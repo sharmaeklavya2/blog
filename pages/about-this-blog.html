@@ -10,28 +10,28 @@
 <body>
 
 <div id="sidebar">
-    <div>
-        <h1><a href="https://sharmaeklavya2.github.io/blog/">Eklavya's Blog <strong></strong></a></h1>
-        <ul>
-            <li><a href="https://sharmaeklavya2.github.io">About me</a></li>
-                <li class="active"><a href="https://sharmaeklavya2.github.io/blog/pages/about-this-blog.html">About this blog</a></li>
-        </ul>
-        <p class="sidebar-label"><a> Tags </a></p>
-        <ul>
-            <a href="https://sharmaeklavya2.github.io/blog/tag/juggling.html">
-                <li> Juggling (3) </li>
-            </a>
-            <a href="https://sharmaeklavya2.github.io/blog/tag/tutorial.html">
-                <li> Tutorial (2) </li>
-            </a>
-        </ul>
+    <div class="primary">
+        <h1><a href="https://sharmaeklavya2.github.io/blog/">Eklavya's Blog</a></h1>
+        <label for="sidebar-checkbox" class="collapsor-lbl"> &equiv; </label>
     </div>
-
-    <footer id="contentinfo">
-        <address id="about">
-        Powered by <a href="http://getpelican.com/">Pelican</a>.
-        </address><!-- /#about -->
-    </footer><!-- /#contentinfo -->
+    <div class="focus-capturer" tabindex="0">
+        <input id="sidebar-checkbox" class="collapsor" type="checkbox" />
+        <div class="collapsible">
+            <ul>
+                <a href="https://sharmaeklavya2.github.io"><li>About me</li></a>
+                    <a href="https://sharmaeklavya2.github.io/blog/pages/about-this-blog.html"><li class="active">About this blog</li></a>
+            </ul>
+            <p class="sidebar-label"> Tags </p>
+            <ul>
+                <a href="https://sharmaeklavya2.github.io/blog/tag/juggling.html">
+                    <li> Juggling <span class="article-count">3</span></li>
+                </a>
+                <a href="https://sharmaeklavya2.github.io/blog/tag/tutorial.html">
+                    <li> Tutorial <span class="article-count">2</span></li>
+                </a>
+            </ul>
+        </div>
+    </div>
 </div>
 
 <div id="main">
