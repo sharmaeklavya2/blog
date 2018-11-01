@@ -2,8 +2,10 @@ https://sharmaeklavya2.github.io/blog/index.html
 https://sharmaeklavya2.github.io/blog/
 https://sharmaeklavya2.github.io/blog/archives.html
 https://sharmaeklavya2.github.io/blog/pages/about-this-blog.html
+https://sharmaeklavya2.github.io/blog/css-collapsible.html
 https://sharmaeklavya2.github.io/blog/juggling-101.html
 https://sharmaeklavya2.github.io/blog/how-i-began-juggling.html
 https://sharmaeklavya2.github.io/blog/3-in-1.html
+https://sharmaeklavya2.github.io/blog/tag/front-end-web-dev.html
 https://sharmaeklavya2.github.io/blog/tag/juggling.html
 https://sharmaeklavya2.github.io/blog/tag/tutorial.html
