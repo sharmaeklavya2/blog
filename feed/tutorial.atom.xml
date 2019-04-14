@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Eklavya's Blog - Tutorial</title><link href="https://sharmaeklavya2.github.io/blog/" rel="alternate"></link><link href="https://sharmaeklavya2.github.io/blog/feed/tutorial.atom.xml" rel="self"></link><id>https://sharmaeklavya2.github.io/blog/</id><updated>2018-11-01T00:00:00+05:30</updated><entry><title>Making a keyboard-navigable collapsible without JavaScript</title><link href="https://sharmaeklavya2.github.io/blog/css-collapsible.html" rel="alternate"></link><published>2018-11-01T00:00:00+05:30</published><updated>2018-11-01T00:00:00+05:30</updated><author><name>Eklavya Sharma</name></author><id>tag:sharmaeklavya2.github.io,2018-11-01:/blog/css-collapsible.html</id><summary type="html">&lt;p&gt;A 'collapsible' is content whose visibility can be toggled by clicking something. However, users without a mouse should also be able to open the collapsed content. This article explains how to make a keyboard-navigable collapsible without using JavaScript.&lt;/p&gt;</summary><content type="html">&lt;p&gt;A 'collapsible' is content whose visibility can be toggled. Here is an example:&lt;/p&gt;
+&lt;div class="collapsible" style="clear: both"&gt;
+    &lt;label for="checkbox0" class="collapsor-lbl"&gt; Click me &lt;/label&gt;
+    &lt;div class="focus-capturer" tabindex="0"&gt;
+        &lt;input id="checkbox0" class="collapsor" type="checkbox" /&gt;
+        &lt;div class="collapsible-content"&gt;
+            &lt;p&gt;This is the body of the collapsible. Its visibility can be toggled using the 'click me' button.&lt;/p&gt;
+            &lt;p&gt;Here we will learn how to make such a collapsible without using JavaScript.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;In this article, we'll look at how to make one.&lt;/p&gt;
+&lt;h2&gt;Skeleton&lt;/h2&gt;
+&lt;p&gt;Let's first create the basic structure without collapsibility.&lt;/p&gt;
+&lt;p&gt;HTML:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;collapsible&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;collapsor-lbl&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; Click me &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;collapsible-content&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+        This is the body of the collapsible.
+    &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;CSS (for beautification):&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;collapsible&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;max-width&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;40&lt;/span&gt;&lt;span class="kt"&gt;em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="k"&gt;border&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt; &lt;span class="kc"&gt;solid&lt;/span&gt; &lt;span class="kc"&gt;black&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="k"&gt;border-radius&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;0.5&lt;/span&gt;&lt;span class="kt"&gt;rem&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;collapsor-lbl&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nd"&gt;hover&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;background-color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;rgba&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.1&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;collapsor-lbl&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;text-align&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;center&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="k"&gt;padding&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;0.5&lt;/span&gt;&lt;span class="kt"&gt;rem&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="kt"&gt;rem&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;collapsible-content&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;padding&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;0.5&lt;/span&gt;&lt;span class="kt"&gt;rem&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="k"&gt;border-top&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt; &lt;span class="kc"&gt;solid&lt;/span&gt; &lt;span class="kc"&gt;black&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This is what the output looks like:&lt;/p&gt;
+&lt;div class="collapsible"&gt;
+    &lt;div class="collapsor-lbl"&gt; Click me &lt;/div&gt;
+    &lt;div class="collapsible-content" style="display: block"&gt;
+        This is the body of the collapsible.
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2&gt;Collapsibility&lt;/h2&gt;
+&lt;p&gt;To add collapsibility, we're going to use a checkbox.
+I read about it on the blog post
+'&lt;a href="https://alligator.io/css/collapsible/"&gt;Implementing A Pure CSS Collapsible&lt;/a&gt;' by alligator.io.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A checkbox maintains state about whether it's checked or not.
+  We can use that to maintain state about whether our collapsible has been clicked or not.&lt;/li&gt;
+&lt;li&gt;We can use the CSS style &lt;code&gt;display:none&lt;/code&gt; to make the checkbox disappear, but still retain its functionality.&lt;/li&gt;
+&lt;li&gt;We can use the CSS pseudo-selector &lt;code&gt;:checked&lt;/code&gt; to select a checked checkbox.&lt;/li&gt;
+&lt;li&gt;We will make sure that &lt;code&gt;.collapsible-content&lt;/code&gt; is a sibling of the checkbox.
+  Then we can use the CSS sibling combinator '&lt;code&gt;~&lt;/code&gt;' to select it.
+  When used together with &lt;code&gt;:checked&lt;/code&gt; on checkbox, we can select &lt;code&gt;.collapsible-content&lt;/code&gt; only when the checkbox is checked.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Change the HTML to this:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;collapsible&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;input&lt;/span&gt; &lt;span class="na"&gt;id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;checkbox1&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;collapsor&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;checkbox&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;label&lt;/span&gt; &lt;span class="na"&gt;for&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;checkbox1&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;collapsor-lbl&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; Click me &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;label&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;collapsible-content&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+        This is the body of the collapsible.
+    &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Add this CSS:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;collapsor-lbl&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;display&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;block&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;collapsor&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;collapsible-content&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;display&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;none&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;collapsor&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nd"&gt;checked&lt;/span&gt; &lt;span class="o"&gt;~&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;collapsible-content&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;display&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;block&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Output:&lt;/p&gt;
+&lt;div class="collapsible"&gt;
+    &lt;input id="checkbox1" class="collapsor" type="checkbox" /&gt;
+    &lt;label for="checkbox1" class="collapsor-lbl"&gt; Click me &lt;/label&gt;
+    &lt;div class="collapsible-content"&gt;
+        This is the body of the collapsible.
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2&gt;Accessibility&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Web accessibility is the inclusive practice of ensuring there are no barriers that
+prevent interaction with, or access to websites, by people with disabilities.
+&lt;footer&gt;&lt;a href="https://en.wikipedia.org/wiki/Web_accessibility"&gt;Wikipedia article on Web Accessibility&lt;/a&gt;&lt;/footer&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I once had a mouse that sometimes stopped functioning, so I can feel a bit of the pain of users who cannot use a mouse.
+Also, some people &lt;em&gt;like&lt;/em&gt; using the keyboard for navigation and it would be bad to force them to use a mouse.&lt;/p&gt;
+&lt;p&gt;I don't know much about web accessibility standards and what it takes for my websites to be fully accessible,
+but the least I can do is make my pages keyboard-navigable.&lt;/p&gt;
+&lt;p&gt;The &lt;a href="https://alligator.io/css/collapsible/#a-note-on-accessibility"&gt;blog post by alligator.io&lt;/a&gt;
+says how to make a collapsible using only CSS, but to make it accessible they had to use JavaScript.
+I, however, have a way of doing it without JavaScript. Prepare to get enlightened!&lt;/p&gt;
+&lt;p&gt;When navigating a web page using the tab key, certain HTML elements have the potential of receiving focus.
+This generally includes links (&lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt; tags) and form elements (&lt;code&gt;&amp;lt;input&amp;gt;&lt;/code&gt; tags).
+When an element receives focus, it gets the &lt;code&gt;:focus&lt;/code&gt; CSS pseudo-class.
+Also, that element and all its descendants get the &lt;code&gt;:focus-within&lt;/code&gt; class.&lt;/p&gt;
+&lt;p&gt;We will therefore wrap &lt;code&gt;.collapsible-content&lt;/code&gt; within a &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt;.
+We will make that &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt; capable of receiving focus via tab by setting the attribute &lt;code&gt;tabindex&lt;/code&gt; to &lt;code&gt;"0"&lt;/code&gt;.
+Then whenever that div has the &lt;code&gt;:focus-within&lt;/code&gt; pseudo-class set,
+we will set &lt;code&gt;display: block&lt;/code&gt; on &lt;code&gt;.collapsible-content&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Change the HTML to this:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;collapsible&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;label&lt;/span&gt; &lt;span class="na"&gt;for&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;checkbox2&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;collapsor-lbl&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; Click me &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;label&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;focus-capturer&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;tabindex&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;0&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;input&lt;/span&gt; &lt;span class="na"&gt;id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;checkbox2&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;collapsor&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;checkbox&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
+        &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;collapsible-content&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;p&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;This is the body of the collapsible.&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;p&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;ul&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+                &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;li&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;link1&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;li&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+                &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;li&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;link2&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;li&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+                &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;li&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;link3&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;li&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;ul&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Add this CSS:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;focus-capturer&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nd"&gt;focus-within&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;collapsible-content&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;display&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;block&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Output:&lt;/p&gt;
+&lt;div class="collapsible"&gt;
+    &lt;label for="checkbox2" class="collapsor-lbl"&gt; Click me &lt;/label&gt;
+    &lt;div class="focus-capturer" tabindex="0"&gt;
+        &lt;input id="checkbox2" class="collapsor" type="checkbox" /&gt;
+        &lt;div class="collapsible-content"&gt;
+            &lt;p&gt;This is the body of the collapsible.&lt;/p&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href=""&gt;link1&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=""&gt;link2&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=""&gt;link3&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Try using the tab key to navigate all the 3 links in the collapsible.
+When the focus moves out of the collapsible, it closes (unless you had clicked on it to open it).&lt;/p&gt;
+&lt;p&gt;Navigation using Shift+Tab is a bit wonky though.&lt;/p&gt;
+&lt;h2&gt;Use&lt;/h2&gt;
+&lt;p&gt;When my blog's website is viewed on a screen of size less than 800 pixels, the navigation bar moves to the top.
+It becomes collapsible and users have to click the '&amp;equiv;' button to open it.
+I have used the above technique to implement this collapsible navigation bar.&lt;/p&gt;
+&lt;p&gt;You can get the complete CSS code by finding
+&lt;a href="https://sharmaeklavya2.github.io/blog/css/collapsible.css"&gt;collapsible.css&lt;/a&gt;
+in the &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; tag of the source of this page.
+I have put &lt;code&gt;#main&lt;/code&gt; before selectors to prevent them from interfering with
+the code for my navigation bar.&lt;/p&gt;
+&lt;p&gt;Feel free to &lt;a href="https://github.com/sharmaeklavya2/blog/issues/new"&gt;reach out&lt;/a&gt;
+for comments, criticism or suggestions.&lt;/p&gt;</content><category term="Front-end web dev"></category><category term="Tutorial"></category></entry><entry><title>Juggling 101</title><link href="https://sharmaeklavya2.github.io/blog/juggling-101.html" rel="alternate"></link><published>2017-12-03T00:00:00+05:30</published><updated>2017-12-03T00:00:00+05:30</updated><author><name>Eklavya Sharma</name></author><id>tag:sharmaeklavya2.github.io,2017-12-03:/blog/juggling-101.html</id><summary type="html">&lt;p&gt;This is a tutorial for those who wish to learn juggling and have absolutely no prior experience. Here you will find links to resources which will help you learn your first juggling pattern and suggestions about what kind of balls to use, what posture you should have, etc.&lt;/p&gt;</summary><content type="html">&lt;p&gt;If you want to learn juggling, you should first know what juggling looks like.
+Watch these videos, which portray many common styles of juggling:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=wP8tbLBls_M"&gt;Anthony Gatto's performance&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=cvME9BLYgsw"&gt;World Juggling day Japan&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Your first pattern&lt;/h2&gt;
+&lt;p&gt;The first juggling pattern you should learn is the 3-ball cascade.
+This is what it looks like:&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://sharmaeklavya2.github.io/blog/img/siteswaps/3.gif" title="3-cascade" /&gt;&lt;/p&gt;
+&lt;p&gt;Most people try to begin with the 3-ball shower.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://sharmaeklavya2.github.io/blog/img/siteswaps/51.gif" title="3-shower" /&gt;&lt;/p&gt;
+&lt;p&gt;This is not recommended. The shower is more difficult than the cascade.
+Don't even try to learn the shower before the cascade; it will make it more difficult to learn the cascade.&lt;/p&gt;
+&lt;p&gt;You can find out how to learn the cascade by watching instructional videos.
+You can find many such videos on YouTube if you search 'cascade juggling tutorial'
+(for example, &lt;a href="https://www.youtube.com/watch?v=x2_j6kMg1co"&gt;this video&lt;/a&gt; by Niels Duinker).&lt;/p&gt;
+&lt;p&gt;If you practice the cascade for around 15 minutes a day, you'll be able to learn it in around a week.
+Consistency is very important in juggling (for any pattern, not just cascade).
+If you don't practice for a few days, you will most likely forget the patterns you haven't mastered.
+Practice everyday for best results.&lt;/p&gt;
+&lt;h2&gt;Get balls&lt;/h2&gt;
+&lt;p&gt;Almost any not-easily-breakable spherical object of an appropriate size and weight is good enough to juggle,
+but we'll discuss the options commonly available.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Tennis or Cricket balls (not the leather ones): These are what I currently use.&lt;/li&gt;
+&lt;li&gt;Sponge balls: These are great if you're juggling in an environment with a lot of breakables.
+  But they bounce off from hands and they lack weight.
+  I learned juggling with them, but I recommend not starting with them.
+  I don't like them anymore.&lt;/li&gt;
+&lt;li&gt;Beanbags: They're small bags filled tight with small beans or beads so that they are almost spherical.
+  They don't bounce and roll off, which can make juggling less annoying when you begin learning.&lt;/li&gt;
+&lt;li&gt;Purpose-made: These are balls specifically made for juggling.
+  I once juggled with them and I think they're much better than all other alternatives.
+  But they're expensive and can usually only be bought online.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Beanbags and purpose-made balls are good, but they're either difficult to find or expensive.
+That's why I have been using tennis balls.&lt;/p&gt;
+&lt;p&gt;Buy an extra ball so that when you lose a ball,
+you can keep practicing till you get a new one.&lt;/p&gt;
+&lt;h2&gt;Choose an environment&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Make sure you don't have breakables in your environment (unless you're juggling with sponge balls).&lt;/li&gt;
+&lt;li&gt;The place should be well lit (this makes much more difference than most people think).&lt;/li&gt;
+&lt;li&gt;The place should have a high enough ceiling.&lt;/li&gt;
+&lt;li&gt;Make sure you have the ability to recover balls if they roll away
+  (for example, under the furniture if you're juggling at home, or into bushes if you're juggling in a park).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you're a student in a hostel, a common room is often a good place to juggle.
+Hostel corridors are generally also good.&lt;/p&gt;
+&lt;p&gt;Try to not juggle in the exact same place facing in the exact same direction every time.
+If you do that, you'll get used to a particular environment and it might be difficult to juggle elsewhere.&lt;/p&gt;
+&lt;h2&gt;Other advice&lt;/h2&gt;
+&lt;p&gt;Keep nails short to avoid injury.&lt;/p&gt;
+&lt;p&gt;Get in the habit of counting your throws so that you can track your progress.
+Sometimes you'll not see any progress for a few days despite regular practice.
+Sometimes your performance could be less than the previous day.
+Such incidences sometimes mean that your technique is incorrect.
+But it usually happens to me for no obvious reason.
+Don't give up. That's normal as far as I know. You'll eventually make progress.&lt;/p&gt;
+&lt;h2&gt;Things to be vigilant about while juggling&lt;/h2&gt;
+&lt;p&gt;Here's a list of things you should be vigilant about while juggling.
+If you can ensure all of these, you'll make progress faster.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Keep a correct stance. Feet should be at shoulder distance. This will increase stability.&lt;/li&gt;
+&lt;li&gt;The &lt;a href="https://en.wikipedia.org/wiki/Humerus"&gt;humerus&lt;/a&gt; should be roughly perpendicular to the ground.
+  This will keep the juggling pattern plane at the right distance from you.&lt;/li&gt;
+&lt;li&gt;The &lt;a href="https://en.wikipedia.org/wiki/Radius_(bone)"&gt;radius&lt;/a&gt; and
+  &lt;a href="https://en.wikipedia.org/wiki/Ulna"&gt;ulna&lt;/a&gt; should be roughly perpendicular to the humerus.
+  This will keep the juggling pattern at the correct height.&lt;/li&gt;
+&lt;li&gt;For patterns with simple throws, there should be low variance in catch points.&lt;/li&gt;
+&lt;li&gt;Keep the pattern in a plane parallel to yourself.&lt;/li&gt;
+&lt;li&gt;If you're repeatedly throwing too forward, try holding on to props for longer.&lt;/li&gt;
+&lt;li&gt;Don't rotate yourself while juggling (unless that's an intended trick).&lt;/li&gt;
+&lt;li&gt;Avoid jerk throws, i.e giving a very large acceleration to balls for a very short time
+  (heavy balls sometimes help prevent jerk throws).&lt;/li&gt;
+&lt;li&gt;Avoid looking funny (for example, some people open their mouth while juggling high patterns).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Good luck&lt;/h2&gt;
+&lt;p&gt;That's all! Keep practicing regularly and you'll soon be able to juggle the cascade.
+I'll soon post another tutorial where I'll write about what you should learn next.&lt;/p&gt;</content><category term="Juggling"></category><category term="Tutorial"></category></entry><entry><title>How to juggle 3 balls in 1 hand</title><link href="https://sharmaeklavya2.github.io/blog/3-in-1.html" rel="alternate"></link><published>2017-11-14T00:00:00+05:30</published><updated>2017-11-14T00:00:00+05:30</updated><author><name>Eklavya Sharma</name></author><id>tag:sharmaeklavya2.github.io,2017-11-14:/blog/3-in-1.html</id><summary type="html">&lt;p&gt;&lt;img src="https://sharmaeklavya2.github.io/blog/img/siteswaps/60.gif" title="60" /&gt;&lt;/p&gt;
+&lt;p&gt;3 balls in 1 hand, a.k.a. 3-in-1, is definitely not an easy pattern,
+mostly because of the speed, accuracy and strength required to do it.
+I could learn to do it because I came up with good prerequisites.
+It still took me a few months to learn it …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img src="https://sharmaeklavya2.github.io/blog/img/siteswaps/60.gif" title="60" /&gt;&lt;/p&gt;
+&lt;p&gt;3 balls in 1 hand, a.k.a. 3-in-1, is definitely not an easy pattern,
+mostly because of the speed, accuracy and strength required to do it.
+I could learn to do it because I came up with good prerequisites.
+It still took me a few months to learn it (which is much more than the average time I take to learn a pattern),
+and I still haven't mastered it.&lt;/p&gt;
+&lt;p&gt;Throughout this article, I'll assume that you want to juggle 3 balls in your right hand.
+If you want to juggle with your left hand, just mirror-invert all instructions here.
+In all &lt;a href="https://en.wikipedia.org/wiki/Siteswap"&gt;siteswaps&lt;/a&gt; mentioned here,
+the first throw will be from the right hand.&lt;/p&gt;
+&lt;p&gt;First of all, you should have mastered the 3 ball shower (siteswap &lt;code&gt;51&lt;/code&gt;) to almost perfection.
+There are 2 mirror-images of the shower.
+You must perfect the one where the left hand makes the horizontal pass
+(i.e. siteswap &lt;code&gt;51&lt;/code&gt;, not &lt;code&gt;15&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;Then you must learn to make a type-6 throw.
+While juggling &lt;code&gt;51&lt;/code&gt;, replace one of the type-5 throws by a type-6 throw.
+It'll look similar to &lt;code&gt;6151505151515151&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://sharmaeklavya2.github.io/blog/img/siteswaps/6151505151515151.gif" title="6151505151515151" /&gt;&lt;/p&gt;
+&lt;p&gt;Practice this until you find it easy to replace a type-5 throw by a type-6 throw.&lt;/p&gt;
+&lt;p&gt;Now practice &lt;code&gt;615150&lt;/code&gt;, then &lt;code&gt;6051&lt;/code&gt;, then &lt;code&gt;61615050&lt;/code&gt; and then &lt;code&gt;606150&lt;/code&gt;.&lt;/p&gt;
+&lt;table&gt;
+&lt;tr&gt; &lt;td&gt;615150&lt;/td&gt; &lt;td&gt;6051&lt;/td&gt; &lt;td&gt;61615050&lt;/td&gt; &lt;td&gt;606150&lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src="https://sharmaeklavya2.github.io/blog/img/siteswaps/615150.gif" title="615150" /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src="https://sharmaeklavya2.github.io/blog/img/siteswaps/6051.gif" title="6051" /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src="https://sharmaeklavya2.github.io/blog/img/siteswaps/61615050.gif" title="61615050" /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src="https://sharmaeklavya2.github.io/blog/img/siteswaps/606150.gif" title="606150" /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;You might also want to try out other variations.
+After you get good at these, you can finally try 3-in-1.&lt;/p&gt;
+&lt;p&gt;You might also like this &lt;a href="https://www.youtube.com/watch?v=z2k3ugex7Kw"&gt;video tutorial by Chris Taibbi&lt;/a&gt;.&lt;/p&gt;</content><category term="Juggling"></category><category term="Tutorial"></category></entry></feed>

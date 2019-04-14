@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Eklavya's Blog - About Me</title><link href="https://sharmaeklavya2.github.io/blog/" rel="alternate"></link><link href="https://sharmaeklavya2.github.io/blog/feed/about-me.atom.xml" rel="self"></link><id>https://sharmaeklavya2.github.io/blog/</id><updated>2019-04-01T00:00:00+05:30</updated><entry><title>Hobbies and Interests</title><link href="https://sharmaeklavya2.github.io/blog/hobbies.html" rel="alternate"></link><published>2017-10-01T00:00:00+05:30</published><updated>2019-04-01T00:00:00+05:30</updated><author><name>Eklavya Sharma</name></author><id>tag:sharmaeklavya2.github.io,2017-10-01:/blog/hobbies.html</id><summary type="html">&lt;p&gt;My hobbies, interests and preferences, along with descriptions and references.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Here's an attempt to exhaustively document my hobbies, interests and preferences.
+In each section, things are arranged in roughly decreasing order of relevance.&lt;/p&gt;
+&lt;p&gt;Sometimes you may not know what something means exactly.
+Looking it up on Wikipedia will often give you a good idea.
+For things whose Wikipedia articles may not be well written,
+I'll provide other references.&lt;/p&gt;
+&lt;h2&gt;Interests&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Data Structures, Algorithms and Theoretical Computer Science&lt;/strong&gt;:
+  For those who have no idea what the word 'Algorithm' means, look it up on the
+  &lt;a href="https://simple.wikipedia.org/wiki/Algorithm"&gt;simple English Wikipedia&lt;/a&gt;.
+  I started studying DSA (Data Structures and Algorithms) in my first year at BITS
+  so that I could become better at competitive programming.
+  But in my second year I developed a liking for it by itself.
+  In subsequent years, I studied and got interested in more areas of theoretical computer science,
+  like theory of computation and computational complexity.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Competitive Programming&lt;/strong&gt;:
+  I solved some math and programming problems on &lt;a href="https://projecteuler.net"&gt;Project Euler&lt;/a&gt; when I was in class 12
+  and solved many algorithmic programming problems in college, mostly in my first year.
+  I occasionally still solve problems on &lt;a href="https://www.codechef.com/users/sharmaeklavya2"&gt;Codechef&lt;/a&gt;
+  and &lt;a href="http://codeforces.com/profile/eku"&gt;Codeforces&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Math&lt;/strong&gt;: I like abstract algebra, number theory and linear algebra.
+  In 2019, I began writing down some of my knowledge on my
+  &lt;a href="https://sharmaeklavya2.github.io/theoremdep"&gt;theorems website&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Juggling&lt;/strong&gt;:
+  I started juggling after my entrance exams and before joining BITS.
+  I know over 30 juggling patterns now. You can watch me juggle on
+  &lt;a href="https://www.youtube.com/watch?v=xYrnQMHfDNE&amp;amp;list=PLACN_dyOcd_WSIzGV-4hVCQyQFmzKH1kb"&gt;YouTube&lt;/a&gt;.
+  One of my first inspirations was this great
+  &lt;a href="https://www.youtube.com/watch?v=wP8tbLBls_M"&gt;juggling video of Anthony Gatto&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Anime&lt;/strong&gt;:
+  'Attack on Titan' is my favorite. I have also watched 'Death Note', 'Fullmetal Alchemist (Brotherhood)',
+  'My Hero Academia' (first season only) and 'The Last Airbender'.
+  Do not look them up on Wikipedia; you'll get spoilers.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Webcomics&lt;/strong&gt;:
+  Webcomics are comic strips put up on websites.
+  I like &lt;a href="https://xkcd.com"&gt;XKCD&lt;/a&gt;, &lt;a href="https://smbc-comics.com"&gt;SMBC&lt;/a&gt; and &lt;a href="https://www.jspowerhour.com"&gt;JSPH&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Software development&lt;/strong&gt;:
+  See &lt;a href="https://github.com/sharmaeklavya2"&gt;my Github profile&lt;/a&gt; for projects I have done.
+  It used to be my primary hobby in my sophomore year at BITS but I'm no longer as interested in it now.
+  I still like to do it occasionally.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Watching videos on YouTube&lt;/strong&gt;:
+  Refer to my &lt;a href="https://www.youtube.com/channel/UCsI0Lrna_yR_X9H5m_ubM9A/channels"&gt;subscriptions&lt;/a&gt;
+  and &lt;a href="https://www.youtube.com/playlist?list=LLsI0Lrna_yR_X9H5m_ubM9A"&gt;liked videos&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Balancing&lt;/strong&gt;:
+  In my third year at BITS, I learned how to balance long sticks on my foot, chin and nose.
+  Here's &lt;a href="https://www.youtube.com/watch?v=sOju-b6JRxI"&gt;my video on YouTube&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Watching movies&lt;/strong&gt;:
+  I rarely watch movies (less than once a month).
+  I mostly watch English movies.
+  My favorites are 'The Matrix' and 'Avatar'. I also like the Marvel movies.
+  Among Indian movies, Baahubali is my favorite.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Video games&lt;/strong&gt;:
+  I used to play a lot of video games before college.
+  My favorites include Rally racing, GTA Vice City and 2D platform games.
+  I stopped after that mostly because I have been busy and I no longer have Windows.
+  Sometimes I play strategy mini-games like &lt;a href="https://alexnisnevich.github.io/untrusted/"&gt;Untrusted&lt;/a&gt;
+  and &lt;a href="http://code.jerev.be/ggo13-transcube/"&gt;Transcube&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Cycling&lt;/strong&gt;:
+  I love cycling as a mode of transport. I used it to commute to classes at BITS.
+  I wish cycling was safer on city roads in India. I can cycle without holding the handlebars.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Dislikes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Tourism&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Attending parties, dinners, etc.&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Preferences&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Music&lt;/strong&gt;:
+  I mostly like rock and some western classical.
+  I also like Indian classical but good songs are harder to find in that category.
+  Here are some of my favorites:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The Stage - Avenged Sevenfold&lt;/li&gt;
+&lt;li&gt;Mello theme - Death Note soundtrack&lt;/li&gt;
+&lt;li&gt;Hotel California - Eagles&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=1B4pZBmI_gU"&gt;Arpeggios from Hell&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Mr Crowley - Ozzy Osbourne&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=I6y0eYcIJ5I"&gt;Minute Waltz - Chopin&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=XWS1IRF_IFA"&gt;Angelina - Tommy Emmanuel&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=c5bzrB5QbSY"&gt;Cesar Frank Sonata&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=_sHURJwNjB8"&gt;Flight of the Bumblebee - Nikolai Rimsky-Korsakov&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;River flows in you - Yiruma&lt;/li&gt;
+&lt;li&gt;Millennium of the Blind - Megadeth&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Food&lt;/strong&gt;:
+  I'm vegetarian. South Indian food is my favorite.
+  Very oily food makes me nauseous and some North Indian cuisines (especially that of Rajasthan) are very oily.
+  I can also cook basic food.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Operating System&lt;/strong&gt;:
+  I strongly prefer Linux (all distributions I have ever seen) and MacOS over Windows.
+  My favorite thing about Linux and MacOS is that they are Unix-like OSes where
+  I can use &lt;a href="https://en.wikipedia.org/wiki/Terminal_emulator"&gt;the terminal&lt;/a&gt; for most of my work.
+  This might seem primitive to most people, but I think the terminal is better than graphical programs
+  for a lot of tasks once you get used to it.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Programming language&lt;/strong&gt;:
+  Python is my favorite for day-to-day programming and projects.
+  For competitive programming, I use C/C++. I also know Java.
+  I prefer C/C++ as a first language to be taught rather than Python or Java.
+  Haskell is the most elegant language I have seen,
+  but I rarely use it because I find pure functional programming difficult.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Text editor&lt;/strong&gt;: Vim is my favorite. I haven't yet tried Emacs.
+  You can check out my &lt;a href="https://github.com/sharmaeklavya2/dotfiles/blob/master/dotfiles/.vimrc"&gt;.vimrc&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content><category term="About Me"></category></entry></feed>
