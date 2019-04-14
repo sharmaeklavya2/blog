@@ -31,11 +31,11 @@ nav {
     list-style: none;
 }
 
-#sitetitle, nav p, nav li a, nav .collapsor-lbl {
+#sitetitle, nav p, nav li > a, nav .collapsor-lbl {
     margin: 0;
     padding: 0.5rem 1rem;
 }
-nav li a {
+nav li > a {
     display: block;
 }
 #sitetitle {
@@ -51,7 +51,7 @@ nav ul {
     padding: 0;
     margin: 0;
 }
-nav li a:hover {
+nav li > a:hover {
     background-color: rgba(0, 0, 0, 0.1);
 }
 
@@ -60,6 +60,7 @@ nav .collapsor {
 }
 nav .collapsor-lbl:hover {
     background-color: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
 }
 
 @media (min-width: 1001px) {
@@ -112,11 +113,8 @@ nav .collapsor-lbl:hover {
     border: 1px solid grey;
 }
 
-a {
+nav a, a:not(:hover) {
     text-decoration: none;
-}
-.entry-content a:hover {
-    text-decoration: underline;
 }
 
 .card {
@@ -141,35 +139,43 @@ a {
 }
 .read-more:hover {
     background-color: rgba(0, 0, 0, 0.15);
+    text-decoration: none;
 }
 table {
     border-collapse: collapse;
 }
 td, th {
     border: 1px solid black;
-    padding: 2px 8px;
+    padding: 0.1rem 0.5rem;
 }
 
+td .tags {
+    margin-left: -0.1rem;
+}
 .tags {
     padding: 0;
     margin: 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style: none;
 }
-.tags li, .tags li a {
-    display: inline-block;
+.tags li, .tags li > a {
+    display: flex;
 }
-.tag, .tags li a, .article-count {
+.tag, .tags li > a, .article-count {
     color: rgba(0, 0, 0, 0.6);
     background-color: rgba(0, 0, 0, 0.1);
     font-size: 90%;
     padding: 0.25em 0.5em;
 }
-.tags li a:hover {
+.tags li > a:hover {
     background-color: rgba(0, 0, 0, 0.15);
+    text-decoration: none;
 }
-.tag, .tags li a {
+.tag, .tags li > a {
     border-radius: 0.4em;
-    margin-top: 0.1em;
-    margin-bottom: 0.1em;
+    margin: 0.1em;
 }
 .article-count {
     border-radius: 100%;
@@ -192,4 +198,20 @@ blockquote footer::before {
 }
 code {
     background-color: rgba(0, 0, 0, 0.05);
+}
+
+.tags .icon {
+    margin: -0.1em 0.2em -0.1em -0.1em;
+}
+.icon {
+    display: inline-block;
+    width: 1.2em;
+    height: 1.2em;
+}
+.hori-flex {
+    display: flex;
+    align-items: center;
+}
+nav .tags {
+    padding: 0.25rem 1rem;
 }
