@@ -173,8 +173,12 @@ in the &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; tag of the source of this p
 I have put &lt;code&gt;#main&lt;/code&gt; before selectors to prevent them from interfering with
 the code for my navigation bar.&lt;/p&gt;
 &lt;p&gt;Feel free to &lt;a href="https://github.com/sharmaeklavya2/blog/issues/new"&gt;reach out&lt;/a&gt;
-for comments, criticism or suggestions.&lt;/p&gt;</content><category term="Front-end web dev"></category><category term="Tutorial"></category></entry><entry><title>Juggling 101</title><link href="https://sharmaeklavya2.github.io/blog/juggling-101.html" rel="alternate"></link><published>2017-12-03T00:00:00+05:30</published><updated>2017-12-03T00:00:00+05:30</updated><author><name>Eklavya Sharma</name></author><id>tag:sharmaeklavya2.github.io,2017-12-03:/blog/juggling-101.html</id><summary type="html">&lt;p&gt;This is a tutorial for those who wish to learn juggling and have absolutely no prior experience. Here you will find links to resources which will help you learn your first juggling pattern and suggestions about what kind of balls to use, what posture you should have, etc.&lt;/p&gt;</summary><content type="html">&lt;p&gt;If you want to learn juggling, you should first know what juggling looks like.
-Watch these videos, which portray many common styles of juggling:&lt;/p&gt;
+for comments, criticism or suggestions.&lt;/p&gt;</content><category term="Front-end web dev"></category><category term="Tutorial"></category></entry><entry><title>Juggling 101</title><link href="https://sharmaeklavya2.github.io/blog/juggling-101.html" rel="alternate"></link><published>2017-12-03T00:00:00+05:30</published><updated>2017-12-03T00:00:00+05:30</updated><author><name>Eklavya Sharma</name></author><id>tag:sharmaeklavya2.github.io,2017-12-03:/blog/juggling-101.html</id><summary type="html">&lt;p&gt;This is a tutorial for those who wish to learn juggling and have absolutely no prior experience. Here you will find links to resources which will help you learn your first juggling pattern and suggestions about what kind of balls to use, what posture you should have, etc.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a tutorial for those who wish to learn juggling and have absolutely no prior experience.
+Here you will find links to resources which will help you learn your first juggling pattern
+and suggestions about what kind of balls to use, what posture you should have, etc.&lt;/p&gt;
+&lt;h2&gt;Getting informed and motivated&lt;/h2&gt;
+&lt;p&gt;If you want to learn juggling, you should first know what juggling looks like.
+Watch these awesome videos, which portray many common styles of juggling:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=wP8tbLBls_M"&gt;Anthony Gatto's performance&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=cvME9BLYgsw"&gt;World Juggling day Japan&lt;/a&gt;&lt;/li&gt;
@@ -201,8 +205,7 @@ but we'll discuss the options commonly available.&lt;/p&gt;
 &lt;li&gt;Tennis or Cricket balls (not the leather ones): These are what I currently use.&lt;/li&gt;
 &lt;li&gt;Sponge balls: These are great if you're juggling in an environment with a lot of breakables.
   But they bounce off from hands and they lack weight.
-  I learned juggling with them, but I recommend not starting with them.
-  I don't like them anymore.&lt;/li&gt;
+  I learned juggling with them, but I recommend not starting with them.&lt;/li&gt;
 &lt;li&gt;Beanbags: They're small bags filled tight with small beans or beads so that they are almost spherical.
   They don't bounce and roll off, which can make juggling less annoying when you begin learning.&lt;/li&gt;
 &lt;li&gt;Purpose-made: These are balls specifically made for juggling.
@@ -290,9 +293,8 @@ It still took me a few months to learn it …&lt;/p&gt;</summary><content type="
 &lt;p&gt;3 balls in 1 hand, a.k.a. 3-in-1, is definitely not an easy pattern,
 mostly because of the speed, accuracy and strength required to do it.
 I could learn to do it because I came up with good prerequisites.
-It still took me a few months to learn it (which is much more than the average time I take to learn a pattern),
-and I still haven't mastered it.&lt;/p&gt;
-&lt;p&gt;Throughout this article, I'll assume that you want to juggle 3 balls in your right hand.
+It still took me a few months to learn it and I still haven't mastered it.&lt;/p&gt;
+&lt;p&gt;Throughout this tutorial, I'll assume that you want to juggle 3 balls in your right hand.
 If you want to juggle with your left hand, just mirror-invert all instructions here.
 In all &lt;a href="https://en.wikipedia.org/wiki/Siteswap"&gt;siteswaps&lt;/a&gt; mentioned here,
 the first throw will be from the right hand.&lt;/p&gt;
@@ -303,18 +305,31 @@ You must perfect the one where the left hand makes the horizontal pass
 &lt;p&gt;Then you must learn to make a type-6 throw.
 While juggling &lt;code&gt;51&lt;/code&gt;, replace one of the type-5 throws by a type-6 throw.
 It'll look similar to &lt;code&gt;6151505151515151&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://sharmaeklavya2.github.io/blog/img/siteswaps/6151505151515151.gif" title="6151505151515151" /&gt;&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src="https://sharmaeklavya2.github.io/blog/img/siteswaps/6151505151515151.gif" /&gt;
+    &lt;figcaption&gt;6151505151515151&lt;/figcaption&gt;
+&lt;/figure&gt;
+
 &lt;p&gt;Practice this until you find it easy to replace a type-5 throw by a type-6 throw.&lt;/p&gt;
 &lt;p&gt;Now practice &lt;code&gt;615150&lt;/code&gt;, then &lt;code&gt;6051&lt;/code&gt;, then &lt;code&gt;61615050&lt;/code&gt; and then &lt;code&gt;606150&lt;/code&gt;.&lt;/p&gt;
-&lt;table&gt;
-&lt;tr&gt; &lt;td&gt;615150&lt;/td&gt; &lt;td&gt;6051&lt;/td&gt; &lt;td&gt;61615050&lt;/td&gt; &lt;td&gt;606150&lt;/td&gt; &lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;img src="https://sharmaeklavya2.github.io/blog/img/siteswaps/615150.gif" title="615150" /&gt;&lt;/td&gt;
-&lt;td&gt;&lt;img src="https://sharmaeklavya2.github.io/blog/img/siteswaps/6051.gif" title="6051" /&gt;&lt;/td&gt;
-&lt;td&gt;&lt;img src="https://sharmaeklavya2.github.io/blog/img/siteswaps/61615050.gif" title="61615050" /&gt;&lt;/td&gt;
-&lt;td&gt;&lt;img src="https://sharmaeklavya2.github.io/blog/img/siteswaps/606150.gif" title="606150" /&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/table&gt;
+&lt;div class="gallery"&gt;
+&lt;figure&gt;
+    &lt;img src="https://sharmaeklavya2.github.io/blog/img/siteswaps/615150.gif" /&gt;
+    &lt;figcaption&gt;615150&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;figure&gt;
+    &lt;img src="https://sharmaeklavya2.github.io/blog/img/siteswaps/6051.gif" /&gt;
+    &lt;figcaption&gt;6051&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;figure&gt;
+    &lt;img src="https://sharmaeklavya2.github.io/blog/img/siteswaps/61615050.gif" /&gt;
+    &lt;figcaption&gt;61615050&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;figure&gt;
+    &lt;img src="https://sharmaeklavya2.github.io/blog/img/siteswaps/606150.gif" /&gt;
+    &lt;figcaption&gt;606150&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
 
 &lt;p&gt;You might also want to try out other variations.
 After you get good at these, you can finally try 3-in-1.&lt;/p&gt;
