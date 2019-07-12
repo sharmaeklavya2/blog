@@ -15,14 +15,59 @@ If you're not using macOS, you can still get a similar working environment on Li
 but you'll have to make major modifications to the instructions below.&lt;/p&gt;
 &lt;p&gt;You can also refer to this &lt;a href="https://sharmaeklavya2.github.io/blog/img/macos-customize-graph.dot.svg"&gt;dependency graph&lt;/a&gt;
 (&lt;a href="https://sharmaeklavya2.github.io/blog/img/macos-customize-graph.dot"&gt;source code&lt;/a&gt;).&lt;/p&gt;
-&lt;h2&gt;Basic setup&lt;/h2&gt;
+&lt;div class="toc"&gt;&lt;span class="toctitle"&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#basic-setup"&gt;Basic setup&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#system-preferences"&gt;System Preferences&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#finder-preferences"&gt;Finder preferences&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#install-google-chrome-and-sync-profile"&gt;Install Google Chrome and sync profile&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#textedit-preferences"&gt;TextEdit preferences&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#terminal-and-shell"&gt;&lt;span style="background-color: #F9E79F"/&gt;Terminal and Shell&lt;/span&gt;&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#terminalapp-preferences"&gt;Terminal.app preferences&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#installing-xcode-command-line-tools"&gt;Installing Xcode command-line tools&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#dotfiles"&gt;Dotfiles&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#install-homebrew"&gt;Install Homebrew&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#install-tmux"&gt;Install tmux&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#install-command-line-programs"&gt;&lt;span style="background-color: #A9DFBF"&gt;Install command-line programs&lt;/span&gt;&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#java"&gt;Java&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#mactex"&gt;MacTex&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#python-and-packages"&gt;Python and packages&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#transfer-backed-up-data"&gt;&lt;span style="background-color: #AED6F1"&gt;Transfer backed-up data&lt;/span&gt;&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#reorganizing-data-and-backup"&gt;Reorganizing data and backup&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#ntfs-drivers-for-macos"&gt;NTFS drivers for macOS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#install-dropbox-and-use-symlinks"&gt;Install Dropbox and use symlinks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#wallpapers-and-profile-picture"&gt;Wallpapers and profile picture&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#customize-vim"&gt;&lt;span style="background-color: #F5B7B1"&gt;Customize Vim&lt;/span&gt;&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#install-newer-vim"&gt;Install newer Vim&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#install-pathogen"&gt;Install Pathogen&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#get-vim-plugins"&gt;Get Vim plugins&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#install-youcompleteme"&gt;Install YouCompleteMe&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#fix-vim-locale-error"&gt;Fix Vim locale error&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#install-nginx-and-serve-website-mirrors"&gt;&lt;span style="background-color: #D2B4DE"&gt;Install Nginx and serve website mirrors&lt;/span&gt;&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#install-and-run-nginx"&gt;Install and run Nginx&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#enable-nginx-autoindex"&gt;Enable nginx autoindex&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#serve-my-websites-with-nginx"&gt;Serve my websites with Nginx&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h2 id="basic-setup"&gt;Basic setup&lt;a class="headerlink" href="#basic-setup" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Connect to a WiFi network&lt;/strong&gt;, since we'll be downloading a lot of stuff.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Update your OS&lt;/strong&gt;.&lt;/li&gt;
 &lt;li&gt;macOS will offer a &lt;strong&gt;tour of the OS&lt;/strong&gt;. Take that if you're new to macOS.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Remove useless apps from dock&lt;/strong&gt;: right-click on the app in the dock, go to Options and uncheck 'Keep in Dock'.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;System Preferences&lt;/h3&gt;
+&lt;h3 id="system-preferences"&gt;System Preferences&lt;a class="headerlink" href="#system-preferences" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Click the Apple logo in the top-left corner of your screen and choose 'System Preferences'.
 Here you can customize most aspects of your operating system.
 If you have the time, go through each of the items and choose the options which make sense to you.
@@ -51,7 +96,7 @@ These are the changes which I made:&lt;/p&gt;
 &lt;li&gt;Accessibility: Siri: 'Enable type to Siri' if you don't want to disable Siri
   but want to talk to it by typing instead of speaking.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Finder preferences&lt;/h3&gt;
+&lt;h3 id="finder-preferences"&gt;Finder preferences&lt;a class="headerlink" href="#finder-preferences" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Finder is the file manager in macOS.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Finder preferences (&lt;code&gt;Cmd + ,&lt;/code&gt;):&lt;ul&gt;
@@ -72,11 +117,11 @@ These are the changes which I made:&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;Press &lt;code&gt;Cmd + Shift + .&lt;/code&gt; to enable viewing hidden files.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Install Google Chrome and sync profile&lt;/h3&gt;
+&lt;h3 id="install-google-chrome-and-sync-profile"&gt;Install Google Chrome and sync profile&lt;a class="headerlink" href="#install-google-chrome-and-sync-profile" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;I prefer Google Chrome over Safari.
 I made Chrome the default browser.
 I also synced my account to get all my bookmarks and extensions.&lt;/p&gt;
-&lt;h3&gt;TextEdit preferences&lt;/h3&gt;
+&lt;h3 id="textedit-preferences"&gt;TextEdit preferences&lt;a class="headerlink" href="#textedit-preferences" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;TextEdit is the default plain-text and rich-text editor bundled with macOS.&lt;/p&gt;
 &lt;p&gt;I usually use &lt;a href="https://en.wikipedia.org/wiki/Vim_(text_editor)"&gt;Vim&lt;/a&gt; for text editing.
 Vim is far superior to TextEdit in terms of advanced functionality,
@@ -90,16 +135,14 @@ But having a lightweight GUI text editor can be handy.&lt;/p&gt;
 &lt;li&gt;Display HTML files as HTML code.&lt;/li&gt;
 &lt;li&gt;Disable 'add .txt extension to plain text files'. This is needed if you have to edit extensionless files.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 style="background-color: #F9E79F"&gt;
-Terminal and Shell&lt;/h2&gt;
-
+&lt;h2 id="terminal-and-shell"&gt;&lt;span style="background-color: #F9E79F"/&gt;Terminal and Shell&lt;/span&gt;&lt;a class="headerlink" href="#terminal-and-shell" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;If you're an aspiring programmer or power user, you should get to know the command-line.
 For this blog post, I'm going to assume that you know how to run commands from the shell and
 you know the meaning of the following words:
 terminal emulator, shell, prompt, home directory, current working directory.
 In case you don't, here's a nice short tutorial by TreeHouse:
 &lt;a href="https://blog.teamtreehouse.com/introduction-to-the-mac-os-x-command-line"&gt;Introduction to the Mac OS X Command Line&lt;/a&gt;.&lt;/p&gt;
-&lt;h3&gt;Terminal.app preferences&lt;/h3&gt;
+&lt;h3 id="terminalapp-preferences"&gt;Terminal.app preferences&lt;a class="headerlink" href="#terminalapp-preferences" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Terminal.app is the default terminal emulator on macOS.
 There are better alternatives, like &lt;a href="https://www.iterm2.com/features.html"&gt;iTerm2&lt;/a&gt;,
 but Terminal.app is good enough for me, so I didn't bother installing iTerm2.&lt;/p&gt;
@@ -128,14 +171,14 @@ Now restart Terminal.app and you'll see the dark blue background of the Solarize
 &lt;li&gt;In the 'Preferences &amp;gt; Profile &amp;gt; Text' tab, set opacity to 85% and font size to 16.&lt;/li&gt;
 &lt;li&gt;In the 'Preferences &amp;gt; Profile &amp;gt; Window' tab, deselect 'restore text when reopening windows'.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Installing &lt;a href="http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/"&gt;Xcode command-line tools&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="installing-xcode-command-line-tools"&gt;Installing &lt;a href="http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/"&gt;Xcode command-line tools&lt;/a&gt;&lt;a class="headerlink" href="#installing-xcode-command-line-tools" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;The 'Xcode command-line tools' consist of command-line applications that are
 very common in Unix-like environments, like git, gcc, make, perl.&lt;/p&gt;
 &lt;p&gt;Run 'xcode-select --install' from a terminal.
 A dialog box will pop up. Select install.
 You should probably connect to a power source before doing this
 because macOS is going to suggest you do so.&lt;/p&gt;
-&lt;h3&gt;Dotfiles&lt;/h3&gt;
+&lt;h3 id="dotfiles"&gt;Dotfiles&lt;a class="headerlink" href="#dotfiles" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Dotfiles colloquially refers to configuration files placed in the home directory.
 These files' names start with a dot (&lt;code&gt;.&lt;/code&gt;).
 Common examples are &lt;code&gt;.bash_profile&lt;/code&gt;, &lt;code&gt;.vimrc&lt;/code&gt; and &lt;code&gt;.gitconfig&lt;/code&gt;.&lt;/p&gt;
@@ -143,23 +186,27 @@ Common examples are &lt;code&gt;.bash_profile&lt;/code&gt;, &lt;code&gt;.vimrc&l
 &lt;a href="https://github.com/sharmaeklavya2/dotfiles"&gt;&lt;code&gt;sharmaeklavya2/dotfiles&lt;/code&gt;&lt;/a&gt;.
 You can find detailed instructions for setting them up in the repository's readme.
 Here is a brief version:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Run &lt;code&gt;git clone https://github.com/sharmaeklavya2/dotfiles.git&lt;/code&gt;.
-This will download a directory named &lt;code&gt;dotfiles&lt;/code&gt; in your current working directory.
-Run &lt;code&gt;cd dotfiles&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Run &lt;code&gt;./scripts/make_links.py&lt;/code&gt; and copy the files in &lt;code&gt;_links&lt;/code&gt; to your home directory.
-Rename &lt;code&gt;~/.bashrc&lt;/code&gt; to &lt;code&gt;~/.bash_profile&lt;/code&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Once you set up the dotfiles, the first thing you'll notice is the improved, colorful prompt.&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git clone https://github.com/sharmaeklavya2/dotfiles.git
+cd dotfiles
+./scripts/make_links.py
+shopt -s dotglob nullglob
+mv _links/.bashrc _links/.bash_profile
+mv _links/* ~
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now either restart your terminal or run &lt;code&gt;source ~/.bash_profile&lt;/code&gt;.
+If you executed the above instructions correctly,
+the first thing you'll notice is the improved, colorful prompt.&lt;/p&gt;
 &lt;p&gt;My dotfiles are written with the Solarized terminal color scheme in mind.
 If you're not using Solarized, you may want to modify or omit using &lt;code&gt;.dircolors&lt;/code&gt; and &lt;code&gt;.vimrc&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;I also recommend using the &lt;code&gt;git-prompt.sh&lt;/code&gt; utility script, which will display useful information
 about git repositories (like branch, dirty status, etc) in your prompt.
-To do this, download &lt;a href="https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh"&gt;https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh&lt;/a&gt;
+To do this, download &lt;a href="https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh"&gt;git-prompt.sh&lt;/a&gt;
 to &lt;code&gt;~/ext_bin/git-prompt.sh&lt;/code&gt;. The &lt;code&gt;~/.bash_profile&lt;/code&gt; will use it to modify the prompt.&lt;/p&gt;
 &lt;p&gt;I also recommend adding the line &lt;code&gt;export HISTSIZE=100000&lt;/code&gt; to either &lt;code&gt;~/.env&lt;/code&gt; or &lt;code&gt;~/.bash_profile&lt;/code&gt;
 to increase your shell input history size.&lt;/p&gt;
-&lt;h3&gt;Install &lt;a href="https://brew.sh/"&gt;Homebrew&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="install-homebrew"&gt;Install &lt;a href="https://brew.sh/"&gt;Homebrew&lt;/a&gt;&lt;a class="headerlink" href="#install-homebrew" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Homebrew (a.k.a. brew) is a package manager, which means it's like a terminal version of the App Store.
 You can install programs (called packages by brew) by simply writing commands on the terminal:&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;brew install name-of-package
@@ -172,7 +219,7 @@ You can install programs (called packages by brew) by simply writing commands on
 
 
 &lt;p&gt;Installation may require superuser permissions.&lt;/p&gt;
-&lt;h3&gt;Install &lt;a href="https://www.hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/"&gt;tmux&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="install-tmux"&gt;Install &lt;a href="https://www.hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/"&gt;tmux&lt;/a&gt;&lt;a class="headerlink" href="#install-tmux" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;I usually need multiple shells to be open.
 I can use Terminal.app's 'tabs' (&lt;code&gt;Cmd + T&lt;/code&gt;) to achieve this.
 But I use tmux instead since it has more features.
@@ -182,19 +229,17 @@ you can open multiple shells on the server on a single SSH session.&lt;/p&gt;
 &lt;p&gt;Brew will check for updates every time you run it.
 To prevent that from happening, add &lt;code&gt;export HOMEBREW_NO_AUTO_UPDATE=1&lt;/code&gt;
 to &lt;code&gt;~/.bash_profile&lt;/code&gt; or &lt;code&gt;~/.env&lt;/code&gt;.&lt;/p&gt;
-&lt;h2 style="background-color: #A9DFBF"&gt;
-Install command-line programs&lt;/h2&gt;
-
-&lt;h3&gt;Java&lt;/h3&gt;
+&lt;h2 id="install-command-line-programs"&gt;&lt;span style="background-color: #A9DFBF"&gt;Install command-line programs&lt;/span&gt;&lt;a class="headerlink" href="#install-command-line-programs" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id="java"&gt;Java&lt;a class="headerlink" href="#java" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;brew install java
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h3&gt;MacTex&lt;/h3&gt;
+&lt;h3 id="mactex"&gt;MacTex&lt;a class="headerlink" href="#mactex" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;MacTex is a suite of programs for typesetting documents using TeX and LaTeX.
 LaTeX is a great system for writing professional-looking mathematical documents.&lt;/p&gt;
 &lt;p&gt;You can install MacTex using a GUI installer, but I did it using &lt;code&gt;brew install mactex&lt;/code&gt;.&lt;/p&gt;
-&lt;h3&gt;Python and packages&lt;/h3&gt;
+&lt;h3 id="python-and-packages"&gt;Python and packages&lt;a class="headerlink" href="#python-and-packages" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;macOS has Python 2 pre-installed, but we should use Python 3, since
 &lt;a href="https://www.anaconda.com/end-of-life-eol-for-python-2-7-is-coming-are-you-ready/"&gt;Python 2 will reach EOL&lt;/a&gt;
 on Jan 1, 2020.&lt;/p&gt;
@@ -217,10 +262,8 @@ but some are useful enough that I installed them in the beginning:&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h2 style="background-color: #AED6F1"&gt;
-Transfer backed-up data&lt;/h2&gt;
-
-&lt;h3&gt;Reorganizing data and backup&lt;/h3&gt;
+&lt;h2 id="transfer-backed-up-data"&gt;&lt;span style="background-color: #AED6F1"&gt;Transfer backed-up data&lt;/span&gt;&lt;a class="headerlink" href="#transfer-backed-up-data" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id="reorganizing-data-and-backup"&gt;Reorganizing data and backup&lt;a class="headerlink" href="#reorganizing-data-and-backup" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;There are many places where I store my files:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;My laptop's SSD (which is small enough for all my files to not fit on it).&lt;/li&gt;
@@ -239,7 +282,7 @@ and demarcated which folders will be on which storage mediums.&lt;/p&gt;
 I use the Dropbox desktop app which syncs my files online in real-time.
 On my external hard drive, I have an up-to-date backup of content that rarely changes.&lt;/p&gt;
 &lt;p&gt;If you use git for your code, make sure push all unpushed code to an online remote like Github or Bitbucket.&lt;/p&gt;
-&lt;h3&gt;NTFS drivers for macOS&lt;/h3&gt;
+&lt;h3 id="ntfs-drivers-for-macos"&gt;NTFS drivers for macOS&lt;a class="headerlink" href="#ntfs-drivers-for-macos" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;My external hard drive is NTFS-formatted, but macOS cannot write to NTFS drives; it can only read from them.
 This was problematic when I was transferring my files from my old laptop (which was also a MacBook)
 to my external hard drive. There are 3 options available:&lt;/p&gt;
@@ -253,7 +296,7 @@ These work seamlessly, but are either expensive or offer a limited-time trial ve
 &lt;p&gt;Fortunately, my external hard drive was a Seagate product.
 Seagate offers a &lt;a href="https://www.seagate.com/in/en/support/downloads/item/ntfs-driver-for-mac-os-master-dl/"&gt;free-of-charge version of Paragon's NTFS driver&lt;/a&gt;
 which only works on Seagate drives.&lt;/p&gt;
-&lt;h3&gt;Install Dropbox and use symlinks&lt;/h3&gt;
+&lt;h3 id="install-dropbox-and-use-symlinks"&gt;Install Dropbox and use symlinks&lt;a class="headerlink" href="#install-dropbox-and-use-symlinks" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;I installed &lt;a href="https://www.dropbox.com/install"&gt;Dropbox's desktop app&lt;/a&gt; on my new laptop.
 This app creates a directory at &lt;code&gt;~/Dropbox&lt;/code&gt; and downloads all your online content into it.
 Anything you put in this directory will get synced to your online account.&lt;/p&gt;
@@ -262,20 +305,18 @@ If I ever change my mind about what to sync, I'll have to move things in and out
 If you're a command-line user, you'll know how annoying it can be to change frequently-used paths.&lt;/p&gt;
 &lt;p&gt;To solve this problem, I placed all my files outside &lt;code&gt;~/Dropbox&lt;/code&gt;
 and created &lt;a href="https://kb.iu.edu/d/abbe"&gt;symlinks&lt;/a&gt; to them which I placed in &lt;code&gt;~/Dropbox&lt;/code&gt;.&lt;/p&gt;
-&lt;h3&gt;Wallpapers and profile picture&lt;/h3&gt;
+&lt;h3 id="wallpapers-and-profile-picture"&gt;Wallpapers and profile picture&lt;a class="headerlink" href="#wallpapers-and-profile-picture" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;After transferring files from my external hard drive to my new laptop,
 I configured macOS to use my custom wallpapers instead of the system-default ones
 and use my profile picture on the lock screen.&lt;/p&gt;
-&lt;h2 style="background-color: #F5B7B1"&gt;
-Customize Vim&lt;/h2&gt;
-
-&lt;h3&gt;Install newer Vim&lt;/h3&gt;
+&lt;h2 id="customize-vim"&gt;&lt;span style="background-color: #F5B7B1"&gt;Customize Vim&lt;/span&gt;&lt;a class="headerlink" href="#customize-vim" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id="install-newer-vim"&gt;Install newer Vim&lt;a class="headerlink" href="#install-newer-vim" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Although macOS comes with &lt;code&gt;vim&lt;/code&gt; pre-installed, that version of Vim was compiled without some important features.
 You can see which features are installed by running &lt;code&gt;vim --version&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Run &lt;code&gt;brew install vim&lt;/code&gt; to install a newer, better Vim.
 Alternatively, you can install MacVim (&lt;code&gt;brew install macvim&lt;/code&gt;).
 This will not replace the old vim; the old vim can still be accessed at &lt;code&gt;/usr/bin/vim&lt;/code&gt;.&lt;/p&gt;
-&lt;h3&gt;Install &lt;a href="https://github.com/tpope/vim-pathogen"&gt;Pathogen&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="install-pathogen"&gt;Install &lt;a href="https://github.com/tpope/vim-pathogen"&gt;Pathogen&lt;/a&gt;&lt;a class="headerlink" href="#install-pathogen" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkdir -p ~/.vim/autoload ~/.vim/bundle &amp;amp;&amp;amp; \
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 &lt;/pre&gt;&lt;/div&gt;
@@ -284,14 +325,14 @@ curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 &lt;p&gt;Add &lt;code&gt;execute pathogen#infect()&lt;/code&gt; to your &lt;code&gt;.vimrc&lt;/code&gt;.
 If you're using &lt;a href="https://github.com/sharmaeklavya2/dotfiles"&gt;my dotfiles&lt;/a&gt;,
 you'll already have it in your &lt;code&gt;.vimrc&lt;/code&gt;.&lt;/p&gt;
-&lt;h3&gt;Get Vim plugins&lt;/h3&gt;
+&lt;h3 id="get-vim-plugins"&gt;Get Vim plugins&lt;a class="headerlink" href="#get-vim-plugins" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Just go to &lt;code&gt;~/.vim/bundle&lt;/code&gt; and clone the git repositories of the plugins you need.
 You can see the list of plugins that I use at
 &lt;a href="https://github.com/sharmaeklavya2/dotfiles/blob/master/vimpackages.txt"&gt;&lt;code&gt;vimpackages.txt&lt;/code&gt;&lt;/a&gt; in my dotfiles.&lt;/p&gt;
 &lt;p&gt;If you're using my dotfiles, you can run &lt;code&gt;./scripts/get_vim_packages.py&lt;/code&gt;.
 This will download the vim plugins from &lt;code&gt;vimpackages.txt&lt;/code&gt; and place them in a directory named &lt;code&gt;vim_bundle&lt;/code&gt;.
 &lt;a href="https://kb.iu.edu/d/abbe"&gt;Symlink&lt;/a&gt; &lt;code&gt;vim_bundle&lt;/code&gt; to &lt;code&gt;~/.vim/bundle&lt;/code&gt;.&lt;/p&gt;
-&lt;h3&gt;Install &lt;a href="https://github.com/ycm-core/YouCompleteMe"&gt;YouCompleteMe&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="install-youcompleteme"&gt;Install &lt;a href="https://github.com/ycm-core/YouCompleteMe"&gt;YouCompleteMe&lt;/a&gt;&lt;a class="headerlink" href="#install-youcompleteme" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;YouCompleteMe is a vim plugin for code auto-completion.
 To install this plugin:&lt;/p&gt;
 &lt;ul&gt;
@@ -307,7 +348,7 @@ want good completion for C, C++, Java, Rust, Go or JavaScript
 (Python auto-complete works out-of-the-box and I'm okay with rudimentary auto-complete for other languages).&lt;/p&gt;
 &lt;p&gt;The documentation says that MacVim is required,
 but I'm able to use YouCompleteMe with Vim installed via &lt;code&gt;brew install vim&lt;/code&gt;.&lt;/p&gt;
-&lt;h3&gt;Fix Vim locale error&lt;/h3&gt;
+&lt;h3 id="fix-vim-locale-error"&gt;Fix Vim locale error&lt;a class="headerlink" href="#fix-vim-locale-error" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;You may get error messages like this when you start Vim:&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Warning: Failed to set locale category LC_NUMERIC to en_IN.
 Warning: Failed to set locale category LC_TIME to en_IN.
@@ -317,21 +358,19 @@ Warning: Failed to set locale category LC_MESSAGES to en_IN.
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Fix this by adding &lt;code&gt;export LC_ALL=en_US.UTF-8&lt;/code&gt; to &lt;code&gt;~/.bash_profile&lt;/code&gt; or &lt;code&gt;~/.env&lt;/code&gt;:
-&lt;a href="https://discourse.brew.sh/t/failed-to-set-locale-category-lc-numeric-to-en-ru/5092"&gt;https://discourse.brew.sh/t/failed-to-set-locale-category-lc-numeric-to-en-ru/5092&lt;/a&gt;&lt;/p&gt;
-&lt;h2 style="background-color: #D2B4DE"&gt;
-Install &lt;a href="https://nginx.org/en/"&gt;Nginx&lt;/a&gt; and serve website mirrors&lt;/h2&gt;
-
-&lt;p&gt;I use Nginx to serve static content.
+&lt;p&gt;Fix this by adding &lt;code&gt;export LC_ALL=en_US.UTF-8&lt;/code&gt; to &lt;code&gt;~/.bash_profile&lt;/code&gt; or &lt;code&gt;~/.env&lt;/code&gt;
+(&lt;a href="https://discourse.brew.sh/t/failed-to-set-locale-category-lc-numeric-to-en-ru/5092"&gt;brew forum post&lt;/a&gt;).&lt;/p&gt;
+&lt;h2 id="install-nginx-and-serve-website-mirrors"&gt;&lt;span style="background-color: #D2B4DE"&gt;Install Nginx and serve website mirrors&lt;/span&gt;&lt;a class="headerlink" href="#install-nginx-and-serve-website-mirrors" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;I use &lt;a href="https://nginx.org/en/"&gt;Nginx&lt;/a&gt; to serve static content.
 It's useful to access local websites that I downloaded or created.&lt;/p&gt;
-&lt;h3&gt;Install and run Nginx&lt;/h3&gt;
+&lt;h3 id="install-and-run-nginx"&gt;Install and run Nginx&lt;a class="headerlink" href="#install-and-run-nginx" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;brew install nginx
 nginx
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Now go to http://localhost:8080. You should see a welcome page from Nginx.&lt;/p&gt;
-&lt;h3&gt;Enable nginx autoindex&lt;/h3&gt;
+&lt;h3 id="enable-nginx-autoindex"&gt;Enable nginx autoindex&lt;a class="headerlink" href="#enable-nginx-autoindex" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Go to &lt;code&gt;/usr/local/etc/nginx/nginx.conf&lt;/code&gt; and
 add &lt;code&gt;autoindex on;&lt;/code&gt; to '&lt;code&gt;http&lt;/code&gt; &amp;gt; &lt;code&gt;server&lt;/code&gt; &amp;gt; &lt;code&gt;location /&lt;/code&gt;'.
 You may also wish to change the port from 8080 to something else by changing the &lt;code&gt;listen&lt;/code&gt; value.&lt;/p&gt;
@@ -339,7 +378,7 @@ You may also wish to change the port from 8080 to something else by changing the
 &lt;p&gt;After making these changes, run &lt;code&gt;nginx -s reload&lt;/code&gt; for the changes to take effect.&lt;/p&gt;
 &lt;p&gt;Visit http://localhost:8080 again. Now instead of seeing the welcome page,
 you should see the list of files in &lt;code&gt;/usr/local/var/www&lt;/code&gt;.&lt;/p&gt;
-&lt;h3&gt;Serve my websites with Nginx&lt;/h3&gt;
+&lt;h3 id="serve-my-websites-with-nginx"&gt;Serve my websites with Nginx&lt;a class="headerlink" href="#serve-my-websites-with-nginx" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;I had backed up compressed archives of my websites to my external hard disk.
 I copied the websites from there, uncompressed them, and placed them in &lt;code&gt;/usr/local/var/www&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;You can put symlinks in &lt;code&gt;/usr/local/var/www&lt;/code&gt;, but &lt;code&gt;/usr/local/var/www&lt;/code&gt; itself cannot be a symlink.&lt;/p&gt;</content><category term="Tutorial"></category></entry><entry><title>Making a keyboard-navigable collapsible without JavaScript</title><link href="https://sharmaeklavya2.github.io/blog/css-collapsible.html" rel="alternate"></link><published>2018-11-01T00:00:00+05:30</published><updated>2018-11-01T00:00:00+05:30</updated><author><name>Eklavya Sharma</name></author><id>tag:sharmaeklavya2.github.io,2018-11-01:/blog/css-collapsible.html</id><summary type="html">&lt;p&gt;A 'collapsible' is content whose visibility can be toggled by clicking something. However, users without a mouse should also be able to open the collapsed content. This article explains how to make a keyboard-navigable collapsible without using JavaScript.&lt;/p&gt;</summary><content type="html">&lt;p&gt;A 'collapsible' is content whose visibility can be toggled. Here is an example:&lt;/p&gt;
@@ -355,7 +394,14 @@ I copied the websites from there, uncompressed them, and placed them in &lt;code
 &lt;/div&gt;
 
 &lt;p&gt;In this article, we'll look at how to make one.&lt;/p&gt;
-&lt;h2&gt;Skeleton&lt;/h2&gt;
+&lt;div class="toc"&gt;&lt;span class="toctitle"&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#skeleton"&gt;Skeleton&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#collapsibility"&gt;Collapsibility&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#accessibility"&gt;Accessibility&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#use"&gt;Use&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h2 id="skeleton"&gt;Skeleton&lt;a class="headerlink" href="#skeleton" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Let's first create the basic structure without collapsibility.&lt;/p&gt;
 &lt;p&gt;HTML:&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;collapsible&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
@@ -395,7 +441,7 @@ I copied the websites from there, uncompressed them, and placed them in &lt;code
     &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;h2&gt;Collapsibility&lt;/h2&gt;
+&lt;h2 id="collapsibility"&gt;Collapsibility&lt;a class="headerlink" href="#collapsibility" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;To add collapsibility, we're going to use a checkbox.
 I read about it on the blog post
 '&lt;a href="https://alligator.io/css/collapsible/"&gt;Implementing A Pure CSS Collapsible&lt;/a&gt;' by alligator.io.&lt;/p&gt;
@@ -441,7 +487,7 @@ I read about it on the blog post
     &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;h2&gt;Accessibility&lt;/h2&gt;
+&lt;h2 id="accessibility"&gt;Accessibility&lt;a class="headerlink" href="#accessibility" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Web accessibility is the inclusive practice of ensuring there are no barriers that
 prevent interaction with, or access to websites, by people with disabilities.
@@ -506,7 +552,7 @@ we will set &lt;code&gt;display: block&lt;/code&gt; on &lt;code&gt;.collapsible-
 &lt;p&gt;Try using the tab key to navigate all the 3 links in the collapsible.
 When the focus moves out of the collapsible, it closes (unless you had clicked on it to open it).&lt;/p&gt;
 &lt;p&gt;Navigation using Shift+Tab is a bit wonky though.&lt;/p&gt;
-&lt;h2&gt;Use&lt;/h2&gt;
+&lt;h2 id="use"&gt;Use&lt;a class="headerlink" href="#use" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;When my blog's website is viewed on a screen of size less than 800 pixels, the navigation bar moves to the top.
 It becomes collapsible and users have to click the '&amp;equiv;' button to open it.
 I have used the above technique to implement this collapsible navigation bar.&lt;/p&gt;
@@ -519,14 +565,24 @@ the code for my navigation bar.&lt;/p&gt;
 for comments, criticism or suggestions.&lt;/p&gt;</content><category term="Front-end web dev"></category><category term="Tutorial"></category></entry><entry><title>Juggling 101</title><link href="https://sharmaeklavya2.github.io/blog/juggling-101.html" rel="alternate"></link><published>2017-12-03T00:00:00+05:30</published><updated>2017-12-03T00:00:00+05:30</updated><author><name>Eklavya Sharma</name></author><id>tag:sharmaeklavya2.github.io,2017-12-03:/blog/juggling-101.html</id><summary type="html">&lt;p&gt;This is a tutorial for those who wish to learn juggling and have absolutely no prior experience. Here you will find links to resources that will help you learn your first juggling pattern and suggestions about what kind of balls to use, what posture you should have, etc.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a tutorial for those who wish to learn juggling and have absolutely no prior experience.
 Here you will find links to resources that will help you learn your first juggling pattern
 and suggestions about what kind of balls to use, what posture you should have, etc.&lt;/p&gt;
-&lt;h2&gt;Getting informed and motivated&lt;/h2&gt;
+&lt;div class="toc"&gt;&lt;span class="toctitle"&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#getting-informed-and-motivated"&gt;Getting informed and motivated&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#your-first-pattern"&gt;Your first pattern&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#get-balls"&gt;Get balls&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#choose-an-environment"&gt;Choose an environment&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#other-advice"&gt;Other advice&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#things-to-be-vigilant-about-while-juggling"&gt;Things to be vigilant about while juggling&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#good-luck"&gt;Good luck&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h2 id="getting-informed-and-motivated"&gt;Getting informed and motivated&lt;a class="headerlink" href="#getting-informed-and-motivated" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;If you want to learn juggling, you should first know what juggling looks like.
 Watch these awesome videos, which portray many common styles of juggling:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=wP8tbLBls_M"&gt;Anthony Gatto's performance&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=cvME9BLYgsw"&gt;World Juggling day Japan&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Your first pattern&lt;/h2&gt;
+&lt;h2 id="your-first-pattern"&gt;Your first pattern&lt;a class="headerlink" href="#your-first-pattern" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;The first juggling pattern you should learn is the 3-ball cascade.
 This is what it looks like:&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://sharmaeklavya2.github.io/blog/img/siteswaps/3.gif" title="3-cascade" /&gt;&lt;/p&gt;
@@ -541,7 +597,7 @@ You can find many such videos on YouTube if you search 'cascade juggling tutoria
 Consistency is very important in juggling (for any pattern, not just cascade).
 If you don't practice for a few days, you will most likely forget the patterns you haven't mastered.
 Practice every day for best results.&lt;/p&gt;
-&lt;h2&gt;Get balls&lt;/h2&gt;
+&lt;h2 id="get-balls"&gt;Get balls&lt;a class="headerlink" href="#get-balls" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Almost any not-easily-breakable spherical object of an appropriate size and weight is good enough to juggle,
 but we'll discuss the options commonly available.&lt;/p&gt;
 &lt;ul&gt;
@@ -559,7 +615,7 @@ but we'll discuss the options commonly available.&lt;/p&gt;
 That's why I have been using tennis balls.&lt;/p&gt;
 &lt;p&gt;Buy an extra ball so that when you lose a ball,
 you can keep practicing till you get a new one.&lt;/p&gt;
-&lt;h2&gt;Choose an environment&lt;/h2&gt;
+&lt;h2 id="choose-an-environment"&gt;Choose an environment&lt;a class="headerlink" href="#choose-an-environment" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Make sure you don't have breakables in your environment (unless you're juggling with sponge balls).&lt;/li&gt;
 &lt;li&gt;The place should be well lit (this makes much more difference than most people think).&lt;/li&gt;
@@ -571,7 +627,7 @@ you can keep practicing till you get a new one.&lt;/p&gt;
 Hostel corridors are generally also good.&lt;/p&gt;
 &lt;p&gt;Try to not juggle in the exact same place facing in the exact same direction every time.
 If you do that, you'll get used to a particular environment and it might be difficult to juggle elsewhere.&lt;/p&gt;
-&lt;h2&gt;Other advice&lt;/h2&gt;
+&lt;h2 id="other-advice"&gt;Other advice&lt;a class="headerlink" href="#other-advice" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Keep nails short to avoid injury.&lt;/p&gt;
 &lt;p&gt;Get in the habit of counting your throws so that you can track your progress.
 Sometimes you'll not see any progress for a few days despite regular practice.
@@ -579,7 +635,7 @@ Sometimes your performance could be less than the previous day.
 Such incidences sometimes mean that your technique is incorrect.
 But it usually happens to me for no obvious reason.
 Don't give up. That's normal as far as I know. You'll eventually make progress.&lt;/p&gt;
-&lt;h2&gt;Things to be vigilant about while juggling&lt;/h2&gt;
+&lt;h2 id="things-to-be-vigilant-about-while-juggling"&gt;Things to be vigilant about while juggling&lt;a class="headerlink" href="#things-to-be-vigilant-about-while-juggling" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Here's a list of things you should be vigilant about while juggling.
 If you can ensure all of these, you'll make progress faster.&lt;/p&gt;
 &lt;ul&gt;
@@ -597,7 +653,7 @@ If you can ensure all of these, you'll make progress faster.&lt;/p&gt;
   (heavy balls sometimes help prevent jerk throws).&lt;/li&gt;
 &lt;li&gt;Avoid looking funny (for example, some people open their mouth while juggling high patterns).&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Good luck&lt;/h2&gt;
+&lt;h2 id="good-luck"&gt;Good luck&lt;a class="headerlink" href="#good-luck" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;That's all! Keep practicing regularly and you'll soon be able to juggle the cascade.
 I'll soon post another tutorial where I'll write about what you should learn next.&lt;/p&gt;</content><category term="Juggling"></category><category term="Tutorial"></category></entry><entry><title>How to juggle 3 balls in 1 hand</title><link href="https://sharmaeklavya2.github.io/blog/3-in-1.html" rel="alternate"></link><published>2017-11-14T00:00:00+05:30</published><updated>2017-11-14T00:00:00+05:30</updated><author><name>Eklavya Sharma</name></author><id>tag:sharmaeklavya2.github.io,2017-11-14:/blog/3-in-1.html</id><summary type="html">&lt;p&gt;&lt;img src="https://sharmaeklavya2.github.io/blog/img/siteswaps/60.gif" title="60" /&gt;&lt;/p&gt;
 &lt;p&gt;3 balls in 1 hand, a.k.a. 3-in-1, is definitely not an easy pattern,

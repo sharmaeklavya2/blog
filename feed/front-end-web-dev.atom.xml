@@ -12,7 +12,14 @@
 &lt;/div&gt;
 
 &lt;p&gt;In this article, we'll look at how to make one.&lt;/p&gt;
-&lt;h2&gt;Skeleton&lt;/h2&gt;
+&lt;div class="toc"&gt;&lt;span class="toctitle"&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#skeleton"&gt;Skeleton&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#collapsibility"&gt;Collapsibility&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#accessibility"&gt;Accessibility&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#use"&gt;Use&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h2 id="skeleton"&gt;Skeleton&lt;a class="headerlink" href="#skeleton" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Let's first create the basic structure without collapsibility.&lt;/p&gt;
 &lt;p&gt;HTML:&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;collapsible&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
@@ -52,7 +59,7 @@
     &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;h2&gt;Collapsibility&lt;/h2&gt;
+&lt;h2 id="collapsibility"&gt;Collapsibility&lt;a class="headerlink" href="#collapsibility" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;To add collapsibility, we're going to use a checkbox.
 I read about it on the blog post
 '&lt;a href="https://alligator.io/css/collapsible/"&gt;Implementing A Pure CSS Collapsible&lt;/a&gt;' by alligator.io.&lt;/p&gt;
@@ -98,7 +105,7 @@ I read about it on the blog post
     &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;h2&gt;Accessibility&lt;/h2&gt;
+&lt;h2 id="accessibility"&gt;Accessibility&lt;a class="headerlink" href="#accessibility" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Web accessibility is the inclusive practice of ensuring there are no barriers that
 prevent interaction with, or access to websites, by people with disabilities.
@@ -163,7 +170,7 @@ we will set &lt;code&gt;display: block&lt;/code&gt; on &lt;code&gt;.collapsible-
 &lt;p&gt;Try using the tab key to navigate all the 3 links in the collapsible.
 When the focus moves out of the collapsible, it closes (unless you had clicked on it to open it).&lt;/p&gt;
 &lt;p&gt;Navigation using Shift+Tab is a bit wonky though.&lt;/p&gt;
-&lt;h2&gt;Use&lt;/h2&gt;
+&lt;h2 id="use"&gt;Use&lt;a class="headerlink" href="#use" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;When my blog's website is viewed on a screen of size less than 800 pixels, the navigation bar moves to the top.
 It becomes collapsible and users have to click the '&amp;equiv;' button to open it.
 I have used the above technique to implement this collapsible navigation bar.&lt;/p&gt;

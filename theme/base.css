@@ -8,6 +8,10 @@ body {
     line-height: 1.4;
     font-size: 1.1em;
 }
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: initial;
+}
 h1 {
     font-size: 2em;
 }
@@ -207,6 +211,7 @@ blockquote footer::before {
 .codehilite pre {
     background-color: rgba(0, 0, 0, 0.02);
     padding: 0.8em;
+    overflow-x: auto;
 }
 code {
     background-color: rgba(0, 0, 0, 0.05);
@@ -259,4 +264,27 @@ figure img {
 }
 .gallery > figure {
     margin: 0.25em;
+}
+
+h2:not(:hover) > .headerlink, h3:not(:hover) > .headerlink, h4:not(:hover) > .headerlink {
+    visibility: hidden;
+}
+.headerlink {
+    margin-left: 0.2em;
+    text-decoration: none;
+    color: gray;
+}
+.toc {
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 1em;
+}
+.toctitle {
+    font-size: 1.5em;
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: 500;
+}
+.toc ul {
+    margin: 0;
+    padding-left: 1.1em;
 }

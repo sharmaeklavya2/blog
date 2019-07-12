@@ -104,7 +104,14 @@
 </div>
 
 <p>In this article, we'll look at how to make one.</p>
-<h2>Skeleton</h2>
+<div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#skeleton">Skeleton</a></li>
+<li><a href="#collapsibility">Collapsibility</a></li>
+<li><a href="#accessibility">Accessibility</a></li>
+<li><a href="#use">Use</a></li>
+</ul>
+</div>
+<h2 id="skeleton">Skeleton<a class="headerlink" href="#skeleton" title="Permanent link">&para;</a></h2>
 <p>Let's first create the basic structure without collapsibility.</p>
 <p>HTML:</p>
 <div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;collapsible&quot;</span><span class="p">&gt;</span>
@@ -144,7 +151,7 @@
     </div>
 </div>
 
-<h2>Collapsibility</h2>
+<h2 id="collapsibility">Collapsibility<a class="headerlink" href="#collapsibility" title="Permanent link">&para;</a></h2>
 <p>To add collapsibility, we're going to use a checkbox.
 I read about it on the blog post
 '<a href="https://alligator.io/css/collapsible/">Implementing A Pure CSS Collapsible</a>' by alligator.io.</p>
@@ -190,7 +197,7 @@ I read about it on the blog post
     </div>
 </div>
 
-<h2>Accessibility</h2>
+<h2 id="accessibility">Accessibility<a class="headerlink" href="#accessibility" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>Web accessibility is the inclusive practice of ensuring there are no barriers that
 prevent interaction with, or access to websites, by people with disabilities.
@@ -255,7 +262,7 @@ we will set <code>display: block</code> on <code>.collapsible-content</code>.</p
 <p>Try using the tab key to navigate all the 3 links in the collapsible.
 When the focus moves out of the collapsible, it closes (unless you had clicked on it to open it).</p>
 <p>Navigation using Shift+Tab is a bit wonky though.</p>
-<h2>Use</h2>
+<h2 id="use">Use<a class="headerlink" href="#use" title="Permanent link">&para;</a></h2>
 <p>When my blog's website is viewed on a screen of size less than 800 pixels, the navigation bar moves to the top.
 It becomes collapsible and users have to click the '&equiv;' button to open it.
 I have used the above technique to implement this collapsible navigation bar.</p>
