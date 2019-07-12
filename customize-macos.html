@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Eklavya's Blog - A Comprehensive Guide to Customizing your MacBook</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/blog/theme/base.css" />
+    <meta name="description" content="This post contains a list of all the things I did to customize my MacBook. Most instructions here are useful only for programmers and power users." />
+    <meta name="keywords" content="Tutorial" />
+
+</head>
+
+<body>
+
+
+<nav>
+    <div class="primary">
+        <a id="sitetitle" href="https://sharmaeklavya2.github.io/blog/">Eklavya's Blog</a>
+        <label for="nav-checkbox" class="collapsor-lbl"> &equiv; </label>
+    </div>
+    <div class="focus-capturer" tabindex="0">
+        <input id="nav-checkbox" class="collapsor" type="checkbox" />
+        <div class="collapsible">
+            <ul>
+                <li><a href="https://sharmaeklavya2.github.io">About me</a></li>
+                <li><a href="https://sharmaeklavya2.github.io/blog/pages/about-this-blog.html">About this blog</a></li>
+                <li><ul class="tags">
+                    <li>Feed:</li>
+                    <li>
+<a type="application/type+xml" rel="alternate" class="hori-flex" href="https://sharmaeklavya2.github.io/blog/feed/all.rss.xml">
+    <svg class="icon"><use xlink:href="https://sharmaeklavya2.github.io/blog/theme/sprites.svg#fa-rss-square"/></svg>
+    <span>RSS</span>
+</a>
+</li>
+
+                    <li>
+<a type="application/type+xml" rel="alternate" class="hori-flex" href="https://sharmaeklavya2.github.io/blog/feed/all.atom.xml">
+    <svg class="icon"><use xlink:href="https://sharmaeklavya2.github.io/blog/theme/sprites.svg#fa-rss-square"/></svg>
+    <span>Atom</span>
+</a>
+</li>
+
+                </ul></li>
+            </ul>
+            <p> Tags </p>
+            <ul>
+                <li>
+                    <a href="https://sharmaeklavya2.github.io/blog/tag/tutorial.html">
+                    Tutorial <span class="article-count">4</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://sharmaeklavya2.github.io/blog/tag/front-end-web-dev.html">
+                    Front-end web dev <span class="article-count">1</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://sharmaeklavya2.github.io/blog/tag/juggling.html">
+                    Juggling <span class="article-count">3</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://sharmaeklavya2.github.io/blog/tag/about-me.html">
+                    About Me <span class="article-count">2</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div id="main">
+<article id="content" class="body">
+    <h1 class="entry-title">A Comprehensive Guide to Customizing your MacBook</h1>
+<table class="post-details">
+    <tr>
+        <td>Published</td>
+        <td><time class="published" datetime="2019-07-12T00:00:00+05:30">
+            12 Jul 2019</time></td>
+    </tr>
+    <tr>
+        <td>Tags</td>
+        <td>
+            <ul class="tags">
+                <li><a href="https://sharmaeklavya2.github.io/blog/tag/tutorial.html">Tutorial</a></li>
+            </ul>
+        </td>
+    </tr>
+</table>
+    <div class="entry-content">
+        <p>I recently got a new laptop - a MacBook Air!
+I customized it so that it's easy for me to use.
+Major changes include:</p>
+<ul>
+<li>Moving data from my old laptop to my new laptop.</li>
+<li>Installing and configuring software for basic necessities, programming and writing content.</li>
+<li>Setting up a nice environment on my <a href="https://en.wikipedia.org/wiki/Terminal_emulator">terminal</a>.</li>
+</ul>
+<p>As I made all these changes to my new laptop, I noted down the steps that I took for future reference.
+I think this could be useful to others', so here I am, writing a blog post on it.</p>
+<p>This post is written for macOS Mojave.
+You may have to modify some instructions if you're using a newer macOS.
+If you're not using macOS, you can still get a similar working environment on Linux,
+but you'll have to make major modifications to the instructions below.</p>
+<p>You can also refer to this <a href="https://sharmaeklavya2.github.io/blog/img/macos-customize-graph.dot.svg">dependency graph</a>
+(<a href="https://sharmaeklavya2.github.io/blog/img/macos-customize-graph.dot">source code</a>).</p>
+<h2>Basic setup</h2>
+<ul>
+<li><strong>Connect to a WiFi network</strong>, since we'll be downloading a lot of stuff.</li>
+<li><strong>Update your OS</strong>.</li>
+<li>macOS will offer a <strong>tour of the OS</strong>. Take that if you're new to macOS.</li>
+<li><strong>Remove useless apps from dock</strong>: right-click on the app in the dock, go to Options and uncheck 'Keep in Dock'.</li>
+</ul>
+<h3>System Preferences</h3>
+<p>Click the Apple logo in the top-left corner of your screen and choose 'System Preferences'.
+Here you can customize most aspects of your operating system.
+If you have the time, go through each of the items and choose the options which make sense to you.
+These are the changes which I made:</p>
+<ul>
+<li>General: Use dark theme (Appearance: Dark).</li>
+<li>Dock:<ul>
+<li>Position on screen: Left.</li>
+<li>Uncheck 'Show recent applications in Dock'.</li>
+</ul>
+</li>
+<li>Language and Region: Select 'English (US)' as the primary language.
+  I live in India, so the default was 'English (India)',
+  but I changed it because I generally follow US spelling.
+  I don't want my spell-checker to highlight 'color' and 'center' as misspelled words.</li>
+<li>Keyboard: Input Sources: Hide input menu in menu bar.</li>
+<li>Display: Choose Resolution as Scaled and choose the large size.</li>
+<li>Bluetooth: Show Bluetooth in menu bar.</li>
+<li>Sharing:<ul>
+<li>Change hostname. The hostname shows up in the terminal prompt, so I want it to be short.</li>
+<li>Allow remote login via SSH.</li>
+</ul>
+</li>
+<li>Siri: Disable Siri. I rarely use it.</li>
+<li>Date and Time: In the 'Clock' tab, check 'Display time with seconds' and 'show date'.</li>
+<li>Accessibility: Siri: 'Enable type to Siri' if you don't want to disable Siri
+  but want to talk to it by typing instead of speaking.</li>
+</ul>
+<h3>Finder preferences</h3>
+<p>Finder is the file manager in macOS.</p>
+<ul>
+<li>Finder preferences (<code>Cmd + ,</code>):<ul>
+<li>General: Show hard disk and connected servers on desktop.</li>
+<li>Sidebar: Select useful locations.</li>
+<li>Advanced:<ul>
+<li>Show all filename extensions.</li>
+<li>Keep folders on top in windows.</li>
+<li>Search current folder when performing a search.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Go to 'View' in Finder's menu bar:<ul>
+<li>Show view options (<code>Cmd + J</code>): 'Sort by Name' and 'Use as Defaults'.</li>
+<li>Show path bar.</li>
+</ul>
+</li>
+<li>Press <code>Cmd + Shift + .</code> to enable viewing hidden files.</li>
+</ul>
+<h3>Install Google Chrome and sync profile</h3>
+<p>I prefer Google Chrome over Safari.
+I made Chrome the default browser.
+I also synced my account to get all my bookmarks and extensions.</p>
+<h3>TextEdit preferences</h3>
+<p>TextEdit is the default plain-text and rich-text editor bundled with macOS.</p>
+<p>I usually use <a href="https://en.wikipedia.org/wiki/Vim_(text_editor)">Vim</a> for text editing.
+Vim is far superior to TextEdit in terms of advanced functionality,
+like customizability, syntax highlighting, find-and-replace, etc.
+But having a lightweight GUI text editor can be handy.</p>
+<p>TextEdit preferences (<code>Cmd + ,</code>):</p>
+<ul>
+<li>Format: plain text. This is needed to prevent new instances of TextEdit from opening a rich-text editor.</li>
+<li>Font: Menlo, size 16.</li>
+<li>Disable 'Correct spelling automatically'.</li>
+<li>Display HTML files as HTML code.</li>
+<li>Disable 'add .txt extension to plain text files'. This is needed if you have to edit extensionless files.</li>
+</ul>
+<h2 style="background-color: #F9E79F">
+Terminal and Shell</h2>
+
+<p>If you're an aspiring programmer or power user, you should get to know the command-line.
+For this blog post, I'm going to assume that you know how to run commands from the shell and
+you know the meaning of the following words:
+terminal emulator, shell, prompt, home directory, current working directory.
+In case you don't, here's a nice short tutorial by TreeHouse:
+<a href="https://blog.teamtreehouse.com/introduction-to-the-mac-os-x-command-line">Introduction to the Mac OS X Command Line</a>.</p>
+<h3>Terminal.app preferences</h3>
+<p>Terminal.app is the default terminal emulator on macOS.
+There are better alternatives, like <a href="https://www.iterm2.com/features.html">iTerm2</a>,
+but Terminal.app is good enough for me, so I didn't bother installing iTerm2.</p>
+<h4>Creating a new profile with the Solarized color scheme</h4>
+<p>Terminal.app has multiple profiles available.
+Each profile specifies the color scheme, font face, font size and many other settings.
+Instead of making changes to the default profile,
+we're going to create a new profile with our changes.</p>
+<p>I use the <a href="https://ethanschoonover.com/solarized/">Solarized</a> color scheme for my terminal because:</p>
+<ul>
+<li>It is an eye-pleasing color scheme. It works well with Vim's syntax highlighting.</li>
+<li>Solarized is a popular color scheme, so it's available on many terminal emulators, text editors, IDEs, etc.
+This helps me get a unified look-and-feel when switching programs or platforms.</li>
+</ul>
+<p>Even though Solarized isn't available out-of-the-box for Terminal.app,
+the advantages above outweigh the effort required to set it up on the terminal.</p>
+<ul>
+<li>Download the <a href="https://raw.githubusercontent.com/tomislav/osx-terminal.app-colors-solarized/master/Solarized%20Dark.terminal">Solarized dark theme for Terminal.app</a>. Open it in finder and double-click on it.</li>
+<li>macOS will say that the file cannot be opened because it is not from an identified developer.
+Go to 'System Preferences &gt; Security &gt; General' and press 'Open Anyway' (don't worry; it's not an executable).</li>
+<li>Open terminal, 'Preferences &gt; Profiles', select 'Solarized Dark' and press the 'Default' button.
+Now restart Terminal.app and you'll see the dark blue background of the Solarized color scheme.</li>
+</ul>
+<h4>Other preferences</h4>
+<ul>
+<li>In the 'Preferences &gt; Profile &gt; Text' tab, set opacity to 85% and font size to 16.</li>
+<li>In the 'Preferences &gt; Profile &gt; Window' tab, deselect 'restore text when reopening windows'.</li>
+</ul>
+<h3>Installing <a href="http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/">Xcode command-line tools</a></h3>
+<p>The 'Xcode command-line tools' consist of command-line applications that are
+very common in Unix-like environments, like git, gcc, make, perl.</p>
+<p>Run 'xcode-select --install' from a terminal.
+A dialog box will pop up. Select install.
+You should probably connect to a power source before doing this
+because macOS is going to suggest you do so.</p>
+<h3>Dotfiles</h3>
+<p>Dotfiles colloquially refers to configuration files placed in the home directory.
+These files' names start with a dot (<code>.</code>).
+Common examples are <code>.bash_profile</code>, <code>.vimrc</code> and <code>.gitconfig</code>.</p>
+<p>I have put all my dotfiles in a Github repository at
+<a href="https://github.com/sharmaeklavya2/dotfiles"><code>sharmaeklavya2/dotfiles</code></a>.
+You can find detailed instructions for setting them up in the repository's readme.
+Here is a brief version:</p>
+<ul>
+<li>Run <code>git clone https://github.com/sharmaeklavya2/dotfiles.git</code>.
+This will download a directory named <code>dotfiles</code> in your current working directory.
+Run <code>cd dotfiles</code>.</li>
+<li>Run <code>./scripts/make_links.py</code> and copy the files in <code>_links</code> to your home directory.
+Rename <code>~/.bashrc</code> to <code>~/.bash_profile</code>.</li>
+</ul>
+<p>Once you set up the dotfiles, the first thing you'll notice is the improved, colorful prompt.</p>
+<p>My dotfiles are written with the Solarized terminal color scheme in mind.
+If you're not using Solarized, you may want to modify or omit using <code>.dircolors</code> and <code>.vimrc</code>.</p>
+<p>I also recommend using the <code>git-prompt.sh</code> utility script, which will display useful information
+about git repositories (like branch, dirty status, etc) in your prompt.
+To do this, download <a href="https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh">https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh</a>
+to <code>~/ext_bin/git-prompt.sh</code>. The <code>~/.bash_profile</code> will use it to modify the prompt.</p>
+<p>I also recommend adding the line <code>export HISTSIZE=100000</code> to either <code>~/.env</code> or <code>~/.bash_profile</code>
+to increase your shell input history size.</p>
+<h3>Install <a href="https://brew.sh/">Homebrew</a></h3>
+<p>Homebrew (a.k.a. brew) is a package manager, which means it's like a terminal version of the App Store.
+You can install programs (called packages by brew) by simply writing commands on the terminal:</p>
+<div class="codehilite"><pre><span></span>brew install name-of-package
+</pre></div>
+
+
+<p>According to <a href="https://brew.sh/">brew's website</a>, brew can be installed by typing this into the terminal:</p>
+<div class="codehilite"><pre><span></span>/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
+</pre></div>
+
+
+<p>Installation may require superuser permissions.</p>
+<h3>Install <a href="https://www.hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/">tmux</a></h3>
+<p>I usually need multiple shells to be open.
+I can use Terminal.app's 'tabs' (<code>Cmd + T</code>) to achieve this.
+But I use tmux instead since it has more features.
+Also, if you SSH to a server that has tmux installed,
+you can open multiple shells on the server on a single SSH session.</p>
+<p>To install, run <code>brew install tmux</code>.</p>
+<p>Brew will check for updates every time you run it.
+To prevent that from happening, add <code>export HOMEBREW_NO_AUTO_UPDATE=1</code>
+to <code>~/.bash_profile</code> or <code>~/.env</code>.</p>
+<h2 style="background-color: #A9DFBF">
+Install command-line programs</h2>
+
+<h3>Java</h3>
+<div class="codehilite"><pre><span></span>brew install java
+</pre></div>
+
+
+<h3>MacTex</h3>
+<p>MacTex is a suite of programs for typesetting documents using TeX and LaTeX.
+LaTeX is a great system for writing professional-looking mathematical documents.</p>
+<p>You can install MacTex using a GUI installer, but I did it using <code>brew install mactex</code>.</p>
+<h3>Python and packages</h3>
+<p>macOS has Python 2 pre-installed, but we should use Python 3, since
+<a href="https://www.anaconda.com/end-of-life-eol-for-python-2-7-is-coming-are-you-ready/">Python 2 will reach EOL</a>
+on Jan 1, 2020.</p>
+<p>Run <code>brew install python3</code>. That will install <code>python3</code> and <a href="https://pip.pypa.io/en/stable/"><code>pip3</code></a>.</p>
+<p>I use <a href="https://docs.python.org/3/tutorial/venv.html">python virtual environments</a>.
+I use one big virtualenv where I install all commonly used packages,
+and I create application-specific virtualenvs for large applications that I'm developing.</p>
+<p>Run <code>pip3 install virtualenv</code> to install the <code>virtualenv</code> tool.
+Run <code>virtualenv /path/to/venv/ -p python3</code> to create a python3 virtualenv.</p>
+<p>Activate the virtualenv using <code>source /path/to/venv/bin/activate</code>.
+Now all python commands and applications you run will use this virtualenv.</p>
+<p>I usually install python packages only when required,
+but some are useful enough that I installed them in the beginning:</p>
+<div class="codehilite"><pre><span></span>pip install ipython requests pipdeptree flake8 grip cleaver
+</pre></div>
+
+
+<p>These packages are useful for number-crunching and analytics:</p>
+<div class="codehilite"><pre><span></span>pip install numpy scipy pandas matplotlib seaborn
+</pre></div>
+
+
+<h2 style="background-color: #AED6F1">
+Transfer backed-up data</h2>
+
+<h3>Reorganizing data and backup</h3>
+<p>There are many places where I store my files:</p>
+<ul>
+<li>My laptop's SSD (which is small enough for all my files to not fit on it).</li>
+<li>My external hard drive.</li>
+<li>My <a href="https://www.dropbox.com/">Dropbox</a> account.</li>
+<li><a href="https://github.com/sharmaeklavya2">My Github repositories</a>.</li>
+<li>My Android phone.</li>
+</ul>
+<p>Some of my files are stored on more than one of the above locations.
+Sometimes the files on one storage medium get updated but not others.
+This made it very difficult for me to manage them without the risk of accidentally losing some files.</p>
+<p>To mitigate this problem, I did a massive reorganization of my files before moving them to my new laptop.
+I organized them into folders based on the kind of content and access patterns
+and demarcated which folders will be on which storage mediums.</p>
+<p>I moved my frequently-changing content to Dropbox.
+I use the Dropbox desktop app which syncs my files online in real-time.
+On my external hard drive, I have an up-to-date backup of content that rarely changes.</p>
+<p>If you use git for your code, make sure push all unpushed code to an online remote like Github or Bitbucket.</p>
+<h3>NTFS drivers for macOS</h3>
+<p>My external hard drive is NTFS-formatted, but macOS cannot write to NTFS drives; it can only read from them.
+This was problematic when I was transferring my files from my old laptop (which was also a MacBook)
+to my external hard drive. There are 3 options available:</p>
+<ul>
+<li>Somehow reformat the external drive to FAT32 without losing data.</li>
+<li>Install an open-source NTFS driver.
+It's hard to make them work and you have to mount/unmount via command-line.</li>
+<li>Install a paid NTFS driver, like <a href="https://www.paragon-software.com/home/ntfs-mac/">Paragon</a>.
+These work seamlessly, but are either expensive or offer a limited-time trial version.</li>
+</ul>
+<p>Fortunately, my external hard drive was a Seagate product.
+Seagate offers a <a href="https://www.seagate.com/in/en/support/downloads/item/ntfs-driver-for-mac-os-master-dl/">free-of-charge version of Paragon's NTFS driver</a>
+which only works on Seagate drives.</p>
+<h3>Install Dropbox and use symlinks</h3>
+<p>I installed <a href="https://www.dropbox.com/install">Dropbox's desktop app</a> on my new laptop.
+This app creates a directory at <code>~/Dropbox</code> and downloads all your online content into it.
+Anything you put in this directory will get synced to your online account.</p>
+<p>Dropbox has the limitation that it will only sync files inside <code>~/Dropbox</code>.
+If I ever change my mind about what to sync, I'll have to move things in and out of <code>~/Dropbox</code>.
+If you're a command-line user, you'll know how annoying it can be to change frequently-used paths.</p>
+<p>To solve this problem, I placed all my files outside <code>~/Dropbox</code>
+and created <a href="https://kb.iu.edu/d/abbe">symlinks</a> to them which I placed in <code>~/Dropbox</code>.</p>
+<h3>Wallpapers and profile picture</h3>
+<p>After transferring files from my external hard drive to my new laptop,
+I configured macOS to use my custom wallpapers instead of the system-default ones
+and use my profile picture on the lock screen.</p>
+<h2 style="background-color: #F5B7B1">
+Customize Vim</h2>
+
+<h3>Install newer Vim</h3>
+<p>Although macOS comes with <code>vim</code> pre-installed, that version of Vim was compiled without some important features.
+You can see which features are installed by running <code>vim --version</code>.</p>
+<p>Run <code>brew install vim</code> to install a newer, better Vim.
+Alternatively, you can install MacVim (<code>brew install macvim</code>).
+This will not replace the old vim; the old vim can still be accessed at <code>/usr/bin/vim</code>.</p>
+<h3>Install <a href="https://github.com/tpope/vim-pathogen">Pathogen</a></h3>
+<div class="codehilite"><pre><span></span>mkdir -p ~/.vim/autoload ~/.vim/bundle &amp;&amp; \
+curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+</pre></div>
+
+
+<p>Add <code>execute pathogen#infect()</code> to your <code>.vimrc</code>.
+If you're using <a href="https://github.com/sharmaeklavya2/dotfiles">my dotfiles</a>,
+you'll already have it in your <code>.vimrc</code>.</p>
+<h3>Get Vim plugins</h3>
+<p>Just go to <code>~/.vim/bundle</code> and clone the git repositories of the plugins you need.
+You can see the list of plugins that I use at
+<a href="https://github.com/sharmaeklavya2/dotfiles/blob/master/vimpackages.txt"><code>vimpackages.txt</code></a> in my dotfiles.</p>
+<p>If you're using my dotfiles, you can run <code>./scripts/get_vim_packages.py</code>.
+This will download the vim plugins from <code>vimpackages.txt</code> and place them in a directory named <code>vim_bundle</code>.
+<a href="https://kb.iu.edu/d/abbe">Symlink</a> <code>vim_bundle</code> to <code>~/.vim/bundle</code>.</p>
+<h3>Install <a href="https://github.com/ycm-core/YouCompleteMe">YouCompleteMe</a></h3>
+<p>YouCompleteMe is a vim plugin for code auto-completion.
+To install this plugin:</p>
+<ul>
+<li>Run <code>brew install cmake</code>.</li>
+<li><code>cd ~/.vim/bundle ; git clone --recursive https://github.com/ycm-core/YouCompleteMe.git ; cd YouCompleteMe</code>.</li>
+<li>If you use a python virtualenv, switch to it and then run <code>./install.py</code>.
+If you don't switch to the virtualenv before running <code>./install.py</code>,
+python auto-complete may not work for external libraries installed in that virtualenv.</li>
+</ul>
+<p>You should read <a href="https://github.com/ycm-core/YouCompleteMe">the documentation</a>
+for more detailed installation instructions. This is important if you
+want good completion for C, C++, Java, Rust, Go or JavaScript
+(Python auto-complete works out-of-the-box and I'm okay with rudimentary auto-complete for other languages).</p>
+<p>The documentation says that MacVim is required,
+but I'm able to use YouCompleteMe with Vim installed via <code>brew install vim</code>.</p>
+<h3>Fix Vim locale error</h3>
+<p>You may get error messages like this when you start Vim:</p>
+<div class="codehilite"><pre><span></span>Warning: Failed to set locale category LC_NUMERIC to en_IN.
+Warning: Failed to set locale category LC_TIME to en_IN.
+Warning: Failed to set locale category LC_COLLATE to en_IN.
+Warning: Failed to set locale category LC_MONETARY to en_IN.
+Warning: Failed to set locale category LC_MESSAGES to en_IN.
+</pre></div>
+
+
+<p>Fix this by adding <code>export LC_ALL=en_US.UTF-8</code> to <code>~/.bash_profile</code> or <code>~/.env</code>:
+<a href="https://discourse.brew.sh/t/failed-to-set-locale-category-lc-numeric-to-en-ru/5092">https://discourse.brew.sh/t/failed-to-set-locale-category-lc-numeric-to-en-ru/5092</a></p>
+<h2 style="background-color: #D2B4DE">
+Install <a href="https://nginx.org/en/">Nginx</a> and serve website mirrors</h2>
+
+<p>I use Nginx to serve static content.
+It's useful to access local websites that I downloaded or created.</p>
+<h3>Install and run Nginx</h3>
+<div class="codehilite"><pre><span></span>brew install nginx
+nginx
+</pre></div>
+
+
+<p>Now go to http://localhost:8080. You should see a welcome page from Nginx.</p>
+<h3>Enable nginx autoindex</h3>
+<p>Go to <code>/usr/local/etc/nginx/nginx.conf</code> and
+add <code>autoindex on;</code> to '<code>http</code> &gt; <code>server</code> &gt; <code>location /</code>'.
+You may also wish to change the port from 8080 to something else by changing the <code>listen</code> value.</p>
+<p>Then rename <code>/usr/local/var/www/index.html</code> to <code>/usr/local/var/www/index.html~</code>.</p>
+<p>After making these changes, run <code>nginx -s reload</code> for the changes to take effect.</p>
+<p>Visit http://localhost:8080 again. Now instead of seeing the welcome page,
+you should see the list of files in <code>/usr/local/var/www</code>.</p>
+<h3>Serve my websites with Nginx</h3>
+<p>I had backed up compressed archives of my websites to my external hard disk.
+I copied the websites from there, uncompressed them, and placed them in <code>/usr/local/var/www</code>.</p>
+<p>You can put symlinks in <code>/usr/local/var/www</code>, but <code>/usr/local/var/www</code> itself cannot be a symlink.</p>
+    </div>
+</article>
+</div>
+
+</body>
+</html>
