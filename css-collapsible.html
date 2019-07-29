@@ -1,97 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Eklavya's Blog - Making a keyboard-navigable collapsible without JavaScript</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/blog/theme/base.css" />
-    <meta name="description" content="A 'collapsible' is content whose visibility can be toggled by clicking something. However, users without a mouse should also be able to open the collapsed content. This article explains how to make a keyboard-navigable collapsible without using JavaScript." />
-    <meta name="keywords" content="Front-end web dev,Tutorial" />
-
-    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/blog/css/collapsible.css" />
-    <link rel="stylesheet" href="https://sharmaeklavya2.github.io/blog/css/pygments-manni.css" />
+<title>Eklavya's Blog - Making a keyboard-navigable collapsible without JavaScript</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/blog/theme/base.css" />
+<meta name="description" content="A 'collapsible' is content whose visibility can be toggled by clicking something. However, users without a mouse should also be able to open the collapsed content. This article explains how to make a keyboard-navigable collapsible without using JavaScript." />
+<meta name="keywords" content="Front-end web dev,Tutorial" />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/blog/css/collapsible.css" />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/blog/css/pygments-manni.css" />
 </head>
 
 <body>
-
-
 <nav>
-    <div class="primary">
-        <a id="sitetitle" href="https://sharmaeklavya2.github.io/blog/">Eklavya's Blog</a>
-        <label for="nav-checkbox" class="collapsor-lbl"> &equiv; </label>
-    </div>
-    <div class="focus-capturer" tabindex="0">
-        <input id="nav-checkbox" class="collapsor" type="checkbox" />
-        <div class="collapsible">
-            <ul>
-                <li><a href="https://sharmaeklavya2.github.io">About me</a></li>
-                <li><a href="https://sharmaeklavya2.github.io/blog/pages/about-this-blog.html">About this blog</a></li>
-                <li><ul class="tags">
-                    <li>Feed:</li>
-                    <li>
-<a type="application/type+xml" rel="alternate" class="hori-flex" href="https://sharmaeklavya2.github.io/blog/feed/all.rss.xml">
-    <svg class="icon"><use xlink:href="https://sharmaeklavya2.github.io/blog/theme/sprites.svg#fa-rss-square"/></svg>
-    <span>RSS</span>
-</a>
-</li>
-
-                    <li>
-<a type="application/type+xml" rel="alternate" class="hori-flex" href="https://sharmaeklavya2.github.io/blog/feed/all.atom.xml">
-    <svg class="icon"><use xlink:href="https://sharmaeklavya2.github.io/blog/theme/sprites.svg#fa-rss-square"/></svg>
-    <span>Atom</span>
-</a>
-</li>
-
-                </ul></li>
-            </ul>
-            <p> Tags </p>
-            <ul>
-                <li>
-                    <a href="https://sharmaeklavya2.github.io/blog/tag/tutorial.html">
-                    Tutorial <span class="article-count">4</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://sharmaeklavya2.github.io/blog/tag/front-end-web-dev.html">
-                    Front-end web dev <span class="article-count">1</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://sharmaeklavya2.github.io/blog/tag/juggling.html">
-                    Juggling <span class="article-count">3</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://sharmaeklavya2.github.io/blog/tag/about-me.html">
-                    About Me <span class="article-count">2</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
+<div class="primary">
+<a id="sitetitle" href="https://sharmaeklavya2.github.io/blog/">Eklavya's Blog</a>
+<label for="nav-checkbox" class="collapsor-lbl">&equiv;</label>
+</div>
+<div class="focus-capturer" tabindex="0">
+<input id="nav-checkbox" class="collapsor" type="checkbox" />
+<div class="collapsible">
+<ul>
+<li><a href="https://sharmaeklavya2.github.io">About me</a></li>
+<li><a href="https://sharmaeklavya2.github.io/blog/pages/about-this-blog.html">About this blog</a></li>
+<li><ul class="tags">
+<li>Feed:</li>
+<li><a type="application/type+xml" rel="alternate" class="hori-flex" href="https://sharmaeklavya2.github.io/blog/feed/all.rss.xml">
+<svg class="icon"><use xlink:href="https://sharmaeklavya2.github.io/blog/theme/sprites.svg#fa-rss-square"/></svg><span>RSS</span>
+</a></li>
+<li><a type="application/type+xml" rel="alternate" class="hori-flex" href="https://sharmaeklavya2.github.io/blog/feed/all.atom.xml">
+<svg class="icon"><use xlink:href="https://sharmaeklavya2.github.io/blog/theme/sprites.svg#fa-rss-square"/></svg><span>Atom</span>
+</a></li>
+</ul></li>
+</ul>
+<p>Tags</p>
+<ul>
+<li><a href="https://sharmaeklavya2.github.io/blog/tag/cs.html">CS <span class="article-count">1</span></a></li>
+<li><a href="https://sharmaeklavya2.github.io/blog/tag/algorithms.html">Algorithms <span class="article-count">1</span></a></li>
+<li><a href="https://sharmaeklavya2.github.io/blog/tag/math.html">Math <span class="article-count">1</span></a></li>
+<li><a href="https://sharmaeklavya2.github.io/blog/tag/abstract-algebra.html">Abstract Algebra <span class="article-count">1</span></a></li>
+<li><a href="https://sharmaeklavya2.github.io/blog/tag/tutorial.html">Tutorial <span class="article-count">4</span></a></li>
+<li><a href="https://sharmaeklavya2.github.io/blog/tag/front-end-web-dev.html">Front-end web dev <span class="article-count">1</span></a></li>
+<li><a href="https://sharmaeklavya2.github.io/blog/tag/juggling.html">Juggling <span class="article-count">3</span></a></li>
+<li><a href="https://sharmaeklavya2.github.io/blog/tag/about-me.html">About Me <span class="article-count">2</span></a></li>
+</ul>
+</div>
+</div>
 </nav>
 
 <div id="main">
 <article id="content" class="body">
-    <h1 class="entry-title">Making a keyboard-navigable collapsible without JavaScript</h1>
+<h1 class="entry-title">Making a keyboard-navigable collapsible without JavaScript</h1>
 <table class="post-details">
-    <tr>
-        <td>Published</td>
-        <td><time class="published" datetime="2018-11-01T00:00:00+05:30">
-            01 Nov 2018</time></td>
-    </tr>
-    <tr>
-        <td>Tags</td>
-        <td>
-            <ul class="tags">
-                <li><a href="https://sharmaeklavya2.github.io/blog/tag/front-end-web-dev.html">Front-end web dev</a></li>
-                <li><a href="https://sharmaeklavya2.github.io/blog/tag/tutorial.html">Tutorial</a></li>
-            </ul>
-        </td>
-    </tr>
+<tr><td>Published</td>
+<td><time class="published" datetime="2018-11-01T00:00:00+05:30">
+01 Nov 2018</time></td></tr>
+<tr><td>Tags</td>
+<td><ul class="tags">
+<li><a href="https://sharmaeklavya2.github.io/blog/tag/front-end-web-dev.html">Front-end web dev</a></li>
+<li><a href="https://sharmaeklavya2.github.io/blog/tag/tutorial.html">Tutorial</a></li>
+</ul></td></tr>
 </table>
-    <div class="entry-content">
-        <p>A 'collapsible' is content whose visibility can be toggled. Here is an example:</p>
+<div class="entry-content">
+<p>A 'collapsible' is content whose visibility can be toggled. Here is an example:</p>
 <div class="collapsible" style="clear: both">
     <label for="checkbox0" class="collapsor-lbl"> Click me </label>
     <div class="focus-capturer" tabindex="0">
@@ -114,31 +85,31 @@
 <h2 id="skeleton">Skeleton<a class="headerlink" href="#skeleton" title="Permanent link">&para;</a></h2>
 <p>Let's first create the basic structure without collapsibility.</p>
 <p>HTML:</p>
-<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;collapsible&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;collapsor-lbl&quot;</span><span class="p">&gt;</span> Click me <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;collapsible-content&quot;</span><span class="p">&gt;</span>
+<div class="codehilite"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;collapsible&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;collapsor-lbl&quot;</span><span class="nt">&gt;</span> Click me <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;collapsible-content&quot;</span><span class="nt">&gt;</span>
         This is the body of the collapsible.
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
 </pre></div>
 
 
 <p>CSS (for beautification):</p>
-<div class="codehilite"><pre><span></span><span class="p">.</span><span class="nc">collapsible</span> <span class="p">{</span>
-    <span class="k">max-width</span><span class="p">:</span> <span class="mi">40</span><span class="kt">em</span><span class="p">;</span>
-    <span class="k">border</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="kc">solid</span> <span class="kc">black</span><span class="p">;</span>
-    <span class="k">border-radius</span><span class="p">:</span> <span class="mf">0.5</span><span class="kt">rem</span><span class="p">;</span>
+<div class="codehilite"><pre><span class="nc">.collapsible</span> <span class="p">{</span>
+    <span class="k">max-width</span><span class="o">:</span> <span class="m">40em</span><span class="p">;</span>
+    <span class="k">border</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="nb">black</span><span class="p">;</span>
+    <span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">0</span><span class="o">.</span><span class="m">5</span><span class="n">rem</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="p">.</span><span class="nc">collapsor-lbl</span><span class="p">:</span><span class="nd">hover</span> <span class="p">{</span>
-    <span class="k">background-color</span><span class="p">:</span> <span class="nb">rgba</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">);</span>
+<span class="nc">.collapsor-lbl</span><span class="nd">:hover</span> <span class="p">{</span>
+    <span class="k">background-color</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">.</span><span class="m">1</span><span class="p">);</span>
 <span class="p">}</span>
-<span class="p">.</span><span class="nc">collapsor-lbl</span> <span class="p">{</span>
-    <span class="k">text-align</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
-    <span class="k">padding</span><span class="p">:</span> <span class="mf">0.5</span><span class="kt">rem</span> <span class="mi">1</span><span class="kt">rem</span><span class="p">;</span>
+<span class="nc">.collapsor-lbl</span> <span class="p">{</span>
+    <span class="k">text-align</span><span class="o">:</span> <span class="k">center</span><span class="p">;</span>
+    <span class="k">padding</span><span class="o">:</span> <span class="m">0</span><span class="o">.</span><span class="m">5</span><span class="n">rem</span> <span class="m">1</span><span class="n">rem</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="p">.</span><span class="nc">collapsible-content</span> <span class="p">{</span>
-    <span class="k">padding</span><span class="p">:</span> <span class="mf">0.5</span><span class="kt">rem</span><span class="p">;</span>
-    <span class="k">border-top</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="kc">solid</span> <span class="kc">black</span><span class="p">;</span>
+<span class="nc">.collapsible-content</span> <span class="p">{</span>
+    <span class="k">padding</span><span class="o">:</span> <span class="m">0</span><span class="o">.</span><span class="m">5</span><span class="n">rem</span><span class="p">;</span>
+    <span class="k">border-top</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="nb">black</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -165,25 +136,25 @@ I read about it on the blog post
   When used together with <code>:checked</code> on checkbox, we can select <code>.collapsible-content</code> only when the checkbox is checked.</li>
 </ul>
 <p>Change the HTML to this:</p>
-<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;collapsible&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;checkbox1&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;collapsor&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="p">/&gt;</span>
-    <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;checkbox1&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;collapsor-lbl&quot;</span><span class="p">&gt;</span> Click me <span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;collapsible-content&quot;</span><span class="p">&gt;</span>
+<div class="codehilite"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;collapsible&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;checkbox1&quot;</span> <span class="na">class=</span><span class="s">&quot;collapsor&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;checkbox1&quot;</span> <span class="na">class=</span><span class="s">&quot;collapsor-lbl&quot;</span><span class="nt">&gt;</span> Click me <span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;collapsible-content&quot;</span><span class="nt">&gt;</span>
         This is the body of the collapsible.
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
 </pre></div>
 
 
 <p>Add this CSS:</p>
-<div class="codehilite"><pre><span></span><span class="p">.</span><span class="nc">collapsor-lbl</span> <span class="p">{</span>
-    <span class="k">display</span><span class="p">:</span> <span class="kc">block</span><span class="p">;</span>
+<div class="codehilite"><pre><span class="nc">.collapsor-lbl</span> <span class="p">{</span>
+    <span class="k">display</span><span class="o">:</span> <span class="k">block</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="p">.</span><span class="nc">collapsor</span><span class="o">,</span> <span class="p">.</span><span class="nc">collapsible-content</span> <span class="p">{</span>
-    <span class="k">display</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+<span class="nc">.collapsor</span><span class="o">,</span> <span class="nc">.collapsible-content</span> <span class="p">{</span>
+    <span class="k">display</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="p">.</span><span class="nc">collapsor</span><span class="p">:</span><span class="nd">checked</span> <span class="o">~</span> <span class="p">.</span><span class="nc">collapsible-content</span> <span class="p">{</span>
-    <span class="k">display</span><span class="p">:</span> <span class="kc">block</span><span class="p">;</span>
+<span class="nc">.collapsor</span><span class="nd">:checked</span> <span class="o">~</span> <span class="nc">.collapsible-content</span> <span class="p">{</span>
+    <span class="k">display</span><span class="o">:</span> <span class="k">block</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -219,26 +190,26 @@ We will make that <code>&lt;div&gt;</code> capable of receiving focus via tab by
 Then whenever that div has the <code>:focus-within</code> pseudo-class set,
 we will set <code>display: block</code> on <code>.collapsible-content</code>.</p>
 <p>Change the HTML to this:</p>
-<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;collapsible&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;checkbox2&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;collapsor-lbl&quot;</span><span class="p">&gt;</span> Click me <span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;focus-capturer&quot;</span> <span class="na">tabindex</span><span class="o">=</span><span class="s">&quot;0&quot;</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;checkbox2&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;collapsor&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="p">/&gt;</span>
-        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;collapsible-content&quot;</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>This is the body of the collapsible.<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-                <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>link1<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-                <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>link2<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-                <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>link3<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-            <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<div class="codehilite"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;collapsible&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;checkbox2&quot;</span> <span class="na">class=</span><span class="s">&quot;collapsor-lbl&quot;</span><span class="nt">&gt;</span> Click me <span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;focus-capturer&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;checkbox2&quot;</span> <span class="na">class=</span><span class="s">&quot;collapsor&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;collapsible-content&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;p&gt;</span>This is the body of the collapsible.<span class="nt">&lt;p&gt;</span>
+            <span class="nt">&lt;ul&gt;</span>
+                <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>link1<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+                <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>link2<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+                <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>link3<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;/ul&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
 </pre></div>
 
 
 <p>Add this CSS:</p>
-<div class="codehilite"><pre><span></span><span class="p">.</span><span class="nc">focus-capturer</span><span class="p">:</span><span class="nd">focus-within</span> <span class="p">.</span><span class="nc">collapsible-content</span> <span class="p">{</span>
-    <span class="k">display</span><span class="p">:</span> <span class="kc">block</span><span class="p">;</span>
+<div class="codehilite"><pre><span class="nc">.focus-capturer</span><span class="nd">:focus-within</span> <span class="nc">.collapsible-content</span> <span class="p">{</span>
+    <span class="k">display</span><span class="o">:</span> <span class="k">block</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -266,16 +237,10 @@ When the focus moves out of the collapsible, it closes (unless you had clicked o
 <p>When my blog's website is viewed on a screen of size less than 800 pixels, the navigation bar moves to the top.
 It becomes collapsible and users have to click the '&equiv;' button to open it.
 I have used the above technique to implement this collapsible navigation bar.</p>
-<p>You can get the complete CSS code by finding
-<a href="https://sharmaeklavya2.github.io/blog/css/collapsible.css">collapsible.css</a>
-in the <code>&lt;head&gt;</code> tag of the source of this page.
-I have put <code>#main</code> before selectors to prevent them from interfering with
-the code for my navigation bar.</p>
 <p>Feel free to <a href="https://github.com/sharmaeklavya2/blog/issues/new">reach out</a>
 for comments, criticism or suggestions.</p>
-    </div>
+</div>
 </article>
 </div>
-
 </body>
 </html>

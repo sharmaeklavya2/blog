@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Eklavya's Blog - CS</title><link href="https://sharmaeklavya2.github.io/blog/" rel="alternate"></link><link href="https://sharmaeklavya2.github.io/blog/feed/cs.atom.xml" rel="self"></link><id>https://sharmaeklavya2.github.io/blog/</id><updated>2019-07-20T00:00:00+05:30</updated><entry><title>Generalizing Segment Trees</title><link href="https://sharmaeklavya2.github.io/blog/generalizing-segment-trees.html" rel="alternate"></link><published>2019-07-20T00:00:00+05:30</published><updated>2019-07-20T00:00:00+05:30</updated><author><name>Eklavya Sharma</name></author><id>tag:sharmaeklavya2.github.io,2019-07-20:/blog/generalizing-segment-trees.html</id><summary type="html">&lt;p&gt;Generalizing segment trees by expressing range query outputs as elements of a monoid and update operations as endomorphisms.&lt;/p&gt;</summary><content type="html">&lt;p&gt;A segment tree is a data structure which stores an array of size &lt;span class="math"&gt;\(n\)&lt;/span&gt;
+and allows &lt;span class="math"&gt;\(O(\lg{n})\)&lt;/span&gt;-time range queries and &lt;span class="math"&gt;\(O(\lg n)\)&lt;/span&gt;-time range updates on it.
+I devised a method of generalizing segment trees using
+concepts from abstract algebra: monoids and endomorphisms.
+This generalization not only gave me conceptual clarity
+but also allowed me to write a
+&lt;a href="https://gist.github.com/sharmaeklavya2/99ed35efbb639bbe7d7b46b89b74fea0"&gt;segment tree C++ library&lt;/a&gt;
+that can be used for any application without modifying the code for queries and updates.&lt;/p&gt;
+&lt;p&gt;This blog post explains what monoids and endomorphisms are,
+and the intuition which led me to use these abstractions to generalize segment trees.
+I will also explain how to perform range updates using lazy propagation.&lt;/p&gt;
+&lt;p&gt;Prerequisite concepts for this blog post:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;What a segment tree is.&lt;/li&gt;
+&lt;li&gt;How to build a segment tree.&lt;/li&gt;
+&lt;li&gt;How to perform range queries on a segment tree.&lt;/li&gt;
+&lt;li&gt;How to perform point updates on a segment tree.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can read about the above prerequisite concepts in the
+&lt;a href="https://codelucid.wordpress.com/2015/05/27/segment-trees/"&gt;article on Segment Trees by codelucid&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="toc"&gt;&lt;span class="toctitle"&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#generalizing-problems"&gt;Generalizing problems&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#query-function"&gt;Query function&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#update-function"&gt;Update function&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#generalizing-the-query-function"&gt;Generalizing the query function&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#substructure-and-the-binary-operator"&gt;Substructure and the binary operator&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#associativity"&gt;Associativity&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#identity"&gt;Identity&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#monoids"&gt;Monoids&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#monoid-elements-as-segment-tree-values"&gt;Monoid elements as segment tree values&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#generalizing-update-functions"&gt;Generalizing update functions&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#node-update-function"&gt;Node update function&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#endomorphism"&gt;Endomorphism&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#node-update-function-is-an-endomorphism"&gt;Node update function is an endomorphism&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#lazy-propagation"&gt;Lazy propagation&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#updation"&gt;Updation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#querying"&gt;Querying&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#combining-updates"&gt;Combining updates&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#generic-implementation-of-segment-trees"&gt;Generic implementation of segment trees&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#representing-node-update-functions"&gt;Representing node update functions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#implementation"&gt;Implementation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#bringing-problems-to-standard-form"&gt;Bringing problems to standard form&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h2 id="generalizing-problems"&gt;Generalizing problems&lt;a class="headerlink" href="#generalizing-problems" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Before we generalize segment trees, let's try to generalize some simple problems
+which can be solved using segment trees. These example problems are used throughout this article.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Problem SUMREPL&lt;/strong&gt;:
+    You are given an array &lt;span class="math"&gt;\(a\)&lt;/span&gt; of &lt;span class="math"&gt;\(n\)&lt;/span&gt; numbers, indexed from 0 to &lt;span class="math"&gt;\(n-1\)&lt;/span&gt;.
+    You will be asked to perform &lt;span class="math"&gt;\(q\)&lt;/span&gt; operations. Each operation will be one of the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;given &lt;span class="math"&gt;\(l\)&lt;/span&gt; and &lt;span class="math"&gt;\(r\)&lt;/span&gt;, output &lt;span class="math"&gt;\(\sum_{i=l}^r a[i]\)&lt;/span&gt;.&lt;/li&gt;
+&lt;li&gt;given &lt;span class="math"&gt;\(l\)&lt;/span&gt;, &lt;span class="math"&gt;\(r\)&lt;/span&gt; and &lt;span class="math"&gt;\(y\)&lt;/span&gt;, replace &lt;span class="math"&gt;\(a[i]\)&lt;/span&gt; by &lt;span class="math"&gt;\(y\)&lt;/span&gt; for all &lt;span class="math"&gt;\(l \le i \le r\)&lt;/span&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Problem MINMAX&lt;/strong&gt;:
+    You are given an array &lt;span class="math"&gt;\(a\)&lt;/span&gt; of &lt;span class="math"&gt;\(n\)&lt;/span&gt; numbers, indexed from 0 to &lt;span class="math"&gt;\(n-1\)&lt;/span&gt;.
+    You will be asked to perform &lt;span class="math"&gt;\(q\)&lt;/span&gt; operations. Each operation will be one of the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;given &lt;span class="math"&gt;\(l\)&lt;/span&gt; and &lt;span class="math"&gt;\(r\)&lt;/span&gt;, output &lt;span class="math"&gt;\(\min_{i=l}^r a[i]\)&lt;/span&gt;.&lt;/li&gt;
+&lt;li&gt;given &lt;span class="math"&gt;\(l\)&lt;/span&gt; and &lt;span class="math"&gt;\(r\)&lt;/span&gt;, output &lt;span class="math"&gt;\(\max_{i=l}^r a[i]\)&lt;/span&gt;.&lt;/li&gt;
+&lt;li&gt;given &lt;span class="math"&gt;\(l\)&lt;/span&gt;, &lt;span class="math"&gt;\(r\)&lt;/span&gt; and &lt;span class="math"&gt;\(y\)&lt;/span&gt;, add &lt;span class="math"&gt;\(y\)&lt;/span&gt; to &lt;span class="math"&gt;\(a[i]\)&lt;/span&gt; for all &lt;span class="math"&gt;\(l \le i \le r\)&lt;/span&gt;.&lt;/li&gt;
+&lt;li&gt;given &lt;span class="math"&gt;\(l\)&lt;/span&gt;, &lt;span class="math"&gt;\(r\)&lt;/span&gt; and &lt;span class="math"&gt;\(z\)&lt;/span&gt;, multiply &lt;span class="math"&gt;\(a[i]\)&lt;/span&gt; by &lt;span class="math"&gt;\(z\)&lt;/span&gt; for all &lt;span class="math"&gt;\(l \le i \le r\)&lt;/span&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Problem CHAROCC&lt;/strong&gt;:
+    You are given an array &lt;span class="math"&gt;\(a\)&lt;/span&gt; of &lt;span class="math"&gt;\(n\)&lt;/span&gt; strings, indexed from 0 to &lt;span class="math"&gt;\(n-1\)&lt;/span&gt;.
+    Each string consists of lowercase English characters (&lt;code&gt;a&lt;/code&gt; to &lt;code&gt;z&lt;/code&gt;).
+    The sum of the lengths of the strings is &lt;span class="math"&gt;\(m\)&lt;/span&gt;.
+    You will be asked to perform &lt;span class="math"&gt;\(q\)&lt;/span&gt; operations. Each operation will be one of the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;given integers &lt;span class="math"&gt;\(l\)&lt;/span&gt; and &lt;span class="math"&gt;\(r\)&lt;/span&gt; and character &lt;span class="math"&gt;\(c\)&lt;/span&gt;, output the number of
+    occurrences of &lt;span class="math"&gt;\(c\)&lt;/span&gt; in the concatenation of &lt;span class="math"&gt;\(a[l], a[l+1], \ldots, a[r]\)&lt;/span&gt;.&lt;/li&gt;
+&lt;li&gt;given integers &lt;span class="math"&gt;\(l\)&lt;/span&gt; and &lt;span class="math"&gt;\(r\)&lt;/span&gt; and character &lt;span class="math"&gt;\(c\)&lt;/span&gt;, append &lt;span class="math"&gt;\(c\)&lt;/span&gt; to &lt;span class="math"&gt;\(a[i]\)&lt;/span&gt; for all &lt;span class="math"&gt;\(l \le i \le r\)&lt;/span&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;You can see that in all these problems, we are given an array of size &lt;span class="math"&gt;\(n\)&lt;/span&gt;.
+The elements of the array can be anything: numbers, strings or something else.
+In these examples, there are 2 kinds of operations - queries and updates.
+In all operations, we're asked to operate on a subarray &lt;span class="math"&gt;\(b = a[l..r]\)&lt;/span&gt;.
+We'll generalize these operations to 2 concepts - query function and update function.&lt;/p&gt;
+&lt;h3 id="query-function"&gt;Query function&lt;a class="headerlink" href="#query-function" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;In queries, we're asked to apply a function &lt;span class="math"&gt;\(f\)&lt;/span&gt; on &lt;span class="math"&gt;\(b\)&lt;/span&gt;.
+We'll call this function the 'query function'.
+In SUMREPL, this function is summation: &lt;span class="math"&gt;\(f(b) = \sum_{x \in b} x\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;In MINMAX, the query function is 'min' for some queries and 'max' for others.
+Instead, we can use the query function
+&lt;span class="math"&gt;\(f(b) = (\min_{x \in b} x, \max_{x \in b})\)&lt;/span&gt;, which returns an ordered pair.
+For every query, we'll compute both min and max and return the appropriate part.&lt;/p&gt;
+&lt;p&gt;In CHAROCC, the query is parametrized by &lt;span class="math"&gt;\(c\)&lt;/span&gt;.
+So we'll compute the result for all lowercase English characters.
+Formally, let &lt;span class="math"&gt;\(\Gamma\)&lt;/span&gt; be the sequence of characters in lowercase English
+and let &lt;span class="math"&gt;\(e(s, c)\)&lt;/span&gt; be the number of occurrences of the character &lt;span class="math"&gt;\(c\)&lt;/span&gt; in string &lt;span class="math"&gt;\(s\)&lt;/span&gt;.
+Then &lt;span class="math"&gt;\(f(b) = [\sum_{x \in b} e(x, c)]_{c \in \Gamma}\)&lt;/span&gt;.
+Here &lt;span class="math"&gt;\(f(b)\)&lt;/span&gt; is an array of length 26.&lt;/p&gt;
+&lt;p&gt;For these 3 examples, we now have a common abstraction to use: the query function.
+The query function's domain is a set of finite arrays of some type.
+Let us denote the codomain of the query function by &lt;span class="math"&gt;\(S\)&lt;/span&gt;,
+which we'll call the 'query output type'.&lt;/p&gt;
+&lt;h3 id="update-function"&gt;Update function&lt;a class="headerlink" href="#update-function" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;In every update operation, we're given a function &lt;span class="math"&gt;\(g\)&lt;/span&gt;, called the update function.
+We have to replace &lt;span class="math"&gt;\(a[i]\)&lt;/span&gt; by &lt;span class="math"&gt;\(g(a[i])\)&lt;/span&gt; for &lt;span class="math"&gt;\(l \le i \le r\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;For SUMREPL, the update function is &lt;span class="math"&gt;\(g_y\)&lt;/span&gt;, where &lt;span class="math"&gt;\(g_y(x) = y\)&lt;/span&gt;.
+For MINMAX, the update function is either &lt;span class="math"&gt;\(g_y(x) = x + y\)&lt;/span&gt; or &lt;span class="math"&gt;\(g_z(x) = xz\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Now the generalized problem looks like this:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Problem RANGEOP&lt;/strong&gt;:
+You are given an array &lt;span class="math"&gt;\(a\)&lt;/span&gt; of &lt;span class="math"&gt;\(n\)&lt;/span&gt; elements, indexed from 0 to &lt;span class="math"&gt;\(n-1\)&lt;/span&gt;.
+You are also given a query function &lt;span class="math"&gt;\(f\)&lt;/span&gt;.
+You will be asked to perform &lt;span class="math"&gt;\(q\)&lt;/span&gt; operations. Each operation will be one of the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;given integers &lt;span class="math"&gt;\(l\)&lt;/span&gt; and &lt;span class="math"&gt;\(r\)&lt;/span&gt;, output &lt;span class="math"&gt;\(f(a[l..r])\)&lt;/span&gt;.&lt;/li&gt;
+&lt;li&gt;given integers &lt;span class="math"&gt;\(l\)&lt;/span&gt; and &lt;span class="math"&gt;\(r\)&lt;/span&gt; and a function &lt;span class="math"&gt;\(g\)&lt;/span&gt;,
+    replace &lt;span class="math"&gt;\(a[i]\)&lt;/span&gt; by &lt;span class="math"&gt;\(g(a[i])\)&lt;/span&gt; for all &lt;span class="math"&gt;\(l \le i \le r\)&lt;/span&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="generalizing-the-query-function"&gt;Generalizing the query function&lt;a class="headerlink" href="#generalizing-the-query-function" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;In problem RANGEOP, &lt;span class="math"&gt;\(f\)&lt;/span&gt; can be any arbitrary function.
+But there are additional constraints if the problem has to be solved using segment trees.&lt;/p&gt;
+&lt;h3 id="substructure-and-the-binary-operator"&gt;Substructure and the binary operator&lt;a class="headerlink" href="#substructure-and-the-binary-operator" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;To be able to solve a problem using segment trees,
+the query function should follow a property called 'substructure'.
+This means that we can compute &lt;span class="math"&gt;\(f(a)\)&lt;/span&gt; using this procedure:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Choose any prefix &lt;span class="math"&gt;\(b\)&lt;/span&gt; of &lt;span class="math"&gt;\(a\)&lt;/span&gt;. Let &lt;span class="math"&gt;\(a = b + c\)&lt;/span&gt; (&lt;span class="math"&gt;\(+\)&lt;/span&gt; denotes array concatenation).&lt;/li&gt;
+&lt;li&gt;Compute &lt;span class="math"&gt;\(f(b)\)&lt;/span&gt; and &lt;span class="math"&gt;\(f(c)\)&lt;/span&gt;.&lt;/li&gt;
+&lt;li&gt;Combine &lt;span class="math"&gt;\(f(b)\)&lt;/span&gt; and &lt;span class="math"&gt;\(f(c)\)&lt;/span&gt; to get &lt;span class="math"&gt;\(f(a)\)&lt;/span&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Examples:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;In SUMREPL, &lt;span class="math"&gt;\(f(b + c) = f(b) + f(c)\)&lt;/span&gt;.&lt;/li&gt;
+&lt;li&gt;In MINMAX, &lt;span class="math"&gt;\(f(b + c)\)&lt;/span&gt; &lt;span class="math"&gt;\(= (\min(f(b)_0, f(c)_0), \max(f(b)_1, f(c)_1))\)&lt;/span&gt;.
+Here &lt;span class="math"&gt;\((x, y)_0 = x\)&lt;/span&gt; and &lt;span class="math"&gt;\((x, y)_1 = y\)&lt;/span&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Non-examples:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Finding the median of an array doesn't have substructure
+because the medians of &lt;span class="math"&gt;\(b\)&lt;/span&gt; and &lt;span class="math"&gt;\(c\)&lt;/span&gt; cannot be used to compute the median of &lt;span class="math"&gt;\(b + c\)&lt;/span&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(f(a) = a[0]^{a[1]^{a[2]^{\ldots a[n-1]}}}\)&lt;/span&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We can express the substructure recurrence relations using a binary operator &lt;span class="math"&gt;\(\circ\)&lt;/span&gt;,
+so that &lt;span class="math"&gt;\(f(b + c) = f(b) \circ f(c)\)&lt;/span&gt;.
+&lt;span class="math"&gt;\(\circ\)&lt;/span&gt; is a function from &lt;span class="math"&gt;\(S \times S\)&lt;/span&gt; to &lt;span class="math"&gt;\(S\)&lt;/span&gt;, where &lt;span class="math"&gt;\(S\)&lt;/span&gt; is the output type of the query function.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;For SUMREPL, &lt;span class="math"&gt;\(x \circ y = x + y\)&lt;/span&gt;.&lt;/li&gt;
+&lt;li&gt;For MINMAX, &lt;span class="math"&gt;\(x \circ y = (\min(x_0, y_0), \max(x_1, y_1))\)&lt;/span&gt;.&lt;/li&gt;
+&lt;li&gt;For CHAROCC, &lt;span class="math"&gt;\(x \circ y\)&lt;/span&gt; is obtained by element-wise addition of arrays &lt;span class="math"&gt;\(x\)&lt;/span&gt; and &lt;span class="math"&gt;\(y\)&lt;/span&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="associativity"&gt;Associativity&lt;a class="headerlink" href="#associativity" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Depending on which prefix of &lt;span class="math"&gt;\(a\)&lt;/span&gt; we choose, there can be multiple ways of computing &lt;span class="math"&gt;\(f(a)\)&lt;/span&gt;.
+For example, there are 2 ways of computing &lt;span class="math"&gt;\(f([x, y, z])\)&lt;/span&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;choosing &lt;span class="math"&gt;\([x]\)&lt;/span&gt; as prefix: &lt;span class="math"&gt;\(f([x, y, z]) = f([x]) \circ f([y, z])\)&lt;/span&gt; &lt;span class="math"&gt;\( = f([x]) \circ (f([y]) \circ f([z]))\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;choosing &lt;span class="math"&gt;\([x, y]\)&lt;/span&gt; as prefix: &lt;span class="math"&gt;\(f([x, y, z]) = f([x, y]) \circ f([z])\)&lt;/span&gt; &lt;span class="math"&gt;\( = (f([x]) \circ f([y])) \circ f([z])\)&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Since the output should not depend on the choice of prefix,
+&lt;span class="math"&gt;\(\circ\)&lt;/span&gt; should be associative over the range of &lt;span class="math"&gt;\(f\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Since &lt;span class="math"&gt;\(\circ\)&lt;/span&gt; is associative, &lt;span class="math"&gt;\(f(a)\)&lt;/span&gt; &lt;span class="math"&gt;\(= f([a[0]]) \circ f([a[1]]) \circ \ldots \circ f([a[n-1]])\)&lt;/span&gt;.&lt;/p&gt;
+&lt;h3 id="identity"&gt;Identity&lt;a class="headerlink" href="#identity" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Let's define &lt;span class="math"&gt;\(e = f([\,])\)&lt;/span&gt;.
+Since &lt;span class="math"&gt;\(f(a) = f(a + [\,]) = f(a) \circ e\)&lt;/span&gt; and &lt;span class="math"&gt;\(f(a) = f([\,] + a) = e \circ f(a)\)&lt;/span&gt;,
+we call &lt;span class="math"&gt;\(e\)&lt;/span&gt; the 'identity element' of &lt;span class="math"&gt;\(S\)&lt;/span&gt; for &lt;span class="math"&gt;\(\circ\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(f\)&lt;/span&gt; may not be defined for an empty array (&lt;span class="math"&gt;\(f(a) = a[0]\)&lt;/span&gt; is an example).
+When this happens, we can still define &lt;span class="math"&gt;\(f([\,]) = e\)&lt;/span&gt;.
+&lt;span class="math"&gt;\(e\)&lt;/span&gt; need not have any real significance; it is just a symbol
+(this is similar to how &lt;span class="math"&gt;\(\sqrt{-1} = i\)&lt;/span&gt;).
+We also define &lt;span class="math"&gt;\(x \circ e = e \circ x = x\)&lt;/span&gt; for all &lt;span class="math"&gt;\(x \in S\)&lt;/span&gt;.&lt;/p&gt;
+&lt;h3 id="monoids"&gt;Monoids&lt;a class="headerlink" href="#monoids" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;A monoid &lt;span class="math"&gt;\(M = (S, \circ)\)&lt;/span&gt; is a set along with a binary operator defined on that set
+which follows these axioms:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Closure: &lt;span class="math"&gt;\(\forall x \in S, \forall y \in S,\)&lt;/span&gt;
+&lt;span class="math"&gt;\(x \circ y \in S\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;Associativity: &lt;span class="math"&gt;\(\forall x \in S, \forall y \in S, \forall z \in S,\)&lt;/span&gt;
+&lt;span class="math"&gt;\((x \circ y) \circ z = x \circ (y \circ z)\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;Existence of identity: &lt;span class="math"&gt;\(\exists e \in S, \forall x \in S,\)&lt;/span&gt;
+&lt;span class="math"&gt;\(e \circ x = x \circ e = x\)&lt;/span&gt;.
+Here &lt;span class="math"&gt;\(e\)&lt;/span&gt; is called the identity of the monoid.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We can see that our query output type &lt;span class="math"&gt;\(S\)&lt;/span&gt; and our binary operator &lt;span class="math"&gt;\(\circ\)&lt;/span&gt; follow the above axioms.
+Therefore, &lt;span class="math"&gt;\((S, \circ)\)&lt;/span&gt; is a monoid.&lt;/p&gt;
+&lt;h3 id="monoid-elements-as-segment-tree-values"&gt;Monoid elements as segment tree values&lt;a class="headerlink" href="#monoid-elements-as-segment-tree-values" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Every node &lt;span class="math"&gt;\(u\)&lt;/span&gt; of a segment tree has the following attributes associated with it:
+&lt;span class="math"&gt;\(\operatorname{value}(u), \operatorname{first}(u), \operatorname{last}(u), \operatorname{index}(u)\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Here &lt;span class="math"&gt;\(\operatorname{value}(u) = f(a[\operatorname{first}(u)..\operatorname{last}(u)])\)&lt;/span&gt;
+and &lt;span class="math"&gt;\(\operatorname{index}(u)\)&lt;/span&gt; is the index of &lt;span class="math"&gt;\(u\)&lt;/span&gt; in the segment tree array.
+The children of &lt;span class="math"&gt;\(u\)&lt;/span&gt; have indices &lt;span class="math"&gt;\(\operatorname{index}(u) * 2 + 1\)&lt;/span&gt; and &lt;span class="math"&gt;\(\operatorname{index}(u) * 2 + 2\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;To build and query a generalized segment tree, we will need to specify the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(e\)&lt;/span&gt;: The identity element of the monoid.
+This is the output of empty queries.
+For SUMREPL, &lt;span class="math"&gt;\(e = 0\)&lt;/span&gt;. For MINMAX, &lt;span class="math"&gt;\(e = (\infty, -\infty)\)&lt;/span&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(f_0(x) = f([x])\)&lt;/span&gt;: Specification of how to apply &lt;span class="math"&gt;\(f\)&lt;/span&gt; to a single-element array.
+This is used to create leaf nodes of the segment tree.
+For SUMREPL, &lt;span class="math"&gt;\(f_0(x) = x\)&lt;/span&gt;. For MINMAX, &lt;span class="math"&gt;\(f_0(x) = (x, x)\)&lt;/span&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(\circ\)&lt;/span&gt;: The binary operator.
+This is used to create internal nodes of the segment tree.
+For SUMREPL, &lt;span class="math"&gt;\(x \circ y = x + y\)&lt;/span&gt;.
+For MINMAX, &lt;span class="math"&gt;\(x \circ y = \min(x_0, y_0), \max(x_1, y_1)\)&lt;/span&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In code, we can create a class for monoid elements.
+The above traits of the monoid can be specified as methods/constructors of the class.&lt;/p&gt;
+&lt;h2 id="generalizing-update-functions"&gt;Generalizing update functions&lt;a class="headerlink" href="#generalizing-update-functions" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id="node-update-function"&gt;Node update function&lt;a class="headerlink" href="#node-update-function" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Suppose I construct a segment tree on the input array &lt;span class="math"&gt;\(a\)&lt;/span&gt; of size &lt;span class="math"&gt;\(n\)&lt;/span&gt;
+(where the query function is &lt;span class="math"&gt;\(f\)&lt;/span&gt; and the corresponding binary operator is &lt;span class="math"&gt;\(\circ\)&lt;/span&gt;).
+Let the value at the root be &lt;span class="math"&gt;\(s\)&lt;/span&gt;. We know that &lt;span class="math"&gt;\(s = f(a)\)&lt;/span&gt;.
+Now I apply a function &lt;span class="math"&gt;\(g\)&lt;/span&gt; to all elements of &lt;span class="math"&gt;\(a\)&lt;/span&gt;.
+For notational convenience, let &lt;span class="math"&gt;\(g(a) = [g(a[0]), g(a[1]), \ldots, g(a[n-1])]\)&lt;/span&gt;.
+After this, I update the segment tree and the value at the root is now &lt;span class="math"&gt;\(t\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Given &lt;span class="math"&gt;\(s\)&lt;/span&gt; and &lt;span class="math"&gt;\(g\)&lt;/span&gt;, can you find &lt;span class="math"&gt;\(t\)&lt;/span&gt;?
+This question effectively means that you should be able to update a segment tree
+node without looking at its descendants.
+We're looking for a function &lt;span class="math"&gt;\(h\)&lt;/span&gt; where &lt;span class="math"&gt;\(h(f(b)) = f(g(b))\)&lt;/span&gt; for all arrays &lt;span class="math"&gt;\(b\)&lt;/span&gt;.
+Let's call &lt;span class="math"&gt;\(h\)&lt;/span&gt; a 'node update function'.&lt;/p&gt;
+&lt;p&gt;There's no straightforward algorithm for deriving &lt;span class="math"&gt;\(h\)&lt;/span&gt; from &lt;span class="math"&gt;\(g\)&lt;/span&gt;, but it's usually easy.
+For example, for the MINMAX problem with &lt;span class="math"&gt;\(g(x) = x + 20\)&lt;/span&gt;, &lt;span class="math"&gt;\(h(x) = (x_0 + 20, x_1 + 20)\)&lt;/span&gt;.
+This is how we verify &lt;span class="math"&gt;\(h\)&lt;/span&gt;:
+&lt;/p&gt;
+&lt;div class="math"&gt;\begin{align*}
+&amp;amp; h(f(a))
+\\ &amp;amp;= h((\min(a), \max(a)))
+\\ &amp;amp;= (\min(a) + 20, \max(a) + 20)
+\\ &amp;amp;= (\min(a + 20), \max(a + 20))
+\\ &amp;amp;= f(g(a))
+\end{align*}&lt;/div&gt;
+&lt;p&gt;Here &lt;span class="math"&gt;\(a + 20\)&lt;/span&gt; is the array obtained by adding 20 to every element of &lt;span class="math"&gt;\(a\)&lt;/span&gt;.&lt;/p&gt;
+&lt;h3 id="endomorphism"&gt;Endomorphism&lt;a class="headerlink" href="#endomorphism" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;For a monoid &lt;span class="math"&gt;\((S, \circ)\)&lt;/span&gt;, a function &lt;span class="math"&gt;\(h: S \mapsto S\)&lt;/span&gt; is an endomorphism iff
+both of these conditions hold:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(h(e) = e\)&lt;/span&gt;. Here &lt;span class="math"&gt;\(e\)&lt;/span&gt; is the identity of &lt;span class="math"&gt;\(S\)&lt;/span&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(h(x \circ y) = h(x) \circ h(y)\)&lt;/span&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For example, &lt;span class="math"&gt;\(h(x) = x + 20\)&lt;/span&gt; is an endomorphism on the monoid &lt;span class="math"&gt;\((\mathbb{Z}, \min)\)&lt;/span&gt; because
+* &lt;span class="math"&gt;\(h(e) = h(\infty) = \infty + 20 = \infty = e\)&lt;/span&gt;.
+* &lt;span class="math"&gt;\(h(x \circ y) = \min(x, y) + 20\)&lt;/span&gt; &lt;span class="math"&gt;\(= \min(x + 20, y + 20) = h(x) \circ h(y)\)&lt;/span&gt;.&lt;/p&gt;
+&lt;h3 id="node-update-function-is-an-endomorphism"&gt;Node update function is an endomorphism&lt;a class="headerlink" href="#node-update-function-is-an-endomorphism" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;\[ h(e) = h(f([\,])) = f(g([\,])) = f([\,]) = e \]&lt;/p&gt;
+&lt;div class="math"&gt;\begin{align*}
+&amp;amp; h(f(b) \circ f(c))
+\\ &amp;amp;= h(f(b + c))
+\\ &amp;amp;= f(g(b + c))
+\\ &amp;amp;= f(g(b) + g(c))
+\\ &amp;amp;= f(g(b)) \circ f(g(c))
+\\ &amp;amp;= h(f(b)) \circ h(f(c))
+\end{align*}&lt;/div&gt;
+&lt;p&gt;Therefore, &lt;span class="math"&gt;\(h\)&lt;/span&gt; is an endomorphism on the range of &lt;span class="math"&gt;\(f\)&lt;/span&gt;.&lt;/p&gt;
+&lt;h2 id="lazy-propagation"&gt;Lazy propagation&lt;a class="headerlink" href="#lazy-propagation" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;In computer science, laziness means procrastination.&lt;/p&gt;
+&lt;p&gt;When we're told to execute an update on a segment tree, we don't actually do the whole update.
+We just note down which subtrees need to be updated.
+Then when we're supposed to answer a query, we update only the part of the segment tree
+which is needed to answer the query.&lt;/p&gt;
+&lt;p&gt;I'll explain this with an example for MINMAX
+with the initial array &lt;span class="math"&gt;\([10, 20, 30, 40, 50, 60, 70]\)&lt;/span&gt;.
+The image below shows the initial segment tree.&lt;/p&gt;
+&lt;figure&gt;
+&lt;img src="https://sharmaeklavya2.github.io/blog/img/segtree-lazy-update/0.dot.svg" /&gt;
+&lt;figcaption&gt;Initial segment tree&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h3 id="updation"&gt;Updation&lt;a class="headerlink" href="#updation" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Now we get an update with &lt;span class="math"&gt;\(l=2, r=6, g(x) = x + 20\)&lt;/span&gt;.
+This corresponds to &lt;span class="math"&gt;\(h(x) = (x_0 + 20, x_1 + 20)\)&lt;/span&gt;.
+Define &lt;span class="math"&gt;\(d(a, b)(x) = (ax_0 + b, ax_1 + b)\)&lt;/span&gt;.
+Therefore, &lt;span class="math"&gt;\(h = d(1, 20)\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;To execute this update, we first find the maximal subtrees which span this range.
+These are the subtrees at &lt;code&gt;2..3&lt;/code&gt; and &lt;code&gt;4..6&lt;/code&gt;.
+We'll update the values at &lt;code&gt;2..3&lt;/code&gt; and &lt;code&gt;4..6&lt;/code&gt; by applying &lt;span class="math"&gt;\(h\)&lt;/span&gt; to their values.
+We'll then note down that their children are yet to be updated with &lt;span class="math"&gt;\(h = d(1, 20)\)&lt;/span&gt;.
+We'll also update all the ancestors of the affected nodes by recomputing their values.&lt;/p&gt;
+&lt;figure&gt;
+&lt;img src="https://sharmaeklavya2.github.io/blog/img/segtree-lazy-update/1.dot.svg" /&gt;
+&lt;figcaption&gt;
+Segment tree after update
+&lt;span class="math"&gt;\(l=2, r=6, g(x) = x + 20\)&lt;/span&gt;.&lt;br /&gt;
+Blue nodes were updated. Red nodes were not updated but they have a pending update.
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h3 id="querying"&gt;Querying&lt;a class="headerlink" href="#querying" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;If a query arrives for &lt;span class="math"&gt;\(l=2, r=5\)&lt;/span&gt;, we would like to return
+&lt;span class="math"&gt;\(\operatorname{value}(\texttt{2..3}) \circ \operatorname{value}(\texttt{4..5})\)&lt;/span&gt;.
+But before that, we'll have to update &lt;span class="math"&gt;\(\operatorname{value}(\texttt{4..5})\)&lt;/span&gt;.
+To do this, we apply &lt;span class="math"&gt;\(h\)&lt;/span&gt; to &lt;span class="math"&gt;\(\operatorname{value}(\texttt{4..5})\)&lt;/span&gt;
+and mark its children as pending for updation.
+Since the pending update moved from &lt;code&gt;4..5&lt;/code&gt; to its child,
+we say that the pending update 'propagated'.&lt;/p&gt;
+&lt;figure&gt;
+&lt;img src="https://sharmaeklavya2.github.io/blog/img/segtree-lazy-update/2.dot.svg" /&gt;
+&lt;figcaption&gt;
+Segment tree after the query &lt;span class="math"&gt;\(l=2, r=5\)&lt;/span&gt;.&lt;br /&gt;
+The value returned by the query is written beside each node.
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h3 id="combining-updates"&gt;Combining updates&lt;a class="headerlink" href="#combining-updates" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Suppose we get the update &lt;span class="math"&gt;\(l=0, r=6, g(x) = x + 10\)&lt;/span&gt;.
+We will update the root node and add &lt;span class="math"&gt;\(d(1, 10)\)&lt;/span&gt; to the children.&lt;/p&gt;
+&lt;figure&gt;
+&lt;img src="https://sharmaeklavya2.github.io/blog/img/segtree-lazy-update/3.dot.svg" /&gt;
+&lt;figcaption&gt;
+Segment tree after update
+&lt;span class="math"&gt;\(l=0, r=6, g(x) = x + 10\)&lt;/span&gt;.&lt;br /&gt;
+Blue nodes were updated. Red nodes were not updated but they have a pending update.
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Now we get another update &lt;span class="math"&gt;\(l=0, r=6, g(x) = 3x\)&lt;/span&gt;. This corresponds to &lt;span class="math"&gt;\(h = d(3, 0)\)&lt;/span&gt;.
+We can update the root node, and add &lt;span class="math"&gt;\(d(3, 0)\)&lt;/span&gt; to the children.
+But the children already have a pending update of &lt;span class="math"&gt;\(d(1, 10)\)&lt;/span&gt;.
+To resolve this, we will compose the functions, i.e. we'll find a single
+function which is equal to successively applying &lt;span class="math"&gt;\(d(1, 10)\)&lt;/span&gt; and then &lt;span class="math"&gt;\(d(3, 0)\)&lt;/span&gt;.&lt;/p&gt;
+&lt;div class="math"&gt;\begin{align*}
+&amp;amp; d(3, 0)(d(1, 10)(x))
+\\ &amp;amp;= d(3, 0)(x + 10)
+\\ &amp;amp;= 3(x + 10) = 3x + 30
+\\ &amp;amp;= d(3, 30)(x)
+\end{align*}&lt;/div&gt;
+&lt;figure&gt;
+&lt;img src="https://sharmaeklavya2.github.io/blog/img/segtree-lazy-update/4.dot.svg" /&gt;
+&lt;figcaption&gt;
+Segment tree after update
+&lt;span class="math"&gt;\(l=0, r=6, g(x) = 3x\)&lt;/span&gt;.&lt;br /&gt;
+Blue nodes were updated. Red nodes were not updated but they have a pending update.
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;More generally, &lt;span class="math"&gt;\(d(a_1, b_1) \cdot d(a_2, b_2) = d(a_1a_2, a_1b_2 + b_1)\)&lt;/span&gt;.&lt;/p&gt;
+&lt;h2 id="generic-implementation-of-segment-trees"&gt;Generic implementation of segment trees&lt;a class="headerlink" href="#generic-implementation-of-segment-trees" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id="representing-node-update-functions"&gt;Representing node update functions&lt;a class="headerlink" href="#representing-node-update-functions" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;We will need to come up with a succinct representation for node update functions.
+In the example above, the function &lt;span class="math"&gt;\(d(a, b)\)&lt;/span&gt; can be specified by the ordered pair &lt;span class="math"&gt;\((a, b)\)&lt;/span&gt;.
+The choice of representation will depend on the type of update functions expected.&lt;/p&gt;
+&lt;p&gt;Then we need to specify the following to describe node update functions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Function application: How to compute &lt;span class="math"&gt;\(h(x)\)&lt;/span&gt; given &lt;span class="math"&gt;\(x\)&lt;/span&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The identity function: The function &lt;span class="math"&gt;\(h(x) = x\)&lt;/span&gt;.
+In the above example, &lt;span class="math"&gt;\(d(1, 0)\)&lt;/span&gt; is the identity function.
+It should also be possible to check whether a function is the identity function.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Function composition: A rule for how to compose 2 node update functions.
+In the above example, the composition of &lt;span class="math"&gt;\((a_1, b_1)\)&lt;/span&gt; and &lt;span class="math"&gt;\((a_2, b_2)\)&lt;/span&gt; is &lt;span class="math"&gt;\((a_1a_2, a_1b_2 + b_1)\)&lt;/span&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="implementation"&gt;Implementation&lt;a class="headerlink" href="#implementation" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;We will use 2 arrays: &lt;code&gt;values&lt;/code&gt; and &lt;code&gt;pending&lt;/code&gt;.
+&lt;code&gt;values[i]&lt;/code&gt; is the value of the &lt;span class="math"&gt;\(i^{\textrm{th}}\)&lt;/span&gt; node.
+&lt;code&gt;pending[i]&lt;/code&gt; is the pending node update function of the &lt;span class="math"&gt;\(i^{\textrm{th}}\)&lt;/span&gt; node.
+Initially, &lt;code&gt;values&lt;/code&gt; is constructed from the input array
+and &lt;code&gt;pending[i]&lt;/code&gt; is the identity function for every node &lt;span class="math"&gt;\(i\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;You can see &lt;a href="https://gist.github.com/sharmaeklavya2/99ed35efbb639bbe7d7b46b89b74fea0"&gt;my C++ segment tree library&lt;/a&gt;
+for an example of how to write generic segment trees.&lt;/p&gt;
+&lt;h2 id="bringing-problems-to-standard-form"&gt;Bringing problems to standard form&lt;a class="headerlink" href="#bringing-problems-to-standard-form" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;To use the generic segment tree implementation, we should be able describe
+query outputs as elements of a monoid and the update function as an endomorphism.
+Let's look at some examples:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;SUMREPL&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(f(a) = \left(n, \sum_{i=1}^n a[i]\right)\)&lt;/span&gt;, where &lt;span class="math"&gt;\(a\)&lt;/span&gt; is an array of size &lt;span class="math"&gt;\(n\)&lt;/span&gt;.
+Therefore, identity is &lt;span class="math"&gt;\((0, 0)\)&lt;/span&gt;, &lt;span class="math"&gt;\(f_0(x) = (1, x)\)&lt;/span&gt;
+and &lt;span class="math"&gt;\((n_1, x) \circ (n_2, y) = (n_1 + n_2, x + y)\)&lt;/span&gt;.&lt;/li&gt;
+&lt;li&gt;For the update function &lt;span class="math"&gt;\(g(x) = y\)&lt;/span&gt;, the node update function is &lt;span class="math"&gt;\(h_y((n, x)) = (n, ny)\)&lt;/span&gt;.
+The identity function is &lt;span class="math"&gt;\(id\)&lt;/span&gt;, which cannot be expressed as &lt;span class="math"&gt;\(h_y\)&lt;/span&gt; for any &lt;span class="math"&gt;\(y\)&lt;/span&gt;.
+Function composition: &lt;span class="math"&gt;\(h_s \cdot h_t = h_s\)&lt;/span&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;CHAROCC&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Each node of the segment tree stores the frequency of every lowercase English letter.
+Identity element is an array with all zeros.
+Creating a leaf node from a string involves computing frequencies of each character.
+The binary operator &lt;span class="math"&gt;\(\circ\)&lt;/span&gt; is defined as element-wise addition of the arrays.&lt;/li&gt;
+&lt;li&gt;A node update function is represented as an array &lt;span class="math"&gt;\(b\)&lt;/span&gt; of length 26.
+Applying the function involves elementwise addition of &lt;span class="math"&gt;\(b\)&lt;/span&gt; to a segment tree node value.
+Functions are composed by adding their arrays element-wise.
+The identity function has all elements 0.
+The update function with character &lt;span class="math"&gt;\(c\)&lt;/span&gt; corresponds to an array
+where the entry of &lt;span class="math"&gt;\(c\)&lt;/span&gt; is 1 and all other entries are 0.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;KADANE&lt;/strong&gt;:&lt;/p&gt;
+&lt;p&gt;You are given an array &lt;span class="math"&gt;\(a\)&lt;/span&gt; of &lt;span class="math"&gt;\(n\)&lt;/span&gt; integers, indexed from 0 to &lt;span class="math"&gt;\(n-1\)&lt;/span&gt;.
+The query function &lt;span class="math"&gt;\(f\)&lt;/span&gt; is the largest contiguous subarray sum.
+You will be asked to perform &lt;span class="math"&gt;\(q\)&lt;/span&gt; operations. Each operation will be one of the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;given integers &lt;span class="math"&gt;\(l\)&lt;/span&gt; and &lt;span class="math"&gt;\(r\)&lt;/span&gt;, output &lt;span class="math"&gt;\(f(a[l..r])\)&lt;/span&gt;.&lt;/li&gt;
+&lt;li&gt;given integers &lt;span class="math"&gt;\(l\)&lt;/span&gt;, &lt;span class="math"&gt;\(r\)&lt;/span&gt; and &lt;span class="math"&gt;\(y\)&lt;/span&gt;, replace &lt;span class="math"&gt;\(a[i]\)&lt;/span&gt; by &lt;span class="math"&gt;\(y\)&lt;/span&gt; for all &lt;span class="math"&gt;\(l \le i \le r\)&lt;/span&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This problem is left as an exercise.
+You must come up with a suitable monoid for representing segment tree values
+and a suitable node update function.&lt;/p&gt;
+&lt;div class="collapsible"&gt;
+    &lt;label for="checkbox0" class="collapsor-lbl"&gt; Minor hint &lt;/label&gt;
+    &lt;div class="focus-capturer" tabindex="0"&gt;
+        &lt;input id="checkbox0" class="collapsor" type="checkbox" /&gt;
+        &lt;div class="collapsible-content"&gt;
+            &lt;p&gt;See the proof of correctness of Kadane's algorithm.
+            Use divide-and-conquer instead of an incremental approach.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="collapsible"&gt;
+    &lt;label for="checkbox1" class="collapsor-lbl"&gt; Major hint &lt;/label&gt;
+    &lt;div class="focus-capturer" tabindex="0"&gt;
+        &lt;input id="checkbox1" class="collapsor" type="checkbox" /&gt;
+        &lt;div class="collapsible-content"&gt;
+            &lt;p&gt;Each segment tree node stores 4 values for its segment:&lt;/p&gt;
+            &lt;ol&gt;
+                &lt;li&gt;Sum of the elements of the segment&lt;/li&gt;
+                &lt;li&gt;Largest prefix sum of the segment&lt;/li&gt;
+                &lt;li&gt;Largest suffix sum of the segment&lt;/li&gt;
+                &lt;li&gt;Largest subarray sum of the segment&lt;/li&gt;
+            &lt;/ol&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</content><category term="CS"></category><category term="Algorithms"></category><category term="Math"></category><category term="Abstract Algebra"></category></entry></feed>

@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Eklavya's Blog - Generalizing Segment Trees</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/blog/theme/base.css" />
+<meta name="description" content="Generalizing segment trees by expressing range query outputs as elements of a monoid and update operations as endomorphisms." />
+<meta name="keywords" content="CS,Algorithms,Math,Abstract Algebra" />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/blog/css/collapsible.css" />
+<script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]}, "extensions": ["tex2jax.js"], "jax": ["input/TeX", "output/CommonHTML"]});</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+</head>
+
+<body>
+<nav>
+<div class="primary">
+<a id="sitetitle" href="https://sharmaeklavya2.github.io/blog/">Eklavya's Blog</a>
+<label for="nav-checkbox" class="collapsor-lbl">&equiv;</label>
+</div>
+<div class="focus-capturer" tabindex="0">
+<input id="nav-checkbox" class="collapsor" type="checkbox" />
+<div class="collapsible">
+<ul>
+<li><a href="https://sharmaeklavya2.github.io">About me</a></li>
+<li><a href="https://sharmaeklavya2.github.io/blog/pages/about-this-blog.html">About this blog</a></li>
+<li><ul class="tags">
+<li>Feed:</li>
+<li><a type="application/type+xml" rel="alternate" class="hori-flex" href="https://sharmaeklavya2.github.io/blog/feed/all.rss.xml">
+<svg class="icon"><use xlink:href="https://sharmaeklavya2.github.io/blog/theme/sprites.svg#fa-rss-square"/></svg><span>RSS</span>
+</a></li>
+<li><a type="application/type+xml" rel="alternate" class="hori-flex" href="https://sharmaeklavya2.github.io/blog/feed/all.atom.xml">
+<svg class="icon"><use xlink:href="https://sharmaeklavya2.github.io/blog/theme/sprites.svg#fa-rss-square"/></svg><span>Atom</span>
+</a></li>
+</ul></li>
+</ul>
+<p>Tags</p>
+<ul>
+<li><a href="https://sharmaeklavya2.github.io/blog/tag/cs.html">CS <span class="article-count">1</span></a></li>
+<li><a href="https://sharmaeklavya2.github.io/blog/tag/algorithms.html">Algorithms <span class="article-count">1</span></a></li>
+<li><a href="https://sharmaeklavya2.github.io/blog/tag/math.html">Math <span class="article-count">1</span></a></li>
+<li><a href="https://sharmaeklavya2.github.io/blog/tag/abstract-algebra.html">Abstract Algebra <span class="article-count">1</span></a></li>
+<li><a href="https://sharmaeklavya2.github.io/blog/tag/tutorial.html">Tutorial <span class="article-count">4</span></a></li>
+<li><a href="https://sharmaeklavya2.github.io/blog/tag/front-end-web-dev.html">Front-end web dev <span class="article-count">1</span></a></li>
+<li><a href="https://sharmaeklavya2.github.io/blog/tag/juggling.html">Juggling <span class="article-count">3</span></a></li>
+<li><a href="https://sharmaeklavya2.github.io/blog/tag/about-me.html">About Me <span class="article-count">2</span></a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<div id="main">
+<article id="content" class="body">
+<h1 class="entry-title">Generalizing Segment Trees</h1>
+<table class="post-details">
+<tr><td>Published</td>
+<td><time class="published" datetime="2019-07-20T00:00:00+05:30">
+20 Jul 2019</time></td></tr>
+<tr><td>Tags</td>
+<td><ul class="tags">
+<li><a href="https://sharmaeklavya2.github.io/blog/tag/cs.html">CS</a></li>
+<li><a href="https://sharmaeklavya2.github.io/blog/tag/algorithms.html">Algorithms</a></li>
+<li><a href="https://sharmaeklavya2.github.io/blog/tag/math.html">Math</a></li>
+<li><a href="https://sharmaeklavya2.github.io/blog/tag/abstract-algebra.html">Abstract Algebra</a></li>
+</ul></td></tr>
+</table>
+<div class="entry-content">
+<p>A segment tree is a data structure which stores an array of size <span class="math">\(n\)</span>
+and allows <span class="math">\(O(\lg{n})\)</span>-time range queries and <span class="math">\(O(\lg n)\)</span>-time range updates on it.
+I devised a method of generalizing segment trees using
+concepts from abstract algebra: monoids and endomorphisms.
+This generalization not only gave me conceptual clarity
+but also allowed me to write a
+<a href="https://gist.github.com/sharmaeklavya2/99ed35efbb639bbe7d7b46b89b74fea0">segment tree C++ library</a>
+that can be used for any application without modifying the code for queries and updates.</p>
+<p>This blog post explains what monoids and endomorphisms are,
+and the intuition which led me to use these abstractions to generalize segment trees.
+I will also explain how to perform range updates using lazy propagation.</p>
+<p>Prerequisite concepts for this blog post:</p>
+<ul>
+<li>What a segment tree is.</li>
+<li>How to build a segment tree.</li>
+<li>How to perform range queries on a segment tree.</li>
+<li>How to perform point updates on a segment tree.</li>
+</ul>
+<p>You can read about the above prerequisite concepts in the
+<a href="https://codelucid.wordpress.com/2015/05/27/segment-trees/">article on Segment Trees by codelucid</a>.</p>
+<div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#generalizing-problems">Generalizing problems</a><ul>
+<li><a href="#query-function">Query function</a></li>
+<li><a href="#update-function">Update function</a></li>
+</ul>
+</li>
+<li><a href="#generalizing-the-query-function">Generalizing the query function</a><ul>
+<li><a href="#substructure-and-the-binary-operator">Substructure and the binary operator</a></li>
+<li><a href="#associativity">Associativity</a></li>
+<li><a href="#identity">Identity</a></li>
+<li><a href="#monoids">Monoids</a></li>
+<li><a href="#monoid-elements-as-segment-tree-values">Monoid elements as segment tree values</a></li>
+</ul>
+</li>
+<li><a href="#generalizing-update-functions">Generalizing update functions</a><ul>
+<li><a href="#node-update-function">Node update function</a></li>
+<li><a href="#endomorphism">Endomorphism</a></li>
+<li><a href="#node-update-function-is-an-endomorphism">Node update function is an endomorphism</a></li>
+</ul>
+</li>
+<li><a href="#lazy-propagation">Lazy propagation</a><ul>
+<li><a href="#updation">Updation</a></li>
+<li><a href="#querying">Querying</a></li>
+<li><a href="#combining-updates">Combining updates</a></li>
+</ul>
+</li>
+<li><a href="#generic-implementation-of-segment-trees">Generic implementation of segment trees</a><ul>
+<li><a href="#representing-node-update-functions">Representing node update functions</a></li>
+<li><a href="#implementation">Implementation</a></li>
+</ul>
+</li>
+<li><a href="#bringing-problems-to-standard-form">Bringing problems to standard form</a></li>
+</ul>
+</div>
+<h2 id="generalizing-problems">Generalizing problems<a class="headerlink" href="#generalizing-problems" title="Permanent link">&para;</a></h2>
+<p>Before we generalize segment trees, let's try to generalize some simple problems
+which can be solved using segment trees. These example problems are used throughout this article.</p>
+<ol>
+<li>
+<p><strong>Problem SUMREPL</strong>:
+    You are given an array <span class="math">\(a\)</span> of <span class="math">\(n\)</span> numbers, indexed from 0 to <span class="math">\(n-1\)</span>.
+    You will be asked to perform <span class="math">\(q\)</span> operations. Each operation will be one of the following:</p>
+<ul>
+<li>given <span class="math">\(l\)</span> and <span class="math">\(r\)</span>, output <span class="math">\(\sum_{i=l}^r a[i]\)</span>.</li>
+<li>given <span class="math">\(l\)</span>, <span class="math">\(r\)</span> and <span class="math">\(y\)</span>, replace <span class="math">\(a[i]\)</span> by <span class="math">\(y\)</span> for all <span class="math">\(l \le i \le r\)</span>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Problem MINMAX</strong>:
+    You are given an array <span class="math">\(a\)</span> of <span class="math">\(n\)</span> numbers, indexed from 0 to <span class="math">\(n-1\)</span>.
+    You will be asked to perform <span class="math">\(q\)</span> operations. Each operation will be one of the following:</p>
+<ul>
+<li>given <span class="math">\(l\)</span> and <span class="math">\(r\)</span>, output <span class="math">\(\min_{i=l}^r a[i]\)</span>.</li>
+<li>given <span class="math">\(l\)</span> and <span class="math">\(r\)</span>, output <span class="math">\(\max_{i=l}^r a[i]\)</span>.</li>
+<li>given <span class="math">\(l\)</span>, <span class="math">\(r\)</span> and <span class="math">\(y\)</span>, add <span class="math">\(y\)</span> to <span class="math">\(a[i]\)</span> for all <span class="math">\(l \le i \le r\)</span>.</li>
+<li>given <span class="math">\(l\)</span>, <span class="math">\(r\)</span> and <span class="math">\(z\)</span>, multiply <span class="math">\(a[i]\)</span> by <span class="math">\(z\)</span> for all <span class="math">\(l \le i \le r\)</span>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Problem CHAROCC</strong>:
+    You are given an array <span class="math">\(a\)</span> of <span class="math">\(n\)</span> strings, indexed from 0 to <span class="math">\(n-1\)</span>.
+    Each string consists of lowercase English characters (<code>a</code> to <code>z</code>).
+    The sum of the lengths of the strings is <span class="math">\(m\)</span>.
+    You will be asked to perform <span class="math">\(q\)</span> operations. Each operation will be one of the following:</p>
+<ul>
+<li>given integers <span class="math">\(l\)</span> and <span class="math">\(r\)</span> and character <span class="math">\(c\)</span>, output the number of
+    occurrences of <span class="math">\(c\)</span> in the concatenation of <span class="math">\(a[l], a[l+1], \ldots, a[r]\)</span>.</li>
+<li>given integers <span class="math">\(l\)</span> and <span class="math">\(r\)</span> and character <span class="math">\(c\)</span>, append <span class="math">\(c\)</span> to <span class="math">\(a[i]\)</span> for all <span class="math">\(l \le i \le r\)</span>.</li>
+</ul>
+</li>
+</ol>
+<p>You can see that in all these problems, we are given an array of size <span class="math">\(n\)</span>.
+The elements of the array can be anything: numbers, strings or something else.
+In these examples, there are 2 kinds of operations - queries and updates.
+In all operations, we're asked to operate on a subarray <span class="math">\(b = a[l..r]\)</span>.
+We'll generalize these operations to 2 concepts - query function and update function.</p>
+<h3 id="query-function">Query function<a class="headerlink" href="#query-function" title="Permanent link">&para;</a></h3>
+<p>In queries, we're asked to apply a function <span class="math">\(f\)</span> on <span class="math">\(b\)</span>.
+We'll call this function the 'query function'.
+In SUMREPL, this function is summation: <span class="math">\(f(b) = \sum_{x \in b} x\)</span>.</p>
+<p>In MINMAX, the query function is 'min' for some queries and 'max' for others.
+Instead, we can use the query function
+<span class="math">\(f(b) = (\min_{x \in b} x, \max_{x \in b})\)</span>, which returns an ordered pair.
+For every query, we'll compute both min and max and return the appropriate part.</p>
+<p>In CHAROCC, the query is parametrized by <span class="math">\(c\)</span>.
+So we'll compute the result for all lowercase English characters.
+Formally, let <span class="math">\(\Gamma\)</span> be the sequence of characters in lowercase English
+and let <span class="math">\(e(s, c)\)</span> be the number of occurrences of the character <span class="math">\(c\)</span> in string <span class="math">\(s\)</span>.
+Then <span class="math">\(f(b) = [\sum_{x \in b} e(x, c)]_{c \in \Gamma}\)</span>.
+Here <span class="math">\(f(b)\)</span> is an array of length 26.</p>
+<p>For these 3 examples, we now have a common abstraction to use: the query function.
+The query function's domain is a set of finite arrays of some type.
+Let us denote the codomain of the query function by <span class="math">\(S\)</span>,
+which we'll call the 'query output type'.</p>
+<h3 id="update-function">Update function<a class="headerlink" href="#update-function" title="Permanent link">&para;</a></h3>
+<p>In every update operation, we're given a function <span class="math">\(g\)</span>, called the update function.
+We have to replace <span class="math">\(a[i]\)</span> by <span class="math">\(g(a[i])\)</span> for <span class="math">\(l \le i \le r\)</span>.</p>
+<p>For SUMREPL, the update function is <span class="math">\(g_y\)</span>, where <span class="math">\(g_y(x) = y\)</span>.
+For MINMAX, the update function is either <span class="math">\(g_y(x) = x + y\)</span> or <span class="math">\(g_z(x) = xz\)</span>.</p>
+<p>Now the generalized problem looks like this:</p>
+<p><strong>Problem RANGEOP</strong>:
+You are given an array <span class="math">\(a\)</span> of <span class="math">\(n\)</span> elements, indexed from 0 to <span class="math">\(n-1\)</span>.
+You are also given a query function <span class="math">\(f\)</span>.
+You will be asked to perform <span class="math">\(q\)</span> operations. Each operation will be one of the following:</p>
+<ul>
+<li>given integers <span class="math">\(l\)</span> and <span class="math">\(r\)</span>, output <span class="math">\(f(a[l..r])\)</span>.</li>
+<li>given integers <span class="math">\(l\)</span> and <span class="math">\(r\)</span> and a function <span class="math">\(g\)</span>,
+    replace <span class="math">\(a[i]\)</span> by <span class="math">\(g(a[i])\)</span> for all <span class="math">\(l \le i \le r\)</span>.</li>
+</ul>
+<h2 id="generalizing-the-query-function">Generalizing the query function<a class="headerlink" href="#generalizing-the-query-function" title="Permanent link">&para;</a></h2>
+<p>In problem RANGEOP, <span class="math">\(f\)</span> can be any arbitrary function.
+But there are additional constraints if the problem has to be solved using segment trees.</p>
+<h3 id="substructure-and-the-binary-operator">Substructure and the binary operator<a class="headerlink" href="#substructure-and-the-binary-operator" title="Permanent link">&para;</a></h3>
+<p>To be able to solve a problem using segment trees,
+the query function should follow a property called 'substructure'.
+This means that we can compute <span class="math">\(f(a)\)</span> using this procedure:</p>
+<ol>
+<li>Choose any prefix <span class="math">\(b\)</span> of <span class="math">\(a\)</span>. Let <span class="math">\(a = b + c\)</span> (<span class="math">\(+\)</span> denotes array concatenation).</li>
+<li>Compute <span class="math">\(f(b)\)</span> and <span class="math">\(f(c)\)</span>.</li>
+<li>Combine <span class="math">\(f(b)\)</span> and <span class="math">\(f(c)\)</span> to get <span class="math">\(f(a)\)</span>.</li>
+</ol>
+<p>Examples:</p>
+<ul>
+<li>In SUMREPL, <span class="math">\(f(b + c) = f(b) + f(c)\)</span>.</li>
+<li>In MINMAX, <span class="math">\(f(b + c)\)</span> <span class="math">\(= (\min(f(b)_0, f(c)_0), \max(f(b)_1, f(c)_1))\)</span>.
+Here <span class="math">\((x, y)_0 = x\)</span> and <span class="math">\((x, y)_1 = y\)</span>.</li>
+</ul>
+<p>Non-examples:</p>
+<ul>
+<li>Finding the median of an array doesn't have substructure
+because the medians of <span class="math">\(b\)</span> and <span class="math">\(c\)</span> cannot be used to compute the median of <span class="math">\(b + c\)</span>.</li>
+<li><span class="math">\(f(a) = a[0]^{a[1]^{a[2]^{\ldots a[n-1]}}}\)</span>.</li>
+</ul>
+<p>We can express the substructure recurrence relations using a binary operator <span class="math">\(\circ\)</span>,
+so that <span class="math">\(f(b + c) = f(b) \circ f(c)\)</span>.
+<span class="math">\(\circ\)</span> is a function from <span class="math">\(S \times S\)</span> to <span class="math">\(S\)</span>, where <span class="math">\(S\)</span> is the output type of the query function.</p>
+<ul>
+<li>For SUMREPL, <span class="math">\(x \circ y = x + y\)</span>.</li>
+<li>For MINMAX, <span class="math">\(x \circ y = (\min(x_0, y_0), \max(x_1, y_1))\)</span>.</li>
+<li>For CHAROCC, <span class="math">\(x \circ y\)</span> is obtained by element-wise addition of arrays <span class="math">\(x\)</span> and <span class="math">\(y\)</span>.</li>
+</ul>
+<h3 id="associativity">Associativity<a class="headerlink" href="#associativity" title="Permanent link">&para;</a></h3>
+<p>Depending on which prefix of <span class="math">\(a\)</span> we choose, there can be multiple ways of computing <span class="math">\(f(a)\)</span>.
+For example, there are 2 ways of computing <span class="math">\(f([x, y, z])\)</span>:</p>
+<ul>
+<li>choosing <span class="math">\([x]\)</span> as prefix: <span class="math">\(f([x, y, z]) = f([x]) \circ f([y, z])\)</span> <span class="math">\( = f([x]) \circ (f([y]) \circ f([z]))\)</span></li>
+<li>choosing <span class="math">\([x, y]\)</span> as prefix: <span class="math">\(f([x, y, z]) = f([x, y]) \circ f([z])\)</span> <span class="math">\( = (f([x]) \circ f([y])) \circ f([z])\)</span></li>
+</ul>
+<p>Since the output should not depend on the choice of prefix,
+<span class="math">\(\circ\)</span> should be associative over the range of <span class="math">\(f\)</span>.</p>
+<p>Since <span class="math">\(\circ\)</span> is associative, <span class="math">\(f(a)\)</span> <span class="math">\(= f([a[0]]) \circ f([a[1]]) \circ \ldots \circ f([a[n-1]])\)</span>.</p>
+<h3 id="identity">Identity<a class="headerlink" href="#identity" title="Permanent link">&para;</a></h3>
+<p>Let's define <span class="math">\(e = f([\,])\)</span>.
+Since <span class="math">\(f(a) = f(a + [\,]) = f(a) \circ e\)</span> and <span class="math">\(f(a) = f([\,] + a) = e \circ f(a)\)</span>,
+we call <span class="math">\(e\)</span> the 'identity element' of <span class="math">\(S\)</span> for <span class="math">\(\circ\)</span>.</p>
+<p><span class="math">\(f\)</span> may not be defined for an empty array (<span class="math">\(f(a) = a[0]\)</span> is an example).
+When this happens, we can still define <span class="math">\(f([\,]) = e\)</span>.
+<span class="math">\(e\)</span> need not have any real significance; it is just a symbol
+(this is similar to how <span class="math">\(\sqrt{-1} = i\)</span>).
+We also define <span class="math">\(x \circ e = e \circ x = x\)</span> for all <span class="math">\(x \in S\)</span>.</p>
+<h3 id="monoids">Monoids<a class="headerlink" href="#monoids" title="Permanent link">&para;</a></h3>
+<p>A monoid <span class="math">\(M = (S, \circ)\)</span> is a set along with a binary operator defined on that set
+which follows these axioms:</p>
+<ul>
+<li>Closure: <span class="math">\(\forall x \in S, \forall y \in S,\)</span>
+<span class="math">\(x \circ y \in S\)</span></li>
+<li>Associativity: <span class="math">\(\forall x \in S, \forall y \in S, \forall z \in S,\)</span>
+<span class="math">\((x \circ y) \circ z = x \circ (y \circ z)\)</span></li>
+<li>Existence of identity: <span class="math">\(\exists e \in S, \forall x \in S,\)</span>
+<span class="math">\(e \circ x = x \circ e = x\)</span>.
+Here <span class="math">\(e\)</span> is called the identity of the monoid.</li>
+</ul>
+<p>We can see that our query output type <span class="math">\(S\)</span> and our binary operator <span class="math">\(\circ\)</span> follow the above axioms.
+Therefore, <span class="math">\((S, \circ)\)</span> is a monoid.</p>
+<h3 id="monoid-elements-as-segment-tree-values">Monoid elements as segment tree values<a class="headerlink" href="#monoid-elements-as-segment-tree-values" title="Permanent link">&para;</a></h3>
+<p>Every node <span class="math">\(u\)</span> of a segment tree has the following attributes associated with it:
+<span class="math">\(\operatorname{value}(u), \operatorname{first}(u), \operatorname{last}(u), \operatorname{index}(u)\)</span>.</p>
+<p>Here <span class="math">\(\operatorname{value}(u) = f(a[\operatorname{first}(u)..\operatorname{last}(u)])\)</span>
+and <span class="math">\(\operatorname{index}(u)\)</span> is the index of <span class="math">\(u\)</span> in the segment tree array.
+The children of <span class="math">\(u\)</span> have indices <span class="math">\(\operatorname{index}(u) * 2 + 1\)</span> and <span class="math">\(\operatorname{index}(u) * 2 + 2\)</span>.</p>
+<p>To build and query a generalized segment tree, we will need to specify the following:</p>
+<ul>
+<li>
+<p><span class="math">\(e\)</span>: The identity element of the monoid.
+This is the output of empty queries.
+For SUMREPL, <span class="math">\(e = 0\)</span>. For MINMAX, <span class="math">\(e = (\infty, -\infty)\)</span>.</p>
+</li>
+<li>
+<p><span class="math">\(f_0(x) = f([x])\)</span>: Specification of how to apply <span class="math">\(f\)</span> to a single-element array.
+This is used to create leaf nodes of the segment tree.
+For SUMREPL, <span class="math">\(f_0(x) = x\)</span>. For MINMAX, <span class="math">\(f_0(x) = (x, x)\)</span>.</p>
+</li>
+<li>
+<p><span class="math">\(\circ\)</span>: The binary operator.
+This is used to create internal nodes of the segment tree.
+For SUMREPL, <span class="math">\(x \circ y = x + y\)</span>.
+For MINMAX, <span class="math">\(x \circ y = \min(x_0, y_0), \max(x_1, y_1)\)</span>.</p>
+</li>
+</ul>
+<p>In code, we can create a class for monoid elements.
+The above traits of the monoid can be specified as methods/constructors of the class.</p>
+<h2 id="generalizing-update-functions">Generalizing update functions<a class="headerlink" href="#generalizing-update-functions" title="Permanent link">&para;</a></h2>
+<h3 id="node-update-function">Node update function<a class="headerlink" href="#node-update-function" title="Permanent link">&para;</a></h3>
+<p>Suppose I construct a segment tree on the input array <span class="math">\(a\)</span> of size <span class="math">\(n\)</span>
+(where the query function is <span class="math">\(f\)</span> and the corresponding binary operator is <span class="math">\(\circ\)</span>).
+Let the value at the root be <span class="math">\(s\)</span>. We know that <span class="math">\(s = f(a)\)</span>.
+Now I apply a function <span class="math">\(g\)</span> to all elements of <span class="math">\(a\)</span>.
+For notational convenience, let <span class="math">\(g(a) = [g(a[0]), g(a[1]), \ldots, g(a[n-1])]\)</span>.
+After this, I update the segment tree and the value at the root is now <span class="math">\(t\)</span>.</p>
+<p>Given <span class="math">\(s\)</span> and <span class="math">\(g\)</span>, can you find <span class="math">\(t\)</span>?
+This question effectively means that you should be able to update a segment tree
+node without looking at its descendants.
+We're looking for a function <span class="math">\(h\)</span> where <span class="math">\(h(f(b)) = f(g(b))\)</span> for all arrays <span class="math">\(b\)</span>.
+Let's call <span class="math">\(h\)</span> a 'node update function'.</p>
+<p>There's no straightforward algorithm for deriving <span class="math">\(h\)</span> from <span class="math">\(g\)</span>, but it's usually easy.
+For example, for the MINMAX problem with <span class="math">\(g(x) = x + 20\)</span>, <span class="math">\(h(x) = (x_0 + 20, x_1 + 20)\)</span>.
+This is how we verify <span class="math">\(h\)</span>:
+</p>
+<div class="math">\begin{align*}
+&amp; h(f(a))
+\\ &amp;= h((\min(a), \max(a)))
+\\ &amp;= (\min(a) + 20, \max(a) + 20)
+\\ &amp;= (\min(a + 20), \max(a + 20))
+\\ &amp;= f(g(a))
+\end{align*}</div>
+<p>Here <span class="math">\(a + 20\)</span> is the array obtained by adding 20 to every element of <span class="math">\(a\)</span>.</p>
+<h3 id="endomorphism">Endomorphism<a class="headerlink" href="#endomorphism" title="Permanent link">&para;</a></h3>
+<p>For a monoid <span class="math">\((S, \circ)\)</span>, a function <span class="math">\(h: S \mapsto S\)</span> is an endomorphism iff
+both of these conditions hold:</p>
+<ul>
+<li><span class="math">\(h(e) = e\)</span>. Here <span class="math">\(e\)</span> is the identity of <span class="math">\(S\)</span>.</li>
+<li><span class="math">\(h(x \circ y) = h(x) \circ h(y)\)</span>.</li>
+</ul>
+<p>For example, <span class="math">\(h(x) = x + 20\)</span> is an endomorphism on the monoid <span class="math">\((\mathbb{Z}, \min)\)</span> because
+* <span class="math">\(h(e) = h(\infty) = \infty + 20 = \infty = e\)</span>.
+* <span class="math">\(h(x \circ y) = \min(x, y) + 20\)</span> <span class="math">\(= \min(x + 20, y + 20) = h(x) \circ h(y)\)</span>.</p>
+<h3 id="node-update-function-is-an-endomorphism">Node update function is an endomorphism<a class="headerlink" href="#node-update-function-is-an-endomorphism" title="Permanent link">&para;</a></h3>
+<p>\[ h(e) = h(f([\,])) = f(g([\,])) = f([\,]) = e \]</p>
+<div class="math">\begin{align*}
+&amp; h(f(b) \circ f(c))
+\\ &amp;= h(f(b + c))
+\\ &amp;= f(g(b + c))
+\\ &amp;= f(g(b) + g(c))
+\\ &amp;= f(g(b)) \circ f(g(c))
+\\ &amp;= h(f(b)) \circ h(f(c))
+\end{align*}</div>
+<p>Therefore, <span class="math">\(h\)</span> is an endomorphism on the range of <span class="math">\(f\)</span>.</p>
+<h2 id="lazy-propagation">Lazy propagation<a class="headerlink" href="#lazy-propagation" title="Permanent link">&para;</a></h2>
+<p>In computer science, laziness means procrastination.</p>
+<p>When we're told to execute an update on a segment tree, we don't actually do the whole update.
+We just note down which subtrees need to be updated.
+Then when we're supposed to answer a query, we update only the part of the segment tree
+which is needed to answer the query.</p>
+<p>I'll explain this with an example for MINMAX
+with the initial array <span class="math">\([10, 20, 30, 40, 50, 60, 70]\)</span>.
+The image below shows the initial segment tree.</p>
+<figure>
+<img src="https://sharmaeklavya2.github.io/blog/img/segtree-lazy-update/0.dot.svg" />
+<figcaption>Initial segment tree</figcaption>
+</figure>
+
+<h3 id="updation">Updation<a class="headerlink" href="#updation" title="Permanent link">&para;</a></h3>
+<p>Now we get an update with <span class="math">\(l=2, r=6, g(x) = x + 20\)</span>.
+This corresponds to <span class="math">\(h(x) = (x_0 + 20, x_1 + 20)\)</span>.
+Define <span class="math">\(d(a, b)(x) = (ax_0 + b, ax_1 + b)\)</span>.
+Therefore, <span class="math">\(h = d(1, 20)\)</span>.</p>
+<p>To execute this update, we first find the maximal subtrees which span this range.
+These are the subtrees at <code>2..3</code> and <code>4..6</code>.
+We'll update the values at <code>2..3</code> and <code>4..6</code> by applying <span class="math">\(h\)</span> to their values.
+We'll then note down that their children are yet to be updated with <span class="math">\(h = d(1, 20)\)</span>.
+We'll also update all the ancestors of the affected nodes by recomputing their values.</p>
+<figure>
+<img src="https://sharmaeklavya2.github.io/blog/img/segtree-lazy-update/1.dot.svg" />
+<figcaption>
+Segment tree after update
+<span class="math">\(l=2, r=6, g(x) = x + 20\)</span>.<br />
+Blue nodes were updated. Red nodes were not updated but they have a pending update.
+</figcaption>
+</figure>
+
+<h3 id="querying">Querying<a class="headerlink" href="#querying" title="Permanent link">&para;</a></h3>
+<p>If a query arrives for <span class="math">\(l=2, r=5\)</span>, we would like to return
+<span class="math">\(\operatorname{value}(\texttt{2..3}) \circ \operatorname{value}(\texttt{4..5})\)</span>.
+But before that, we'll have to update <span class="math">\(\operatorname{value}(\texttt{4..5})\)</span>.
+To do this, we apply <span class="math">\(h\)</span> to <span class="math">\(\operatorname{value}(\texttt{4..5})\)</span>
+and mark its children as pending for updation.
+Since the pending update moved from <code>4..5</code> to its child,
+we say that the pending update 'propagated'.</p>
+<figure>
+<img src="https://sharmaeklavya2.github.io/blog/img/segtree-lazy-update/2.dot.svg" />
+<figcaption>
+Segment tree after the query <span class="math">\(l=2, r=5\)</span>.<br />
+The value returned by the query is written beside each node.
+</figcaption>
+</figure>
+
+<h3 id="combining-updates">Combining updates<a class="headerlink" href="#combining-updates" title="Permanent link">&para;</a></h3>
+<p>Suppose we get the update <span class="math">\(l=0, r=6, g(x) = x + 10\)</span>.
+We will update the root node and add <span class="math">\(d(1, 10)\)</span> to the children.</p>
+<figure>
+<img src="https://sharmaeklavya2.github.io/blog/img/segtree-lazy-update/3.dot.svg" />
+<figcaption>
+Segment tree after update
+<span class="math">\(l=0, r=6, g(x) = x + 10\)</span>.<br />
+Blue nodes were updated. Red nodes were not updated but they have a pending update.
+</figcaption>
+</figure>
+
+<p>Now we get another update <span class="math">\(l=0, r=6, g(x) = 3x\)</span>. This corresponds to <span class="math">\(h = d(3, 0)\)</span>.
+We can update the root node, and add <span class="math">\(d(3, 0)\)</span> to the children.
+But the children already have a pending update of <span class="math">\(d(1, 10)\)</span>.
+To resolve this, we will compose the functions, i.e. we'll find a single
+function which is equal to successively applying <span class="math">\(d(1, 10)\)</span> and then <span class="math">\(d(3, 0)\)</span>.</p>
+<div class="math">\begin{align*}
+&amp; d(3, 0)(d(1, 10)(x))
+\\ &amp;= d(3, 0)(x + 10)
+\\ &amp;= 3(x + 10) = 3x + 30
+\\ &amp;= d(3, 30)(x)
+\end{align*}</div>
+<figure>
+<img src="https://sharmaeklavya2.github.io/blog/img/segtree-lazy-update/4.dot.svg" />
+<figcaption>
+Segment tree after update
+<span class="math">\(l=0, r=6, g(x) = 3x\)</span>.<br />
+Blue nodes were updated. Red nodes were not updated but they have a pending update.
+</figcaption>
+</figure>
+
+<p>More generally, <span class="math">\(d(a_1, b_1) \cdot d(a_2, b_2) = d(a_1a_2, a_1b_2 + b_1)\)</span>.</p>
+<h2 id="generic-implementation-of-segment-trees">Generic implementation of segment trees<a class="headerlink" href="#generic-implementation-of-segment-trees" title="Permanent link">&para;</a></h2>
+<h3 id="representing-node-update-functions">Representing node update functions<a class="headerlink" href="#representing-node-update-functions" title="Permanent link">&para;</a></h3>
+<p>We will need to come up with a succinct representation for node update functions.
+In the example above, the function <span class="math">\(d(a, b)\)</span> can be specified by the ordered pair <span class="math">\((a, b)\)</span>.
+The choice of representation will depend on the type of update functions expected.</p>
+<p>Then we need to specify the following to describe node update functions:</p>
+<ul>
+<li>
+<p>Function application: How to compute <span class="math">\(h(x)\)</span> given <span class="math">\(x\)</span>.</p>
+</li>
+<li>
+<p>The identity function: The function <span class="math">\(h(x) = x\)</span>.
+In the above example, <span class="math">\(d(1, 0)\)</span> is the identity function.
+It should also be possible to check whether a function is the identity function.</p>
+</li>
+<li>
+<p>Function composition: A rule for how to compose 2 node update functions.
+In the above example, the composition of <span class="math">\((a_1, b_1)\)</span> and <span class="math">\((a_2, b_2)\)</span> is <span class="math">\((a_1a_2, a_1b_2 + b_1)\)</span>.</p>
+</li>
+</ul>
+<h3 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">&para;</a></h3>
+<p>We will use 2 arrays: <code>values</code> and <code>pending</code>.
+<code>values[i]</code> is the value of the <span class="math">\(i^{\textrm{th}}\)</span> node.
+<code>pending[i]</code> is the pending node update function of the <span class="math">\(i^{\textrm{th}}\)</span> node.
+Initially, <code>values</code> is constructed from the input array
+and <code>pending[i]</code> is the identity function for every node <span class="math">\(i\)</span>.</p>
+<p>You can see <a href="https://gist.github.com/sharmaeklavya2/99ed35efbb639bbe7d7b46b89b74fea0">my C++ segment tree library</a>
+for an example of how to write generic segment trees.</p>
+<h2 id="bringing-problems-to-standard-form">Bringing problems to standard form<a class="headerlink" href="#bringing-problems-to-standard-form" title="Permanent link">&para;</a></h2>
+<p>To use the generic segment tree implementation, we should be able describe
+query outputs as elements of a monoid and the update function as an endomorphism.
+Let's look at some examples:</p>
+<p><strong>SUMREPL</strong>:</p>
+<ul>
+<li><span class="math">\(f(a) = \left(n, \sum_{i=1}^n a[i]\right)\)</span>, where <span class="math">\(a\)</span> is an array of size <span class="math">\(n\)</span>.
+Therefore, identity is <span class="math">\((0, 0)\)</span>, <span class="math">\(f_0(x) = (1, x)\)</span>
+and <span class="math">\((n_1, x) \circ (n_2, y) = (n_1 + n_2, x + y)\)</span>.</li>
+<li>For the update function <span class="math">\(g(x) = y\)</span>, the node update function is <span class="math">\(h_y((n, x)) = (n, ny)\)</span>.
+The identity function is <span class="math">\(id\)</span>, which cannot be expressed as <span class="math">\(h_y\)</span> for any <span class="math">\(y\)</span>.
+Function composition: <span class="math">\(h_s \cdot h_t = h_s\)</span>.</li>
+</ul>
+<p><strong>CHAROCC</strong>:</p>
+<ul>
+<li>Each node of the segment tree stores the frequency of every lowercase English letter.
+Identity element is an array with all zeros.
+Creating a leaf node from a string involves computing frequencies of each character.
+The binary operator <span class="math">\(\circ\)</span> is defined as element-wise addition of the arrays.</li>
+<li>A node update function is represented as an array <span class="math">\(b\)</span> of length 26.
+Applying the function involves elementwise addition of <span class="math">\(b\)</span> to a segment tree node value.
+Functions are composed by adding their arrays element-wise.
+The identity function has all elements 0.
+The update function with character <span class="math">\(c\)</span> corresponds to an array
+where the entry of <span class="math">\(c\)</span> is 1 and all other entries are 0.</li>
+</ul>
+<p><strong>KADANE</strong>:</p>
+<p>You are given an array <span class="math">\(a\)</span> of <span class="math">\(n\)</span> integers, indexed from 0 to <span class="math">\(n-1\)</span>.
+The query function <span class="math">\(f\)</span> is the largest contiguous subarray sum.
+You will be asked to perform <span class="math">\(q\)</span> operations. Each operation will be one of the following:</p>
+<ul>
+<li>given integers <span class="math">\(l\)</span> and <span class="math">\(r\)</span>, output <span class="math">\(f(a[l..r])\)</span>.</li>
+<li>given integers <span class="math">\(l\)</span>, <span class="math">\(r\)</span> and <span class="math">\(y\)</span>, replace <span class="math">\(a[i]\)</span> by <span class="math">\(y\)</span> for all <span class="math">\(l \le i \le r\)</span>.</li>
+</ul>
+<p>This problem is left as an exercise.
+You must come up with a suitable monoid for representing segment tree values
+and a suitable node update function.</p>
+<div class="collapsible">
+    <label for="checkbox0" class="collapsor-lbl"> Minor hint </label>
+    <div class="focus-capturer" tabindex="0">
+        <input id="checkbox0" class="collapsor" type="checkbox" />
+        <div class="collapsible-content">
+            <p>See the proof of correctness of Kadane's algorithm.
+            Use divide-and-conquer instead of an incremental approach.</p>
+        </div>
+    </div>
+</div>
+
+<div class="collapsible">
+    <label for="checkbox1" class="collapsor-lbl"> Major hint </label>
+    <div class="focus-capturer" tabindex="0">
+        <input id="checkbox1" class="collapsor" type="checkbox" />
+        <div class="collapsible-content">
+            <p>Each segment tree node stores 4 values for its segment:</p>
+            <ol>
+                <li>Sum of the elements of the segment</li>
+                <li>Largest prefix sum of the segment</li>
+                <li>Largest suffix sum of the segment</li>
+                <li>Largest subarray sum of the segment</li>
+            </ol>
+        </div>
+    </div>
+</div>
+</div>
+</article>
+</div>
+</body>
+</html>
