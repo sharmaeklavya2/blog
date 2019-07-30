@@ -11,7 +11,6 @@ https://sharmaeklavya2.github.io/blog/hobbies.html
 https://sharmaeklavya2.github.io/blog/tag/cs.html
 https://sharmaeklavya2.github.io/blog/tag/algorithms.html
 https://sharmaeklavya2.github.io/blog/tag/math.html
-https://sharmaeklavya2.github.io/blog/tag/abstract-algebra.html
 https://sharmaeklavya2.github.io/blog/tag/tutorial.html
 https://sharmaeklavya2.github.io/blog/tag/front-end-web-dev.html
 https://sharmaeklavya2.github.io/blog/tag/juggling.html

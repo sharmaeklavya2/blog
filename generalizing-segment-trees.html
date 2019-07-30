@@ -5,8 +5,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/blog/theme/base.css" />
-<meta name="description" content="Generalizing segment trees by expressing range query outputs as elements of a monoid and update operations as endomorphisms." />
-<meta name="keywords" content="CS,Algorithms,Math,Abstract Algebra" />
+<meta name="description" content="How I generalized segment trees by expressing range query outputs as elements of a monoid and update operations as functions." />
+<meta name="keywords" content="CS,Algorithms,Math" />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/blog/css/collapsible.css" />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/blog/css/pygments-manni.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]}, "extensions": ["tex2jax.js"], "jax": ["input/TeX", "output/CommonHTML"]});</script>
@@ -40,7 +40,6 @@
 <li><a href="https://sharmaeklavya2.github.io/blog/tag/cs.html">CS <span class="article-count">1</span></a></li>
 <li><a href="https://sharmaeklavya2.github.io/blog/tag/algorithms.html">Algorithms <span class="article-count">1</span></a></li>
 <li><a href="https://sharmaeklavya2.github.io/blog/tag/math.html">Math <span class="article-count">1</span></a></li>
-<li><a href="https://sharmaeklavya2.github.io/blog/tag/abstract-algebra.html">Abstract Algebra <span class="article-count">1</span></a></li>
 <li><a href="https://sharmaeklavya2.github.io/blog/tag/tutorial.html">Tutorial <span class="article-count">4</span></a></li>
 <li><a href="https://sharmaeklavya2.github.io/blog/tag/front-end-web-dev.html">Front-end web dev <span class="article-count">1</span></a></li>
 <li><a href="https://sharmaeklavya2.github.io/blog/tag/juggling.html">Juggling <span class="article-count">3</span></a></li>
@@ -62,21 +61,20 @@
 <li><a href="https://sharmaeklavya2.github.io/blog/tag/cs.html">CS</a></li>
 <li><a href="https://sharmaeklavya2.github.io/blog/tag/algorithms.html">Algorithms</a></li>
 <li><a href="https://sharmaeklavya2.github.io/blog/tag/math.html">Math</a></li>
-<li><a href="https://sharmaeklavya2.github.io/blog/tag/abstract-algebra.html">Abstract Algebra</a></li>
 </ul></td></tr>
 </table>
 <div class="entry-content">
 <p>A segment tree is a data structure which stores an array of size <span class="math">\(n\)</span>
 and allows <span class="math">\(O(\log{n})\)</span>-time range queries and <span class="math">\(O(\log n)\)</span>-time range updates on it.
-I devised a method of generalizing segment trees using
-concepts from abstract algebra: monoids and endomorphisms.
+I devised a method of generalizing segment trees by expressing
+query outputs as elements of a monoid and update operations as functions.
 This generalization not only gave me conceptual clarity
 but also allowed me to write a
 <a href="https://gist.github.com/sharmaeklavya2/99ed35efbb639bbe7d7b46b89b74fea0">segment tree C++ library</a>
 that can be used for any application without modifying the code for queries and updates.</p>
-<p>This blog post explains what monoids and endomorphisms are,
+<p>This blog post explains what a monoid is,
 and the intuition which led me to use these abstractions to generalize segment trees.
-I will also explain how to perform range updates using lazy propagation.</p>
+I'll also explain how to perform range updates using lazy propagation.</p>
 <p>Prerequisite concepts for this blog post:</p>
 <ul>
 <li>What a segment tree is.</li>
@@ -101,23 +99,19 @@ I will also explain how to perform range updates using lazy propagation.</p>
 <li><a href="#c-example">C++ example</a></li>
 </ul>
 </li>
-<li><a href="#generalizing-update-functions">Generalizing update functions</a><ul>
 <li><a href="#node-update-function">Node update function</a></li>
-<li><a href="#endomorphism">Endomorphism</a></li>
-<li><a href="#node-update-function-is-an-endomorphism">Node update function is an endomorphism</a></li>
-</ul>
-</li>
 <li><a href="#lazy-propagation">Lazy propagation</a><ul>
 <li><a href="#updation">Updation</a></li>
 <li><a href="#querying">Querying</a></li>
 <li><a href="#combining-updates">Combining updates</a></li>
 </ul>
 </li>
-<li><a href="#generic-implementation-of-segment-trees">Generic implementation of segment trees</a><ul>
-<li><a href="#representing-node-update-functions">Representing node update functions</a></li>
-<li><a href="#implementation">Implementation</a></li>
+<li><a href="#node-update-function-family">Node update function family</a><ul>
+<li><a href="#representing-the-family">Representing the family</a></li>
+<li><a href="#c-example_1">C++ example</a></li>
 </ul>
 </li>
+<li><a href="#generic-segment-tree-implementation">Generic segment tree implementation</a></li>
 <li><a href="#bringing-problems-to-standard-form">Bringing problems to standard form</a></li>
 </ul>
 </div>
@@ -130,7 +124,7 @@ which can be solved using segment trees. These example problems are used through
     You are given an array <span class="math">\(a\)</span> of <span class="math">\(n\)</span> numbers, indexed from 0 to <span class="math">\(n-1\)</span>.
     You will be asked to perform <span class="math">\(q\)</span> operations. Each operation will be one of the following:</p>
 <ul>
-<li>given <span class="math">\(l\)</span> and <span class="math">\(r\)</span>, output <span class="math">\(\sum_{i=l}^r a[i]\)</span>.</li>
+<li>given <span class="math">\(l\)</span> and <span class="math">\(r\)</span>, output <span class="math">\(\sum\limits_{i=l}^r a[i]\)</span>.</li>
 <li>given <span class="math">\(l\)</span>, <span class="math">\(r\)</span> and <span class="math">\(y\)</span>, replace <span class="math">\(a[i]\)</span> by <span class="math">\(y\)</span> for all <span class="math">\(l \le i \le r\)</span>.</li>
 </ul>
 </li>
@@ -139,8 +133,8 @@ which can be solved using segment trees. These example problems are used through
     You are given an array <span class="math">\(a\)</span> of <span class="math">\(n\)</span> numbers, indexed from 0 to <span class="math">\(n-1\)</span>.
     You will be asked to perform <span class="math">\(q\)</span> operations. Each operation will be one of the following:</p>
 <ul>
-<li>given <span class="math">\(l\)</span> and <span class="math">\(r\)</span>, output <span class="math">\(\min_{i=l}^r a[i]\)</span>.</li>
-<li>given <span class="math">\(l\)</span> and <span class="math">\(r\)</span>, output <span class="math">\(\max_{i=l}^r a[i]\)</span>.</li>
+<li>given <span class="math">\(l\)</span> and <span class="math">\(r\)</span>, output <span class="math">\(\min\limits_{i=l}^r a[i]\)</span>.</li>
+<li>given <span class="math">\(l\)</span> and <span class="math">\(r\)</span>, output <span class="math">\(\max\limits_{i=l}^r a[i]\)</span>.</li>
 <li>given <span class="math">\(l\)</span>, <span class="math">\(r\)</span> and <span class="math">\(y\)</span>, add <span class="math">\(y\)</span> to <span class="math">\(a[i]\)</span> for all <span class="math">\(l \le i \le r\)</span>.</li>
 <li>given <span class="math">\(l\)</span>, <span class="math">\(r\)</span> and <span class="math">\(z\)</span>, multiply <span class="math">\(a[i]\)</span> by <span class="math">\(z\)</span> for all <span class="math">\(l \le i \le r\)</span>.</li>
 </ul>
@@ -167,16 +161,16 @@ We'll generalize these operations to 2 concepts - query function and update func
 <h3 id="query-function">Query function<a class="headerlink" href="#query-function" title="Permanent link">&para;</a></h3>
 <p>In queries, we're asked to apply a function <span class="math">\(f\)</span> on <span class="math">\(b\)</span>.
 We'll call this function the 'query function'.
-In SUMREPL, this function is summation: <span class="math">\(f(b) = \sum_{x \in b} x\)</span>.</p>
+In SUMREPL, this function is summation: <span class="math">\(f(b) = \sum\limits_{x \in b} x\)</span>.</p>
 <p>In MINMAX, the query function is 'min' for some queries and 'max' for others.
 Instead, we can use the query function
-<span class="math">\(f(b) = (\min_{x \in b} x, \max_{x \in b})\)</span>, which returns an ordered pair.
+<span class="math">\(f(b) = (\min\limits_{x \in b} x, \max\limits_{x \in b})\)</span>, which returns an ordered pair.
 For every query, we'll compute both min and max and return the appropriate part.</p>
 <p>In CHAROCC, the query is parametrized by <span class="math">\(c\)</span>.
 So we'll compute the result for all lowercase English characters.
 Formally, let <span class="math">\(\Gamma\)</span> be the sequence of characters in lowercase English
 and let <span class="math">\(e(s, c)\)</span> be the number of occurrences of the character <span class="math">\(c\)</span> in string <span class="math">\(s\)</span>.
-Then <span class="math">\(f(b) = [\sum_{x \in b} e(x, c)]_{c \in \Gamma}\)</span>.
+Then <span class="math">\(f(b) = [\sum\limits_{x \in b} e(x, c)]_{c \in \Gamma}\)</span>.
 Here <span class="math">\(f(b)\)</span> is an array of length 26.</p>
 <p>For these 3 examples, we now have a common abstraction to use: the query function.
 The query function's domain is a set of finite arrays of some type.
@@ -261,7 +255,7 @@ which follows these axioms:</p>
 Here <span class="math">\(e\)</span> is called the identity of the monoid.</li>
 </ul>
 <p>We can see that our query output type <span class="math">\(S\)</span> and our binary operator <span class="math">\(\circ\)</span> follow the above axioms.
-Therefore, <span class="math">\((S, \circ)\)</span> is a monoid.</p>
+Therefore, <span class="math">\((S, \circ)\)</span> is a monoid. We'll call it the 'query monoid'.</p>
 <h3 id="monoid-elements-as-segment-tree-values">Monoid elements as segment tree values<a class="headerlink" href="#monoid-elements-as-segment-tree-values" title="Permanent link">&para;</a></h3>
 <p>Every node <span class="math">\(u\)</span> of a segment tree represents a segment (contiguous subarray) of the input array.
 For example, the root represents the whole array,
@@ -273,7 +267,7 @@ Let's denote this by <span class="math">\(\operatorname{value}(u)\)</span>.</p>
 <p>To build and query a generalized segment tree, we will need to specify the following:</p>
 <ul>
 <li>
-<p><span class="math">\(e\)</span>: The identity element of the monoid.
+<p><span class="math">\(e\)</span>: The identity element of the query monoid.
 This is the output of empty queries.
 For SUMREPL, <span class="math">\(e = 0\)</span>. For MINMAX, <span class="math">\(e = (\infty, -\infty)\)</span>.</p>
 </li>
@@ -291,8 +285,8 @@ For MINMAX, <span class="math">\(x \circ y = \min(x_0, y_0), \max(x_1, y_1)\)</s
 </ul>
 <h3 id="c-example">C++ example<a class="headerlink" href="#c-example" title="Permanent link">&para;</a></h3>
 <p>When we write a generic segment tree library in C++,
-we can make the monoid type as a template parameter.</p>
-<p>Here's an example of how to represent monoid elements as a class
+we can make the query monoid type a template parameter.</p>
+<p>Here's an example of how to represent query monoid elements as a class
 for the MINMAX problem:</p>
 <div class="codehilite"><pre><span class="cp">#include &lt;algorithm&gt;</span>
 
@@ -301,20 +295,28 @@ for the MINMAX problem:</p>
     <span class="k">static</span> <span class="k">const</span> <span class="kt">int</span> <span class="n">infty</span> <span class="o">=</span> <span class="mf">2e9</span><span class="p">;</span>
     <span class="kt">int</span> <span class="n">x_min</span><span class="p">,</span> <span class="n">x_max</span><span class="p">;</span>
 
-    <span class="n">MinMaxElem</span><span class="p">()</span><span class="o">:</span> <span class="n">x_min</span><span class="p">(</span><span class="n">infty</span><span class="p">),</span> <span class="n">x_max</span><span class="p">(</span><span class="o">-</span><span class="n">infty</span><span class="p">)</span> <span class="p">{}</span>  <span class="c1">// identity element</span>
+    <span class="n">MinMaxElem</span><span class="p">()</span><span class="o">:</span>
+        <span class="c1">// identity element</span>
+        <span class="n">x_min</span><span class="p">(</span><span class="n">infty</span><span class="p">),</span> <span class="n">x_max</span><span class="p">(</span><span class="o">-</span><span class="n">infty</span><span class="p">)</span> <span class="p">{}</span>
 
-    <span class="k">explicit</span> <span class="n">MinMaxElem</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span><span class="o">:</span> <span class="n">x_min</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x_max</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{}</span>  <span class="c1">// element at leaf node</span>
+    <span class="k">explicit</span> <span class="n">MinMaxElem</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span><span class="o">:</span>
+        <span class="c1">// element at leaf node</span>
+        <span class="n">x_min</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x_max</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{}</span>
 
-    <span class="n">MinMaxElem</span><span class="p">(</span><span class="k">const</span> <span class="n">MinMaxElem</span><span class="o">&amp;</span> <span class="n">l</span><span class="p">,</span> <span class="k">const</span> <span class="n">MinMaxElem</span><span class="o">&amp;</span> <span class="n">r</span><span class="p">)</span><span class="o">:</span>  <span class="c1">// binary operator</span>
+    <span class="n">MinMaxElem</span><span class="p">(</span><span class="k">const</span> <span class="n">MinMaxElem</span><span class="o">&amp;</span> <span class="n">l</span><span class="p">,</span> <span class="k">const</span> <span class="n">MinMaxElem</span><span class="o">&amp;</span> <span class="n">r</span><span class="p">)</span><span class="o">:</span>
+        <span class="c1">// binary operator</span>
         <span class="n">x_min</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">min</span><span class="p">(</span><span class="n">l</span><span class="p">.</span><span class="n">x_min</span><span class="p">,</span> <span class="n">r</span><span class="p">.</span><span class="n">x_min</span><span class="p">)),</span> <span class="n">x_max</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">max</span><span class="p">(</span><span class="n">l</span><span class="p">.</span><span class="n">x_max</span><span class="p">,</span> <span class="n">r</span><span class="p">.</span><span class="n">x_max</span><span class="p">))</span> <span class="p">{}</span>
+
+    <span class="n">MinMaxElem</span><span class="p">(</span><span class="kt">int</span> <span class="n">_x_min</span><span class="p">,</span> <span class="kt">int</span> <span class="n">_x_max</span><span class="p">)</span><span class="o">:</span>
+        <span class="c1">// direct constructor (will be used later, when coding update functions)</span>
+        <span class="n">x_min</span><span class="p">(</span><span class="n">_x_min</span><span class="p">),</span> <span class="n">x_max</span><span class="p">(</span><span class="n">_x_max</span><span class="p">)</span> <span class="p">{}</span>
 <span class="p">};</span>
 </pre></div>
 
 
 <p>In the segment tree library, we can call the above methods
-on the templated monoid type without needing to know what they do.</p>
-<h2 id="generalizing-update-functions">Generalizing update functions<a class="headerlink" href="#generalizing-update-functions" title="Permanent link">&para;</a></h2>
-<h3 id="node-update-function">Node update function<a class="headerlink" href="#node-update-function" title="Permanent link">&para;</a></h3>
+on the templated query monoid type without needing to know what they do.</p>
+<h2 id="node-update-function">Node update function<a class="headerlink" href="#node-update-function" title="Permanent link">&para;</a></h2>
 <p>Suppose I construct a segment tree on the input array <span class="math">\(a\)</span> of size <span class="math">\(n\)</span>
 (where the query function is <span class="math">\(f\)</span> and the corresponding binary operator is <span class="math">\(\circ\)</span>).
 Let the value at the root be <span class="math">\(s\)</span>. We know that <span class="math">\(s = f(a)\)</span>.
@@ -335,30 +337,14 @@ This is how we verify <span class="math">\(h\)</span>:
 \\ &amp;= h((\min(a), \max(a)))
 \\ &amp;= (\min(a) + 20, \max(a) + 20)
 \\ &amp;= (\min(a + 20), \max(a + 20))
+\\ &amp;= (\min(g(a)), \max(g(a)))
 \\ &amp;= f(g(a))
 \end{align*}</div>
 <p>Here <span class="math">\(a + 20\)</span> is the array obtained by adding 20 to every element of <span class="math">\(a\)</span>.</p>
-<h3 id="endomorphism">Endomorphism<a class="headerlink" href="#endomorphism" title="Permanent link">&para;</a></h3>
-<p>For a monoid <span class="math">\((S, \circ)\)</span>, a function <span class="math">\(h: S \mapsto S\)</span> is an endomorphism iff
-both of these conditions hold:</p>
-<ul>
-<li><span class="math">\(h(e) = e\)</span>. Here <span class="math">\(e\)</span> is the identity of <span class="math">\(S\)</span>.</li>
-<li><span class="math">\(h(x \circ y) = h(x) \circ h(y)\)</span>.</li>
-</ul>
-<p>For example, <span class="math">\(h(x) = x + 20\)</span> is an endomorphism on the monoid <span class="math">\((\mathbb{Z}, \min)\)</span> because
-* <span class="math">\(h(e) = h(\infty) = \infty + 20 = \infty = e\)</span>.
-* <span class="math">\(h(x \circ y) = \min(x, y) + 20\)</span> <span class="math">\(= \min(x + 20, y + 20) = h(x) \circ h(y)\)</span>.</p>
-<h3 id="node-update-function-is-an-endomorphism">Node update function is an endomorphism<a class="headerlink" href="#node-update-function-is-an-endomorphism" title="Permanent link">&para;</a></h3>
-<p>\[ h(e) = h(f([\,])) = f(g([\,])) = f([\,]) = e \]</p>
-<div class="math">\begin{align*}
-&amp; h(f(b) \circ f(c))
-\\ &amp;= h(f(b + c))
-\\ &amp;= f(g(b + c))
-\\ &amp;= f(g(b) + g(c))
-\\ &amp;= f(g(b)) \circ f(g(c))
-\\ &amp;= h(f(b)) \circ h(f(c))
-\end{align*}</div>
-<p>Therefore, <span class="math">\(h\)</span> is an endomorphism on the range of <span class="math">\(f\)</span>.</p>
+<p>It can be proven that <span class="math">\(h\)</span> is an endomorphism (
+a <a href="https://en.wikipedia.org/wiki/Monoid#Monoid_homomorphisms">homomorphism</a>
+whose domain and codomain are the same).
+I'm omitting the proof here for brevity.</p>
 <h2 id="lazy-propagation">Lazy propagation<a class="headerlink" href="#lazy-propagation" title="Permanent link">&para;</a></h2>
 <p>In computer science, laziness means procrastination.</p>
 <p>When we're told to execute an update on a segment tree, we don't actually do the whole update.
@@ -446,15 +432,31 @@ Blue nodes were updated. Red nodes were not updated but they have a pending upda
 </figure>
 
 <p>More generally, <span class="math">\(d(a_1, b_1) \cdot d(a_2, b_2) = d(a_1a_2, a_1b_2 + b_1)\)</span>.</p>
-<h2 id="generic-implementation-of-segment-trees">Generic implementation of segment trees<a class="headerlink" href="#generic-implementation-of-segment-trees" title="Permanent link">&para;</a></h2>
-<h3 id="representing-node-update-functions">Representing node update functions<a class="headerlink" href="#representing-node-update-functions" title="Permanent link">&para;</a></h3>
-<p>We will need to come up with a succinct representation for node update functions.
-In the example above, the function <span class="math">\(d(a, b)\)</span> can be specified by the ordered pair <span class="math">\((a, b)\)</span>.
-The choice of representation will depend on the type of update functions expected.</p>
-<p>Then we need to specify the following to describe node update functions:</p>
+<h2 id="node-update-function-family">Node update function family<a class="headerlink" href="#node-update-function-family" title="Permanent link">&para;</a></h2>
+<p>In the above example for lazy propagation,
+<span class="math">\(D = \{d(a, b): (a, b) \in \mathbb{Z}^2\}\)</span> is a 'function family'.
+It represents the set of all possible node update functions for MINMAX.</p>
+<p>For any segment tree problem, you'll have to come up with a function family for node update functions.
+Additionally, this function family will need to be closed under function composition.
+This means that if <span class="math">\(h_1\)</span> and <span class="math">\(h_2\)</span> are members of this family,
+then <span class="math">\(h_1 \cdot h_2\)</span> should also be a member of this family.</p>
+<p>This family should also include the identity function.
+The identity function is the function <span class="math">\(h(x) = x\)</span>.
+In the above example for lazy propagation, <span class="math">\(d(1, 0)\)</span> is the identity.</p>
+<p>(In fact, the function family forms a monoid over function composition,
+since function composition is always associative.)</p>
+<h3 id="representing-the-family">Representing the family<a class="headerlink" href="#representing-the-family" title="Permanent link">&para;</a></h3>
+<p>To represent a node update function family, we'll need to specify:</p>
 <ul>
 <li>
-<p>Function application: How to compute <span class="math">\(h(x)\)</span> given <span class="math">\(x\)</span>.</p>
+<p>Function representation:
+We must be able to represent every function in the family uniquely.
+In the above example, <span class="math">\(d(a, b)\)</span> can be represented by the ordered pair <span class="math">\((a, b)\)</span>.</p>
+</li>
+<li>
+<p>Function definition:
+For every function in the family, we must know how to apply it to the input.
+In the above example, <span class="math">\(d(a, b)(x) = (ax_0 + b, ax_1 + b)\)</span> is the definition.</p>
 </li>
 <li>
 <p>The identity function: The function <span class="math">\(h(x) = x\)</span>.
@@ -462,21 +464,53 @@ In the above example, <span class="math">\(d(1, 0)\)</span> is the identity func
 It should also be possible to check whether a function is the identity function.</p>
 </li>
 <li>
-<p>Function composition: A rule for how to compose 2 node update functions.
+<p>Function composition: A rule for how to compose 2 functions.
 In the above example, the composition of <span class="math">\((a_1, b_1)\)</span> and <span class="math">\((a_2, b_2)\)</span> is <span class="math">\((a_1a_2, a_1b_2 + b_1)\)</span>.</p>
 </li>
 </ul>
-<h3 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">&para;</a></h3>
+<h3 id="c-example_1">C++ example<a class="headerlink" href="#c-example_1" title="Permanent link">&para;</a></h3>
+<p>When we write a generic segment tree library in C++,
+we can make the node update function family a template parameter.</p>
+<p>Here's an example of how to represent node update functions as a class
+for the MINMAX problem:</p>
+<div class="codehilite"><pre><span class="k">class</span> <span class="nc">LinearUpdFunc</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">;</span>  <span class="c1">// function representation</span>
+
+    <span class="n">MinMaxElem</span> <span class="nf">operator</span><span class="p">()(</span><span class="k">const</span> <span class="n">MinMaxElem</span><span class="o">&amp;</span> <span class="n">x</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span>
+        <span class="c1">// function definition</span>
+        <span class="k">return</span> <span class="n">MinMaxElem</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">x_min</span> <span class="o">*</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">,</span> <span class="n">x</span><span class="p">.</span><span class="n">x_max</span> <span class="o">*</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">LinearUpdFunc</span><span class="p">()</span><span class="o">:</span>
+        <span class="c1">// identity function</span>
+        <span class="n">a</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">b</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="p">{}</span>
+
+    <span class="kt">bool</span> <span class="n">is_identity</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">LinearUpdFunc</span><span class="p">(</span><span class="k">const</span> <span class="n">LinearUpdFunc</span><span class="o">&amp;</span> <span class="n">l</span><span class="p">,</span> <span class="k">const</span> <span class="n">LinearUpdFunc</span><span class="o">&amp;</span> <span class="n">r</span><span class="p">)</span><span class="o">:</span>
+        <span class="c1">// function composition</span>
+        <span class="n">a</span><span class="p">(</span><span class="n">l</span><span class="p">.</span><span class="n">a</span> <span class="o">*</span> <span class="n">r</span><span class="p">.</span><span class="n">a</span><span class="p">),</span> <span class="n">b</span><span class="p">(</span><span class="n">l</span><span class="p">.</span><span class="n">a</span> <span class="o">*</span> <span class="n">r</span><span class="p">.</span><span class="n">b</span> <span class="o">+</span> <span class="n">l</span><span class="p">.</span><span class="n">b</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">};</span>
+</pre></div>
+
+
+<p>In the segment tree library, we can call the above methods
+on the templated function family type without needing to know what they do.</p>
+<h2 id="generic-segment-tree-implementation">Generic segment tree implementation<a class="headerlink" href="#generic-segment-tree-implementation" title="Permanent link">&para;</a></h2>
 <p>We will use 2 arrays: <code>values</code> and <code>pending</code>.
-<code>values[i]</code> is the value of the <span class="math">\(i^{\textrm{th}}\)</span> node.
+<code>values[i]</code> is the value of the <span class="math">\(i^{\textrm{th}}\)</span> node of the segment tree.
 <code>pending[i]</code> is the pending node update function of the <span class="math">\(i^{\textrm{th}}\)</span> node.
 Initially, <code>values</code> is constructed from the input array
 and <code>pending[i]</code> is the identity function for every node <span class="math">\(i\)</span>.</p>
 <p>You can see <a href="https://gist.github.com/sharmaeklavya2/99ed35efbb639bbe7d7b46b89b74fea0">my C++ segment tree library</a>
 for an example of how to write generic segment trees.</p>
 <h2 id="bringing-problems-to-standard-form">Bringing problems to standard form<a class="headerlink" href="#bringing-problems-to-standard-form" title="Permanent link">&para;</a></h2>
-<p>To use the generic segment tree implementation, we should be able describe
-query outputs as elements of a monoid and the update function as an endomorphism.
+<p>To use the generic segment tree implementation,
+we should be able to come up with a suitable query monoid
+and a suitable node update function family.
 Let's look at some examples:</p>
 <p><strong>SUMREPL</strong>:</p>
 <ul>
@@ -485,7 +519,7 @@ Therefore, identity is <span class="math">\((0, 0)\)</span>, <span class="math">
 and <span class="math">\((n_1, x) \circ (n_2, y) = (n_1 + n_2, x + y)\)</span>.</li>
 <li>For the update function <span class="math">\(g(x) = y\)</span>, the node update function is <span class="math">\(h_y((n, x)) = (n, ny)\)</span>.
 The identity function is <span class="math">\(id\)</span>, which cannot be expressed as <span class="math">\(h_y\)</span> for any <span class="math">\(y\)</span>.
-Function composition: <span class="math">\(h_s \cdot h_t = h_s\)</span>.</li>
+Function composition: <span class="math">\(h_s \cdot h_t = h_s\)</span> and <span class="math">\(h_s \cdot id = id \cdot h_s = h_s\)</span>.</li>
 </ul>
 <p><strong>CHAROCC</strong>:</p>
 <ul>
@@ -502,15 +536,17 @@ where the entry of <span class="math">\(c\)</span> is 1 and all other entries ar
 </ul>
 <p><strong>KADANE</strong>:</p>
 <p>You are given an array <span class="math">\(a\)</span> of <span class="math">\(n\)</span> integers, indexed from 0 to <span class="math">\(n-1\)</span>.
-The query function <span class="math">\(f\)</span> is the largest contiguous subarray sum.
+The query function <span class="math">\(f\)</span> is the largest contiguous subarray sum
+(i.e., find a contiguous subarray of the input such that
+the sum of the numbers in the subarray is maximum,
+and then return that maximum sum).
 You will be asked to perform <span class="math">\(q\)</span> operations. Each operation will be one of the following:</p>
 <ul>
 <li>given integers <span class="math">\(l\)</span> and <span class="math">\(r\)</span>, output <span class="math">\(f(a[l..r])\)</span>.</li>
 <li>given integers <span class="math">\(l\)</span>, <span class="math">\(r\)</span> and <span class="math">\(y\)</span>, replace <span class="math">\(a[i]\)</span> by <span class="math">\(y\)</span> for all <span class="math">\(l \le i \le r\)</span>.</li>
 </ul>
-<p>This problem is left as an exercise.
-You must come up with a suitable monoid for representing segment tree values
-and a suitable node update function.</p>
+<p>The problem of coming up with a suitable monoid and
+a suitable node update function family is left as an exercise.</p>
 <div class="collapsible">
     <label for="checkbox0" class="collapsor-lbl"> Minor hint </label>
     <div class="focus-capturer" tabindex="0">
