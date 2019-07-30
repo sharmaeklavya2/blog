@@ -8,6 +8,7 @@
 <meta name="description" content="Generalizing segment trees by expressing range query outputs as elements of a monoid and update operations as endomorphisms." />
 <meta name="keywords" content="CS,Algorithms,Math,Abstract Algebra" />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/blog/css/collapsible.css" />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/blog/css/pygments-manni.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]}, "extensions": ["tex2jax.js"], "jax": ["input/TeX", "output/CommonHTML"]});</script>
 <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
 </head>
@@ -66,7 +67,7 @@
 </table>
 <div class="entry-content">
 <p>A segment tree is a data structure which stores an array of size <span class="math">\(n\)</span>
-and allows <span class="math">\(O(\lg{n})\)</span>-time range queries and <span class="math">\(O(\lg n)\)</span>-time range updates on it.
+and allows <span class="math">\(O(\log{n})\)</span>-time range queries and <span class="math">\(O(\log n)\)</span>-time range updates on it.
 I devised a method of generalizing segment trees using
 concepts from abstract algebra: monoids and endomorphisms.
 This generalization not only gave me conceptual clarity
@@ -97,6 +98,7 @@ I will also explain how to perform range updates using lazy propagation.</p>
 <li><a href="#identity">Identity</a></li>
 <li><a href="#monoids">Monoids</a></li>
 <li><a href="#monoid-elements-as-segment-tree-values">Monoid elements as segment tree values</a></li>
+<li><a href="#c-example">C++ example</a></li>
 </ul>
 </li>
 <li><a href="#generalizing-update-functions">Generalizing update functions</a><ul>
@@ -152,7 +154,8 @@ which can be solved using segment trees. These example problems are used through
 <ul>
 <li>given integers <span class="math">\(l\)</span> and <span class="math">\(r\)</span> and character <span class="math">\(c\)</span>, output the number of
     occurrences of <span class="math">\(c\)</span> in the concatenation of <span class="math">\(a[l], a[l+1], \ldots, a[r]\)</span>.</li>
-<li>given integers <span class="math">\(l\)</span> and <span class="math">\(r\)</span> and character <span class="math">\(c\)</span>, append <span class="math">\(c\)</span> to <span class="math">\(a[i]\)</span> for all <span class="math">\(l \le i \le r\)</span>.</li>
+<li>given integers <span class="math">\(l\)</span> and <span class="math">\(r\)</span> and character <span class="math">\(c\)</span>, append <span class="math">\(c\)</span> to <span class="math">\(a[i]\)</span> for all <span class="math">\(l \le i \le r\)</span>.
+    For example, if <span class="math">\(a[i]\)</span> is <code>"car"</code> and <span class="math">\(c\)</span> is <code>'t'</code>, then <span class="math">\(a[i]\)</span> should be changed to <code>"cart"</code>.</li>
 </ul>
 </li>
 </ol>
@@ -260,11 +263,13 @@ Here <span class="math">\(e\)</span> is called the identity of the monoid.</li>
 <p>We can see that our query output type <span class="math">\(S\)</span> and our binary operator <span class="math">\(\circ\)</span> follow the above axioms.
 Therefore, <span class="math">\((S, \circ)\)</span> is a monoid.</p>
 <h3 id="monoid-elements-as-segment-tree-values">Monoid elements as segment tree values<a class="headerlink" href="#monoid-elements-as-segment-tree-values" title="Permanent link">&para;</a></h3>
-<p>Every node <span class="math">\(u\)</span> of a segment tree has the following attributes associated with it:
-<span class="math">\(\operatorname{value}(u), \operatorname{first}(u), \operatorname{last}(u), \operatorname{index}(u)\)</span>.</p>
-<p>Here <span class="math">\(\operatorname{value}(u) = f(a[\operatorname{first}(u)..\operatorname{last}(u)])\)</span>
-and <span class="math">\(\operatorname{index}(u)\)</span> is the index of <span class="math">\(u\)</span> in the segment tree array.
-The children of <span class="math">\(u\)</span> have indices <span class="math">\(\operatorname{index}(u) * 2 + 1\)</span> and <span class="math">\(\operatorname{index}(u) * 2 + 2\)</span>.</p>
+<p>Every node <span class="math">\(u\)</span> of a segment tree represents a segment (contiguous subarray) of the input array.
+For example, the root represents the whole array,
+the root's children represent the left and right halves of the array,
+and the leaves represent segments with only one element in them.
+Let's denote <span class="math">\(u\)</span>'s segment by <span class="math">\(\operatorname{segment}(u)\)</span>.</p>
+<p>In every node <span class="math">\(u\)</span> of the segment tree, we will store the value <span class="math">\(f(\operatorname{segment}(u))\)</span>.
+Let's denote this by <span class="math">\(\operatorname{value}(u)\)</span>.</p>
 <p>To build and query a generalized segment tree, we will need to specify the following:</p>
 <ul>
 <li>
@@ -284,8 +289,30 @@ For SUMREPL, <span class="math">\(x \circ y = x + y\)</span>.
 For MINMAX, <span class="math">\(x \circ y = \min(x_0, y_0), \max(x_1, y_1)\)</span>.</p>
 </li>
 </ul>
-<p>In code, we can create a class for monoid elements.
-The above traits of the monoid can be specified as methods/constructors of the class.</p>
+<h3 id="c-example">C++ example<a class="headerlink" href="#c-example" title="Permanent link">&para;</a></h3>
+<p>When we write a generic segment tree library in C++,
+we can make the monoid type as a template parameter.</p>
+<p>Here's an example of how to represent monoid elements as a class
+for the MINMAX problem:</p>
+<div class="codehilite"><pre><span class="cp">#include &lt;algorithm&gt;</span>
+
+<span class="k">class</span> <span class="nc">MinMaxElem</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="k">static</span> <span class="k">const</span> <span class="kt">int</span> <span class="n">infty</span> <span class="o">=</span> <span class="mf">2e9</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">x_min</span><span class="p">,</span> <span class="n">x_max</span><span class="p">;</span>
+
+    <span class="n">MinMaxElem</span><span class="p">()</span><span class="o">:</span> <span class="n">x_min</span><span class="p">(</span><span class="n">infty</span><span class="p">),</span> <span class="n">x_max</span><span class="p">(</span><span class="o">-</span><span class="n">infty</span><span class="p">)</span> <span class="p">{}</span>  <span class="c1">// identity element</span>
+
+    <span class="k">explicit</span> <span class="n">MinMaxElem</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span><span class="o">:</span> <span class="n">x_min</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x_max</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{}</span>  <span class="c1">// element at leaf node</span>
+
+    <span class="n">MinMaxElem</span><span class="p">(</span><span class="k">const</span> <span class="n">MinMaxElem</span><span class="o">&amp;</span> <span class="n">l</span><span class="p">,</span> <span class="k">const</span> <span class="n">MinMaxElem</span><span class="o">&amp;</span> <span class="n">r</span><span class="p">)</span><span class="o">:</span>  <span class="c1">// binary operator</span>
+        <span class="n">x_min</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">min</span><span class="p">(</span><span class="n">l</span><span class="p">.</span><span class="n">x_min</span><span class="p">,</span> <span class="n">r</span><span class="p">.</span><span class="n">x_min</span><span class="p">)),</span> <span class="n">x_max</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">max</span><span class="p">(</span><span class="n">l</span><span class="p">.</span><span class="n">x_max</span><span class="p">,</span> <span class="n">r</span><span class="p">.</span><span class="n">x_max</span><span class="p">))</span> <span class="p">{}</span>
+<span class="p">};</span>
+</pre></div>
+
+
+<p>In the segment tree library, we can call the above methods
+on the templated monoid type without needing to know what they do.</p>
 <h2 id="generalizing-update-functions">Generalizing update functions<a class="headerlink" href="#generalizing-update-functions" title="Permanent link">&para;</a></h2>
 <h3 id="node-update-function">Node update function<a class="headerlink" href="#node-update-function" title="Permanent link">&para;</a></h3>
 <p>Suppose I construct a segment tree on the input array <span class="math">\(a\)</span> of size <span class="math">\(n\)</span>
@@ -340,7 +367,12 @@ Then when we're supposed to answer a query, we update only the part of the segme
 which is needed to answer the query.</p>
 <p>I'll explain this with an example for MINMAX
 with the initial array <span class="math">\([10, 20, 30, 40, 50, 60, 70]\)</span>.
-The image below shows the initial segment tree.</p>
+The image below shows the initial segment tree.
+It presents 2 attributes of every segment tree node <span class="math">\(u\)</span>:</p>
+<ul>
+<li>the indexes of the first and last elements of <span class="math">\(\operatorname{segment}(u)\)</span>.</li>
+<li><span class="math">\(\operatorname{value}(u)\)</span>.</li>
+</ul>
 <figure>
 <img src="https://sharmaeklavya2.github.io/blog/img/segtree-lazy-update/0.dot.svg" />
 <figcaption>Initial segment tree</figcaption>

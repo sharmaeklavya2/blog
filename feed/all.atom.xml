@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>Eklavya's Blog</title><link href="https://sharmaeklavya2.github.io/blog/" rel="alternate"></link><link href="https://sharmaeklavya2.github.io/blog/feed/all.atom.xml" rel="self"></link><id>https://sharmaeklavya2.github.io/blog/</id><updated>2019-07-20T00:00:00+05:30</updated><entry><title>Generalizing Segment Trees</title><link href="https://sharmaeklavya2.github.io/blog/generalizing-segment-trees.html" rel="alternate"></link><published>2019-07-20T00:00:00+05:30</published><updated>2019-07-20T00:00:00+05:30</updated><author><name>Eklavya Sharma</name></author><id>tag:sharmaeklavya2.github.io,2019-07-20:/blog/generalizing-segment-trees.html</id><summary type="html">&lt;p&gt;Generalizing segment trees by expressing range query outputs as elements of a monoid and update operations as endomorphisms.&lt;/p&gt;</summary><content type="html">&lt;p&gt;A segment tree is a data structure which stores an array of size &lt;span class="math"&gt;\(n\)&lt;/span&gt;
-and allows &lt;span class="math"&gt;\(O(\lg{n})\)&lt;/span&gt;-time range queries and &lt;span class="math"&gt;\(O(\lg n)\)&lt;/span&gt;-time range updates on it.
+and allows &lt;span class="math"&gt;\(O(\log{n})\)&lt;/span&gt;-time range queries and &lt;span class="math"&gt;\(O(\log n)\)&lt;/span&gt;-time range updates on it.
 I devised a method of generalizing segment trees using
 concepts from abstract algebra: monoids and endomorphisms.
 This generalization not only gave me conceptual clarity
@@ -31,6 +31,7 @@ I will also explain how to perform range updates using lazy propagation.&lt;/p&g
 &lt;li&gt;&lt;a href="#identity"&gt;Identity&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#monoids"&gt;Monoids&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#monoid-elements-as-segment-tree-values"&gt;Monoid elements as segment tree values&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#c-example"&gt;C++ example&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href="#generalizing-update-functions"&gt;Generalizing update functions&lt;/a&gt;&lt;ul&gt;
@@ -86,7 +87,8 @@ which can be solved using segment trees. These example problems are used through
 &lt;ul&gt;
 &lt;li&gt;given integers &lt;span class="math"&gt;\(l\)&lt;/span&gt; and &lt;span class="math"&gt;\(r\)&lt;/span&gt; and character &lt;span class="math"&gt;\(c\)&lt;/span&gt;, output the number of
     occurrences of &lt;span class="math"&gt;\(c\)&lt;/span&gt; in the concatenation of &lt;span class="math"&gt;\(a[l], a[l+1], \ldots, a[r]\)&lt;/span&gt;.&lt;/li&gt;
-&lt;li&gt;given integers &lt;span class="math"&gt;\(l\)&lt;/span&gt; and &lt;span class="math"&gt;\(r\)&lt;/span&gt; and character &lt;span class="math"&gt;\(c\)&lt;/span&gt;, append &lt;span class="math"&gt;\(c\)&lt;/span&gt; to &lt;span class="math"&gt;\(a[i]\)&lt;/span&gt; for all &lt;span class="math"&gt;\(l \le i \le r\)&lt;/span&gt;.&lt;/li&gt;
+&lt;li&gt;given integers &lt;span class="math"&gt;\(l\)&lt;/span&gt; and &lt;span class="math"&gt;\(r\)&lt;/span&gt; and character &lt;span class="math"&gt;\(c\)&lt;/span&gt;, append &lt;span class="math"&gt;\(c\)&lt;/span&gt; to &lt;span class="math"&gt;\(a[i]\)&lt;/span&gt; for all &lt;span class="math"&gt;\(l \le i \le r\)&lt;/span&gt;.
+    For example, if &lt;span class="math"&gt;\(a[i]\)&lt;/span&gt; is &lt;code&gt;"car"&lt;/code&gt; and &lt;span class="math"&gt;\(c\)&lt;/span&gt; is &lt;code&gt;'t'&lt;/code&gt;, then &lt;span class="math"&gt;\(a[i]\)&lt;/span&gt; should be changed to &lt;code&gt;"cart"&lt;/code&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
@@ -194,11 +196,13 @@ Here &lt;span class="math"&gt;\(e\)&lt;/span&gt; is called the identity of the m
 &lt;p&gt;We can see that our query output type &lt;span class="math"&gt;\(S\)&lt;/span&gt; and our binary operator &lt;span class="math"&gt;\(\circ\)&lt;/span&gt; follow the above axioms.
 Therefore, &lt;span class="math"&gt;\((S, \circ)\)&lt;/span&gt; is a monoid.&lt;/p&gt;
 &lt;h3 id="monoid-elements-as-segment-tree-values"&gt;Monoid elements as segment tree values&lt;a class="headerlink" href="#monoid-elements-as-segment-tree-values" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Every node &lt;span class="math"&gt;\(u\)&lt;/span&gt; of a segment tree has the following attributes associated with it:
-&lt;span class="math"&gt;\(\operatorname{value}(u), \operatorname{first}(u), \operatorname{last}(u), \operatorname{index}(u)\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;Here &lt;span class="math"&gt;\(\operatorname{value}(u) = f(a[\operatorname{first}(u)..\operatorname{last}(u)])\)&lt;/span&gt;
-and &lt;span class="math"&gt;\(\operatorname{index}(u)\)&lt;/span&gt; is the index of &lt;span class="math"&gt;\(u\)&lt;/span&gt; in the segment tree array.
-The children of &lt;span class="math"&gt;\(u\)&lt;/span&gt; have indices &lt;span class="math"&gt;\(\operatorname{index}(u) * 2 + 1\)&lt;/span&gt; and &lt;span class="math"&gt;\(\operatorname{index}(u) * 2 + 2\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Every node &lt;span class="math"&gt;\(u\)&lt;/span&gt; of a segment tree represents a segment (contiguous subarray) of the input array.
+For example, the root represents the whole array,
+the root's children represent the left and right halves of the array,
+and the leaves represent segments with only one element in them.
+Let's denote &lt;span class="math"&gt;\(u\)&lt;/span&gt;'s segment by &lt;span class="math"&gt;\(\operatorname{segment}(u)\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;In every node &lt;span class="math"&gt;\(u\)&lt;/span&gt; of the segment tree, we will store the value &lt;span class="math"&gt;\(f(\operatorname{segment}(u))\)&lt;/span&gt;.
+Let's denote this by &lt;span class="math"&gt;\(\operatorname{value}(u)\)&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;To build and query a generalized segment tree, we will need to specify the following:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -218,8 +222,30 @@ For SUMREPL, &lt;span class="math"&gt;\(x \circ y = x + y\)&lt;/span&gt;.
 For MINMAX, &lt;span class="math"&gt;\(x \circ y = \min(x_0, y_0), \max(x_1, y_1)\)&lt;/span&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;In code, we can create a class for monoid elements.
-The above traits of the monoid can be specified as methods/constructors of the class.&lt;/p&gt;
+&lt;h3 id="c-example"&gt;C++ example&lt;a class="headerlink" href="#c-example" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;When we write a generic segment tree library in C++,
+we can make the monoid type as a template parameter.&lt;/p&gt;
+&lt;p&gt;Here's an example of how to represent monoid elements as a class
+for the MINMAX problem:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="cp"&gt;#include &amp;lt;algorithm&amp;gt;&lt;/span&gt;
+
+&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;MinMaxElem&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="k"&gt;public&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;static&lt;/span&gt; &lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;infty&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;2e9&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;x_min&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;x_max&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+    &lt;span class="n"&gt;MinMaxElem&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;x_min&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;infty&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;x_max&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;infty&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;  &lt;span class="c1"&gt;// identity element&lt;/span&gt;
+
+    &lt;span class="k"&gt;explicit&lt;/span&gt; &lt;span class="n"&gt;MinMaxElem&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;x_min&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;x_max&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;  &lt;span class="c1"&gt;// element at leaf node&lt;/span&gt;
+
+    &lt;span class="n"&gt;MinMaxElem&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="n"&gt;MinMaxElem&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;l&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="n"&gt;MinMaxElem&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;  &lt;span class="c1"&gt;// binary operator&lt;/span&gt;
+        &lt;span class="n"&gt;x_min&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;min&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;l&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;x_min&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;x_min&lt;/span&gt;&lt;span class="p"&gt;)),&lt;/span&gt; &lt;span class="n"&gt;x_max&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;max&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;l&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;x_max&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;x_max&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
+&lt;span class="p"&gt;};&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;In the segment tree library, we can call the above methods
+on the templated monoid type without needing to know what they do.&lt;/p&gt;
 &lt;h2 id="generalizing-update-functions"&gt;Generalizing update functions&lt;a class="headerlink" href="#generalizing-update-functions" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;h3 id="node-update-function"&gt;Node update function&lt;a class="headerlink" href="#node-update-function" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Suppose I construct a segment tree on the input array &lt;span class="math"&gt;\(a\)&lt;/span&gt; of size &lt;span class="math"&gt;\(n\)&lt;/span&gt;
@@ -274,7 +300,12 @@ Then when we're supposed to answer a query, we update only the part of the segme
 which is needed to answer the query.&lt;/p&gt;
 &lt;p&gt;I'll explain this with an example for MINMAX
 with the initial array &lt;span class="math"&gt;\([10, 20, 30, 40, 50, 60, 70]\)&lt;/span&gt;.
-The image below shows the initial segment tree.&lt;/p&gt;
+The image below shows the initial segment tree.
+It presents 2 attributes of every segment tree node &lt;span class="math"&gt;\(u\)&lt;/span&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the indexes of the first and last elements of &lt;span class="math"&gt;\(\operatorname{segment}(u)\)&lt;/span&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(\operatorname{value}(u)\)&lt;/span&gt;.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;figure&gt;
 &lt;img src="https://sharmaeklavya2.github.io/blog/img/segtree-lazy-update/0.dot.svg" /&gt;
 &lt;figcaption&gt;Initial segment tree&lt;/figcaption&gt;
