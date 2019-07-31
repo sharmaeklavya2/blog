@@ -276,8 +276,8 @@ This is how we verify &lt;span class="math"&gt;\(h\)&lt;/span&gt;:
 \\ &amp;amp;= f(g(a))
 \end{align*}&lt;/div&gt;
 &lt;p&gt;Here &lt;span class="math"&gt;\(a + 20\)&lt;/span&gt; is the array obtained by adding 20 to every element of &lt;span class="math"&gt;\(a\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;It can be proven that &lt;span class="math"&gt;\(h\)&lt;/span&gt; is an endomorphism (
-a &lt;a href="https://en.wikipedia.org/wiki/Monoid#Monoid_homomorphisms"&gt;homomorphism&lt;/a&gt;
+&lt;p&gt;It can be proven that every node update function is an endomorphism (a
+&lt;a href="https://en.wikipedia.org/wiki/Monoid#Monoid_homomorphisms"&gt;homomorphism&lt;/a&gt;
 whose domain and codomain are the same).
 I'm omitting the proof here for brevity.&lt;/p&gt;
 &lt;h2 id="lazy-propagation"&gt;Lazy propagation&lt;a class="headerlink" href="#lazy-propagation" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
