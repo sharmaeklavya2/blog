@@ -39,7 +39,7 @@
 <li><a href="https://sharmaeklavya2.github.io/blog/tag/tutorial.html">Tutorial <span class="article-count">4</span></a></li>
 <li><a href="https://sharmaeklavya2.github.io/blog/tag/front-end-web-dev.html">Front-end web dev <span class="article-count">1</span></a></li>
 <li><a href="https://sharmaeklavya2.github.io/blog/tag/juggling.html">Juggling <span class="article-count">3</span></a></li>
-<li><a href="https://sharmaeklavya2.github.io/blog/tag/about-me.html">About Me <span class="article-count">2</span></a></li>
+<li><a href="https://sharmaeklavya2.github.io/blog/tag/about-me.html">About Me <span class="article-count">1</span></a></li>
 </ul>
 </div>
 </div>
@@ -245,7 +245,7 @@ Common examples are <code>.bash_profile</code>, <code>.vimrc</code> and <code>.g
 <a href="https://github.com/sharmaeklavya2/dotfiles"><code>sharmaeklavya2/dotfiles</code></a>.
 You can find detailed instructions for setting them up in the repository's readme.
 Here is a brief version:</p>
-<div class="codehilite"><pre>git clone https://github.com/sharmaeklavya2/dotfiles.git
+<div class="codehilite"><pre><span></span>git clone https://github.com/sharmaeklavya2/dotfiles.git
 cd dotfiles
 ./scripts/make_links.py
 shopt -s dotglob nullglob
@@ -268,12 +268,12 @@ to increase your shell input history size.</p>
 <h3 id="install-homebrew">Install <a href="https://brew.sh/">Homebrew</a><a class="headerlink" href="#install-homebrew" title="Permanent link">&para;</a></h3>
 <p>Homebrew (a.k.a. brew) is a package manager, which means it's like a terminal version of the App Store.
 You can install programs (called packages by brew) by simply writing commands on the terminal:</p>
-<div class="codehilite"><pre>brew install name-of-package
+<div class="codehilite"><pre><span></span>brew install name-of-package
 </pre></div>
 
 
 <p>According to <a href="https://brew.sh/">brew's website</a>, brew can be installed by typing this into the terminal:</p>
-<div class="codehilite"><pre>/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
+<div class="codehilite"><pre><span></span>/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
 </pre></div>
 
 
@@ -290,7 +290,7 @@ To prevent that from happening, add <code>export HOMEBREW_NO_AUTO_UPDATE=1</code
 to <code>~/.bash_profile</code> or <code>~/.env</code>.</p>
 <h2 id="install-command-line-programs"><span style="background-color: #A9DFBF">Install command-line programs</span><a class="headerlink" href="#install-command-line-programs" title="Permanent link">&para;</a></h2>
 <h3 id="java">Java<a class="headerlink" href="#java" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre>brew install java
+<div class="codehilite"><pre><span></span>brew install java
 </pre></div>
 
 
@@ -312,12 +312,12 @@ Run <code>virtualenv /path/to/venv/ -p python3</code> to create a python3 virtua
 Now all python commands and applications you run will use this virtualenv.</p>
 <p>I usually install python packages only when required,
 but some are useful enough that I installed them in the beginning:</p>
-<div class="codehilite"><pre>pip install ipython requests pipdeptree flake8 grip cleaver
+<div class="codehilite"><pre><span></span>pip install ipython requests pipdeptree flake8 grip cleaver
 </pre></div>
 
 
 <p>These packages are useful for number-crunching and analytics:</p>
-<div class="codehilite"><pre>pip install numpy scipy pandas matplotlib seaborn
+<div class="codehilite"><pre><span></span>pip install numpy scipy pandas matplotlib seaborn
 </pre></div>
 
 
@@ -376,7 +376,7 @@ You can see which features are installed by running <code>vim --version</code>.<
 Alternatively, you can install MacVim (<code>brew install macvim</code>).
 This will not replace the old vim; the old vim can still be accessed at <code>/usr/bin/vim</code>.</p>
 <h3 id="install-pathogen">Install <a href="https://github.com/tpope/vim-pathogen">Pathogen</a><a class="headerlink" href="#install-pathogen" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre>mkdir -p ~/.vim/autoload ~/.vim/bundle &amp;&amp; \
+<div class="codehilite"><pre><span></span>mkdir -p ~/.vim/autoload ~/.vim/bundle &amp;&amp; \
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 </pre></div>
 
@@ -409,7 +409,7 @@ want good completion for C, C++, Java, Rust, Go or JavaScript
 but I'm able to use YouCompleteMe with Vim installed via <code>brew install vim</code>.</p>
 <h3 id="fix-vim-locale-error">Fix Vim locale error<a class="headerlink" href="#fix-vim-locale-error" title="Permanent link">&para;</a></h3>
 <p>You may get error messages like this when you start Vim:</p>
-<div class="codehilite"><pre>Warning: Failed to set locale category LC_NUMERIC to en_IN.
+<div class="codehilite"><pre><span></span>Warning: Failed to set locale category LC_NUMERIC to en_IN.
 Warning: Failed to set locale category LC_TIME to en_IN.
 Warning: Failed to set locale category LC_COLLATE to en_IN.
 Warning: Failed to set locale category LC_MONETARY to en_IN.
@@ -423,7 +423,7 @@ Warning: Failed to set locale category LC_MESSAGES to en_IN.
 <p>I use <a href="https://nginx.org/en/">Nginx</a> to serve static content.
 It's useful to access local websites that I downloaded or created.</p>
 <h3 id="install-and-run-nginx">Install and run Nginx<a class="headerlink" href="#install-and-run-nginx" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre>brew install nginx
+<div class="codehilite"><pre><span></span>brew install nginx
 nginx
 </pre></div>
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Eklavya's Blog</title><link href="https://sharmaeklavya2.github.io/blog/" rel="alternate"></link><link href="https://sharmaeklavya2.github.io/blog/feed/all.atom.xml" rel="self"></link><id>https://sharmaeklavya2.github.io/blog/</id><updated>2019-10-07T00:00:00+05:30</updated><entry><title>Generalizing Segment Trees</title><link href="https://sharmaeklavya2.github.io/blog/generalizing-segment-trees.html" rel="alternate"></link><published>2019-07-20T00:00:00+05:30</published><updated>2019-07-20T00:00:00+05:30</updated><author><name>Eklavya Sharma</name></author><id>tag:sharmaeklavya2.github.io,2019-07-20:/blog/generalizing-segment-trees.html</id><summary type="html">&lt;p&gt;How I generalized segment trees by expressing range query outputs as elements of a monoid and update operations as functions.&lt;/p&gt;</summary><content type="html">&lt;p&gt;A segment tree is a data structure which stores an array of size &lt;span class="math"&gt;\(n\)&lt;/span&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Eklavya's Blog</title><link href="https://sharmaeklavya2.github.io/blog/" rel="alternate"></link><link href="https://sharmaeklavya2.github.io/blog/feed/all.atom.xml" rel="self"></link><id>https://sharmaeklavya2.github.io/blog/</id><updated>2019-07-20T00:00:00+05:30</updated><entry><title>Generalizing Segment Trees</title><link href="https://sharmaeklavya2.github.io/blog/generalizing-segment-trees.html" rel="alternate"></link><published>2019-07-20T00:00:00+05:30</published><updated>2019-07-20T00:00:00+05:30</updated><author><name>Eklavya Sharma</name></author><id>tag:sharmaeklavya2.github.io,2019-07-20:/blog/generalizing-segment-trees.html</id><summary type="html">&lt;p&gt;How I generalized segment trees by expressing range query outputs as elements of a monoid and update operations as functions.&lt;/p&gt;</summary><content type="html">&lt;p&gt;A segment tree is a data structure which stores an array of size &lt;span class="math"&gt;\(n\)&lt;/span&gt;
 and allows &lt;span class="math"&gt;\(O(\log{n})\)&lt;/span&gt;-time range queries and &lt;span class="math"&gt;\(O(\log n)\)&lt;/span&gt;-time range updates on it.
 I devised a method of generalizing segment trees by expressing
 query outputs as elements of a monoid and update operations as functions.
@@ -223,7 +223,7 @@ For MINMAX, &lt;span class="math"&gt;\(x \circ y = \min(x_0, y_0), \max(x_1, y_1
 we can make the query monoid type a template parameter.&lt;/p&gt;
 &lt;p&gt;Here's an example of how to represent query monoid elements as a class
 for the MINMAX problem:&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="cp"&gt;#include &amp;lt;algorithm&amp;gt;&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;algorithm&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
 
 &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;MinMaxElem&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
 &lt;span class="k"&gt;public&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
@@ -408,7 +408,7 @@ In the above example, the composition of &lt;span class="math"&gt;\((a_1, b_1)\)
 we can make the node update function family a template parameter.&lt;/p&gt;
 &lt;p&gt;Here's an example of how to represent node update functions as a class
 for the MINMAX problem:&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;LinearUpdFunc&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;LinearUpdFunc&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
 &lt;span class="k"&gt;public&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
     &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;  &lt;span class="c1"&gt;// function representation&lt;/span&gt;
 
@@ -694,7 +694,7 @@ Common examples are &lt;code&gt;.bash_profile&lt;/code&gt;, &lt;code&gt;.vimrc&l
 &lt;a href="https://github.com/sharmaeklavya2/dotfiles"&gt;&lt;code&gt;sharmaeklavya2/dotfiles&lt;/code&gt;&lt;/a&gt;.
 You can find detailed instructions for setting them up in the repository's readme.
 Here is a brief version:&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;git clone https://github.com/sharmaeklavya2/dotfiles.git
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git clone https://github.com/sharmaeklavya2/dotfiles.git
 cd dotfiles
 ./scripts/make_links.py
 shopt -s dotglob nullglob
@@ -717,12 +717,12 @@ to increase your shell input history size.&lt;/p&gt;
 &lt;h3 id="install-homebrew"&gt;Install &lt;a href="https://brew.sh/"&gt;Homebrew&lt;/a&gt;&lt;a class="headerlink" href="#install-homebrew" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Homebrew (a.k.a. brew) is a package manager, which means it's like a terminal version of the App Store.
 You can install programs (called packages by brew) by simply writing commands on the terminal:&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;brew install name-of-package
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;brew install name-of-package
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;According to &lt;a href="https://brew.sh/"&gt;brew's website&lt;/a&gt;, brew can be installed by typing this into the terminal:&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;/usr/bin/ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;/usr/bin/ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -739,7 +739,7 @@ To prevent that from happening, add &lt;code&gt;export HOMEBREW_NO_AUTO_UPDATE=1
 to &lt;code&gt;~/.bash_profile&lt;/code&gt; or &lt;code&gt;~/.env&lt;/code&gt;.&lt;/p&gt;
 &lt;h2 id="install-command-line-programs"&gt;&lt;span style="background-color: #A9DFBF"&gt;Install command-line programs&lt;/span&gt;&lt;a class="headerlink" href="#install-command-line-programs" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;h3 id="java"&gt;Java&lt;a class="headerlink" href="#java" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;brew install java
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;brew install java
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -761,12 +761,12 @@ Run &lt;code&gt;virtualenv /path/to/venv/ -p python3&lt;/code&gt; to create a py
 Now all python commands and applications you run will use this virtualenv.&lt;/p&gt;
 &lt;p&gt;I usually install python packages only when required,
 but some are useful enough that I installed them in the beginning:&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;pip install ipython requests pipdeptree flake8 grip cleaver
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install ipython requests pipdeptree flake8 grip cleaver
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;These packages are useful for number-crunching and analytics:&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;pip install numpy scipy pandas matplotlib seaborn
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install numpy scipy pandas matplotlib seaborn
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -825,7 +825,7 @@ You can see which features are installed by running &lt;code&gt;vim --version&lt
 Alternatively, you can install MacVim (&lt;code&gt;brew install macvim&lt;/code&gt;).
 This will not replace the old vim; the old vim can still be accessed at &lt;code&gt;/usr/bin/vim&lt;/code&gt;.&lt;/p&gt;
 &lt;h3 id="install-pathogen"&gt;Install &lt;a href="https://github.com/tpope/vim-pathogen"&gt;Pathogen&lt;/a&gt;&lt;a class="headerlink" href="#install-pathogen" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;mkdir -p ~/.vim/autoload ~/.vim/bundle &amp;amp;&amp;amp; \
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkdir -p ~/.vim/autoload ~/.vim/bundle &amp;amp;&amp;amp; \
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -858,7 +858,7 @@ want good completion for C, C++, Java, Rust, Go or JavaScript
 but I'm able to use YouCompleteMe with Vim installed via &lt;code&gt;brew install vim&lt;/code&gt;.&lt;/p&gt;
 &lt;h3 id="fix-vim-locale-error"&gt;Fix Vim locale error&lt;a class="headerlink" href="#fix-vim-locale-error" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;You may get error messages like this when you start Vim:&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;Warning: Failed to set locale category LC_NUMERIC to en_IN.
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Warning: Failed to set locale category LC_NUMERIC to en_IN.
 Warning: Failed to set locale category LC_TIME to en_IN.
 Warning: Failed to set locale category LC_COLLATE to en_IN.
 Warning: Failed to set locale category LC_MONETARY to en_IN.
@@ -872,7 +872,7 @@ Warning: Failed to set locale category LC_MESSAGES to en_IN.
 &lt;p&gt;I use &lt;a href="https://nginx.org/en/"&gt;Nginx&lt;/a&gt; to serve static content.
 It's useful to access local websites that I downloaded or created.&lt;/p&gt;
 &lt;h3 id="install-and-run-nginx"&gt;Install and run Nginx&lt;a class="headerlink" href="#install-and-run-nginx" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;brew install nginx
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;brew install nginx
 nginx
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -912,31 +912,31 @@ I copied the websites from there, uncompressed them, and placed them in &lt;code
 &lt;h2 id="skeleton"&gt;Skeleton&lt;a class="headerlink" href="#skeleton" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Let's first create the basic structure without collapsibility.&lt;/p&gt;
 &lt;p&gt;HTML:&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;div&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;collapsible&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class="nt"&gt;&amp;lt;div&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;collapsor-lbl&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt; Click me &lt;span class="nt"&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-    &lt;span class="nt"&gt;&amp;lt;div&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;collapsible-content&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;collapsible&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;collapsor-lbl&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; Click me &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;collapsible-content&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
         This is the body of the collapsible.
-    &lt;span class="nt"&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-&lt;span class="nt"&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;CSS (for beautification):&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="nc"&gt;.collapsible&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="k"&gt;max-width&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;40em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-    &lt;span class="k"&gt;border&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;1px&lt;/span&gt; &lt;span class="k"&gt;solid&lt;/span&gt; &lt;span class="nb"&gt;black&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-    &lt;span class="k"&gt;border&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;radius&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="m"&gt;5&lt;/span&gt;&lt;span class="n"&gt;rem&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;collapsible&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;max-width&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;40&lt;/span&gt;&lt;span class="kt"&gt;em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="k"&gt;border&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt; &lt;span class="kc"&gt;solid&lt;/span&gt; &lt;span class="kc"&gt;black&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="k"&gt;border-radius&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;0.5&lt;/span&gt;&lt;span class="kt"&gt;rem&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="nc"&gt;.collapsor-lbl&lt;/span&gt;&lt;span class="nd"&gt;:hover&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="k"&gt;background-color&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;rgba&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;collapsor-lbl&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nd"&gt;hover&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;background-color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;rgba&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.1&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="nc"&gt;.collapsor-lbl&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="k"&gt;text-align&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="k"&gt;center&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-    &lt;span class="k"&gt;padding&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="m"&gt;5&lt;/span&gt;&lt;span class="n"&gt;rem&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="n"&gt;rem&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;collapsor-lbl&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;text-align&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;center&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="k"&gt;padding&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;0.5&lt;/span&gt;&lt;span class="kt"&gt;rem&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="kt"&gt;rem&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="nc"&gt;.collapsible-content&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="k"&gt;padding&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="m"&gt;5&lt;/span&gt;&lt;span class="n"&gt;rem&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-    &lt;span class="k"&gt;border-top&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;1px&lt;/span&gt; &lt;span class="k"&gt;solid&lt;/span&gt; &lt;span class="nb"&gt;black&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;collapsible-content&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;padding&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;0.5&lt;/span&gt;&lt;span class="kt"&gt;rem&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="k"&gt;border-top&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt; &lt;span class="kc"&gt;solid&lt;/span&gt; &lt;span class="kc"&gt;black&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -963,25 +963,25 @@ I read about it on the blog post
   When used together with &lt;code&gt;:checked&lt;/code&gt; on checkbox, we can select &lt;code&gt;.collapsible-content&lt;/code&gt; only when the checkbox is checked.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Change the HTML to this:&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;div&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;collapsible&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class="nt"&gt;&amp;lt;input&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;checkbox1&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;collapsor&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;checkbox&amp;quot;&lt;/span&gt; &lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
-    &lt;span class="nt"&gt;&amp;lt;label&lt;/span&gt; &lt;span class="na"&gt;for=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;checkbox1&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;collapsor-lbl&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt; Click me &lt;span class="nt"&gt;&amp;lt;/label&amp;gt;&lt;/span&gt;
-    &lt;span class="nt"&gt;&amp;lt;div&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;collapsible-content&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;collapsible&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;input&lt;/span&gt; &lt;span class="na"&gt;id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;checkbox1&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;collapsor&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;checkbox&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;label&lt;/span&gt; &lt;span class="na"&gt;for&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;checkbox1&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;collapsor-lbl&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; Click me &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;label&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;collapsible-content&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
         This is the body of the collapsible.
-    &lt;span class="nt"&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-&lt;span class="nt"&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Add this CSS:&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="nc"&gt;.collapsor-lbl&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="k"&gt;display&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="k"&gt;block&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;collapsor-lbl&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;display&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;block&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="nc"&gt;.collapsor&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nc"&gt;.collapsible-content&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="k"&gt;display&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="k"&gt;none&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;collapsor&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;collapsible-content&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;display&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;none&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="nc"&gt;.collapsor&lt;/span&gt;&lt;span class="nd"&gt;:checked&lt;/span&gt; &lt;span class="o"&gt;~&lt;/span&gt; &lt;span class="nc"&gt;.collapsible-content&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="k"&gt;display&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="k"&gt;block&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;collapsor&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nd"&gt;checked&lt;/span&gt; &lt;span class="o"&gt;~&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;collapsible-content&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;display&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;block&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -1017,26 +1017,26 @@ We will make that &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt; capable of receiv
 Then whenever that div has the &lt;code&gt;:focus-within&lt;/code&gt; pseudo-class set,
 we will set &lt;code&gt;display: block&lt;/code&gt; on &lt;code&gt;.collapsible-content&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Change the HTML to this:&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;div&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;collapsible&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class="nt"&gt;&amp;lt;label&lt;/span&gt; &lt;span class="na"&gt;for=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;checkbox2&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;collapsor-lbl&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt; Click me &lt;span class="nt"&gt;&amp;lt;/label&amp;gt;&lt;/span&gt;
-    &lt;span class="nt"&gt;&amp;lt;div&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;focus-capturer&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;tabindex=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;0&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class="nt"&gt;&amp;lt;input&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;checkbox2&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;collapsor&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;checkbox&amp;quot;&lt;/span&gt; &lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
-        &lt;span class="nt"&gt;&amp;lt;div&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;collapsible-content&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
-            &lt;span class="nt"&gt;&amp;lt;p&amp;gt;&lt;/span&gt;This is the body of the collapsible.&lt;span class="nt"&gt;&amp;lt;p&amp;gt;&lt;/span&gt;
-            &lt;span class="nt"&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
-                &lt;span class="nt"&gt;&amp;lt;li&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class="na"&gt;href=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;link1&lt;span class="nt"&gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-                &lt;span class="nt"&gt;&amp;lt;li&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class="na"&gt;href=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;link2&lt;span class="nt"&gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-                &lt;span class="nt"&gt;&amp;lt;li&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class="na"&gt;href=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;link3&lt;span class="nt"&gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-            &lt;span class="nt"&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
-        &lt;span class="nt"&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-    &lt;span class="nt"&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-&lt;span class="nt"&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;collapsible&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;label&lt;/span&gt; &lt;span class="na"&gt;for&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;checkbox2&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;collapsor-lbl&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; Click me &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;label&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;focus-capturer&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;tabindex&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;0&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;input&lt;/span&gt; &lt;span class="na"&gt;id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;checkbox2&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;collapsor&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;checkbox&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
+        &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;collapsible-content&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;p&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;This is the body of the collapsible.&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;p&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;ul&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+                &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;li&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;link1&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;li&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+                &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;li&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;link2&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;li&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+                &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;li&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;link3&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;li&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;ul&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Add this CSS:&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="nc"&gt;.focus-capturer&lt;/span&gt;&lt;span class="nd"&gt;:focus-within&lt;/span&gt; &lt;span class="nc"&gt;.collapsible-content&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="k"&gt;display&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="k"&gt;block&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;focus-capturer&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nd"&gt;focus-within&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;collapsible-content&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;display&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;block&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -1235,146 +1235,4 @@ It'll look similar to &lt;code&gt;6151505151515151&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;You might also want to try out other variations.
 After you get good at these, you can finally try 3-in-1.&lt;/p&gt;
-&lt;p&gt;You might also like this &lt;a href="https://www.youtube.com/watch?v=z2k3ugex7Kw"&gt;video tutorial by Chris Taibbi&lt;/a&gt;.&lt;/p&gt;</content><category term="Juggling"></category><category term="Tutorial"></category></entry><entry><title>Hobbies and Interests</title><link href="https://sharmaeklavya2.github.io/blog/hobbies.html" rel="alternate"></link><published>2017-10-01T00:00:00+05:30</published><updated>2019-10-07T00:00:00+05:30</updated><author><name>Eklavya Sharma</name></author><id>tag:sharmaeklavya2.github.io,2017-10-01:/blog/hobbies.html</id><summary type="html">&lt;p&gt;My hobbies, interests and preferences, along with descriptions and references.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Here's an attempt to exhaustively document my hobbies, interests and preferences.
-In each section, things are arranged in roughly decreasing order of relevance.&lt;/p&gt;
-&lt;p&gt;Sometimes you may not know what something means exactly.
-Looking it up on Wikipedia will often give you a good idea.
-For things whose Wikipedia articles may not be well written,
-I'll provide other references.&lt;/p&gt;
-&lt;h2 id="interests"&gt;Interests&lt;a class="headerlink" href="#interests" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Data Structures, Algorithms and Theoretical Computer Science&lt;/strong&gt;:
-  For those who have no idea what the word 'Algorithm' means, look it up on the
-  &lt;a href="https://simple.wikipedia.org/wiki/Algorithm"&gt;simple English Wikipedia&lt;/a&gt;.
-  I started studying DSA (Data Structures and Algorithms) in my first year at BITS
-  so that I could become better at competitive programming.
-  But in my second year, I developed a liking for it by itself.
-  In subsequent years, I studied and got interested in more areas of theoretical computer science,
-  like theory of computation and computational complexity.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Competitive Programming&lt;/strong&gt;:
-  I solved some math and programming problems on &lt;a href="https://projecteuler.net"&gt;Project Euler&lt;/a&gt; when I was in class 12
-  and solved many algorithmic programming problems in college, mostly in my first year.
-  I occasionally still solve problems on &lt;a href="https://www.codechef.com/users/sharmaeklavya2"&gt;Codechef&lt;/a&gt;
-  and &lt;a href="http://codeforces.com/profile/eku"&gt;Codeforces&lt;/a&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Math&lt;/strong&gt;: I like abstract algebra, number theory and linear algebra.
-  In 2019, I began writing down some of my knowledge on my
-  &lt;a href="https://sharmaeklavya2.github.io/theoremdep"&gt;theorems website&lt;/a&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Juggling&lt;/strong&gt;:
-  I started juggling after my entrance exams and before joining BITS.
-  I know over 30 juggling patterns now. You can watch me juggle on
-  &lt;a href="https://www.youtube.com/watch?v=xYrnQMHfDNE&amp;amp;list=PLACN_dyOcd_WSIzGV-4hVCQyQFmzKH1kb"&gt;YouTube&lt;/a&gt;.
-  One of my first inspirations was this great
-  &lt;a href="https://www.youtube.com/watch?v=wP8tbLBls_M"&gt;juggling video of Anthony Gatto&lt;/a&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Anime&lt;/strong&gt;:
-  'Attack on Titan' is my favorite. I have also watched 'Death Note', 'Fullmetal Alchemist (Brotherhood)',
-  'My Hero Academia' (first season only) and 'The Last Airbender'.
-  Do not look them up on Wikipedia; you'll get spoilers.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Webcomics&lt;/strong&gt;:
-  Webcomics are comic strips put up on websites.
-  I like &lt;a href="https://xkcd.com"&gt;XKCD&lt;/a&gt;, &lt;a href="https://smbc-comics.com"&gt;SMBC&lt;/a&gt; and &lt;a href="https://www.jspowerhour.com"&gt;JSPH&lt;/a&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Reddit&lt;/strong&gt;:
-  I like reading posts on &lt;a href="https://www.reddit.com/r/funny/"&gt;r/funny&lt;/a&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Software development&lt;/strong&gt;:
-  See &lt;a href="https://github.com/sharmaeklavya2"&gt;my Github profile&lt;/a&gt; for projects I have done.
-  It used to be my primary hobby in my sophomore year at BITS but I'm no longer as interested in it now.
-  I still like to do it occasionally.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Watching videos on YouTube&lt;/strong&gt;:
-  Refer to my &lt;a href="https://www.youtube.com/channel/UCsI0Lrna_yR_X9H5m_ubM9A/channels"&gt;subscriptions&lt;/a&gt;
-  and &lt;a href="https://www.youtube.com/playlist?list=LLsI0Lrna_yR_X9H5m_ubM9A"&gt;liked videos&lt;/a&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Balancing&lt;/strong&gt;:
-  In my third year at BITS, I learned how to balance long sticks on my foot, chin and nose.
-  Here's &lt;a href="https://www.youtube.com/watch?v=sOju-b6JRxI"&gt;my video on YouTube&lt;/a&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Watching movies&lt;/strong&gt;:
-  I rarely watch movies (less than once a month).
-  I mostly watch English movies.
-  My favorites are 'The Matrix' and 'Avatar'. I also like Marvel movies.
-  Among Indian movies, Baahubali is my favorite.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Video games&lt;/strong&gt;:
-  I used to play a lot of video games before college.
-  My favorites include Rally racing, GTA Vice City and 2D platform games.
-  I stopped after that mostly because I have been busy and I no longer have Windows.
-  Sometimes I play strategy mini-games like &lt;a href="https://alexnisnevich.github.io/untrusted/"&gt;Untrusted&lt;/a&gt;
-  and &lt;a href="http://code.jerev.be/ggo13-transcube/"&gt;Transcube&lt;/a&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Cycling&lt;/strong&gt;:
-  I love cycling as a mode of transport. I used it to commute to classes at BITS.
-  I wish cycling was safer on city roads in India. I can cycle without holding the handlebars.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="dislikes"&gt;Dislikes&lt;a class="headerlink" href="#dislikes" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Tourism&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Attending parties&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="preferences"&gt;Preferences&lt;a class="headerlink" href="#preferences" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Music&lt;/strong&gt;:
-  I mostly like rock and some western classical.
-  I also like Indian classical but good songs are harder to find in that category.
-  Here are some of my favorites:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;The Stage - Avenged Sevenfold&lt;/li&gt;
-&lt;li&gt;Mello theme - Death Note soundtrack&lt;/li&gt;
-&lt;li&gt;Hotel California - Eagles&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=1B4pZBmI_gU"&gt;Arpeggios from Hell&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Mr. Crowley - Ozzy Osbourne&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=I6y0eYcIJ5I"&gt;Minute Waltz - Chopin&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=XWS1IRF_IFA"&gt;Angelina - Tommy Emmanuel&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=c5bzrB5QbSY"&gt;Cesar Frank Sonata&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=_sHURJwNjB8"&gt;Flight of the Bumblebee - Nikolai Rimsky-Korsakov&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;River flows in you - Yiruma&lt;/li&gt;
-&lt;li&gt;Millennium of the Blind - Megadeth&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Food&lt;/strong&gt;:
-  I'm vegetarian. South Indian food is my favorite.
-  Very oily food makes me nauseous and some North Indian cuisines (especially that of Rajasthan) are very oily.
-  I can also cook simple food.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Operating System&lt;/strong&gt;:
-  I strongly prefer Linux (all distributions I have ever seen) and macOS over Windows.
-  My favorite thing about Linux and macOS is that they are Unix-like OSes where
-  I can use &lt;a href="https://en.wikipedia.org/wiki/Terminal_emulator"&gt;the terminal&lt;/a&gt; for most of my work.
-  This might seem primitive to most people, but I think the terminal is better than graphical programs
-  for a lot of tasks once you get used to it.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Programming language&lt;/strong&gt;:
-  Python is my favorite for day-to-day programming and projects.
-  For competitive programming, I use C/C++. I also know Java.
-  I prefer C/C++ as a first language to be taught rather than Python or Java.
-  Haskell is the most elegant language I have seen,
-  but I rarely use it because I find pure functional programming difficult.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Text editor&lt;/strong&gt;: Vim is my favorite. I haven't yet tried Emacs.
-  You can check out my &lt;a href="https://github.com/sharmaeklavya2/dotfiles/blob/master/dotfiles/.vimrc"&gt;.vimrc&lt;/a&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;</content><category term="About Me"></category></entry></feed>
+&lt;p&gt;You might also like this &lt;a href="https://www.youtube.com/watch?v=z2k3ugex7Kw"&gt;video tutorial by Chris Taibbi&lt;/a&gt;.&lt;/p&gt;</content><category term="Juggling"></category><category term="Tutorial"></category></entry></feed>
