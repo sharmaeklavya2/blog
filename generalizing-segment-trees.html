@@ -288,7 +288,7 @@ For MINMAX, <span class="math">\(x \circ y = \min(x_0, y_0), \max(x_1, y_1)\)</s
 we can make the query monoid type a template parameter.</p>
 <p>Here's an example of how to represent query monoid elements as a class
 for the MINMAX problem:</p>
-<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp"></span>
+<div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp"></span>
 
 <span class="k">class</span> <span class="nc">MinMaxElem</span> <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
@@ -311,7 +311,7 @@ for the MINMAX problem:</p>
         <span class="c1">// direct constructor (will be used later, when coding update functions)</span>
         <span class="n">x_min</span><span class="p">(</span><span class="n">_x_min</span><span class="p">),</span> <span class="n">x_max</span><span class="p">(</span><span class="n">_x_max</span><span class="p">)</span> <span class="p">{}</span>
 <span class="p">};</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>In the segment tree library, we can call the above methods
@@ -473,7 +473,7 @@ In the above example, the composition of <span class="math">\((a_1, b_1)\)</span
 we can make the node update function family a template parameter.</p>
 <p>Here's an example of how to represent node update functions as a class
 for the MINMAX problem:</p>
-<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">LinearUpdFunc</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">LinearUpdFunc</span> <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
     <span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">;</span>  <span class="c1">// function representation</span>
 
@@ -494,7 +494,7 @@ for the MINMAX problem:</p>
         <span class="c1">// function composition</span>
         <span class="n">a</span><span class="p">(</span><span class="n">l</span><span class="p">.</span><span class="n">a</span> <span class="o">*</span> <span class="n">r</span><span class="p">.</span><span class="n">a</span><span class="p">),</span> <span class="n">b</span><span class="p">(</span><span class="n">l</span><span class="p">.</span><span class="n">a</span> <span class="o">*</span> <span class="n">r</span><span class="p">.</span><span class="n">b</span> <span class="o">+</span> <span class="n">l</span><span class="p">.</span><span class="n">b</span><span class="p">)</span> <span class="p">{}</span>
 <span class="p">};</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>In the segment tree library, we can call the above methods

@@ -82,7 +82,7 @@ but you'll have to make major modifications to the instructions below.</p>
 <li><a href="#textedit-preferences">TextEdit preferences</a></li>
 </ul>
 </li>
-<li><a href="#terminal-and-shell"><span style="background-color: #F9E79F"/>Terminal and Shell</span></a><ul>
+<li><a href="#terminal-and-shell">Terminal and Shell</a><ul>
 <li><a href="#terminalapp-preferences">Terminal.app preferences</a></li>
 <li><a href="#installing-xcode-command-line-tools">Installing Xcode command-line tools</a></li>
 <li><a href="#dotfiles">Dotfiles</a></li>
@@ -90,20 +90,20 @@ but you'll have to make major modifications to the instructions below.</p>
 <li><a href="#install-tmux">Install tmux</a></li>
 </ul>
 </li>
-<li><a href="#install-command-line-programs"><span style="background-color: #A9DFBF">Install command-line programs</span></a><ul>
+<li><a href="#install-command-line-programs">Install command-line programs</a><ul>
 <li><a href="#java">Java</a></li>
 <li><a href="#mactex">MacTex</a></li>
 <li><a href="#python-and-packages">Python and packages</a></li>
 </ul>
 </li>
-<li><a href="#transfer-backed-up-data"><span style="background-color: #AED6F1">Transfer backed-up data</span></a><ul>
+<li><a href="#transfer-backed-up-data">Transfer backed-up data</a><ul>
 <li><a href="#reorganizing-data-and-backup">Reorganizing data and backup</a></li>
 <li><a href="#ntfs-drivers-for-macos">NTFS drivers for macOS</a></li>
 <li><a href="#install-dropbox-and-use-symlinks">Install Dropbox and use symlinks</a></li>
 <li><a href="#wallpapers-and-profile-picture">Wallpapers and profile picture</a></li>
 </ul>
 </li>
-<li><a href="#customize-vim"><span style="background-color: #F5B7B1">Customize Vim</span></a><ul>
+<li><a href="#customize-vim">Customize Vim</a><ul>
 <li><a href="#install-newer-vim">Install newer Vim</a></li>
 <li><a href="#install-pathogen">Install Pathogen</a></li>
 <li><a href="#get-vim-plugins">Get Vim plugins</a></li>
@@ -111,7 +111,7 @@ but you'll have to make major modifications to the instructions below.</p>
 <li><a href="#fix-vim-locale-error">Fix Vim locale error</a></li>
 </ul>
 </li>
-<li><a href="#install-nginx-and-serve-website-mirrors"><span style="background-color: #D2B4DE">Install Nginx and serve website mirrors</span></a><ul>
+<li><a href="#install-nginx-and-serve-website-mirrors">Install Nginx and serve website mirrors</a><ul>
 <li><a href="#install-and-run-nginx">Install and run Nginx</a></li>
 <li><a href="#enable-nginx-autoindex">Enable nginx autoindex</a></li>
 <li><a href="#serve-my-websites-with-nginx">Serve my websites with Nginx</a></li>
@@ -245,13 +245,13 @@ Common examples are <code>.bash_profile</code>, <code>.vimrc</code> and <code>.g
 <a href="https://github.com/sharmaeklavya2/dotfiles"><code>sharmaeklavya2/dotfiles</code></a>.
 You can find detailed instructions for setting them up in the repository's readme.
 Here is a brief version:</p>
-<div class="codehilite"><pre><span></span>git clone https://github.com/sharmaeklavya2/dotfiles.git
+<div class="codehilite"><pre><span></span><code>git clone https://github.com/sharmaeklavya2/dotfiles.git
 cd dotfiles
 ./scripts/make_links.py
 shopt -s dotglob nullglob
 mv _links/.bashrc _links/.bash_profile
 mv _links/* ~
-</pre></div>
+</code></pre></div>
 
 
 <p>Now either restart your terminal or run <code>source ~/.bash_profile</code>.
@@ -268,13 +268,13 @@ to increase your shell input history size.</p>
 <h3 id="install-homebrew">Install <a href="https://brew.sh/">Homebrew</a><a class="headerlink" href="#install-homebrew" title="Permanent link">&para;</a></h3>
 <p>Homebrew (a.k.a. brew) is a package manager, which means it's like a terminal version of the App Store.
 You can install programs (called packages by brew) by simply writing commands on the terminal:</p>
-<div class="codehilite"><pre><span></span>brew install name-of-package
-</pre></div>
+<div class="codehilite"><pre><span></span><code>brew install name-of-package
+</code></pre></div>
 
 
 <p>According to <a href="https://brew.sh/">brew's website</a>, brew can be installed by typing this into the terminal:</p>
-<div class="codehilite"><pre><span></span>/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
-</pre></div>
+<div class="codehilite"><pre><span></span><code>/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
+</code></pre></div>
 
 
 <p>Installation may require superuser permissions.</p>
@@ -290,8 +290,8 @@ To prevent that from happening, add <code>export HOMEBREW_NO_AUTO_UPDATE=1</code
 to <code>~/.bash_profile</code> or <code>~/.env</code>.</p>
 <h2 id="install-command-line-programs"><span style="background-color: #A9DFBF">Install command-line programs</span><a class="headerlink" href="#install-command-line-programs" title="Permanent link">&para;</a></h2>
 <h3 id="java">Java<a class="headerlink" href="#java" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span>brew install java
-</pre></div>
+<div class="codehilite"><pre><span></span><code>brew install java
+</code></pre></div>
 
 
 <h3 id="mactex">MacTex<a class="headerlink" href="#mactex" title="Permanent link">&para;</a></h3>
@@ -312,13 +312,13 @@ Run <code>virtualenv /path/to/venv/ -p python3</code> to create a python3 virtua
 Now all python commands and applications you run will use this virtualenv.</p>
 <p>I usually install python packages only when required,
 but some are useful enough that I installed them in the beginning:</p>
-<div class="codehilite"><pre><span></span>pip install ipython requests pipdeptree flake8 grip cleaver
-</pre></div>
+<div class="codehilite"><pre><span></span><code>pip install ipython requests pipdeptree flake8 grip cleaver
+</code></pre></div>
 
 
 <p>These packages are useful for number-crunching and analytics:</p>
-<div class="codehilite"><pre><span></span>pip install numpy scipy pandas matplotlib seaborn
-</pre></div>
+<div class="codehilite"><pre><span></span><code>pip install numpy scipy pandas matplotlib seaborn
+</code></pre></div>
 
 
 <h2 id="transfer-backed-up-data"><span style="background-color: #AED6F1">Transfer backed-up data</span><a class="headerlink" href="#transfer-backed-up-data" title="Permanent link">&para;</a></h2>
@@ -376,9 +376,9 @@ You can see which features are installed by running <code>vim --version</code>.<
 Alternatively, you can install MacVim (<code>brew install macvim</code>).
 This will not replace the old vim; the old vim can still be accessed at <code>/usr/bin/vim</code>.</p>
 <h3 id="install-pathogen">Install <a href="https://github.com/tpope/vim-pathogen">Pathogen</a><a class="headerlink" href="#install-pathogen" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span>mkdir -p ~/.vim/autoload ~/.vim/bundle &amp;&amp; \
+<div class="codehilite"><pre><span></span><code>mkdir -p ~/.vim/autoload ~/.vim/bundle &amp;&amp; \
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-</pre></div>
+</code></pre></div>
 
 
 <p>Add <code>execute pathogen#infect()</code> to your <code>.vimrc</code>.
@@ -409,12 +409,12 @@ want good completion for C, C++, Java, Rust, Go or JavaScript
 but I'm able to use YouCompleteMe with Vim installed via <code>brew install vim</code>.</p>
 <h3 id="fix-vim-locale-error">Fix Vim locale error<a class="headerlink" href="#fix-vim-locale-error" title="Permanent link">&para;</a></h3>
 <p>You may get error messages like this when you start Vim:</p>
-<div class="codehilite"><pre><span></span>Warning: Failed to set locale category LC_NUMERIC to en_IN.
+<div class="codehilite"><pre><span></span><code>Warning: Failed to set locale category LC_NUMERIC to en_IN.
 Warning: Failed to set locale category LC_TIME to en_IN.
 Warning: Failed to set locale category LC_COLLATE to en_IN.
 Warning: Failed to set locale category LC_MONETARY to en_IN.
 Warning: Failed to set locale category LC_MESSAGES to en_IN.
-</pre></div>
+</code></pre></div>
 
 
 <p>Fix this by adding <code>export LC_ALL=en_US.UTF-8</code> to <code>~/.bash_profile</code> or <code>~/.env</code>
@@ -423,9 +423,9 @@ Warning: Failed to set locale category LC_MESSAGES to en_IN.
 <p>I use <a href="https://nginx.org/en/">Nginx</a> to serve static content.
 It's useful to access local websites that I downloaded or created.</p>
 <h3 id="install-and-run-nginx">Install and run Nginx<a class="headerlink" href="#install-and-run-nginx" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span>brew install nginx
+<div class="codehilite"><pre><span></span><code>brew install nginx
 nginx
-</pre></div>
+</code></pre></div>
 
 
 <p>Now go to http://localhost:8080. You should see a welcome page from Nginx.</p>

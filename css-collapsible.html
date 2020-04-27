@@ -84,17 +84,17 @@
 <h2 id="skeleton">Skeleton<a class="headerlink" href="#skeleton" title="Permanent link">&para;</a></h2>
 <p>Let's first create the basic structure without collapsibility.</p>
 <p>HTML:</p>
-<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;collapsible&quot;</span><span class="p">&gt;</span>
+<div class="codehilite"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;collapsible&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;collapsor-lbl&quot;</span><span class="p">&gt;</span> Click me <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;collapsible-content&quot;</span><span class="p">&gt;</span>
         This is the body of the collapsible.
     <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>CSS (for beautification):</p>
-<div class="codehilite"><pre><span></span><span class="p">.</span><span class="nc">collapsible</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code><span class="p">.</span><span class="nc">collapsible</span> <span class="p">{</span>
     <span class="k">max-width</span><span class="p">:</span> <span class="mi">40</span><span class="kt">em</span><span class="p">;</span>
     <span class="k">border</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="kc">solid</span> <span class="kc">black</span><span class="p">;</span>
     <span class="k">border-radius</span><span class="p">:</span> <span class="mf">0.5</span><span class="kt">rem</span><span class="p">;</span>
@@ -110,7 +110,7 @@
     <span class="k">padding</span><span class="p">:</span> <span class="mf">0.5</span><span class="kt">rem</span><span class="p">;</span>
     <span class="k">border-top</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="kc">solid</span> <span class="kc">black</span><span class="p">;</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>This is what the output looks like:</p>
@@ -135,18 +135,18 @@ I read about it on the blog post
   When used together with <code>:checked</code> on checkbox, we can select <code>.collapsible-content</code> only when the checkbox is checked.</li>
 </ul>
 <p>Change the HTML to this:</p>
-<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;collapsible&quot;</span><span class="p">&gt;</span>
+<div class="codehilite"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;collapsible&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">input</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;checkbox1&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;collapsor&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="p">/&gt;</span>
     <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;checkbox1&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;collapsor-lbl&quot;</span><span class="p">&gt;</span> Click me <span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;collapsible-content&quot;</span><span class="p">&gt;</span>
         This is the body of the collapsible.
     <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Add this CSS:</p>
-<div class="codehilite"><pre><span></span><span class="p">.</span><span class="nc">collapsor-lbl</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code><span class="p">.</span><span class="nc">collapsor-lbl</span> <span class="p">{</span>
     <span class="k">display</span><span class="p">:</span> <span class="kc">block</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="p">.</span><span class="nc">collapsor</span><span class="o">,</span> <span class="p">.</span><span class="nc">collapsible-content</span> <span class="p">{</span>
@@ -155,7 +155,7 @@ I read about it on the blog post
 <span class="p">.</span><span class="nc">collapsor</span><span class="p">:</span><span class="nd">checked</span> <span class="o">~</span> <span class="p">.</span><span class="nc">collapsible-content</span> <span class="p">{</span>
     <span class="k">display</span><span class="p">:</span> <span class="kc">block</span><span class="p">;</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Output:</p>
@@ -189,7 +189,7 @@ We will make that <code>&lt;div&gt;</code> capable of receiving focus via tab by
 Then whenever that div has the <code>:focus-within</code> pseudo-class set,
 we will set <code>display: block</code> on <code>.collapsible-content</code>.</p>
 <p>Change the HTML to this:</p>
-<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;collapsible&quot;</span><span class="p">&gt;</span>
+<div class="codehilite"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;collapsible&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;checkbox2&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;collapsor-lbl&quot;</span><span class="p">&gt;</span> Click me <span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;focus-capturer&quot;</span> <span class="na">tabindex</span><span class="o">=</span><span class="s">&quot;0&quot;</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">input</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;checkbox2&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;collapsor&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="p">/&gt;</span>
@@ -203,14 +203,14 @@ we will set <code>display: block</code> on <code>.collapsible-content</code>.</p
         <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Add this CSS:</p>
-<div class="codehilite"><pre><span></span><span class="p">.</span><span class="nc">focus-capturer</span><span class="p">:</span><span class="nd">focus-within</span> <span class="p">.</span><span class="nc">collapsible-content</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code><span class="p">.</span><span class="nc">focus-capturer</span><span class="p">:</span><span class="nd">focus-within</span> <span class="p">.</span><span class="nc">collapsible-content</span> <span class="p">{</span>
     <span class="k">display</span><span class="p">:</span> <span class="kc">block</span><span class="p">;</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Output:</p>

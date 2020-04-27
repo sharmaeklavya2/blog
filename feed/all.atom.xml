@@ -223,7 +223,7 @@ For MINMAX, &lt;span class="math"&gt;\(x \circ y = \min(x_0, y_0), \max(x_1, y_1
 we can make the query monoid type a template parameter.&lt;/p&gt;
 &lt;p&gt;Here's an example of how to represent query monoid elements as a class
 for the MINMAX problem:&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;algorithm&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;algorithm&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
 
 &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;MinMaxElem&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
 &lt;span class="k"&gt;public&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
@@ -246,7 +246,7 @@ for the MINMAX problem:&lt;/p&gt;
         &lt;span class="c1"&gt;// direct constructor (will be used later, when coding update functions)&lt;/span&gt;
         &lt;span class="n"&gt;x_min&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;_x_min&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;x_max&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;_x_max&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
 &lt;span class="p"&gt;};&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;In the segment tree library, we can call the above methods
@@ -408,7 +408,7 @@ In the above example, the composition of &lt;span class="math"&gt;\((a_1, b_1)\)
 we can make the node update function family a template parameter.&lt;/p&gt;
 &lt;p&gt;Here's an example of how to represent node update functions as a class
 for the MINMAX problem:&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;LinearUpdFunc&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;LinearUpdFunc&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
 &lt;span class="k"&gt;public&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
     &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;  &lt;span class="c1"&gt;// function representation&lt;/span&gt;
 
@@ -429,7 +429,7 @@ for the MINMAX problem:&lt;/p&gt;
         &lt;span class="c1"&gt;// function composition&lt;/span&gt;
         &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;l&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;l&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;l&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
 &lt;span class="p"&gt;};&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;In the segment tree library, we can call the above methods
@@ -507,7 +507,7 @@ a suitable node update function family is left as an exercise.&lt;/p&gt;
             &lt;/ol&gt;
         &lt;/div&gt;
     &lt;/div&gt;
-&lt;/div&gt;</content><category term="CS"></category><category term="Algorithms"></category><category term="Math"></category></entry><entry><title>A Comprehensive Guide to Customizing your MacBook</title><link href="https://sharmaeklavya2.github.io/blog/customize-macos.html" rel="alternate"></link><published>2019-07-12T00:00:00+05:30</published><updated>2019-07-12T00:00:00+05:30</updated><author><name>Eklavya Sharma</name></author><id>tag:sharmaeklavya2.github.io,2019-07-12:/blog/customize-macos.html</id><summary type="html">&lt;p&gt;This post contains a list of all the things I did to customize my MacBook. Most instructions here are useful only for programmers and power users.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I recently got a new laptop - a MacBook Air!
+&lt;/div&gt;</content><category term="posts"></category><category term="CS"></category><category term="Algorithms"></category><category term="Math"></category></entry><entry><title>A Comprehensive Guide to Customizing your MacBook</title><link href="https://sharmaeklavya2.github.io/blog/customize-macos.html" rel="alternate"></link><published>2019-07-12T00:00:00+05:30</published><updated>2019-07-12T00:00:00+05:30</updated><author><name>Eklavya Sharma</name></author><id>tag:sharmaeklavya2.github.io,2019-07-12:/blog/customize-macos.html</id><summary type="html">&lt;p&gt;This post contains a list of all the things I did to customize my MacBook. Most instructions here are useful only for programmers and power users.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I recently got a new laptop - a MacBook Air!
 I customized it so that it's easy for me to use.
 Major changes include:&lt;/p&gt;
 &lt;ul&gt;
@@ -531,7 +531,7 @@ but you'll have to make major modifications to the instructions below.&lt;/p&gt;
 &lt;li&gt;&lt;a href="#textedit-preferences"&gt;TextEdit preferences&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="#terminal-and-shell"&gt;&lt;span style="background-color: #F9E79F"/&gt;Terminal and Shell&lt;/span&gt;&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#terminal-and-shell"&gt;Terminal and Shell&lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href="#terminalapp-preferences"&gt;Terminal.app preferences&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#installing-xcode-command-line-tools"&gt;Installing Xcode command-line tools&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#dotfiles"&gt;Dotfiles&lt;/a&gt;&lt;/li&gt;
@@ -539,20 +539,20 @@ but you'll have to make major modifications to the instructions below.&lt;/p&gt;
 &lt;li&gt;&lt;a href="#install-tmux"&gt;Install tmux&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="#install-command-line-programs"&gt;&lt;span style="background-color: #A9DFBF"&gt;Install command-line programs&lt;/span&gt;&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#install-command-line-programs"&gt;Install command-line programs&lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href="#java"&gt;Java&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#mactex"&gt;MacTex&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#python-and-packages"&gt;Python and packages&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="#transfer-backed-up-data"&gt;&lt;span style="background-color: #AED6F1"&gt;Transfer backed-up data&lt;/span&gt;&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#transfer-backed-up-data"&gt;Transfer backed-up data&lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href="#reorganizing-data-and-backup"&gt;Reorganizing data and backup&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#ntfs-drivers-for-macos"&gt;NTFS drivers for macOS&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#install-dropbox-and-use-symlinks"&gt;Install Dropbox and use symlinks&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#wallpapers-and-profile-picture"&gt;Wallpapers and profile picture&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="#customize-vim"&gt;&lt;span style="background-color: #F5B7B1"&gt;Customize Vim&lt;/span&gt;&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#customize-vim"&gt;Customize Vim&lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href="#install-newer-vim"&gt;Install newer Vim&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#install-pathogen"&gt;Install Pathogen&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#get-vim-plugins"&gt;Get Vim plugins&lt;/a&gt;&lt;/li&gt;
@@ -560,7 +560,7 @@ but you'll have to make major modifications to the instructions below.&lt;/p&gt;
 &lt;li&gt;&lt;a href="#fix-vim-locale-error"&gt;Fix Vim locale error&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="#install-nginx-and-serve-website-mirrors"&gt;&lt;span style="background-color: #D2B4DE"&gt;Install Nginx and serve website mirrors&lt;/span&gt;&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#install-nginx-and-serve-website-mirrors"&gt;Install Nginx and serve website mirrors&lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href="#install-and-run-nginx"&gt;Install and run Nginx&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#enable-nginx-autoindex"&gt;Enable nginx autoindex&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#serve-my-websites-with-nginx"&gt;Serve my websites with Nginx&lt;/a&gt;&lt;/li&gt;
@@ -694,13 +694,13 @@ Common examples are &lt;code&gt;.bash_profile&lt;/code&gt;, &lt;code&gt;.vimrc&l
 &lt;a href="https://github.com/sharmaeklavya2/dotfiles"&gt;&lt;code&gt;sharmaeklavya2/dotfiles&lt;/code&gt;&lt;/a&gt;.
 You can find detailed instructions for setting them up in the repository's readme.
 Here is a brief version:&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git clone https://github.com/sharmaeklavya2/dotfiles.git
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git clone https://github.com/sharmaeklavya2/dotfiles.git
 cd dotfiles
 ./scripts/make_links.py
 shopt -s dotglob nullglob
 mv _links/.bashrc _links/.bash_profile
 mv _links/* ~
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Now either restart your terminal or run &lt;code&gt;source ~/.bash_profile&lt;/code&gt;.
@@ -717,13 +717,13 @@ to increase your shell input history size.&lt;/p&gt;
 &lt;h3 id="install-homebrew"&gt;Install &lt;a href="https://brew.sh/"&gt;Homebrew&lt;/a&gt;&lt;a class="headerlink" href="#install-homebrew" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Homebrew (a.k.a. brew) is a package manager, which means it's like a terminal version of the App Store.
 You can install programs (called packages by brew) by simply writing commands on the terminal:&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;brew install name-of-package
-&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;brew install name-of-package
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;According to &lt;a href="https://brew.sh/"&gt;brew's website&lt;/a&gt;, brew can be installed by typing this into the terminal:&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;/usr/bin/ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;
-&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;/usr/bin/ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Installation may require superuser permissions.&lt;/p&gt;
@@ -739,8 +739,8 @@ To prevent that from happening, add &lt;code&gt;export HOMEBREW_NO_AUTO_UPDATE=1
 to &lt;code&gt;~/.bash_profile&lt;/code&gt; or &lt;code&gt;~/.env&lt;/code&gt;.&lt;/p&gt;
 &lt;h2 id="install-command-line-programs"&gt;&lt;span style="background-color: #A9DFBF"&gt;Install command-line programs&lt;/span&gt;&lt;a class="headerlink" href="#install-command-line-programs" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;h3 id="java"&gt;Java&lt;a class="headerlink" href="#java" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;brew install java
-&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;brew install java
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h3 id="mactex"&gt;MacTex&lt;a class="headerlink" href="#mactex" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
@@ -761,13 +761,13 @@ Run &lt;code&gt;virtualenv /path/to/venv/ -p python3&lt;/code&gt; to create a py
 Now all python commands and applications you run will use this virtualenv.&lt;/p&gt;
 &lt;p&gt;I usually install python packages only when required,
 but some are useful enough that I installed them in the beginning:&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install ipython requests pipdeptree flake8 grip cleaver
-&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pip install ipython requests pipdeptree flake8 grip cleaver
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;These packages are useful for number-crunching and analytics:&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install numpy scipy pandas matplotlib seaborn
-&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pip install numpy scipy pandas matplotlib seaborn
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h2 id="transfer-backed-up-data"&gt;&lt;span style="background-color: #AED6F1"&gt;Transfer backed-up data&lt;/span&gt;&lt;a class="headerlink" href="#transfer-backed-up-data" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
@@ -825,9 +825,9 @@ You can see which features are installed by running &lt;code&gt;vim --version&lt
 Alternatively, you can install MacVim (&lt;code&gt;brew install macvim&lt;/code&gt;).
 This will not replace the old vim; the old vim can still be accessed at &lt;code&gt;/usr/bin/vim&lt;/code&gt;.&lt;/p&gt;
 &lt;h3 id="install-pathogen"&gt;Install &lt;a href="https://github.com/tpope/vim-pathogen"&gt;Pathogen&lt;/a&gt;&lt;a class="headerlink" href="#install-pathogen" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkdir -p ~/.vim/autoload ~/.vim/bundle &amp;amp;&amp;amp; \
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;mkdir -p ~/.vim/autoload ~/.vim/bundle &amp;amp;&amp;amp; \
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Add &lt;code&gt;execute pathogen#infect()&lt;/code&gt; to your &lt;code&gt;.vimrc&lt;/code&gt;.
@@ -858,12 +858,12 @@ want good completion for C, C++, Java, Rust, Go or JavaScript
 but I'm able to use YouCompleteMe with Vim installed via &lt;code&gt;brew install vim&lt;/code&gt;.&lt;/p&gt;
 &lt;h3 id="fix-vim-locale-error"&gt;Fix Vim locale error&lt;a class="headerlink" href="#fix-vim-locale-error" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;You may get error messages like this when you start Vim:&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Warning: Failed to set locale category LC_NUMERIC to en_IN.
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Warning: Failed to set locale category LC_NUMERIC to en_IN.
 Warning: Failed to set locale category LC_TIME to en_IN.
 Warning: Failed to set locale category LC_COLLATE to en_IN.
 Warning: Failed to set locale category LC_MONETARY to en_IN.
 Warning: Failed to set locale category LC_MESSAGES to en_IN.
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Fix this by adding &lt;code&gt;export LC_ALL=en_US.UTF-8&lt;/code&gt; to &lt;code&gt;~/.bash_profile&lt;/code&gt; or &lt;code&gt;~/.env&lt;/code&gt;
@@ -872,9 +872,9 @@ Warning: Failed to set locale category LC_MESSAGES to en_IN.
 &lt;p&gt;I use &lt;a href="https://nginx.org/en/"&gt;Nginx&lt;/a&gt; to serve static content.
 It's useful to access local websites that I downloaded or created.&lt;/p&gt;
 &lt;h3 id="install-and-run-nginx"&gt;Install and run Nginx&lt;a class="headerlink" href="#install-and-run-nginx" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;brew install nginx
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;brew install nginx
 nginx
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Now go to http://localhost:8080. You should see a welcome page from Nginx.&lt;/p&gt;
@@ -889,7 +889,7 @@ you should see the list of files in &lt;code&gt;/usr/local/var/www&lt;/code&gt;.
 &lt;h3 id="serve-my-websites-with-nginx"&gt;Serve my websites with Nginx&lt;a class="headerlink" href="#serve-my-websites-with-nginx" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;I had backed up compressed archives of my websites to my external hard disk.
 I copied the websites from there, uncompressed them, and placed them in &lt;code&gt;/usr/local/var/www&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;You can put symlinks in &lt;code&gt;/usr/local/var/www&lt;/code&gt;, but &lt;code&gt;/usr/local/var/www&lt;/code&gt; itself cannot be a symlink.&lt;/p&gt;</content><category term="Tutorial"></category></entry><entry><title>Making a keyboard-navigable collapsible without JavaScript</title><link href="https://sharmaeklavya2.github.io/blog/css-collapsible.html" rel="alternate"></link><published>2018-11-01T00:00:00+05:30</published><updated>2018-11-01T00:00:00+05:30</updated><author><name>Eklavya Sharma</name></author><id>tag:sharmaeklavya2.github.io,2018-11-01:/blog/css-collapsible.html</id><summary type="html">&lt;p&gt;A 'collapsible' is content whose visibility can be toggled by clicking something. However, users without a mouse should also be able to open the collapsed content. This article explains how to make a keyboard-navigable collapsible without using JavaScript.&lt;/p&gt;</summary><content type="html">&lt;p&gt;A 'collapsible' is content whose visibility can be toggled. Here is an example:&lt;/p&gt;
+&lt;p&gt;You can put symlinks in &lt;code&gt;/usr/local/var/www&lt;/code&gt;, but &lt;code&gt;/usr/local/var/www&lt;/code&gt; itself cannot be a symlink.&lt;/p&gt;</content><category term="posts"></category><category term="Tutorial"></category></entry><entry><title>Making a keyboard-navigable collapsible without JavaScript</title><link href="https://sharmaeklavya2.github.io/blog/css-collapsible.html" rel="alternate"></link><published>2018-11-01T00:00:00+05:30</published><updated>2018-11-01T00:00:00+05:30</updated><author><name>Eklavya Sharma</name></author><id>tag:sharmaeklavya2.github.io,2018-11-01:/blog/css-collapsible.html</id><summary type="html">&lt;p&gt;A 'collapsible' is content whose visibility can be toggled by clicking something. However, users without a mouse should also be able to open the collapsed content. This article explains how to make a keyboard-navigable collapsible without using JavaScript.&lt;/p&gt;</summary><content type="html">&lt;p&gt;A 'collapsible' is content whose visibility can be toggled. Here is an example:&lt;/p&gt;
 &lt;div class="collapsible" style="clear: both"&gt;
     &lt;label for="checkbox0" class="collapsor-lbl"&gt; Click me &lt;/label&gt;
     &lt;div class="focus-capturer" tabindex="0"&gt;
@@ -912,17 +912,17 @@ I copied the websites from there, uncompressed them, and placed them in &lt;code
 &lt;h2 id="skeleton"&gt;Skeleton&lt;a class="headerlink" href="#skeleton" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Let's first create the basic structure without collapsibility.&lt;/p&gt;
 &lt;p&gt;HTML:&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;collapsible&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;collapsible&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
     &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;collapsor-lbl&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; Click me &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
     &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;collapsible-content&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
         This is the body of the collapsible.
     &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;CSS (for beautification):&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;collapsible&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;collapsible&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
     &lt;span class="k"&gt;max-width&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;40&lt;/span&gt;&lt;span class="kt"&gt;em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
     &lt;span class="k"&gt;border&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt; &lt;span class="kc"&gt;solid&lt;/span&gt; &lt;span class="kc"&gt;black&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
     &lt;span class="k"&gt;border-radius&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;0.5&lt;/span&gt;&lt;span class="kt"&gt;rem&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
@@ -938,7 +938,7 @@ I copied the websites from there, uncompressed them, and placed them in &lt;code
     &lt;span class="k"&gt;padding&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;0.5&lt;/span&gt;&lt;span class="kt"&gt;rem&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
     &lt;span class="k"&gt;border-top&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt; &lt;span class="kc"&gt;solid&lt;/span&gt; &lt;span class="kc"&gt;black&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;This is what the output looks like:&lt;/p&gt;
@@ -963,18 +963,18 @@ I read about it on the blog post
   When used together with &lt;code&gt;:checked&lt;/code&gt; on checkbox, we can select &lt;code&gt;.collapsible-content&lt;/code&gt; only when the checkbox is checked.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Change the HTML to this:&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;collapsible&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;collapsible&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
     &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;input&lt;/span&gt; &lt;span class="na"&gt;id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;checkbox1&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;collapsor&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;checkbox&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
     &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;label&lt;/span&gt; &lt;span class="na"&gt;for&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;checkbox1&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;collapsor-lbl&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; Click me &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;label&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
     &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;collapsible-content&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
         This is the body of the collapsible.
     &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Add this CSS:&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;collapsor-lbl&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;collapsor-lbl&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
     &lt;span class="k"&gt;display&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;block&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;collapsor&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;collapsible-content&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
@@ -983,7 +983,7 @@ I read about it on the blog post
 &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;collapsor&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nd"&gt;checked&lt;/span&gt; &lt;span class="o"&gt;~&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;collapsible-content&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
     &lt;span class="k"&gt;display&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;block&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Output:&lt;/p&gt;
@@ -1017,7 +1017,7 @@ We will make that &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt; capable of receiv
 Then whenever that div has the &lt;code&gt;:focus-within&lt;/code&gt; pseudo-class set,
 we will set &lt;code&gt;display: block&lt;/code&gt; on &lt;code&gt;.collapsible-content&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Change the HTML to this:&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;collapsible&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;collapsible&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
     &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;label&lt;/span&gt; &lt;span class="na"&gt;for&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;checkbox2&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;collapsor-lbl&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; Click me &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;label&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
     &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;focus-capturer&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;tabindex&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;0&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
         &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;input&lt;/span&gt; &lt;span class="na"&gt;id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;checkbox2&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;collapsor&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;checkbox&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
@@ -1031,14 +1031,14 @@ we will set &lt;code&gt;display: block&lt;/code&gt; on &lt;code&gt;.collapsible-
         &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
     &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Add this CSS:&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;focus-capturer&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nd"&gt;focus-within&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;collapsible-content&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;focus-capturer&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nd"&gt;focus-within&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;collapsible-content&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
     &lt;span class="k"&gt;display&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;block&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Output:&lt;/p&gt;
@@ -1065,7 +1065,7 @@ When the focus moves out of the collapsible, it closes (unless you had clicked o
 It becomes collapsible and users have to click the '&amp;equiv;' button to open it.
 I have used the above technique to implement this collapsible navigation bar.&lt;/p&gt;
 &lt;p&gt;Feel free to &lt;a href="https://github.com/sharmaeklavya2/blog/issues/new"&gt;reach out&lt;/a&gt;
-for comments, criticism or suggestions.&lt;/p&gt;</content><category term="Front-end web dev"></category><category term="Tutorial"></category></entry><entry><title>Juggling 101</title><link href="https://sharmaeklavya2.github.io/blog/juggling-101.html" rel="alternate"></link><published>2017-12-03T00:00:00+05:30</published><updated>2017-12-03T00:00:00+05:30</updated><author><name>Eklavya Sharma</name></author><id>tag:sharmaeklavya2.github.io,2017-12-03:/blog/juggling-101.html</id><summary type="html">&lt;p&gt;This is a tutorial for those who wish to learn juggling and have absolutely no prior experience. Here you will find links to resources that will help you learn your first juggling pattern and suggestions about what kind of balls to use, what posture you should have, etc.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a tutorial for those who wish to learn juggling and have absolutely no prior experience.
+for comments, criticism or suggestions.&lt;/p&gt;</content><category term="posts"></category><category term="Front-end web dev"></category><category term="Tutorial"></category></entry><entry><title>Juggling 101</title><link href="https://sharmaeklavya2.github.io/blog/juggling-101.html" rel="alternate"></link><published>2017-12-03T00:00:00+05:30</published><updated>2017-12-03T00:00:00+05:30</updated><author><name>Eklavya Sharma</name></author><id>tag:sharmaeklavya2.github.io,2017-12-03:/blog/juggling-101.html</id><summary type="html">&lt;p&gt;This is a tutorial for those who wish to learn juggling and have absolutely no prior experience. Here you will find links to resources that will help you learn your first juggling pattern and suggestions about what kind of balls to use, what posture you should have, etc.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a tutorial for those who wish to learn juggling and have absolutely no prior experience.
 Here you will find links to resources that will help you learn your first juggling pattern
 and suggestions about what kind of balls to use, what posture you should have, etc.&lt;/p&gt;
 &lt;div class="toc"&gt;&lt;span class="toctitle"&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
@@ -1158,7 +1158,7 @@ If you can ensure all of these, you'll make progress faster.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;h2 id="good-luck"&gt;Good luck&lt;a class="headerlink" href="#good-luck" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;That's all! Keep practicing regularly and you'll soon be able to juggle the cascade.
-I'll soon post another tutorial where I'll write about what you should learn next.&lt;/p&gt;</content><category term="Juggling"></category><category term="Tutorial"></category></entry><entry><title>How I began Juggling</title><link href="https://sharmaeklavya2.github.io/blog/how-i-began-juggling.html" rel="alternate"></link><published>2017-12-02T00:00:00+05:30</published><updated>2017-12-02T00:00:00+05:30</updated><author><name>Eklavya Sharma</name></author><id>tag:sharmaeklavya2.github.io,2017-12-02:/blog/how-i-began-juggling.html</id><summary type="html">&lt;p&gt;Since childhood, juggling had captivated me and I always wanted to learn how to juggle.
+I'll soon post another tutorial where I'll write about what you should learn next.&lt;/p&gt;</content><category term="posts"></category><category term="Juggling"></category><category term="Tutorial"></category></entry><entry><title>How I began Juggling</title><link href="https://sharmaeklavya2.github.io/blog/how-i-began-juggling.html" rel="alternate"></link><published>2017-12-02T00:00:00+05:30</published><updated>2017-12-02T00:00:00+05:30</updated><author><name>Eklavya Sharma</name></author><id>tag:sharmaeklavya2.github.io,2017-12-02:/blog/how-i-began-juggling.html</id><summary type="html">&lt;p&gt;Since childhood, juggling had captivated me and I always wanted to learn how to juggle.
 However, all my initial attempts to learn it failed. It was so difficult.
 I couldn't make any progress even when I tried for hours.&lt;/p&gt;
 &lt;p&gt;Then one day (in 2011, when I was around 16 years …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Since childhood, juggling had captivated me and I always wanted to learn how to juggle.
@@ -1187,7 +1187,7 @@ and 7 patterns with 3 clubs.&lt;/p&gt;
 &lt;p&gt;I didn't make much progress in 2016 and 2017.
 I have been busy with studies and haven't been able to juggle regularly.&lt;/p&gt;
 &lt;p&gt;You can find videos documenting my juggling skills on youtube:
-&lt;a href="https://www.youtube.com/watch?v=xYrnQMHfDNE&amp;amp;list=PLACN_dyOcd_WSIzGV-4hVCQyQFmzKH1kb"&gt;Juggling by me (October 2015)&lt;/a&gt;.&lt;/p&gt;</content><category term="Juggling"></category><category term="About Me"></category></entry><entry><title>How to juggle 3 balls in 1 hand</title><link href="https://sharmaeklavya2.github.io/blog/3-in-1.html" rel="alternate"></link><published>2017-11-14T00:00:00+05:30</published><updated>2017-11-14T00:00:00+05:30</updated><author><name>Eklavya Sharma</name></author><id>tag:sharmaeklavya2.github.io,2017-11-14:/blog/3-in-1.html</id><summary type="html">&lt;p&gt;&lt;img src="https://sharmaeklavya2.github.io/blog/img/siteswaps/60.gif" title="60" /&gt;&lt;/p&gt;
+&lt;a href="https://www.youtube.com/watch?v=xYrnQMHfDNE&amp;amp;list=PLACN_dyOcd_WSIzGV-4hVCQyQFmzKH1kb"&gt;Juggling by me (October 2015)&lt;/a&gt;.&lt;/p&gt;</content><category term="posts"></category><category term="Juggling"></category><category term="About Me"></category></entry><entry><title>How to juggle 3 balls in 1 hand</title><link href="https://sharmaeklavya2.github.io/blog/3-in-1.html" rel="alternate"></link><published>2017-11-14T00:00:00+05:30</published><updated>2017-11-14T00:00:00+05:30</updated><author><name>Eklavya Sharma</name></author><id>tag:sharmaeklavya2.github.io,2017-11-14:/blog/3-in-1.html</id><summary type="html">&lt;p&gt;&lt;img src="https://sharmaeklavya2.github.io/blog/img/siteswaps/60.gif" title="60" /&gt;&lt;/p&gt;
 &lt;p&gt;3 balls in 1 hand, a.k.a. 3-in-1, is definitely not an easy pattern,
 mostly because of the speed, accuracy and strength required to do it.
 I could learn to do it because I came up with good prerequisites.
@@ -1235,4 +1235,4 @@ It'll look similar to &lt;code&gt;6151505151515151&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;You might also want to try out other variations.
 After you get good at these, you can finally try 3-in-1.&lt;/p&gt;
-&lt;p&gt;You might also like this &lt;a href="https://www.youtube.com/watch?v=z2k3ugex7Kw"&gt;video tutorial by Chris Taibbi&lt;/a&gt;.&lt;/p&gt;</content><category term="Juggling"></category><category term="Tutorial"></category></entry></feed>
+&lt;p&gt;You might also like this &lt;a href="https://www.youtube.com/watch?v=z2k3ugex7Kw"&gt;video tutorial by Chris Taibbi&lt;/a&gt;.&lt;/p&gt;</content><category term="posts"></category><category term="Juggling"></category><category term="Tutorial"></category></entry></feed>
