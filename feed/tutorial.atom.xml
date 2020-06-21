@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Eklavya's Blog - Tutorial</title><link href="https://sharmaeklavya2.github.io/blog/" rel="alternate"></link><link href="https://sharmaeklavya2.github.io/blog/feed/tutorial.atom.xml" rel="self"></link><id>https://sharmaeklavya2.github.io/blog/</id><updated>2019-07-12T00:00:00+05:30</updated><entry><title>A Comprehensive Guide to Customizing your MacBook</title><link href="https://sharmaeklavya2.github.io/blog/customize-macos.html" rel="alternate"></link><published>2019-07-12T00:00:00+05:30</published><updated>2019-07-12T00:00:00+05:30</updated><author><name>Eklavya Sharma</name></author><id>tag:sharmaeklavya2.github.io,2019-07-12:/blog/customize-macos.html</id><summary type="html">&lt;p&gt;This post contains a list of all the things I did to customize my MacBook. Most instructions here are useful only for programmers and power users.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I recently got a new laptop - a MacBook Air!
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Eklavya's Blog - Tutorial</title><link href="https://sharmaeklavya2.github.io/blog/" rel="alternate"></link><link href="https://sharmaeklavya2.github.io/blog/feed/tutorial.atom.xml" rel="self"></link><id>https://sharmaeklavya2.github.io/blog/</id><updated>2020-06-21T00:00:00+05:30</updated><entry><title>A Comprehensive Guide to Customizing your MacBook</title><link href="https://sharmaeklavya2.github.io/blog/customize-macos.html" rel="alternate"></link><published>2019-07-12T00:00:00+05:30</published><updated>2020-06-21T00:00:00+05:30</updated><author><name>Eklavya Sharma</name></author><id>tag:sharmaeklavya2.github.io,2019-07-12:/blog/customize-macos.html</id><summary type="html">&lt;p&gt;This post contains a list of all the things I did to customize my MacBook. Most instructions here are useful only for programmers and power users.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I recently got a new laptop - a MacBook Air!
 I customized it so that it's easy for me to use.
 Major changes include:&lt;/p&gt;
 &lt;ul&gt;
@@ -8,7 +8,7 @@ Major changes include:&lt;/p&gt;
 &lt;li&gt;Setting up a nice environment on my &lt;a href="https://en.wikipedia.org/wiki/Terminal_emulator"&gt;terminal&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;As I made all these changes to my new laptop, I noted down the steps that I took for future reference.
-I think this could be useful to others', so here I am, writing a blog post on it.&lt;/p&gt;
+I think they could be useful to others, so here they are, as a blog post.&lt;/p&gt;
 &lt;p&gt;This post is written for macOS Mojave.
 You may have to modify some instructions if you're using a newer macOS.
 If you're not using macOS, you can still get a similar working environment on Linux,
@@ -174,7 +174,7 @@ Now restart Terminal.app and you'll see the dark blue background of the Solarize
 &lt;h3 id="installing-xcode-command-line-tools"&gt;Installing &lt;a href="http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/"&gt;Xcode command-line tools&lt;/a&gt;&lt;a class="headerlink" href="#installing-xcode-command-line-tools" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;The 'Xcode command-line tools' consist of command-line applications that are
 very common in Unix-like environments, like git, gcc, make, perl.&lt;/p&gt;
-&lt;p&gt;Run 'xcode-select --install' from a terminal.
+&lt;p&gt;Run &lt;code&gt;xcode-select --install&lt;/code&gt; from a terminal.
 A dialog box will pop up. Select install.
 You should probably connect to a power source before doing this
 because macOS is going to suggest you do so.&lt;/p&gt;
@@ -281,7 +281,8 @@ and demarcated which folders will be on which storage mediums.&lt;/p&gt;
 &lt;p&gt;I moved my frequently-changing content to Dropbox.
 I use the Dropbox desktop app which syncs my files online in real-time.
 On my external hard drive, I have an up-to-date backup of content that rarely changes.&lt;/p&gt;
-&lt;p&gt;If you use git for your code, make sure push all unpushed code to an online remote like Github or Bitbucket.&lt;/p&gt;
+&lt;p&gt;If you use git for your code, make sure to push all unpushed code on your old computer
+to an online remote to avoid losing data.&lt;/p&gt;
 &lt;h3 id="ntfs-drivers-for-macos"&gt;NTFS drivers for macOS&lt;a class="headerlink" href="#ntfs-drivers-for-macos" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;My external hard drive is NTFS-formatted, but macOS cannot write to NTFS drives; it can only read from them.
 This was problematic when I was transferring my files from my old laptop (which was also a MacBook)
@@ -305,6 +306,9 @@ If I ever change my mind about what to sync, I'll have to move things in and out
 If you're a command-line user, you'll know how annoying it can be to change frequently-used paths.&lt;/p&gt;
 &lt;p&gt;To solve this problem, I placed all my files outside &lt;code&gt;~/Dropbox&lt;/code&gt;
 and created &lt;a href="https://kb.iu.edu/d/abbe"&gt;symlinks&lt;/a&gt; to them which I placed in &lt;code&gt;~/Dropbox&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Edit&lt;/strong&gt;: This no longer works, since
+&lt;a href="http://www.paulingraham.com/dropbox-and-symlinks.html"&gt;Dropbox removed support for using external symlinks&lt;/a&gt;.
+Now I place my files inside Dropbox and created symlinks to access them from outside &lt;code&gt;~/Dropbox&lt;/code&gt;.&lt;/p&gt;
 &lt;h3 id="wallpapers-and-profile-picture"&gt;Wallpapers and profile picture&lt;a class="headerlink" href="#wallpapers-and-profile-picture" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;After transferring files from my external hard drive to my new laptop,
 I configured macOS to use my custom wallpapers instead of the system-default ones

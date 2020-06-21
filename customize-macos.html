@@ -52,6 +52,9 @@
 <tr><td>Published</td>
 <td><time class="published" datetime="2019-07-12T00:00:00+05:30">
 12 Jul 2019</time></td></tr>
+<tr><td>Modified</td>
+<td><time class="modified" datetime="2020-06-21T00:00:00+05:30">
+21 Jun 2020</time></td></tr>
 <tr><td>Tags</td>
 <td><ul class="tags">
 <li><a href="https://sharmaeklavya2.github.io/blog/tag/tutorial.html">Tutorial</a></li>
@@ -67,7 +70,7 @@ Major changes include:</p>
 <li>Setting up a nice environment on my <a href="https://en.wikipedia.org/wiki/Terminal_emulator">terminal</a>.</li>
 </ul>
 <p>As I made all these changes to my new laptop, I noted down the steps that I took for future reference.
-I think this could be useful to others', so here I am, writing a blog post on it.</p>
+I think they could be useful to others, so here they are, as a blog post.</p>
 <p>This post is written for macOS Mojave.
 You may have to modify some instructions if you're using a newer macOS.
 If you're not using macOS, you can still get a similar working environment on Linux,
@@ -233,7 +236,7 @@ Now restart Terminal.app and you'll see the dark blue background of the Solarize
 <h3 id="installing-xcode-command-line-tools">Installing <a href="http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/">Xcode command-line tools</a><a class="headerlink" href="#installing-xcode-command-line-tools" title="Permanent link">&para;</a></h3>
 <p>The 'Xcode command-line tools' consist of command-line applications that are
 very common in Unix-like environments, like git, gcc, make, perl.</p>
-<p>Run 'xcode-select --install' from a terminal.
+<p>Run <code>xcode-select --install</code> from a terminal.
 A dialog box will pop up. Select install.
 You should probably connect to a power source before doing this
 because macOS is going to suggest you do so.</p>
@@ -340,7 +343,8 @@ and demarcated which folders will be on which storage mediums.</p>
 <p>I moved my frequently-changing content to Dropbox.
 I use the Dropbox desktop app which syncs my files online in real-time.
 On my external hard drive, I have an up-to-date backup of content that rarely changes.</p>
-<p>If you use git for your code, make sure push all unpushed code to an online remote like Github or Bitbucket.</p>
+<p>If you use git for your code, make sure to push all unpushed code on your old computer
+to an online remote to avoid losing data.</p>
 <h3 id="ntfs-drivers-for-macos">NTFS drivers for macOS<a class="headerlink" href="#ntfs-drivers-for-macos" title="Permanent link">&para;</a></h3>
 <p>My external hard drive is NTFS-formatted, but macOS cannot write to NTFS drives; it can only read from them.
 This was problematic when I was transferring my files from my old laptop (which was also a MacBook)
@@ -364,6 +368,9 @@ If I ever change my mind about what to sync, I'll have to move things in and out
 If you're a command-line user, you'll know how annoying it can be to change frequently-used paths.</p>
 <p>To solve this problem, I placed all my files outside <code>~/Dropbox</code>
 and created <a href="https://kb.iu.edu/d/abbe">symlinks</a> to them which I placed in <code>~/Dropbox</code>.</p>
+<p><strong>Edit</strong>: This no longer works, since
+<a href="http://www.paulingraham.com/dropbox-and-symlinks.html">Dropbox removed support for using external symlinks</a>.
+Now I place my files inside Dropbox and created symlinks to access them from outside <code>~/Dropbox</code>.</p>
 <h3 id="wallpapers-and-profile-picture">Wallpapers and profile picture<a class="headerlink" href="#wallpapers-and-profile-picture" title="Permanent link">&para;</a></h3>
 <p>After transferring files from my external hard drive to my new laptop,
 I configured macOS to use my custom wallpapers instead of the system-default ones
