@@ -59,7 +59,7 @@ which can be solved using segment trees. These example problems are used through
     You are given an array &lt;span class="math"&gt;\(a\)&lt;/span&gt; of &lt;span class="math"&gt;\(n\)&lt;/span&gt; numbers, indexed from 0 to &lt;span class="math"&gt;\(n-1\)&lt;/span&gt;.
     You will be asked to perform &lt;span class="math"&gt;\(q\)&lt;/span&gt; operations. Each operation will be one of the following:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;given &lt;span class="math"&gt;\(l\)&lt;/span&gt; and &lt;span class="math"&gt;\(r\)&lt;/span&gt;, output &lt;span class="math"&gt;\(\sum\limits_{i=l}^r a[i]\)&lt;/span&gt;.&lt;/li&gt;
+&lt;li&gt;given &lt;span class="math"&gt;\(l\)&lt;/span&gt; and &lt;span class="math"&gt;\(r\)&lt;/span&gt;, output &lt;span class="math"&gt;\(\sum_{i=l}^r a[i]\)&lt;/span&gt;.&lt;/li&gt;
 &lt;li&gt;given &lt;span class="math"&gt;\(l\)&lt;/span&gt;, &lt;span class="math"&gt;\(r\)&lt;/span&gt; and &lt;span class="math"&gt;\(y\)&lt;/span&gt;, replace &lt;span class="math"&gt;\(a[i]\)&lt;/span&gt; by &lt;span class="math"&gt;\(y\)&lt;/span&gt; for all &lt;span class="math"&gt;\(l \le i \le r\)&lt;/span&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -68,8 +68,8 @@ which can be solved using segment trees. These example problems are used through
     You are given an array &lt;span class="math"&gt;\(a\)&lt;/span&gt; of &lt;span class="math"&gt;\(n\)&lt;/span&gt; numbers, indexed from 0 to &lt;span class="math"&gt;\(n-1\)&lt;/span&gt;.
     You will be asked to perform &lt;span class="math"&gt;\(q\)&lt;/span&gt; operations. Each operation will be one of the following:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;given &lt;span class="math"&gt;\(l\)&lt;/span&gt; and &lt;span class="math"&gt;\(r\)&lt;/span&gt;, output &lt;span class="math"&gt;\(\min\limits_{i=l}^r a[i]\)&lt;/span&gt;.&lt;/li&gt;
-&lt;li&gt;given &lt;span class="math"&gt;\(l\)&lt;/span&gt; and &lt;span class="math"&gt;\(r\)&lt;/span&gt;, output &lt;span class="math"&gt;\(\max\limits_{i=l}^r a[i]\)&lt;/span&gt;.&lt;/li&gt;
+&lt;li&gt;given &lt;span class="math"&gt;\(l\)&lt;/span&gt; and &lt;span class="math"&gt;\(r\)&lt;/span&gt;, output &lt;span class="math"&gt;\(\min_{i=l}^r a[i]\)&lt;/span&gt;.&lt;/li&gt;
+&lt;li&gt;given &lt;span class="math"&gt;\(l\)&lt;/span&gt; and &lt;span class="math"&gt;\(r\)&lt;/span&gt;, output &lt;span class="math"&gt;\(\max_{i=l}^r a[i]\)&lt;/span&gt;.&lt;/li&gt;
 &lt;li&gt;given &lt;span class="math"&gt;\(l\)&lt;/span&gt;, &lt;span class="math"&gt;\(r\)&lt;/span&gt; and &lt;span class="math"&gt;\(y\)&lt;/span&gt;, add &lt;span class="math"&gt;\(y\)&lt;/span&gt; to &lt;span class="math"&gt;\(a[i]\)&lt;/span&gt; for all &lt;span class="math"&gt;\(l \le i \le r\)&lt;/span&gt;.&lt;/li&gt;
 &lt;li&gt;given &lt;span class="math"&gt;\(l\)&lt;/span&gt;, &lt;span class="math"&gt;\(r\)&lt;/span&gt; and &lt;span class="math"&gt;\(z\)&lt;/span&gt;, multiply &lt;span class="math"&gt;\(a[i]\)&lt;/span&gt; by &lt;span class="math"&gt;\(z\)&lt;/span&gt; for all &lt;span class="math"&gt;\(l \le i \le r\)&lt;/span&gt;.&lt;/li&gt;
 &lt;/ul&gt;
@@ -96,16 +96,16 @@ We'll generalize these operations to 2 concepts - query function and update func
 &lt;h3 id="query-function"&gt;Query function&lt;a class="headerlink" href="#query-function" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;In queries, we're asked to apply a function &lt;span class="math"&gt;\(f\)&lt;/span&gt; on &lt;span class="math"&gt;\(b\)&lt;/span&gt;.
 We'll call this function the 'query function'.
-In SUMREPL, this function is summation: &lt;span class="math"&gt;\(f(b) = \sum\limits_{x \in b} x\)&lt;/span&gt;.&lt;/p&gt;
+In SUMREPL, this function is summation: &lt;span class="math"&gt;\(f(b) = \sum_{x \in b} x\)&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;In MINMAX, the query function is 'min' for some queries and 'max' for others.
 Instead, we can use the query function
-&lt;span class="math"&gt;\(f(b) = (\min\limits_{x \in b} x, \max\limits_{x \in b})\)&lt;/span&gt;, which returns an ordered pair.
+&lt;span class="math"&gt;\(f(b) = \left(\min_{x \in b} x, \max_{x \in b} x\right)\)&lt;/span&gt;, which returns an ordered pair.
 For every query, we'll compute both min and max and return the appropriate part.&lt;/p&gt;
 &lt;p&gt;In CHAROCC, the query is parametrized by &lt;span class="math"&gt;\(c\)&lt;/span&gt;.
 So we'll compute the result for all lowercase English characters.
 Formally, let &lt;span class="math"&gt;\(\Gamma\)&lt;/span&gt; be the sequence of characters in lowercase English
 and let &lt;span class="math"&gt;\(e(s, c)\)&lt;/span&gt; be the number of occurrences of the character &lt;span class="math"&gt;\(c\)&lt;/span&gt; in string &lt;span class="math"&gt;\(s\)&lt;/span&gt;.
-Then &lt;span class="math"&gt;\(f(b) = [\sum\limits_{x \in b} e(x, c)]_{c \in \Gamma}\)&lt;/span&gt;.
+Then &lt;span class="math"&gt;\(f(b) = [\sum_{x \in b} e(x, c)]_{c \in \Gamma}\)&lt;/span&gt;.
 Here &lt;span class="math"&gt;\(f(b)\)&lt;/span&gt; is an array of length 26.&lt;/p&gt;
 &lt;p&gt;For these 3 examples, we now have a common abstraction to use: the query function.
 The query function's domain is a set of finite arrays of some type.

@@ -124,7 +124,7 @@ which can be solved using segment trees. These example problems are used through
     You are given an array <span class="math">\(a\)</span> of <span class="math">\(n\)</span> numbers, indexed from 0 to <span class="math">\(n-1\)</span>.
     You will be asked to perform <span class="math">\(q\)</span> operations. Each operation will be one of the following:</p>
 <ul>
-<li>given <span class="math">\(l\)</span> and <span class="math">\(r\)</span>, output <span class="math">\(\sum\limits_{i=l}^r a[i]\)</span>.</li>
+<li>given <span class="math">\(l\)</span> and <span class="math">\(r\)</span>, output <span class="math">\(\sum_{i=l}^r a[i]\)</span>.</li>
 <li>given <span class="math">\(l\)</span>, <span class="math">\(r\)</span> and <span class="math">\(y\)</span>, replace <span class="math">\(a[i]\)</span> by <span class="math">\(y\)</span> for all <span class="math">\(l \le i \le r\)</span>.</li>
 </ul>
 </li>
@@ -133,8 +133,8 @@ which can be solved using segment trees. These example problems are used through
     You are given an array <span class="math">\(a\)</span> of <span class="math">\(n\)</span> numbers, indexed from 0 to <span class="math">\(n-1\)</span>.
     You will be asked to perform <span class="math">\(q\)</span> operations. Each operation will be one of the following:</p>
 <ul>
-<li>given <span class="math">\(l\)</span> and <span class="math">\(r\)</span>, output <span class="math">\(\min\limits_{i=l}^r a[i]\)</span>.</li>
-<li>given <span class="math">\(l\)</span> and <span class="math">\(r\)</span>, output <span class="math">\(\max\limits_{i=l}^r a[i]\)</span>.</li>
+<li>given <span class="math">\(l\)</span> and <span class="math">\(r\)</span>, output <span class="math">\(\min_{i=l}^r a[i]\)</span>.</li>
+<li>given <span class="math">\(l\)</span> and <span class="math">\(r\)</span>, output <span class="math">\(\max_{i=l}^r a[i]\)</span>.</li>
 <li>given <span class="math">\(l\)</span>, <span class="math">\(r\)</span> and <span class="math">\(y\)</span>, add <span class="math">\(y\)</span> to <span class="math">\(a[i]\)</span> for all <span class="math">\(l \le i \le r\)</span>.</li>
 <li>given <span class="math">\(l\)</span>, <span class="math">\(r\)</span> and <span class="math">\(z\)</span>, multiply <span class="math">\(a[i]\)</span> by <span class="math">\(z\)</span> for all <span class="math">\(l \le i \le r\)</span>.</li>
 </ul>
@@ -161,16 +161,16 @@ We'll generalize these operations to 2 concepts - query function and update func
 <h3 id="query-function">Query function<a class="headerlink" href="#query-function" title="Permanent link">&para;</a></h3>
 <p>In queries, we're asked to apply a function <span class="math">\(f\)</span> on <span class="math">\(b\)</span>.
 We'll call this function the 'query function'.
-In SUMREPL, this function is summation: <span class="math">\(f(b) = \sum\limits_{x \in b} x\)</span>.</p>
+In SUMREPL, this function is summation: <span class="math">\(f(b) = \sum_{x \in b} x\)</span>.</p>
 <p>In MINMAX, the query function is 'min' for some queries and 'max' for others.
 Instead, we can use the query function
-<span class="math">\(f(b) = (\min\limits_{x \in b} x, \max\limits_{x \in b})\)</span>, which returns an ordered pair.
+<span class="math">\(f(b) = \left(\min_{x \in b} x, \max_{x \in b} x\right)\)</span>, which returns an ordered pair.
 For every query, we'll compute both min and max and return the appropriate part.</p>
 <p>In CHAROCC, the query is parametrized by <span class="math">\(c\)</span>.
 So we'll compute the result for all lowercase English characters.
 Formally, let <span class="math">\(\Gamma\)</span> be the sequence of characters in lowercase English
 and let <span class="math">\(e(s, c)\)</span> be the number of occurrences of the character <span class="math">\(c\)</span> in string <span class="math">\(s\)</span>.
-Then <span class="math">\(f(b) = [\sum\limits_{x \in b} e(x, c)]_{c \in \Gamma}\)</span>.
+Then <span class="math">\(f(b) = [\sum_{x \in b} e(x, c)]_{c \in \Gamma}\)</span>.
 Here <span class="math">\(f(b)\)</span> is an array of length 26.</p>
 <p>For these 3 examples, we now have a common abstraction to use: the query function.
 The query function's domain is a set of finite arrays of some type.
