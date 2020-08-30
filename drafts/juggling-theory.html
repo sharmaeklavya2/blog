@@ -69,9 +69,9 @@ the last few theorems employ elementary graph theory and number theory.</p>
 <h2 id="what-is-juggling">What is Juggling?<a class="headerlink" href="#what-is-juggling" title="Permanent link">&para;</a></h2>
 <p>Juggling is a recreational activity where a person manipulates multiple objects
 by repeatedly throwing and catching them.
-If you haven't seen juggling before, I highly recommend watching this
-<a href="https://youtu.be/wP8tbLBls_M?t=362">amazing performance by Anthony Gatto</a>.</p>
-<p>There are different 'patterns' in juggling.
+If you haven't seen professional juggling before, I highly recommend watching this
+<a href="https://youtu.be/wP8tbLBls_M?t=362" target="_blank">amazing performance by Anthony Gatto</a>.</p>
+<p>There are different <em>patterns</em> in juggling.
 The animations below depict three well-known patterns:
 cascade, shower and fountain.</p>
 <div class="gallery">
@@ -93,10 +93,10 @@ cascade, shower and fountain.</p>
 I used GIF animations above to explain to you what cascade, shower and fountain mean,
 but we are interested in a way of representing juggling patterns
 that is much smaller (just a few characters long),
-reveals the 'structure' of the pattern
+reveals the <em>structure</em> of the pattern
 and can be read and analyzed by machines.
 In 1981, Paul Klimek invented a way of representing juggling patterns
-as a sequence of integers. His notation is called 'siteswap'.</p>
+as a sequence of integers. His notation is called <em>siteswap</em>.</p>
 <p>An amazing by-product of having such a notation is the ability to
 automate the process of inventing new patterns
 by brute-force enumeration of integer sequences.
@@ -104,7 +104,7 @@ Previously, only non-beginner jugglers could invent patterns using hit-and-trial
 <p>Another advantage of siteswaps is that they can be used as input to
 programs that create animations of juggling patterns.
 In fact, that is exactly how I created the above GIFs,
-using <a href="https://jugglinglab.org/">Juggling Lab</a>.</p>
+using <a href="https://jugglinglab.org/" target="_blank">Juggling Lab</a>.</p>
 <h2 id="the-features-of-a-juggling-pattern">The features of a juggling pattern<a class="headerlink" href="#the-features-of-a-juggling-pattern" title="Permanent link">&para;</a></h2>
 <p>There are some assumptions that we'll impose on juggling patterns.
 These set of assumptions define our <em>model</em>.
@@ -132,14 +132,14 @@ and then move on to more complex but more important features.</p>
 </figure>
 </div>
 
-<p><strong>Assumption</strong>: <em>All throws are made at integral units of time.</em></p>
-<p>A unit of time is called a 'tick' or a 'beat'.
+<p><strong>Assumption</strong>: <em>all throws are made at integral units of time.</em></p>
+<p>A unit of time is called a <em>tick</em> or a <em>beat</em>.
 The speed of a pattern is defined by the duration of a tick in seconds.</p>
 <h3 id="dwell">Dwell<a class="headerlink" href="#dwell" title="Permanent link">&para;</a></h3>
 <p>The amount of time the juggler holds a ball in his/her hand is called <em>dwell</em>.
 Dwell is measured in ticks.
-Using a large dwell is called 'lazy style'
-and using a small dwell is called 'hot-potato style'.</p>
+Using a large dwell is called <em>lazy style</em>
+and using a small dwell is called <em>hot-potato style</em>.</p>
 <div class="gallery">
 <figure>
     <img src="https://sharmaeklavya2.github.io/blog/img/siteswaps/522.gif" />
@@ -226,7 +226,7 @@ This information is captured by siteswap.
 This is where things start getting mathematical!</p>
 <p><strong>Assumption</strong>: <em>hands throw alternately</em>, i.e. at even ticks, the left hand throws
 and at odd ticks, the right hand throws. This assumption is called <em>asynchronicity</em>.</p>
-<p><strong>Assumption</strong>: <em>A hand can only hold 1 ball at a time.</em>
+<p><strong>Assumption</strong>: <em>a hand can only hold 1 ball at a time.</em>
 This restriction is called <em>non-multiplexing</em>.
 (Most non-jugglers assume that non-multiplexing is mandatory for juggling,
 but that's not always true.)</p>
@@ -243,7 +243,7 @@ This is because if an object is thrown at time <span class="math">\(t\)</span> a
 then it will be thrown next at time <span class="math">\(t+x\)</span>.
 Since hands throw alternately, an odd <span class="math">\(x\)</span> will change the throwing hand.
 Therefore, to specify a throw, we only need to specify the order of every throw.</p>
-<p><strong>Assumption</strong>: <em>Patterns are periodic.</em>
+<p><strong>Assumption</strong>: <em>patterns are periodic.</em>
 So, we only need to state the smallest repeating subsequence
 of the infinite sequence of throw orders.
 This finite-sized subsequence is called siteswap.
@@ -263,7 +263,7 @@ For each <span class="math">\(i\)</span>, let <span class="math">\(b_i = a_i \bm
 <p><strong>Theorem</strong>: Let <span class="math">\(a\)</span> be a siteswap of period <span class="math">\(n\)</span>.
 Then the number of objects being juggled is <span class="math">\((\sum_{i=1}^n a_i)/n\)</span>.</p>
 <p>The proof of the above theorem is quite involved. Read the editorial of problem
-<a href="https://www.codechef.com/ICL2017/problems/ICL1703">ICL1703</a> on Codechef.</p>
+<a href="https://www.codechef.com/ICL2017/problems/ICL1703" target="_blank">ICL1703</a> on Codechef.</p>
 </div>
 </article>
 </div>
