@@ -77,14 +77,14 @@ Towards the end, basics of graph theory and number theory are used.</p>
 </ul>
 </li>
 <li><a href="#siteswap-examples">Siteswap examples</a></li>
-<li><a href="#what-is-a-valid-siteswap">What is a valid siteswap?</a><ul>
+<li><a href="#when-is-a-siteswap-valid">When is a siteswap valid?</a><ul>
 <li><a href="#easy-part-of-the-proof">Easy part of the proof</a></li>
-<li><a href="#hard-part-of-the-proof">Hard part of the proof</a></li>
+<li><a href="#not-so-easy-part-of-the-proof">Not-so-easy part of the proof</a></li>
 </ul>
 </li>
 <li><a href="#other-things-about-siteswaps">Other things about siteswaps</a><ul>
 <li><a href="#average-theorem">Average theorem</a></li>
-<li><a href="#weird-throw-orders">Weird throw orders</a></li>
+<li><a href="#special-throw-orders">Special throw orders</a></li>
 <li><a href="#extensions">Extensions</a></li>
 </ul>
 </li>
@@ -202,10 +202,8 @@ except that instead of throwing from the inside and catching on the outside,
 we throw from the outside and catch on the inside.
 (A careful observation will reveal that the reverse cascade is actually a time-reversed
 version of the normal cascade.)</p>
-<p>The above examples use static hand positioning, i.e.
-all throw positions are the same and all catch positions are the same.
-We can get nice variations of the cascade, which don't really look like the cascade,
-by using dynamic hand positioning.</p>
+<p>By using more complicated hand-positions, we can get awesome variations
+of the cascade, that don't really look like the cascade.</p>
 <div class="gallery">
 <figure>
     <img src="https://sharmaeklavya2.github.io/blog/img/siteswaps/3-mills.gif" />
@@ -323,7 +321,7 @@ This gives us the sequence <code>[3, 4, 5]</code> repeated indefinitely.</p>
 Usually people just concatenate the numbers together and write <code>345</code> instead of <code>[3, 4, 5]</code>.
 This is not a problem, since throw orders above 9 rarely arise in practice,
 and even if they do, we can use <code>a</code> for 10, <code>b</code> for 11, and so on.</p>
-<h2 id="what-is-a-valid-siteswap">What is a valid siteswap?<a class="headerlink" href="#what-is-a-valid-siteswap" title="Permanent link">&para;</a></h2>
+<h2 id="when-is-a-siteswap-valid">When is a siteswap valid?<a class="headerlink" href="#when-is-a-siteswap-valid" title="Permanent link">&para;</a></h2>
 <p>If we take an arbitrary sequence of integers, will it be the siteswap of some juggling pattern?
 As we'll see, the answer turns out to be "no". But why?
 At each tick, we just have to throw according to the throw-order.
@@ -370,25 +368,24 @@ characterization of what a valid siteswap is.
 Essentially, we're trying to remove the <em>juggling</em> from the problem
 and reduce it to a pure math problem.</p>
 <p>Let <span class="math">\(a\)</span> be a sequence of <span class="math">\(n\)</span> non-negative integers.
-We'll now define a function <span class="math">\(f_a: \mathbb{Z} \mapsto \mathbb{Z}\)</span>,
+We'll now define a function <span class="math">\(f_a: \mathbb{Z} \mapsto \mathbb{Z},\)</span>
 that takes as input a <em>throw time</em> and outputs the corresponding <em>catch time</em>.
-\[ f_a(x) = x + a[x \bmod n] \]</p>
-<p>Here <span class="math">\(a[i]\)</span> is the <span class="math">\(i^{\textrm{th}}\)</span> integer in <span class="math">\(a\)</span> and <span class="math">\(x \bmod n\)</span>
-is the remainder obtained after dividing <span class="math">\(x\)</span> by <span class="math">\(n\)</span>.</p>
+\[ f_a(x) = x + a[x \bmod n] \]
+Here <span class="math">\(a[i] = a_i\)</span> and <span class="math">\(x \bmod n\)</span> is the remainder obtained after dividing <span class="math">\(x\)</span> by <span class="math">\(n\)</span>.</p>
 <p>Now we need to prove two things:</p>
 <ul>
 <li>At any time <span class="math">\(y\)</span>, we have a ball to throw, i.e.
-<span class="math">\(\forall y \in \mathbb{Z}, \exists x \in \mathbb{Z}, f_a(x) = y\)</span>.</li>
+<span class="math">\(\forall y \in \mathbb{Z},\)</span> <span class="math">\(\exists x \in \mathbb{Z},\)</span> <span class="math">\(f_a(x) = y\)</span>.</li>
 <li>We don't have collisions, i.e. there shouldn't be multiple balls landing
 in your hand at the same time:
-<span class="math">\(\forall x_1, x_2 \in \mathbb{Z}, (f_a(x_1) = f_a(x_2) \implies x_1 = x_2)\)</span>.</li>
+<span class="math">\(\forall x_1, x_2 \in \mathbb{Z},\)</span> <span class="math">\((f_a(x_1) = f_a(x_2)\)</span> <span class="math">\(\implies x_1 = x_2)\)</span>.</li>
 </ul>
 <p>Does this look familiar? This is exactly the definition of a bijection!
 The first conditions says that <span class="math">\(f_a\)</span> should be onto,
 and the second condition says that <span class="math">\(f_a\)</span> should be one-to-one.
 Therefore, we get that <span class="math">\(a\)</span> is a valid siteswap iff <span class="math">\(f_a\)</span> is a bijection.</p>
 <p>Define the predicate <span class="math">\(P\)</span> as:<br>
-<em><span class="math">\(P(a)\)</span>: For <span class="math">\(b_i = (i + a[i]) \bmod n\)</span>, <span class="math">\(b\)</span> is a permutation of <span class="math">\(\mathbb{Z}_n\)</span>.</em><br>
+<em><span class="math">\(P(a)\)</span>: For <span class="math">\(b_i = (i + a[i]) \bmod n,\)</span> <span class="math">\(b\)</span> is a permutation of <span class="math">\(\mathbb{Z}_n\)</span>.</em><br>
 Now theorem 1 reduces to this lemma:</p>
 <p><strong>Lemma 2</strong>: Let <span class="math">\(a\)</span> be a sequence of <span class="math">\(n\)</span> non-negative integers.
 Then <span class="math">\(f_a\)</span> is a bijection iff <span class="math">\(P(a)\)</span>.</p>
@@ -417,8 +414,8 @@ Therefore, <span class="math">\(P(a)\)</span> is true. <span class="math">\(\Box
 <p><em>Proof</em>. Assume <span class="math">\(f_a\)</span> is not one-to-one.
 Then <span class="math">\(\exists u_1 \neq u_2\)</span> such that <span class="math">\(f_a(u_1) = f_a(u_2)\)</span>.
 Let <span class="math">\(i_1 = u_1 \bmod n\)</span> and <span class="math">\(i_2 = u_2 \bmod n\)</span>.</p>
-<p><em>Case 1</em>: <span class="math">\(i_1 = i_2\)</span>.
-\[ f_a(u_1) = f_a(u_2) \implies u_1 + a[i_1] = u_2 + a[i_2] \implies u_1 = u_2 \]
+<p><em>Case 1</em>: <span class="math">\(i_1 = i_2\)</span>.<br>
+<span class="math">\(f_a(u_1) = f_a(u_2)\)</span> <span class="math">\(\implies u_1 + a[i_1] = u_2 + a[i_2]\)</span> <span class="math">\(\implies u_1 = u_2.\)</span>
 This is a contradiction, since <span class="math">\(u_1 \neq u_2\)</span>.</p>
 <p><em>Case 2</em>: <span class="math">\(i_1 \neq i_2\)</span>.
 </p>
@@ -431,7 +428,7 @@ This is a contradiction, since <span class="math">\(u_1 \neq u_2\)</span>.</p>
 <p>
 Since <span class="math">\(b\)</span> contains a duplicate entry, it cannot be a permutation of <span class="math">\(\mathbb{Z}_n\)</span>.
 This contradicts <span class="math">\(P(a)\)</span>. Therefore, <span class="math">\(f_a\)</span> is one-to-one. <span class="math">\(\Box\)</span></p>
-<h3 id="hard-part-of-the-proof">Hard part of the proof<a class="headerlink" href="#hard-part-of-the-proof" title="Permanent link">&para;</a></h3>
+<h3 id="not-so-easy-part-of-the-proof">Not-so-easy part of the proof<a class="headerlink" href="#not-so-easy-part-of-the-proof" title="Permanent link">&para;</a></h3>
 <p><strong>Lemma 5</strong>: If <span class="math">\(f_a\)</span> is one-to-one, then <span class="math">\(f_a\)</span> is onto.</p>
 <p><em>Proof</em>.
 There are 3 crucial insights in this proof.
@@ -455,7 +452,7 @@ We now ask: how many edges enter <span class="math">\(S\)</span>
 We'll now show that at least <span class="math">\(n\)</span> edges enter <span class="math">\(S\)</span>.
 Since <span class="math">\(f_a\)</span> is one-to-one, this would prove that the number of edges entering <span class="math">\(S\)</span>
 is equal to <span class="math">\(n\)</span> and each vertex in <span class="math">\(S\)</span> has in-degree exactly 1.</p>
-<p>Let <span class="math">\(S = \{u_0, u_1, \ldots, u_{n-1}\}\)</span>, where <span class="math">\(u_i = rn + i\)</span>.
+<p>Let <span class="math">\(S = \{u_0, u_1, \ldots, u_{n-1}\},\)</span> where <span class="math">\(u_i = rn + i\)</span>.
 Let <span class="math">\(v_i = f_a(u_i) = u_i + a[i]\)</span>.
 Suppose the major label of <span class="math">\(v_i\)</span> is <span class="math">\(s\)</span>.
 Then the major label of <span class="math">\(v_i - (s-r)n\)</span> is <span class="math">\(r\)</span>, so <span class="math">\(v_i \in S\)</span>.
@@ -480,7 +477,7 @@ I have abstracted out juggling terminology from this problem,
 so you don't need to know anything about juggling to understand it.
 I have also written an
 <a href="https://discuss.codechef.com/t/icl1703-editorial/14270" target="_blank">editorial</a> for it.</p>
-<h3 id="weird-throw-orders">Weird throw orders<a class="headerlink" href="#weird-throw-orders" title="Permanent link">&para;</a></h3>
+<h3 id="special-throw-orders">Special throw orders<a class="headerlink" href="#special-throw-orders" title="Permanent link">&para;</a></h3>
 <p>Sometimes you may want to not have a ball in your hand at some tick.
 This situation is called a zero-order throw.
 Here are some examples:</p>
