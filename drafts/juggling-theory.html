@@ -86,6 +86,7 @@ Towards the end, basics of graph theory and number theory are used.</p>
 <li><a href="#average-theorem">Average theorem</a></li>
 <li><a href="#special-throw-orders">Special throw orders</a></li>
 <li><a href="#extensions">Extensions</a></li>
+<li><a href="#uses-and-limitations-of-mathematical-analysis">Uses and limitations of mathematical analysis</a></li>
 </ul>
 </li>
 <li><a href="#want-to-learn-how-to-juggle">Want to learn how to juggle?</a></li>
@@ -118,17 +119,19 @@ cascade, shower and fountain.</p>
 I used GIF animations above to explain to you what cascade, shower and fountain mean,
 but we are interested in a way of representing juggling patterns
 that is much smaller (just a few characters long),
-reveals the <em>structure</em> of the pattern
-and can be read and analyzed by machines.
-In 1981, Paul Klimek invented a way of representing juggling patterns
-as a sequence of integers. His notation is called <em>siteswap</em>.</p>
-<p>An amazing by-product of having such a notation is the ability to
+reveals the <em>structure</em> of the pattern, and can be read and analyzed by machines.
+In 1981, Paul Klimek invented a way of associating a sequence of integers
+to each juggling pattern. This sequence of integers is called a <em>siteswap</em>,
+and it captures important properties of a jugging pattern.
+In this post, I'll show how to succinctly represent juggling patterns,
+and siteswaps form the most important part of this representation.</p>
+<p>An amazing by-product of having such a representation is the ability to
 automate the process of inventing new patterns
 by brute-force enumeration of integer sequences.
 Previously, only non-beginner jugglers could invent patterns using hit-and-trial.</p>
 <p>Another advantage of siteswaps is that they can be used as input to
 programs that create animations of juggling patterns.
-In fact, that is exactly how I created the above GIFs,
+In fact, this is exactly how I created all the animations in this post,
 using <a href="https://jugglinglab.org/" target="_blank">Juggling Lab</a>.</p>
 <h2 id="the-features-of-a-juggling-pattern">The features of a juggling pattern<a class="headerlink" href="#the-features-of-a-juggling-pattern" title="Permanent link">&para;</a></h2>
 <p>There are some assumptions that we'll impose on juggling patterns.
@@ -543,6 +546,32 @@ Siteswap notation and the associated theory extends to these too.</p>
 </figure>
 </div>
 
+<h3 id="uses-and-limitations-of-mathematical-analysis">Uses and limitations of mathematical analysis<a class="headerlink" href="#uses-and-limitations-of-mathematical-analysis" title="Permanent link">&para;</a></h3>
+<p>We can invent new juggling patterns by brute-force enumeration of integer sequences
+up to a certain length and then using the permutation theorem to filter out invalid sequences.
+Each siteswap output by this process corresponds to a valid juggling pattern.
+This is great, and rumors say that <code>441</code> was invented like this.</p>
+<figure>
+    <img src="https://sharmaeklavya2.github.io/blog/img/siteswaps/441.gif" />
+    <figcaption>Half box (441)</figcaption>
+</figure>
+
+<p>However, this approach has limitations.
+A lot of patterns look very similar to each other.
+Out of the many patterns output by this algorithm,
+only some may be aesthetically pleasing,
+that too after carefully choosing an appropriate hand positioning.
+So in practice, highly skilled humans outperform machines in inventing <em>interesting</em> patterns.</p>
+<p>But that doesn't mean this theory is useless!
+All humans are not so highly skilled, and there are other uses of juggling theory,
+like animation programs, transitioning across patterns,
+generating patterns under constraints, etc.</p>
+<p>Also, a hybrid approach can be useful.
+For example, I invented the patterns <code>615150</code> and <code>6051</code>
+using a combination of spatio-temporal imagination
+and help from diagrams and animation programs.
+For more details, see my other blog post,
+<a href="https://sharmaeklavya2.github.io/blog/3-in-1.html">How to juggle 3 balls in 1 hand</a>.</p>
 <h2 id="want-to-learn-how-to-juggle">Want to learn how to juggle?<a class="headerlink" href="#want-to-learn-how-to-juggle" title="Permanent link">&para;</a></h2>
 <p>Juggling is a very enjoyable hobby. If you feel motivated,
 see my other blog post, <a href="https://sharmaeklavya2.github.io/blog/juggling-101.html">Juggling 101</a>, on how to learn juggling.</p>
