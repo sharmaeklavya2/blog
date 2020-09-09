@@ -90,6 +90,7 @@ Towards the end, basics of graph theory and number theory are used.</p>
 </ul>
 </li>
 <li><a href="#want-to-learn-how-to-juggle">Want to learn how to juggle?</a></li>
+<li><a href="#references">References</a></li>
 </ul>
 </div>
 <h2 id="what-is-juggling">What is Juggling?<a class="headerlink" href="#what-is-juggling" title="Permanent link">&para;</a></h2>
@@ -335,7 +336,8 @@ balls will land in your hands only on even ticks,
 so at odd ticks, eventually you won't have any balls left to throw.
 But there's more. You also need to ensure that the number of balls
 landing in your hand at each tick is not more than 1.
-Otherwise, you'll have more balls than you can throw.</p>
+Otherwise, you'll have more balls than you can throw.
+Think of these two constraints as the equivalent of <em>conservation of mass</em>.</p>
 <p>So how can we find out if a sequence of integers is a valid siteswap?
 I'll get straight to the point, like this:</p>
 <p><strong>Permutation Theorem</strong>: Let <span class="math">\(a = [a_0, a_1, \ldots, a_{n-1}]\)</span> be a sequence of <span class="math">\(n\)</span> non-negative integers.
@@ -354,8 +356,8 @@ The proofs work for the general case that includes zero-order throws.</p>
 <p>The permutation theorem gives us the following <span class="math">\(O(n)\)</span>-time algorithm (python code ahead):</p>
 <div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">is_valid</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
     <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-    <span class="n">freq</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">n</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">freq</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">n</span>  <span class="c1"># a list of n zeros</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>  <span class="c1"># i from 0 to n-1</span>
         <span class="n">b_i</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">%</span> <span class="n">n</span>
         <span class="n">freq</span><span class="p">[</span><span class="n">b_i</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">freq</span><span class="p">:</span>
@@ -397,7 +399,7 @@ before you read my proof below.</p>
 <blockquote>
 <p>Mathematics shares one feature with juggling:
 for maximum enjoyment, you have to try it yourself.
-<footer>Joe Buhler and Ron Graham</footer></p>
+<footer>Joe Buhler and Ron Graham<sup><a href="#cite-buhler-graham">[1]</a></sup></footer></p>
 </blockquote>
 <h3 id="easy-part-of-the-proof">Easy part of the proof<a class="headerlink" href="#easy-part-of-the-proof" title="Permanent link">&para;</a></h3>
 <p><strong>Lemma 3</strong>: If <span class="math">\(f_a\)</span> is a one-to-one, then <span class="math">\(P(a)\)</span> is true.</p>
@@ -439,7 +441,9 @@ Formally, let <span class="math">\(G_a\)</span> be a graph whose vertex set is <
 For each <span class="math">\(x \in \mathbb{Z}\)</span>, there is an edge from <span class="math">\(x\)</span> to <span class="math">\(f_a(x)\)</span>.
 Hence, the out-degree of each vertex is 1.
 <span class="math">\(f_a\)</span> is one-to-one means that the in-degree of each vertex is at most 1.
-We want to show that <span class="math">\(f_a\)</span> is onto, i.e. every vertex has in-degree at least 1.</p>
+We want to show that <span class="math">\(f_a\)</span> is onto, i.e. every vertex has in-degree at least 1.
+(Actually, there's a name for <span class="math">\(G_a\)</span> when <span class="math">\(a\)</span> is a valid siteswap:
+it's called a <em>ladder diagram</em>.)</p>
 <p>It is easy to see that if <span class="math">\((u, v)\)</span> is an edge in <span class="math">\(G_a\)</span>,
 then for any <span class="math">\(k \in \mathbb{Z}\)</span>, <span class="math">\((u - kn, v - kn)\)</span> is also an edge in <span class="math">\(G_a\)</span>.
 This is the second crucial idea of this proof.</p>
@@ -480,7 +484,10 @@ so you don't need to know anything about juggling to understand it.
 I have also written an
 <a href="https://discuss.codechef.com/t/icl1703-editorial/14270" target="_blank">editorial</a> for it.</p>
 <h3 id="special-throw-orders">Special throw orders<a class="headerlink" href="#special-throw-orders" title="Permanent link">&para;</a></h3>
-<p>Sometimes you may want to not have a ball in your hand at some tick.
+<p>We assumed that we will throw a ball on every tick.
+We can relax this assumption, without violating conservation of mass,
+by allowing instances when no ball falls into your hand
+and so you don't throw anything.
 This situation is called a zero-order throw.
 Here are some examples:</p>
 <div class="gallery">
@@ -562,15 +569,17 @@ only some may be aesthetically pleasing,
 that too after carefully choosing an appropriate hand positioning.
 So in practice, highly skilled humans outperform machines in inventing <em>interesting</em> patterns.</p>
 <p>But that doesn't mean this theory is useless!
-All humans are not so highly skilled, and there are other uses of juggling theory,
+There are other uses of juggling theory,
 like animation programs, transitioning across patterns,
-generating patterns under constraints, etc.</p>
-<p>Also, a hybrid approach can be useful.
-For example, I invented the patterns <code>615150</code> and <code>6051</code>
-using a combination of spatio-temporal imagination
-and help from diagrams and animation programs.
-For more details, see my other blog post,
-<a href="https://sharmaeklavya2.github.io/blog/3-in-1.html">How to juggle 3 balls in 1 hand</a>.</p>
+generating patterns under constraints, etc.
+Also, an understanding of juggling theory can help jugglers
+invent interesting patterns more easily.
+This is how I invented <code>615150</code> and <code>6051</code>,
+and these patterns helped me learn to
+<a href="https://sharmaeklavya2.github.io/blog/3-in-1.html">juggle 3 balls in 1 hand</a>.</p>
+<p>You can try inventing your own patterns, and then easily see what they look like using
+<a href="https://jugglinglab.org/" target="_blank">Juggling Lab</a>
+or its <a href="https://jugglinglab.org/html/animinfo.html" target="_blank">GIF server</a>.</p>
 <h2 id="want-to-learn-how-to-juggle">Want to learn how to juggle?<a class="headerlink" href="#want-to-learn-how-to-juggle" title="Permanent link">&para;</a></h2>
 <p>Juggling is a very enjoyable hobby. If you feel motivated,
 see my other blog post, <a href="https://sharmaeklavya2.github.io/blog/juggling-101.html">Juggling 101</a>, on how to learn juggling.</p>
@@ -579,6 +588,17 @@ By the end of my third semester, I had learned around 30 different patterns.
 You can see my progress on
 <a href="https://www.youtube.com/watch?v=xYrnQMHfDNE&list=PLACN_dyOcd_WSIzGV-4hVCQyQFmzKH1kb">
 YouTube</a>.</p>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ol>
+<li class="citation" id="cite-buhler-graham">
+<!--<span class="cite-name">buhler-graham</span><br>-->
+<span class="cite-authors">Joe Buhler and Ron Graham.</span>
+<cite class="cite-title">
+<a href="http://www.math.ucsd.edu/~fan/ron/papers/04_05_juggling.pdf" target="_blank">
+Juggling patterns, passing, and posets.</a></cite><br>
+<span class="cite-source">In Mathematical Adventures for Students and Amateurs (2004): 99&ndash;116.</span>
+</li>
+</ol>
 </div>
 </article>
 </div>
