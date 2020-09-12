@@ -7,58 +7,62 @@
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/blog/theme/base.css" />
 <meta name="description" content="This post contains a list of all the things I did to customize my MacBook. Most instructions here are useful only for programmers and power users." />
 <meta name="keywords" content="Tutorial" />
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', (event) => {
+    nav = document.getElementById('nav');
+    nav.classList.add('hidden');
+    collapsor = document.getElementById('nav-collapsor');
+    collapsor.addEventListener('click', (event) => {
+        nav.classList.toggle('hidden');
+    });
+});
+</script>
 </head>
 
 <body>
-<nav>
+<header>
 <div class="primary">
 <a id="sitetitle" href="https://sharmaeklavya2.github.io/blog/">Eklavya's Blog</a>
-<label for="nav-checkbox" class="collapsor-lbl">&equiv;</label>
+<span id="nav-collapsor"><span>&equiv;</span></span>
 </div>
-<div class="focus-capturer" tabindex="0">
-<input id="nav-checkbox" class="collapsor" type="checkbox" />
-<div class="collapsible">
-<ul>
-<li><a href="https://sharmaeklavya2.github.io">About me</a></li>
-<li><a href="https://sharmaeklavya2.github.io/blog/pages/about-this-blog.html">About this blog</a></li>
-<li><ul class="tags">
-<li>Feed:</li>
-<li><a type="application/type+xml" rel="alternate" class="hori-flex" href="https://sharmaeklavya2.github.io/blog/feed/all.rss.xml">
+<nav id="nav">
+<a href="https://sharmaeklavya2.github.io">About me</a>
+<a href="https://sharmaeklavya2.github.io/blog/pages/about-this-blog.html">About this blog</a>
+<span class="feed-group"><span>Feed:</span>
+<a type="application/type+xml" rel="alternate" class="feed-widget" href="https://sharmaeklavya2.github.io/blog/feed/all.rss.xml">
 <svg class="icon"><use xlink:href="https://sharmaeklavya2.github.io/blog/theme/sprites.svg#fa-rss-square"/></svg><span>RSS</span>
-</a></li>
-<li><a type="application/type+xml" rel="alternate" class="hori-flex" href="https://sharmaeklavya2.github.io/blog/feed/all.atom.xml">
+</a>
+<a type="application/type+xml" rel="alternate" class="feed-widget" href="https://sharmaeklavya2.github.io/blog/feed/all.atom.xml">
 <svg class="icon"><use xlink:href="https://sharmaeklavya2.github.io/blog/theme/sprites.svg#fa-rss-square"/></svg><span>Atom</span>
-</a></li>
-</ul></li>
-</ul>
-<p>Tags</p>
-<ul>
-<li><a href="https://sharmaeklavya2.github.io/blog/tag/algorithms.html">Algorithms <span class="article-count">1</span></a></li>
-<li><a href="https://sharmaeklavya2.github.io/blog/tag/math.html">Math <span class="article-count">1</span></a></li>
-<li><a href="https://sharmaeklavya2.github.io/blog/tag/tutorial.html">Tutorial <span class="article-count">3</span></a></li>
-<li><a href="https://sharmaeklavya2.github.io/blog/tag/web-dev.html">Web dev <span class="article-count">1</span></a></li>
-<li><a href="https://sharmaeklavya2.github.io/blog/tag/juggling.html">Juggling <span class="article-count">3</span></a></li>
-<li><a href="https://sharmaeklavya2.github.io/blog/tag/about-me.html">About me <span class="article-count">1</span></a></li>
-</ul>
-</div>
-</div>
+</a>
+</span>
+<span class="nav-heading">Tags</span>
+<a href="https://sharmaeklavya2.github.io/blog/tag/algorithms.html">Algorithms <span class="article-count">1</span></a>
+<a href="https://sharmaeklavya2.github.io/blog/tag/math.html">Math <span class="article-count">1</span></a>
+<a href="https://sharmaeklavya2.github.io/blog/tag/tutorial.html">Tutorial <span class="article-count">3</span></a>
+<a href="https://sharmaeklavya2.github.io/blog/tag/web-dev.html">Web dev <span class="article-count">1</span></a>
+<a href="https://sharmaeklavya2.github.io/blog/tag/juggling.html">Juggling <span class="article-count">3</span></a>
+<a href="https://sharmaeklavya2.github.io/blog/tag/about-me.html">About me <span class="article-count">1</span></a>
 </nav>
+</header>
 
-<div id="main">
+<main id="main">
 <article id="content" class="body">
 <h1 class="entry-title">A Comprehensive Guide to Customizing your MacBook</h1>
-<table class="post-details">
-<tr><td>Published</td>
-<td><time class="published" datetime="2019-07-12T00:00:00+05:30">
-12 Jul 2019</time></td></tr>
-<tr><td>Modified</td>
-<td><time class="modified" datetime="2020-06-21T00:00:00+05:30">
-21 Jun 2020</time></td></tr>
-<tr><td>Tags</td>
-<td><ul class="tags">
+<span class="post-details">
+<span class="post-date">
+<svg class="icon"><use xlink:href="https://sharmaeklavya2.github.io/blog/theme/sprites.svg#fa-calendar-alt"/></svg>
+<time class="published outdated" datetime="2019-07-12T00:00:00+05:30">12 Jul 2019</time>
+<time class="modified" datetime="2020-06-21T00:00:00+05:30">
+21 Jun 2020</time>
+</span>
+<span class="post-tags">
+<svg class="icon"><use xlink:href="https://sharmaeklavya2.github.io/blog/theme/sprites.svg#fa-tags"/></svg>
+<ul class="hori-link-list">
 <li><a href="https://sharmaeklavya2.github.io/blog/tag/tutorial.html">Tutorial</a></li>
-</ul></td></tr>
-</table>
+</ul>
+</span>
+</span>
 <div class="entry-content">
 <p>I recently got a new laptop - a MacBook Air!
 I customized it so that it's easy for me to use.
@@ -196,7 +200,7 @@ But having a lightweight GUI text editor can be handy.</p>
 <li>Display HTML files as HTML code.</li>
 <li>Disable 'add .txt extension to plain text files'. This is needed if you have to edit extensionless files.</li>
 </ul>
-<h2 id="terminal-and-shell"><span style="background-color: #F9E79F"/>Terminal and Shell</span><a class="headerlink" href="#terminal-and-shell" title="Permanent link">&para;</a></h2>
+<h2 id="terminal-and-shell"><span style="background-color: rgba(255, 204, 0, 0.3)"/>Terminal and Shell</span><a class="headerlink" href="#terminal-and-shell" title="Permanent link">&para;</a></h2>
 <p>If you're an aspiring programmer or power user, you should get to know the command-line.
 For this blog post, I'm going to assume that you know how to run commands from the shell and
 you know the meaning of the following words:
@@ -290,7 +294,7 @@ you can open multiple shells on the server on a single SSH session.</p>
 <p>Brew will check for updates every time you run it.
 To prevent that from happening, add <code>export HOMEBREW_NO_AUTO_UPDATE=1</code>
 to <code>~/.bash_profile</code> or <code>~/.env</code>.</p>
-<h2 id="install-command-line-programs"><span style="background-color: #A9DFBF">Install command-line programs</span><a class="headerlink" href="#install-command-line-programs" title="Permanent link">&para;</a></h2>
+<h2 id="install-command-line-programs"><span style="background-color: rgba(0, 255, 102, 0.3)">Install command-line programs</span><a class="headerlink" href="#install-command-line-programs" title="Permanent link">&para;</a></h2>
 <h3 id="java">Java<a class="headerlink" href="#java" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><code>brew install java
 </code></pre></div>
@@ -323,7 +327,7 @@ but some are useful enough that I installed them in the beginning:</p>
 </code></pre></div>
 
 
-<h2 id="transfer-backed-up-data"><span style="background-color: #AED6F1">Transfer backed-up data</span><a class="headerlink" href="#transfer-backed-up-data" title="Permanent link">&para;</a></h2>
+<h2 id="transfer-backed-up-data"><span style="background-color: rgba(0, 136, 255, 0.3)">Transfer backed-up data</span><a class="headerlink" href="#transfer-backed-up-data" title="Permanent link">&para;</a></h2>
 <h3 id="reorganizing-data-and-backup">Reorganizing data and backup<a class="headerlink" href="#reorganizing-data-and-backup" title="Permanent link">&para;</a></h3>
 <p>There are many places where I store my files:</p>
 <ul>
@@ -374,7 +378,7 @@ Now I place my files inside Dropbox and created symlinks to access them from out
 <p>After transferring files from my external hard drive to my new laptop,
 I configured macOS to use my custom wallpapers instead of the system-default ones
 and use my profile picture on the lock screen.</p>
-<h2 id="customize-vim"><span style="background-color: #F5B7B1">Customize Vim</span><a class="headerlink" href="#customize-vim" title="Permanent link">&para;</a></h2>
+<h2 id="customize-vim"><span style="background-color: rgba(255, 0, 0, 0.3)">Customize Vim</span><a class="headerlink" href="#customize-vim" title="Permanent link">&para;</a></h2>
 <h3 id="install-newer-vim">Install newer Vim<a class="headerlink" href="#install-newer-vim" title="Permanent link">&para;</a></h3>
 <p>Although macOS comes with <code>vim</code> pre-installed, that version of Vim was compiled without some important features.
 You can see which features are installed by running <code>vim --version</code>.</p>
@@ -425,7 +429,7 @@ Warning: Failed to set locale category LC_MESSAGES to en_IN.
 
 <p>Fix this by adding <code>export LC_ALL=en_US.UTF-8</code> to <code>~/.bash_profile</code> or <code>~/.env</code>
 (<a href="https://discourse.brew.sh/t/failed-to-set-locale-category-lc-numeric-to-en-ru/5092">brew forum post</a>).</p>
-<h2 id="install-nginx-and-serve-website-mirrors"><span style="background-color: #D2B4DE">Install Nginx and serve website mirrors</span><a class="headerlink" href="#install-nginx-and-serve-website-mirrors" title="Permanent link">&para;</a></h2>
+<h2 id="install-nginx-and-serve-website-mirrors"><span style="background-color: rgba(170, 0, 255, 0.3)">Install Nginx and serve website mirrors</span><a class="headerlink" href="#install-nginx-and-serve-website-mirrors" title="Permanent link">&para;</a></h2>
 <p>I use <a href="https://nginx.org/en/">Nginx</a> to serve static content.
 It's useful to access local websites that I downloaded or created.</p>
 <h3 id="install-and-run-nginx">Install and run Nginx<a class="headerlink" href="#install-and-run-nginx" title="Permanent link">&para;</a></h3>
@@ -449,6 +453,6 @@ I copied the websites from there, uncompressed them, and placed them in <code>/u
 <p>You can put symlinks in <code>/usr/local/var/www</code>, but <code>/usr/local/var/www</code> itself cannot be a symlink.</p>
 </div>
 </article>
-</div>
+</main>
 </body>
 </html>

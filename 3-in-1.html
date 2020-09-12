@@ -7,56 +7,61 @@
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/blog/theme/base.css" />
 <meta name="description" content="3 balls in 1 hand, a.k.a. 3-in-1, is definitely not an easy pattern, mostly because of the speed, accuracy and strength required to do it. I could learn to do it because I came up with good prerequisites. It still took me a few months to learn it …" />
 <meta name="keywords" content="Juggling,Tutorial" />
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', (event) => {
+    nav = document.getElementById('nav');
+    nav.classList.add('hidden');
+    collapsor = document.getElementById('nav-collapsor');
+    collapsor.addEventListener('click', (event) => {
+        nav.classList.toggle('hidden');
+    });
+});
+</script>
 </head>
 
 <body>
-<nav>
+<header>
 <div class="primary">
 <a id="sitetitle" href="https://sharmaeklavya2.github.io/blog/">Eklavya's Blog</a>
-<label for="nav-checkbox" class="collapsor-lbl">&equiv;</label>
+<span id="nav-collapsor"><span>&equiv;</span></span>
 </div>
-<div class="focus-capturer" tabindex="0">
-<input id="nav-checkbox" class="collapsor" type="checkbox" />
-<div class="collapsible">
-<ul>
-<li><a href="https://sharmaeklavya2.github.io">About me</a></li>
-<li><a href="https://sharmaeklavya2.github.io/blog/pages/about-this-blog.html">About this blog</a></li>
-<li><ul class="tags">
-<li>Feed:</li>
-<li><a type="application/type+xml" rel="alternate" class="hori-flex" href="https://sharmaeklavya2.github.io/blog/feed/all.rss.xml">
+<nav id="nav">
+<a href="https://sharmaeklavya2.github.io">About me</a>
+<a href="https://sharmaeklavya2.github.io/blog/pages/about-this-blog.html">About this blog</a>
+<span class="feed-group"><span>Feed:</span>
+<a type="application/type+xml" rel="alternate" class="feed-widget" href="https://sharmaeklavya2.github.io/blog/feed/all.rss.xml">
 <svg class="icon"><use xlink:href="https://sharmaeklavya2.github.io/blog/theme/sprites.svg#fa-rss-square"/></svg><span>RSS</span>
-</a></li>
-<li><a type="application/type+xml" rel="alternate" class="hori-flex" href="https://sharmaeklavya2.github.io/blog/feed/all.atom.xml">
+</a>
+<a type="application/type+xml" rel="alternate" class="feed-widget" href="https://sharmaeklavya2.github.io/blog/feed/all.atom.xml">
 <svg class="icon"><use xlink:href="https://sharmaeklavya2.github.io/blog/theme/sprites.svg#fa-rss-square"/></svg><span>Atom</span>
-</a></li>
-</ul></li>
-</ul>
-<p>Tags</p>
-<ul>
-<li><a href="https://sharmaeklavya2.github.io/blog/tag/algorithms.html">Algorithms <span class="article-count">1</span></a></li>
-<li><a href="https://sharmaeklavya2.github.io/blog/tag/math.html">Math <span class="article-count">1</span></a></li>
-<li><a href="https://sharmaeklavya2.github.io/blog/tag/tutorial.html">Tutorial <span class="article-count">3</span></a></li>
-<li><a href="https://sharmaeklavya2.github.io/blog/tag/web-dev.html">Web dev <span class="article-count">1</span></a></li>
-<li><a href="https://sharmaeklavya2.github.io/blog/tag/juggling.html">Juggling <span class="article-count">3</span></a></li>
-<li><a href="https://sharmaeklavya2.github.io/blog/tag/about-me.html">About me <span class="article-count">1</span></a></li>
-</ul>
-</div>
-</div>
+</a>
+</span>
+<span class="nav-heading">Tags</span>
+<a href="https://sharmaeklavya2.github.io/blog/tag/algorithms.html">Algorithms <span class="article-count">1</span></a>
+<a href="https://sharmaeklavya2.github.io/blog/tag/math.html">Math <span class="article-count">1</span></a>
+<a href="https://sharmaeklavya2.github.io/blog/tag/tutorial.html">Tutorial <span class="article-count">3</span></a>
+<a href="https://sharmaeklavya2.github.io/blog/tag/web-dev.html">Web dev <span class="article-count">1</span></a>
+<a href="https://sharmaeklavya2.github.io/blog/tag/juggling.html">Juggling <span class="article-count">3</span></a>
+<a href="https://sharmaeklavya2.github.io/blog/tag/about-me.html">About me <span class="article-count">1</span></a>
 </nav>
+</header>
 
-<div id="main">
+<main id="main">
 <article id="content" class="body">
 <h1 class="entry-title">How to juggle 3 balls in 1 hand</h1>
-<table class="post-details">
-<tr><td>Published</td>
-<td><time class="published" datetime="2017-11-14T00:00:00+05:30">
-14 Nov 2017</time></td></tr>
-<tr><td>Tags</td>
-<td><ul class="tags">
+<span class="post-details">
+<span class="post-date">
+<svg class="icon"><use xlink:href="https://sharmaeklavya2.github.io/blog/theme/sprites.svg#fa-calendar-alt"/></svg>
+<time class="published" datetime="2017-11-14T00:00:00+05:30">14 Nov 2017</time>
+</span>
+<span class="post-tags">
+<svg class="icon"><use xlink:href="https://sharmaeklavya2.github.io/blog/theme/sprites.svg#fa-tags"/></svg>
+<ul class="hori-link-list">
 <li><a href="https://sharmaeklavya2.github.io/blog/tag/juggling.html">Juggling</a></li>
 <li><a href="https://sharmaeklavya2.github.io/blog/tag/tutorial.html">Tutorial</a></li>
-</ul></td></tr>
-</table>
+</ul>
+</span>
+</span>
 <div class="entry-content">
 <p><img src="https://sharmaeklavya2.github.io/blog/img/siteswaps/60.gif" title="60" /></p>
 <p>3 balls in 1 hand, a.k.a. 3-in-1, is definitely not an easy pattern,
@@ -105,6 +110,6 @@ After you get good at these, you can finally try 3-in-1.</p>
 <p>You might also like this <a href="https://www.youtube.com/watch?v=z2k3ugex7Kw">video tutorial by Chris Taibbi</a>.</p>
 </div>
 </article>
-</div>
+</main>
 </body>
 </html>

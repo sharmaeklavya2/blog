@@ -7,75 +7,75 @@
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/blog/theme/base.css" />
 <meta name="description" content="Articles related to Math on Eklavya's Blog." />
 <meta name="keywords" content="Math" />
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', (event) => {
+    nav = document.getElementById('nav');
+    nav.classList.add('hidden');
+    collapsor = document.getElementById('nav-collapsor');
+    collapsor.addEventListener('click', (event) => {
+        nav.classList.toggle('hidden');
+    });
+});
+</script>
 </head>
 
 <body>
-<nav>
+<header>
 <div class="primary">
 <a id="sitetitle" href="https://sharmaeklavya2.github.io/blog/">Eklavya's Blog</a>
-<label for="nav-checkbox" class="collapsor-lbl">&equiv;</label>
+<span id="nav-collapsor"><span>&equiv;</span></span>
 </div>
-<div class="focus-capturer" tabindex="0">
-<input id="nav-checkbox" class="collapsor" type="checkbox" />
-<div class="collapsible">
-<ul>
-<li><a href="https://sharmaeklavya2.github.io">About me</a></li>
-<li><a href="https://sharmaeklavya2.github.io/blog/pages/about-this-blog.html">About this blog</a></li>
-<li><ul class="tags">
-<li>Feed:</li>
-<li><a type="application/type+xml" rel="alternate" class="hori-flex" href="https://sharmaeklavya2.github.io/blog/feed/all.rss.xml">
+<nav id="nav">
+<a href="https://sharmaeklavya2.github.io">About me</a>
+<a href="https://sharmaeklavya2.github.io/blog/pages/about-this-blog.html">About this blog</a>
+<span class="feed-group"><span>Feed:</span>
+<a type="application/type+xml" rel="alternate" class="feed-widget" href="https://sharmaeklavya2.github.io/blog/feed/all.rss.xml">
 <svg class="icon"><use xlink:href="https://sharmaeklavya2.github.io/blog/theme/sprites.svg#fa-rss-square"/></svg><span>RSS</span>
-</a></li>
-<li><a type="application/type+xml" rel="alternate" class="hori-flex" href="https://sharmaeklavya2.github.io/blog/feed/all.atom.xml">
+</a>
+<a type="application/type+xml" rel="alternate" class="feed-widget" href="https://sharmaeklavya2.github.io/blog/feed/all.atom.xml">
 <svg class="icon"><use xlink:href="https://sharmaeklavya2.github.io/blog/theme/sprites.svg#fa-rss-square"/></svg><span>Atom</span>
-</a></li>
-</ul></li>
-</ul>
-<p>Tags</p>
-<ul>
-<li><a href="https://sharmaeklavya2.github.io/blog/tag/algorithms.html">Algorithms <span class="article-count">1</span></a></li>
-<li><a href="https://sharmaeklavya2.github.io/blog/tag/math.html">Math <span class="article-count">1</span></a></li>
-<li><a href="https://sharmaeklavya2.github.io/blog/tag/tutorial.html">Tutorial <span class="article-count">3</span></a></li>
-<li><a href="https://sharmaeklavya2.github.io/blog/tag/web-dev.html">Web dev <span class="article-count">1</span></a></li>
-<li><a href="https://sharmaeklavya2.github.io/blog/tag/juggling.html">Juggling <span class="article-count">3</span></a></li>
-<li><a href="https://sharmaeklavya2.github.io/blog/tag/about-me.html">About me <span class="article-count">1</span></a></li>
-</ul>
-</div>
-</div>
+</a>
+</span>
+<span class="nav-heading">Tags</span>
+<a href="https://sharmaeklavya2.github.io/blog/tag/algorithms.html">Algorithms <span class="article-count">1</span></a>
+<a href="https://sharmaeklavya2.github.io/blog/tag/math.html">Math <span class="article-count">1</span></a>
+<a href="https://sharmaeklavya2.github.io/blog/tag/tutorial.html">Tutorial <span class="article-count">3</span></a>
+<a href="https://sharmaeklavya2.github.io/blog/tag/web-dev.html">Web dev <span class="article-count">1</span></a>
+<a href="https://sharmaeklavya2.github.io/blog/tag/juggling.html">Juggling <span class="article-count">3</span></a>
+<a href="https://sharmaeklavya2.github.io/blog/tag/about-me.html">About me <span class="article-count">1</span></a>
 </nav>
+</header>
 
-<div id="main">
+<main id="main">
 <div class="tag-title-container">
-<h2>Articles with the tag <span class="tag">Math</span></h2>
-<ul class="tags">
-<li><a type="application/type+xml" rel="alternate" class="hori-flex" href="https://sharmaeklavya2.github.io/blog/feed/math.rss.xml">
+<h1>Articles tagged &lsquo;<span class="tag">Math</span>&rsquo;</h1>
+<span class="feed-group">
+<a type="application/type+xml" rel="alternate" class="feed-widget" href="https://sharmaeklavya2.github.io/blog/feed/math.rss.xml">
 <svg class="icon"><use xlink:href="https://sharmaeklavya2.github.io/blog/theme/sprites.svg#fa-rss-square"/></svg><span>RSS</span>
-</a></li>
-<li><a type="application/type+xml" rel="alternate" class="hori-flex" href="https://sharmaeklavya2.github.io/blog/feed/math.atom.xml">
+</a>
+<a type="application/type+xml" rel="alternate" class="feed-widget" href="https://sharmaeklavya2.github.io/blog/feed/math.atom.xml">
 <svg class="icon"><use xlink:href="https://sharmaeklavya2.github.io/blog/theme/sprites.svg#fa-rss-square"/></svg><span>Atom</span>
-</a></li>
-</ul>
+</a>
+</span>
 </div>
 <ol id="post-list">
-<li><article class="hentry card">
-<header><h2 class="entry-title"><a href="https://sharmaeklavya2.github.io/blog/generalizing-segment-trees.html" >
-Generalizing Segment Trees</a></h2></header>
-<table class="post-details">
-<tr><td>Published</td>
-<td><time class="published" datetime="2019-07-20T00:00:00+05:30">
-20 Jul 2019</time></td></tr>
-<tr><td>Tags</td>
-<td><ul class="tags">
+<li>
+<h2><a href="https://sharmaeklavya2.github.io/blog/generalizing-segment-trees.html" >Generalizing Segment Trees</a></h2>
+<span class="post-details">
+<span class="post-date">
+<svg class="icon"><use xlink:href="https://sharmaeklavya2.github.io/blog/theme/sprites.svg#fa-calendar-alt"/></svg>
+<time class="published" datetime="2019-07-20T00:00:00+05:30">20 Jul 2019</time>
+</span>
+<span class="post-tags">
+<svg class="icon"><use xlink:href="https://sharmaeklavya2.github.io/blog/theme/sprites.svg#fa-tags"/></svg>
+<ul class="hori-link-list">
 <li><a href="https://sharmaeklavya2.github.io/blog/tag/algorithms.html">Algorithms</a></li>
 <li><a href="https://sharmaeklavya2.github.io/blog/tag/math.html">Math</a></li>
-</ul></td></tr>
-</table>
-<div class="entry-content">
-<p>How I generalized segment trees by expressing range query outputs as elements of a monoid and update operations as functions.</p>
-</div>
-<a class="read-more" href="https://sharmaeklavya2.github.io/blog/generalizing-segment-trees.html">Read full post</a>
-</article></li>
+</ul>
+</span>
+</span><div class="entry-content"><p>How I generalized segment trees by expressing range query outputs as elements of a monoid and update operations as functions.</p></div>
+</li>
 </ol>
-</div>
+</main>
 </body>
 </html>

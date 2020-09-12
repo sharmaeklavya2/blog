@@ -135,7 +135,7 @@ But having a lightweight GUI text editor can be handy.&lt;/p&gt;
 &lt;li&gt;Display HTML files as HTML code.&lt;/li&gt;
 &lt;li&gt;Disable 'add .txt extension to plain text files'. This is needed if you have to edit extensionless files.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="terminal-and-shell"&gt;&lt;span style="background-color: #F9E79F"/&gt;Terminal and Shell&lt;/span&gt;&lt;a class="headerlink" href="#terminal-and-shell" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="terminal-and-shell"&gt;&lt;span style="background-color: rgba(255, 204, 0, 0.3)"/&gt;Terminal and Shell&lt;/span&gt;&lt;a class="headerlink" href="#terminal-and-shell" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;If you're an aspiring programmer or power user, you should get to know the command-line.
 For this blog post, I'm going to assume that you know how to run commands from the shell and
 you know the meaning of the following words:
@@ -229,7 +229,7 @@ you can open multiple shells on the server on a single SSH session.&lt;/p&gt;
 &lt;p&gt;Brew will check for updates every time you run it.
 To prevent that from happening, add &lt;code&gt;export HOMEBREW_NO_AUTO_UPDATE=1&lt;/code&gt;
 to &lt;code&gt;~/.bash_profile&lt;/code&gt; or &lt;code&gt;~/.env&lt;/code&gt;.&lt;/p&gt;
-&lt;h2 id="install-command-line-programs"&gt;&lt;span style="background-color: #A9DFBF"&gt;Install command-line programs&lt;/span&gt;&lt;a class="headerlink" href="#install-command-line-programs" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="install-command-line-programs"&gt;&lt;span style="background-color: rgba(0, 255, 102, 0.3)"&gt;Install command-line programs&lt;/span&gt;&lt;a class="headerlink" href="#install-command-line-programs" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;h3 id="java"&gt;Java&lt;a class="headerlink" href="#java" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;brew install java
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -262,7 +262,7 @@ but some are useful enough that I installed them in the beginning:&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h2 id="transfer-backed-up-data"&gt;&lt;span style="background-color: #AED6F1"&gt;Transfer backed-up data&lt;/span&gt;&lt;a class="headerlink" href="#transfer-backed-up-data" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="transfer-backed-up-data"&gt;&lt;span style="background-color: rgba(0, 136, 255, 0.3)"&gt;Transfer backed-up data&lt;/span&gt;&lt;a class="headerlink" href="#transfer-backed-up-data" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;h3 id="reorganizing-data-and-backup"&gt;Reorganizing data and backup&lt;a class="headerlink" href="#reorganizing-data-and-backup" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;There are many places where I store my files:&lt;/p&gt;
 &lt;ul&gt;
@@ -313,7 +313,7 @@ Now I place my files inside Dropbox and created symlinks to access them from out
 &lt;p&gt;After transferring files from my external hard drive to my new laptop,
 I configured macOS to use my custom wallpapers instead of the system-default ones
 and use my profile picture on the lock screen.&lt;/p&gt;
-&lt;h2 id="customize-vim"&gt;&lt;span style="background-color: #F5B7B1"&gt;Customize Vim&lt;/span&gt;&lt;a class="headerlink" href="#customize-vim" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="customize-vim"&gt;&lt;span style="background-color: rgba(255, 0, 0, 0.3)"&gt;Customize Vim&lt;/span&gt;&lt;a class="headerlink" href="#customize-vim" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;h3 id="install-newer-vim"&gt;Install newer Vim&lt;a class="headerlink" href="#install-newer-vim" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Although macOS comes with &lt;code&gt;vim&lt;/code&gt; pre-installed, that version of Vim was compiled without some important features.
 You can see which features are installed by running &lt;code&gt;vim --version&lt;/code&gt;.&lt;/p&gt;
@@ -364,7 +364,7 @@ Warning: Failed to set locale category LC_MESSAGES to en_IN.
 
 &lt;p&gt;Fix this by adding &lt;code&gt;export LC_ALL=en_US.UTF-8&lt;/code&gt; to &lt;code&gt;~/.bash_profile&lt;/code&gt; or &lt;code&gt;~/.env&lt;/code&gt;
 (&lt;a href="https://discourse.brew.sh/t/failed-to-set-locale-category-lc-numeric-to-en-ru/5092"&gt;brew forum post&lt;/a&gt;).&lt;/p&gt;
-&lt;h2 id="install-nginx-and-serve-website-mirrors"&gt;&lt;span style="background-color: #D2B4DE"&gt;Install Nginx and serve website mirrors&lt;/span&gt;&lt;a class="headerlink" href="#install-nginx-and-serve-website-mirrors" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="install-nginx-and-serve-website-mirrors"&gt;&lt;span style="background-color: rgba(170, 0, 255, 0.3)"&gt;Install Nginx and serve website mirrors&lt;/span&gt;&lt;a class="headerlink" href="#install-nginx-and-serve-website-mirrors" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;I use &lt;a href="https://nginx.org/en/"&gt;Nginx&lt;/a&gt; to serve static content.
 It's useful to access local websites that I downloaded or created.&lt;/p&gt;
 &lt;h3 id="install-and-run-nginx"&gt;Install and run Nginx&lt;a class="headerlink" href="#install-and-run-nginx" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
