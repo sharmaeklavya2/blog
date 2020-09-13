@@ -382,7 +382,9 @@ and reduce it to a pure math problem.</p>
 <p>Let <span class="math">\(a\)</span> be a sequence of <span class="math">\(n\)</span> non-negative integers.
 We'll now define a function <span class="math">\(f_a: \mathbb{Z} \mapsto \mathbb{Z},\)</span>
 that takes as input a <em>throw time</em> and outputs the corresponding <em>catch time</em>.
-\[ f_a(x) = x + a[x \bmod n] \]
+</p>
+<div class="math">$$ f_a(x) = x + a[x \bmod n] $$</div>
+<p>
 Here <span class="math">\(a[i] = a_i\)</span> and <span class="math">\(x \bmod n\)</span> is the remainder obtained after dividing <span class="math">\(x\)</span> by <span class="math">\(n\)</span>.</p>
 <p>Now we need to prove two things:</p>
 <ul>
@@ -413,12 +415,12 @@ for maximum enjoyment, you have to try it yourself.
 <p><strong>Lemma 3</strong>: If <span class="math">\(f_a\)</span> is one-to-one, then <span class="math">\(P(a)\)</span> is true.</p>
 <p><em>Proof</em>. Assume <span class="math">\(P(a)\)</span> is false. Then <span class="math">\(\exists i_1, i_2 \in \mathbb{Z}_n\)</span> such that
 <span class="math">\(i_1 \neq i_2\)</span> and <span class="math">\(b[i_1] = b[i_2]\)</span>.</p>
-<div class="math">\begin{align}
+<div class="math">$$\begin{aligned}
 &amp; b[i_1] = b[i_2]
 \\ &amp;\implies (i_1 + a[i_1]) \bmod n = (i_2 + a[i_2]) \bmod n
 \\ &amp;\implies \exists k \in \mathbb{Z}, i_1 + a[i_1] = i_2 + a[i_2] + kn
 \\ &amp;\implies \exists k \in \mathbb{Z}, f_a(i_1) = f_a(i_2 + kn)
-\end{align}</div>
+\end{aligned}$$</div>
 <p>
 This is a contradiction, since <span class="math">\(f_a\)</span> is one-to-one.
 Therefore, <span class="math">\(P(a)\)</span> is true. <span class="math">\(\Box\)</span></p>
@@ -431,12 +433,12 @@ Let <span class="math">\(i_1 = u_1 \bmod n\)</span> and <span class="math">\(i_2
 This is a contradiction, since <span class="math">\(u_1 \neq u_2\)</span>.</p>
 <p><em>Case 2</em>: <span class="math">\(i_1 \neq i_2\)</span>.
 </p>
-<div class="math">\begin{align}
+<div class="math">$$\begin{aligned}
 &amp; f_a(u_1) = f_a(u_2)
 \\ &amp;\implies u_1 + a[i_1] = u_2 + a[i_2]
 \\ &amp;\implies i_1 + a[i_1] \equiv i_2 + a[i_2] \pmod{n}
 \\ &amp;\implies b[i_1] = b[i_2]
-\end{align}</div>
+\end{aligned}$$</div>
 <p>
 Since <span class="math">\(b\)</span> contains a duplicate entry, it cannot be a permutation of <span class="math">\(\mathbb{Z}_n\)</span>.
 This contradicts <span class="math">\(P(a)\)</span>. Therefore, <span class="math">\(f_a\)</span> is one-to-one. <span class="math">\(\Box\)</span></p>

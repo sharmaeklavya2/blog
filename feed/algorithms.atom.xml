@@ -267,14 +267,14 @@ Let's call &lt;span class="math"&gt;\(h\)&lt;/span&gt; a 'node update function'.
 For example, for the MINMAX problem with &lt;span class="math"&gt;\(g(x) = x + 20\)&lt;/span&gt;, &lt;span class="math"&gt;\(h(x) = (x_0 + 20, x_1 + 20)\)&lt;/span&gt;.
 This is how we verify &lt;span class="math"&gt;\(h\)&lt;/span&gt;:
 &lt;/p&gt;
-&lt;div class="math"&gt;\begin{align*}
+&lt;div class="math"&gt;$$\begin{aligned}
 &amp;amp; h(f(a))
 \\ &amp;amp;= h((\min(a), \max(a)))
 \\ &amp;amp;= (\min(a) + 20, \max(a) + 20)
 \\ &amp;amp;= (\min(a + 20), \max(a + 20))
 \\ &amp;amp;= (\min(g(a)), \max(g(a)))
 \\ &amp;amp;= f(g(a))
-\end{align*}&lt;/div&gt;
+\end{aligned}$$&lt;/div&gt;
 &lt;p&gt;Here &lt;span class="math"&gt;\(a + 20\)&lt;/span&gt; is the array obtained by adding 20 to every element of &lt;span class="math"&gt;\(a\)&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;It can be proven that every node update function is an endomorphism (a
 &lt;a href="https://en.wikipedia.org/wiki/Monoid#Monoid_homomorphisms"&gt;homomorphism&lt;/a&gt;
@@ -351,12 +351,12 @@ We can update the root node, and add &lt;span class="math"&gt;\(d(3, 0)\)&lt;/sp
 But the children already have a pending update of &lt;span class="math"&gt;\(d(1, 10)\)&lt;/span&gt;.
 To resolve this, we will compose the functions, i.e. we'll find a single
 function which is equal to successively applying &lt;span class="math"&gt;\(d(1, 10)\)&lt;/span&gt; and then &lt;span class="math"&gt;\(d(3, 0)\)&lt;/span&gt;.&lt;/p&gt;
-&lt;div class="math"&gt;\begin{align*}
+&lt;div class="math"&gt;$$\begin{aligned}
 &amp;amp; d(3, 0)(d(1, 10)(x))
 \\ &amp;amp;= d(3, 0)(x + 10)
 \\ &amp;amp;= 3(x + 10) = 3x + 30
 \\ &amp;amp;= d(3, 30)(x)
-\end{align*}&lt;/div&gt;
+\end{aligned}$$&lt;/div&gt;
 &lt;figure&gt;
 &lt;img src="https://sharmaeklavya2.github.io/blog/img/segtree-lazy-update/4.dot.svg" /&gt;
 &lt;figcaption&gt;

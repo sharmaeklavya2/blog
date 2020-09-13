@@ -335,14 +335,14 @@ Let's call <span class="math">\(h\)</span> a 'node update function'.</p>
 For example, for the MINMAX problem with <span class="math">\(g(x) = x + 20\)</span>, <span class="math">\(h(x) = (x_0 + 20, x_1 + 20)\)</span>.
 This is how we verify <span class="math">\(h\)</span>:
 </p>
-<div class="math">\begin{align*}
+<div class="math">$$\begin{aligned}
 &amp; h(f(a))
 \\ &amp;= h((\min(a), \max(a)))
 \\ &amp;= (\min(a) + 20, \max(a) + 20)
 \\ &amp;= (\min(a + 20), \max(a + 20))
 \\ &amp;= (\min(g(a)), \max(g(a)))
 \\ &amp;= f(g(a))
-\end{align*}</div>
+\end{aligned}$$</div>
 <p>Here <span class="math">\(a + 20\)</span> is the array obtained by adding 20 to every element of <span class="math">\(a\)</span>.</p>
 <p>It can be proven that every node update function is an endomorphism (a
 <a href="https://en.wikipedia.org/wiki/Monoid#Monoid_homomorphisms">homomorphism</a>
@@ -419,12 +419,12 @@ We can update the root node, and add <span class="math">\(d(3, 0)\)</span> to th
 But the children already have a pending update of <span class="math">\(d(1, 10)\)</span>.
 To resolve this, we will compose the functions, i.e. we'll find a single
 function which is equal to successively applying <span class="math">\(d(1, 10)\)</span> and then <span class="math">\(d(3, 0)\)</span>.</p>
-<div class="math">\begin{align*}
+<div class="math">$$\begin{aligned}
 &amp; d(3, 0)(d(1, 10)(x))
 \\ &amp;= d(3, 0)(x + 10)
 \\ &amp;= 3(x + 10) = 3x + 30
 \\ &amp;= d(3, 30)(x)
-\end{align*}</div>
+\end{aligned}$$</div>
 <figure>
 <img src="https://sharmaeklavya2.github.io/blog/img/segtree-lazy-update/4.dot.svg" />
 <figcaption>
