@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 });
 </script>
-<link rel="stylesheet" href="https://sharmaeklavya2.github.io/blog/css/collapsible.css" />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/blog/css/solarized.css" />
 <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"extensions": ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]}, "extensions": ["tex2jax.js"], "jax": ["input/TeX", "output/CommonHTML"]});</script>
 <script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
@@ -550,32 +549,22 @@ You will be asked to perform <span class="math">\(q\)</span> operations. Each op
 </ul>
 <p>The problem of coming up with a suitable monoid and
 a suitable node update function family is left as an exercise.</p>
-<div class="collapsible">
-    <label for="checkbox0" class="collapsor-lbl"> Minor hint </label>
-    <div class="focus-capturer" tabindex="0">
-        <input id="checkbox0" class="collapsor" type="checkbox" />
-        <div class="collapsible-content">
-            <p>See the proof of correctness of Kadane's algorithm.
-            Use divide-and-conquer instead of an incremental approach.</p>
-        </div>
-    </div>
-</div>
+<details>
+    <summary>Minor hint</summary>
+    <p>See the proof of correctness of Kadane's algorithm.
+    Use divide-and-conquer instead of an incremental approach.</p>
+</details>
 
-<div class="collapsible">
-    <label for="checkbox1" class="collapsor-lbl"> Major hint </label>
-    <div class="focus-capturer" tabindex="0">
-        <input id="checkbox1" class="collapsor" type="checkbox" />
-        <div class="collapsible-content">
-            <p>Each segment tree node stores 4 values for its segment:</p>
-            <ol>
-                <li>Sum of the elements of the segment</li>
-                <li>Largest prefix sum of the segment</li>
-                <li>Largest suffix sum of the segment</li>
-                <li>Largest subarray sum of the segment</li>
-            </ol>
-        </div>
-    </div>
-</div>
+<details>
+    <summary>Major hint</summary>
+    <p>Each segment tree node stores 4 values for its segment:</p>
+    <ol>
+        <li>Sum of the elements of the segment</li>
+        <li>Largest prefix sum of the segment</li>
+        <li>Largest suffix sum of the segment</li>
+        <li>Largest subarray sum of the segment</li>
+    </ol>
+</details>
 </div>
 </article>
 </main>

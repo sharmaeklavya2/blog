@@ -482,29 +482,19 @@ You will be asked to perform &lt;span class="math"&gt;\(q\)&lt;/span&gt; operati
 &lt;/ul&gt;
 &lt;p&gt;The problem of coming up with a suitable monoid and
 a suitable node update function family is left as an exercise.&lt;/p&gt;
-&lt;div class="collapsible"&gt;
-    &lt;label for="checkbox0" class="collapsor-lbl"&gt; Minor hint &lt;/label&gt;
-    &lt;div class="focus-capturer" tabindex="0"&gt;
-        &lt;input id="checkbox0" class="collapsor" type="checkbox" /&gt;
-        &lt;div class="collapsible-content"&gt;
-            &lt;p&gt;See the proof of correctness of Kadane's algorithm.
-            Use divide-and-conquer instead of an incremental approach.&lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
+&lt;details&gt;
+    &lt;summary&gt;Minor hint&lt;/summary&gt;
+    &lt;p&gt;See the proof of correctness of Kadane's algorithm.
+    Use divide-and-conquer instead of an incremental approach.&lt;/p&gt;
+&lt;/details&gt;
 
-&lt;div class="collapsible"&gt;
-    &lt;label for="checkbox1" class="collapsor-lbl"&gt; Major hint &lt;/label&gt;
-    &lt;div class="focus-capturer" tabindex="0"&gt;
-        &lt;input id="checkbox1" class="collapsor" type="checkbox" /&gt;
-        &lt;div class="collapsible-content"&gt;
-            &lt;p&gt;Each segment tree node stores 4 values for its segment:&lt;/p&gt;
-            &lt;ol&gt;
-                &lt;li&gt;Sum of the elements of the segment&lt;/li&gt;
-                &lt;li&gt;Largest prefix sum of the segment&lt;/li&gt;
-                &lt;li&gt;Largest suffix sum of the segment&lt;/li&gt;
-                &lt;li&gt;Largest subarray sum of the segment&lt;/li&gt;
-            &lt;/ol&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</content><category term="posts"></category><category term="Algorithms"></category><category term="Math"></category></entry></feed>
+&lt;details&gt;
+    &lt;summary&gt;Major hint&lt;/summary&gt;
+    &lt;p&gt;Each segment tree node stores 4 values for its segment:&lt;/p&gt;
+    &lt;ol&gt;
+        &lt;li&gt;Sum of the elements of the segment&lt;/li&gt;
+        &lt;li&gt;Largest prefix sum of the segment&lt;/li&gt;
+        &lt;li&gt;Largest suffix sum of the segment&lt;/li&gt;
+        &lt;li&gt;Largest subarray sum of the segment&lt;/li&gt;
+    &lt;/ol&gt;
+&lt;/details&gt;</content><category term="posts"></category><category term="Algorithms"></category><category term="Math"></category></entry></feed>
