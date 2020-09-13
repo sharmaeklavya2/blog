@@ -54,7 +54,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
 <span class="post-details">
 <span class="post-date">
 <svg class="icon"><use xlink:href="https://sharmaeklavya2.github.io/blog/theme/sprites.svg#fa-calendar-alt"/></svg>
-<time class="published" datetime="2018-11-01T00:00:00+05:30">01 Nov 2018</time>
+<time class="published outdated" datetime="2018-11-01T00:00:00+05:30">01 Nov 2018</time>
+<time class="modified" datetime="2020-09-13T00:00:00+05:30">
+13 Sep 2020</time>
 </span>
 <span class="post-tags">
 <svg class="icon"><use xlink:href="https://sharmaeklavya2.github.io/blog/theme/sprites.svg#fa-tags"/></svg>
@@ -78,6 +80,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
 </div>
 
 <p>In this article, we'll look at how to make one.</p>
+<p><strong>Important update</strong>: This article talks about a hacky solution to
+make a collapsible without using JavaScript.
+I recently (September 2020) found a much simpler, cleaner and semantic solution
+using the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details"><code>&lt;details&gt;</code></a> tag.</p>
 <div class="toc"><span class="toctitle">Table of Contents</span><ul>
 <li><a href="#skeleton">Skeleton</a></li>
 <li><a href="#collapsibility">Collapsibility</a></li>

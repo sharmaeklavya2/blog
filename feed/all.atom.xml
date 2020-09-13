@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Eklavya's Blog</title><link href="https://sharmaeklavya2.github.io/blog/" rel="alternate"></link><link href="https://sharmaeklavya2.github.io/blog/feed/all.atom.xml" rel="self"></link><id>https://sharmaeklavya2.github.io/blog/</id><updated>2020-06-21T00:00:00+05:30</updated><entry><title>Generalizing Segment Trees</title><link href="https://sharmaeklavya2.github.io/blog/generalizing-segment-trees.html" rel="alternate"></link><published>2019-07-20T00:00:00+05:30</published><updated>2019-07-20T00:00:00+05:30</updated><author><name>Eklavya Sharma</name></author><id>tag:sharmaeklavya2.github.io,2019-07-20:/blog/generalizing-segment-trees.html</id><summary type="html">&lt;p&gt;How I generalized segment trees by expressing range query outputs as elements of a monoid and update operations as functions.&lt;/p&gt;</summary><content type="html">&lt;p&gt;A segment tree is a data structure which stores an array of size &lt;span class="math"&gt;\(n\)&lt;/span&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Eklavya's Blog</title><link href="https://sharmaeklavya2.github.io/blog/" rel="alternate"></link><link href="https://sharmaeklavya2.github.io/blog/feed/all.atom.xml" rel="self"></link><id>https://sharmaeklavya2.github.io/blog/</id><updated>2020-09-13T00:00:00+05:30</updated><entry><title>Generalizing Segment Trees</title><link href="https://sharmaeklavya2.github.io/blog/generalizing-segment-trees.html" rel="alternate"></link><published>2019-07-20T00:00:00+05:30</published><updated>2019-07-20T00:00:00+05:30</updated><author><name>Eklavya Sharma</name></author><id>tag:sharmaeklavya2.github.io,2019-07-20:/blog/generalizing-segment-trees.html</id><summary type="html">&lt;p&gt;How I generalized segment trees by expressing range query outputs as elements of a monoid and update operations as functions.&lt;/p&gt;</summary><content type="html">&lt;p&gt;A segment tree is a data structure which stores an array of size &lt;span class="math"&gt;\(n\)&lt;/span&gt;
 and allows &lt;span class="math"&gt;\(O(\log{n})\)&lt;/span&gt;-time range queries and &lt;span class="math"&gt;\(O(\log n)\)&lt;/span&gt;-time range updates on it.
 I devised a method of generalizing segment trees by expressing
 query outputs as elements of a monoid and update operations as functions.
@@ -751,12 +751,12 @@ Run &lt;code&gt;virtualenv /path/to/venv/ -p python3&lt;/code&gt; to create a py
 Now all python commands and applications you run will use this virtualenv.&lt;/p&gt;
 &lt;p&gt;I usually install python packages only when required,
 but some are useful enough that I installed them in the beginning:&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pip install ipython requests pipdeptree flake8 grip cleaver
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pip install ipython requests jinja2 pipdeptree flake8 grip
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;These packages are useful for number-crunching and analytics:&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pip install numpy scipy pandas matplotlib seaborn
+&lt;p&gt;These packages are useful for math and computation:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pip install numpy scipy pandas matplotlib seaborn sympy
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
@@ -883,7 +883,7 @@ you should see the list of files in &lt;code&gt;/usr/local/var/www&lt;/code&gt;.
 &lt;h3 id="serve-my-websites-with-nginx"&gt;Serve my websites with Nginx&lt;a class="headerlink" href="#serve-my-websites-with-nginx" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;I had backed up compressed archives of my websites to my external hard disk.
 I copied the websites from there, uncompressed them, and placed them in &lt;code&gt;/usr/local/var/www&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;You can put symlinks in &lt;code&gt;/usr/local/var/www&lt;/code&gt;, but &lt;code&gt;/usr/local/var/www&lt;/code&gt; itself cannot be a symlink.&lt;/p&gt;</content><category term="posts"></category><category term="Tutorial"></category></entry><entry><title>Making a keyboard-navigable collapsible without JavaScript</title><link href="https://sharmaeklavya2.github.io/blog/css-collapsible.html" rel="alternate"></link><published>2018-11-01T00:00:00+05:30</published><updated>2018-11-01T00:00:00+05:30</updated><author><name>Eklavya Sharma</name></author><id>tag:sharmaeklavya2.github.io,2018-11-01:/blog/css-collapsible.html</id><summary type="html">&lt;p&gt;A 'collapsible' is content whose visibility can be toggled by clicking something. However, users without a mouse should also be able to open the collapsed content. This article explains how to make a keyboard-navigable collapsible without using JavaScript.&lt;/p&gt;</summary><content type="html">&lt;p&gt;A 'collapsible' is content whose visibility can be toggled. Here is an example:&lt;/p&gt;
+&lt;p&gt;You can put symlinks in &lt;code&gt;/usr/local/var/www&lt;/code&gt;, but &lt;code&gt;/usr/local/var/www&lt;/code&gt; itself cannot be a symlink.&lt;/p&gt;</content><category term="posts"></category><category term="Tutorial"></category></entry><entry><title>Making a keyboard-navigable collapsible without JavaScript</title><link href="https://sharmaeklavya2.github.io/blog/css-collapsible.html" rel="alternate"></link><published>2018-11-01T00:00:00+05:30</published><updated>2020-09-13T00:00:00+05:30</updated><author><name>Eklavya Sharma</name></author><id>tag:sharmaeklavya2.github.io,2018-11-01:/blog/css-collapsible.html</id><summary type="html">&lt;p&gt;A 'collapsible' is content whose visibility can be toggled by clicking something. However, users without a mouse should also be able to open the collapsed content. This article explains how to make a keyboard-navigable collapsible without using JavaScript.&lt;/p&gt;</summary><content type="html">&lt;p&gt;A 'collapsible' is content whose visibility can be toggled. Here is an example:&lt;/p&gt;
 &lt;div class="collapsible" style="clear: both"&gt;
     &lt;label for="checkbox0" class="collapsor-lbl"&gt; Click me &lt;/label&gt;
     &lt;div class="focus-capturer" tabindex="0"&gt;
@@ -896,6 +896,10 @@ I copied the websites from there, uncompressed them, and placed them in &lt;code
 &lt;/div&gt;
 
 &lt;p&gt;In this article, we'll look at how to make one.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Important update&lt;/strong&gt;: This article talks about a hacky solution to
+make a collapsible without using JavaScript.
+I recently (September 2020) found a much simpler, cleaner and semantic solution
+using the &lt;a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details"&gt;&lt;code&gt;&amp;lt;details&amp;gt;&lt;/code&gt;&lt;/a&gt; tag.&lt;/p&gt;
 &lt;div class="toc"&gt;&lt;span class="toctitle"&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href="#skeleton"&gt;Skeleton&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#collapsibility"&gt;Collapsibility&lt;/a&gt;&lt;/li&gt;
