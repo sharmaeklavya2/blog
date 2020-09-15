@@ -8,14 +8,15 @@
 <meta name="description" content="This post explains how math and computer science can be applied to juggling, a seemingly non-mathematical field. This gives us more insight into what really goes on in a juggling pattern and helps us automate the process of finding new juggling patterns. It is also used to give input to juggling animation software." />
 <meta name="keywords" content="Juggling,Math" />
 <script type="text/javascript">
-document.addEventListener('DOMContentLoaded', (event) => {
+function enableNav() {
     nav = document.getElementById('nav');
     nav.classList.add('hidden');
     collapsor = document.getElementById('nav-collapsor');
     collapsor.addEventListener('click', (event) => {
         nav.classList.toggle('hidden');
     });
-});
+}
+// document.addEventListener('DOMContentLoaded', enableNav);
 </script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous"/>
 <link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
@@ -51,6 +52,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
 <a href="https://sharmaeklavya2.github.io/blog/tag/about-me.html">About me <span class="article-count">1</span></a>
 </nav>
 </header>
+<script type="text/javascript">
+enableNav();
+</script>
 
 <main id="main">
 <article id="content" class="body">

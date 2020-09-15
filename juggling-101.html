@@ -8,14 +8,15 @@
 <meta name="description" content="This is an article for those who wish to learn juggling and have absolutely no prior experience. Here you will find links to resources that will help you learn your first juggling pattern and suggestions about what kind of balls to use, what posture you should have, etc." />
 <meta name="keywords" content="Juggling" />
 <script type="text/javascript">
-document.addEventListener('DOMContentLoaded', (event) => {
+function enableNav() {
     nav = document.getElementById('nav');
     nav.classList.add('hidden');
     collapsor = document.getElementById('nav-collapsor');
     collapsor.addEventListener('click', (event) => {
         nav.classList.toggle('hidden');
     });
-});
+}
+// document.addEventListener('DOMContentLoaded', enableNav);
 </script>
 </head>
 
@@ -45,6 +46,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
 <a href="https://sharmaeklavya2.github.io/blog/tag/about-me.html">About me <span class="article-count">1</span></a>
 </nav>
 </header>
+<script type="text/javascript">
+enableNav();
+</script>
 
 <main id="main">
 <article id="content" class="body">

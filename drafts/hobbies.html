@@ -8,14 +8,15 @@
 <meta name="description" content="My hobbies, interests and preferences, along with descriptions and references." />
 <meta name="keywords" content="About me" />
 <script type="text/javascript">
-document.addEventListener('DOMContentLoaded', (event) => {
+function enableNav() {
     nav = document.getElementById('nav');
     nav.classList.add('hidden');
     collapsor = document.getElementById('nav-collapsor');
     collapsor.addEventListener('click', (event) => {
         nav.classList.toggle('hidden');
     });
-});
+}
+// document.addEventListener('DOMContentLoaded', enableNav);
 </script>
 </head>
 
@@ -45,6 +46,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
 <a href="https://sharmaeklavya2.github.io/blog/tag/about-me.html">About me <span class="article-count">1</span></a>
 </nav>
 </header>
+<script type="text/javascript">
+enableNav();
+</script>
 
 <main id="main">
 <article id="content" class="body">

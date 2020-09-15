@@ -8,14 +8,15 @@
 <meta name="description" content="Since childhood, juggling had captivated me and I always wanted to learn how to juggle. However, all my initial attempts to learn it failed. It was so difficult. I couldn't make any progress even when I tried for hours. Then one day (in 2011, when I was around 16 years …" />
 <meta name="keywords" content="Juggling,About me" />
 <script type="text/javascript">
-document.addEventListener('DOMContentLoaded', (event) => {
+function enableNav() {
     nav = document.getElementById('nav');
     nav.classList.add('hidden');
     collapsor = document.getElementById('nav-collapsor');
     collapsor.addEventListener('click', (event) => {
         nav.classList.toggle('hidden');
     });
-});
+}
+// document.addEventListener('DOMContentLoaded', enableNav);
 </script>
 </head>
 
@@ -45,6 +46,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
 <a href="https://sharmaeklavya2.github.io/blog/tag/about-me.html">About me <span class="article-count">1</span></a>
 </nav>
 </header>
+<script type="text/javascript">
+enableNav();
+</script>
 
 <main id="main">
 <article id="content" class="body">
