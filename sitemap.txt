@@ -1,5 +1,6 @@
 https://sharmaeklavya2.github.io/blog/
 https://sharmaeklavya2.github.io/blog/pages/about-this-blog.html
+https://sharmaeklavya2.github.io/blog/gems-of-wikipedia.html
 https://sharmaeklavya2.github.io/blog/generalizing-segment-trees.html
 https://sharmaeklavya2.github.io/blog/customize-macos.html
 https://sharmaeklavya2.github.io/blog/css-collapsible.html
