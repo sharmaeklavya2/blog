@@ -5,11 +5,9 @@ https://sharmaeklavya2.github.io/blog/generalizing-segment-trees.html
 https://sharmaeklavya2.github.io/blog/customize-macos.html
 https://sharmaeklavya2.github.io/blog/css-collapsible.html
 https://sharmaeklavya2.github.io/blog/juggling-101.html
-https://sharmaeklavya2.github.io/blog/how-i-began-juggling.html
 https://sharmaeklavya2.github.io/blog/3-in-1.html
 https://sharmaeklavya2.github.io/blog/tag/juggling.html
 https://sharmaeklavya2.github.io/blog/tag/math.html
 https://sharmaeklavya2.github.io/blog/tag/algorithms.html
 https://sharmaeklavya2.github.io/blog/tag/tutorial.html
 https://sharmaeklavya2.github.io/blog/tag/web-dev.html
-https://sharmaeklavya2.github.io/blog/tag/about-me.html
