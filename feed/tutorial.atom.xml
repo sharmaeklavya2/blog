@@ -406,7 +406,6 @@ using the &lt;a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/
 &lt;li&gt;&lt;a href="#skeleton"&gt;Skeleton&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#collapsibility"&gt;Collapsibility&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#accessibility"&gt;Accessibility&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#use"&gt;Use&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;h2 id="skeleton"&gt;Skeleton&lt;a class="headerlink" href="#skeleton" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
@@ -558,14 +557,7 @@ we will set &lt;code&gt;display: block&lt;/code&gt; on &lt;code&gt;.collapsible-
 &lt;/div&gt;
 
 &lt;p&gt;Try using the tab key to navigate all the 3 links in the collapsible.
-When the focus moves out of the collapsible, it closes (unless you had clicked on it to open it).&lt;/p&gt;
-&lt;p&gt;Navigation using Shift+Tab is a bit wonky though.&lt;/p&gt;
-&lt;h2 id="use"&gt;Use&lt;a class="headerlink" href="#use" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;When my blog's website is viewed on a screen of size less than 800 pixels, the navigation bar moves to the top.
-It becomes collapsible and users have to click the '&amp;equiv;' button to open it.
-I have used the above technique to implement this collapsible navigation bar.&lt;/p&gt;
-&lt;p&gt;Feel free to &lt;a href="https://github.com/sharmaeklavya2/blog/issues/new"&gt;reach out&lt;/a&gt;
-for comments, criticism or suggestions.&lt;/p&gt;</content><category term="posts"></category><category term="Web dev"></category><category term="Tutorial"></category></entry><entry><title>How to juggle 3 balls in 1 hand</title><link href="https://sharmaeklavya2.github.io/blog/3-in-1.html" rel="alternate"></link><published>2017-11-14T00:00:00+05:30</published><updated>2017-11-14T00:00:00+05:30</updated><author><name>Eklavya Sharma</name></author><id>tag:sharmaeklavya2.github.io,2017-11-14:/blog/3-in-1.html</id><summary type="html">&lt;p&gt;&lt;img src="https://sharmaeklavya2.github.io/blog/img/siteswaps/60.gif" alt="juggling 3 balls in 1 hand" title="60" /&gt;&lt;/p&gt;
+When the focus moves out of the collapsible, it closes (unless you had clicked on it to open it).&lt;/p&gt;</content><category term="posts"></category><category term="Web dev"></category><category term="Tutorial"></category></entry><entry><title>How to juggle 3 balls in 1 hand</title><link href="https://sharmaeklavya2.github.io/blog/3-in-1.html" rel="alternate"></link><published>2017-11-14T00:00:00+05:30</published><updated>2017-11-14T00:00:00+05:30</updated><author><name>Eklavya Sharma</name></author><id>tag:sharmaeklavya2.github.io,2017-11-14:/blog/3-in-1.html</id><summary type="html">&lt;p&gt;&lt;img src="https://sharmaeklavya2.github.io/blog/img/siteswaps/60.gif" alt="juggling 3 balls in 1 hand" title="60" /&gt;&lt;/p&gt;
 &lt;p&gt;3 balls in 1 hand, a.k.a. 3-in-1, is definitely not an easy pattern,
 mostly because of the speed, accuracy and strength required to do it.
 I could learn to do it because I came up with good prerequisites.
