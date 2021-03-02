@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Eklavya's Blog - Creating high-quality animations</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://sharmaeklavya2.github.io/blog/theme/base.css" />
+<meta name="color-scheme" content="light dark" />
+<meta name="description" content="Animated videos are great for explaining stuff, and I want to incorporate such videos in my presentations. I had trouble finding the right tools for this task, but later realized that SVG and CSS can do what I want. Here I'll describe my motivation and the advantages of this method." />
+<script type="text/javascript">
+function enableNav() {
+    nav = document.getElementById('nav');
+    nav.classList.add('hidden');
+    collapsor = document.getElementById('nav-collapsor');
+    collapsor.addEventListener('click', (event) => {
+        nav.classList.toggle('hidden');
+    });
+}
+// document.addEventListener('DOMContentLoaded', enableNav);
+</script>
+</head>
+
+<body>
+<header>
+<div class="primary">
+<a id="sitetitle" href="https://sharmaeklavya2.github.io/blog/">Eklavya's Blog</a>
+<span id="nav-collapsor"><span>&equiv;</span></span>
+</div>
+<nav id="nav">
+<a href="https://sharmaeklavya2.github.io">About me</a>
+<a href="https://sharmaeklavya2.github.io/blog/pages/about-this-blog.html">About this blog</a>
+<span class="feed-group"><span>Feed:</span>
+<a type="application/type+xml" rel="alternate" class="feed-widget" href="https://sharmaeklavya2.github.io/blog/feed/all.rss.xml">
+<svg class="icon"><use xlink:href="https://sharmaeklavya2.github.io/blog/theme/sprites.svg#fa-rss-square"/></svg><span>RSS</span>
+</a>
+<a type="application/type+xml" rel="alternate" class="feed-widget" href="https://sharmaeklavya2.github.io/blog/feed/all.atom.xml">
+<svg class="icon"><use xlink:href="https://sharmaeklavya2.github.io/blog/theme/sprites.svg#fa-rss-square"/></svg><span>Atom</span>
+</a>
+</span>
+<span class="nav-heading">Tags</span>
+<a href="https://sharmaeklavya2.github.io/blog/tag/dream.html">Dream <span class="article-count">1</span></a>
+<a href="https://sharmaeklavya2.github.io/blog/tag/juggling.html">Juggling <span class="article-count">3</span></a>
+<a href="https://sharmaeklavya2.github.io/blog/tag/math.html">Math <span class="article-count">2</span></a>
+<a href="https://sharmaeklavya2.github.io/blog/tag/algorithms.html">Algorithms <span class="article-count">1</span></a>
+<a href="https://sharmaeklavya2.github.io/blog/tag/tutorial.html">Tutorial <span class="article-count">3</span></a>
+<a href="https://sharmaeklavya2.github.io/blog/tag/web-dev.html">Web dev <span class="article-count">1</span></a>
+</nav>
+</header>
+<script type="text/javascript">
+enableNav();
+</script>
+
+<main id="main">
+<article id="content" class="body">
+<h1 class="entry-title">Creating high-quality animations</h1>
+<span class="post-details">
+<span class="post-date">
+<svg class="icon"><use xlink:href="https://sharmaeklavya2.github.io/blog/theme/sprites.svg#fa-calendar-alt"/></svg>
+<time class="published" datetime="2021-03-02T00:00:00+05:30">02 Mar 2021</time>
+</span>
+</span>
+<div class="entry-content">
+<h2 id="why-animate">Why animate?<a class="headerlink" href="#why-animate" title="Permanent link">&para;</a></h2>
+<p>I'm a fan of some popular science channels on YouTube,
+like <a href="https://www.youtube.com/c/veritasium">Veritasium</a>
+and <a href="https://www.youtube.com/c/smartereveryday">SmarterEveryDay</a>.
+Their videos are interesting to watch and explain concepts in a way that's easy to grasp.</p>
+<p>One of the things that really impressed me is their use of high-quality animations.
+Including animated diagrams in a presentation aids understanding
+in the same way that including figures in a book or research paper does:
+by making visualization easier.
+However, the effect is more pronounced in animated diagrams
+since they help us clearly see how a system changes over time.
+As an example, Veritasium's video on
+<a href="https://www.youtube.com/watch?v=pTn6Ewhb27k&amp;t=107s">measuring the speed of light</a>
+(watch from 00:01:47 to 00:03:20)
+clearly shows how the clocks and light pulses behave during different experiments.</p>
+<p>Being an (aspiring) academic, I couldn't help but compare these videos
+to those created by other academics, like lecture videos and conference talks
+(due to the COVID-19 pandemic, many conference talks are now pre-recorded).
+Most academic talks sound like PowerPoint presentations or whiteboard/blackboard presentations.
+There's nothing wrong with this though, because
+for most academic videos, if they contain enough figures,
+then adding animated diagrams would have very little marginal utility,
+and making high-quality animations is (apparently) a very time-consuming task.
+However, occasionally some complicated explanations can benefit from them,
+and classic, well-known results deserve good videos because a lot of people will watch them.
+Consequently, creating such videos is something I wanted to dabble in.</p>
+<h2 id="searching-for-animation-tools">Searching for animation tools<a class="headerlink" href="#searching-for-animation-tools" title="Permanent link">&para;</a></h2>
+<p>I searched the internet for animation programs, but the results didn't seem relevant.
+Specifically, most of them seemed to target two use cases:
+artistic creations (like cartoons) and simple slideshow-like animations.
+It's possible that I overlooked or misjudged some of these tools.
+My sister, who is an artist, said that what I'm trying to do is called
+'<a href="https://en.wikipedia.org/wiki/Motion_graphics">motion graphics</a>'.
+She, and many other websites, recommended
+<a href="https://www.adobe.com/products/aftereffects.html">Adobe After Effects</a>,
+but that is non-free and very expensive.</p>
+<p>Then an idea struck me: why not ask Derek Muller (the creator of Veritasium)?
+The kind of animations his videos have are very similar to what I want to make.
+So I emailed him, and this was his reply:</p>
+<blockquote>
+<p>I hire animators and I would advise you do the same.
+It's a specialized skill set so it's best to hire an expert.</p>
+</blockquote>
+<p>I was pleasantly surprised that he replied so quickly;
+I thought he would be too busy for that.
+But I can't hire people, so the reply didn't help much.</p>
+<h2 id="the-solution-i-found">The solution I found<a class="headerlink" href="#the-solution-i-found" title="Permanent link">&para;</a></h2>
+<p>Because of some front-end web development work that I did
+(check out my <a href="https://github.com/sharmaeklavya2?tab=repositories">github repos</a>
+labeled 'web' for examples), I could recall that we can
+<a href="https://blog.logrocket.com/animating-svg-with-css-83e8e27d739c/">animate SVG elements using CSS</a>.
+This technique seems to be useful for GIF-like animations,
+but I think they can be used to create longer animations too.</p>
+<p>I created the following short animations to experiment
+(you can click the images and then
+<a href="https://www.computerhope.com/issues/ch000746.htm">view the source code</a>):</p>
+<figure>
+<a href="https://sharmaeklavya2.github.io/blog/img/snake.svg">
+<img class="nofilter" src="https://sharmaeklavya2.github.io/blog/img/snake.svg" alt="A trail of red balls bouncing in a box"/>
+</a>
+<figcaption>A trail of red balls bouncing in a box.</figcaption>
+</figure>
+
+<figure>
+<a href="https://sharmaeklavya2.github.io/blog/img/bp1.svg">
+<img class="no-dark" src="https://sharmaeklavya2.github.io/blog/img/bp1.svg" alt="Animation of 1D bin packing"/>
+</a>
+<figcaption>Animation of 1D
+<a href="https://en.wikipedia.org/wiki/Bin_packing_problem">bin packing</a>.</figcaption>
+</figure>
+
+<h3 id="svg-is-vector">SVG is vector<a class="headerlink" href="#svg-is-vector" title="Permanent link">&para;</a></h3>
+<p>SVG images are vector images, i.e., there's no concept of 'pixel' in SVG.
+Vector images can be infinitely zoomed into without loss of quality.
+For non-photographic images (like diagrams), this leads to a very compact representation.
+This advantage carries over to SVG animations as well.</p>
+<p>Similarly, SVG animations don't have the concept of frames; they are 'vectored in time'.
+One can display them at frame rates as large as what the display device supports.</p>
+<h3 id="svg-is-text-based">SVG is text-based<a class="headerlink" href="#svg-is-text-based" title="Permanent link">&para;</a></h3>
+<p>SVG is text-based, i.e., one has to write code in a text file
+instead of using a graphical editor.
+Therefore, it has the same advantages that <a href="https://github.com/pgf-tikz/pgf">TikZ</a>
+has for making figures in a TeX document:
+diffing and version-control are easy, and we can optionally get automation
+(i.e., writing a program that outputs an SVG instead of writing an SVG by hand)
+using, for example, Python and <a href="https://jinja.palletsprojects.com/en/2.11.x/">Jinja2</a>.</p>
+<h3 id="converting-to-video">Converting to video<a class="headerlink" href="#converting-to-video" title="Permanent link">&para;</a></h3>
+<p>To convert the SVG animation to a traditional format (like MP4),
+you can run the animation in your browser and record your screen.
+But if your computer is not fast enough to run the SVG animation at
+a good frame-rate, then the recorded video will be jittery.</p>
+<p>I couldn't find an appropriate SVG to video converter on the internet,
+so I had to implement my own converter:
+<a href="https://github.com/sharmaeklavya2/svg-to-video">https://github.com/sharmaeklavya2/svg-to-video</a>.
+The output of my converter doesn't have any jitter.
+Unfortunately, it is very slow
+(<a href="https://github.com/puppeteer/puppeteer/issues/476">for reasons beyond my control</a>):
+it takes around 75 ms per frame on my Ubuntu and 240 ms per frame on my MacBook.</p>
+<p>A disadvantage of SVG animations is that they're hard to pause, resume and seek
+like normal videos. This can make it hard to create long animations, since you'll
+have to wait for the whole animation to finish before you can see the end.
+But you can work around that by using
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/animation-play-state">animation-play-state</a>
+and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/animation-delay">animation-delay</a>
+with <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties">custom CSS properties</a>.
+In fact, this is how my svg-to-video program works;
+it pauses the animation using <code>animation-play-state: paused</code>,
+it repeatedly makes slight increments to <code>animation-delay</code> to seek to different times,
+and takes a screenshot at each instant.</p>
+</div>
+</article>
+</main>
+</body>
+</html>
