@@ -216,7 +216,7 @@ In case you don't, here's a nice short tutorial by TreeHouse:
 <p>Terminal.app is the default terminal emulator on macOS.
 There are better alternatives, like <a href="https://www.iterm2.com/features.html">iTerm2</a>,
 but Terminal.app is good enough for me, so I didn't bother installing iTerm2.</p>
-<h4>Creating a new profile with the Solarized color scheme</h4>
+<h4 id="creating-a-new-profile-with-the-solarized-color-scheme">Creating a new profile with the Solarized color scheme<a class="headerlink" href="#creating-a-new-profile-with-the-solarized-color-scheme" title="Permanent link">&para;</a></h4>
 <p>Terminal.app has multiple profiles available.
 Each profile specifies the color scheme, font face, font size and many other settings.
 Instead of making changes to the default profile,
@@ -236,7 +236,7 @@ Go to 'System Preferences &gt; Security &gt; General' and press 'Open Anyway' (d
 <li>Open terminal, 'Preferences &gt; Profiles', select 'Solarized Dark' and press the 'Default' button.
 Now restart Terminal.app and you'll see the dark blue background of the Solarized color scheme.</li>
 </ul>
-<h4>Other preferences</h4>
+<h4 id="other-preferences">Other preferences<a class="headerlink" href="#other-preferences" title="Permanent link">&para;</a></h4>
 <ul>
 <li>In the 'Preferences &gt; Profile &gt; Text' tab, set opacity to 85% and font size to 16.</li>
 <li>In the 'Preferences &gt; Profile &gt; Window' tab, deselect 'restore text when reopening windows'.</li>
@@ -264,7 +264,6 @@ mv _links/.bashrc _links/.bash_profile
 mv _links/* ~
 </code></pre></div>
 
-
 <p>Now either restart your terminal or run <code>source ~/.bash_profile</code>.
 If you executed the above instructions correctly,
 the first thing you'll notice is the improved, colorful prompt.</p>
@@ -282,11 +281,9 @@ You can install programs (called packages by brew) by simply writing commands on
 <div class="codehilite"><pre><span></span><code>brew install name-of-package
 </code></pre></div>
 
-
 <p>According to <a href="https://brew.sh/">brew's website</a>, brew can be installed by typing this into the terminal:</p>
 <div class="codehilite"><pre><span></span><code>/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
 </code></pre></div>
-
 
 <p>Installation may require superuser permissions.</p>
 <h3 id="install-tmux">Install <a href="https://www.hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/">tmux</a><a class="headerlink" href="#install-tmux" title="Permanent link">&para;</a></h3>
@@ -303,7 +300,6 @@ to <code>~/.bash_profile</code> or <code>~/.env</code>.</p>
 <h3 id="java">Java<a class="headerlink" href="#java" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><code>brew install java
 </code></pre></div>
-
 
 <h3 id="mactex">MacTex<a class="headerlink" href="#mactex" title="Permanent link">&para;</a></h3>
 <p>MacTex is a suite of programs for typesetting documents using TeX and LaTeX.
@@ -326,11 +322,9 @@ but some are useful enough that I installed them in the beginning:</p>
 <div class="codehilite"><pre><span></span><code>pip install ipython requests jinja2 pipdeptree flake8 grip
 </code></pre></div>
 
-
 <p>These packages are useful for math and computation:</p>
 <div class="codehilite"><pre><span></span><code>pip install numpy scipy pandas matplotlib seaborn sympy
 </code></pre></div>
-
 
 <h2 id="transfer-backed-up-data"><span style="background-color: rgba(0, 136, 255, 0.3)">Transfer backed-up data</span><a class="headerlink" href="#transfer-backed-up-data" title="Permanent link">&para;</a></h2>
 <h3 id="reorganizing-data-and-backup">Reorganizing data and backup<a class="headerlink" href="#reorganizing-data-and-backup" title="Permanent link">&para;</a></h3>
@@ -395,7 +389,6 @@ This will not replace the old vim; the old vim can still be accessed at <code>/u
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 </code></pre></div>
 
-
 <p>Add <code>execute pathogen#infect()</code> to your <code>.vimrc</code>.
 If you're using <a href="https://github.com/sharmaeklavya2/dotfiles">my dotfiles</a>,
 you'll already have it in your <code>.vimrc</code>.</p>
@@ -431,7 +424,6 @@ Warning: Failed to set locale category LC_MONETARY to en_IN.
 Warning: Failed to set locale category LC_MESSAGES to en_IN.
 </code></pre></div>
 
-
 <p>Fix this by adding <code>export LC_ALL=en_US.UTF-8</code> to <code>~/.bash_profile</code> or <code>~/.env</code>
 (<a href="https://discourse.brew.sh/t/failed-to-set-locale-category-lc-numeric-to-en-ru/5092">brew forum post</a>).</p>
 <h2 id="install-nginx-and-serve-website-mirrors"><span style="background-color: rgba(170, 0, 255, 0.3)">Install Nginx and serve website mirrors</span><a class="headerlink" href="#install-nginx-and-serve-website-mirrors" title="Permanent link">&para;</a></h2>
@@ -441,7 +433,6 @@ It's useful to access local websites that I downloaded or created.</p>
 <div class="codehilite"><pre><span></span><code>brew install nginx
 nginx
 </code></pre></div>
-
 
 <p>Now go to http://localhost:8080. You should see a welcome page from Nginx.</p>
 <h3 id="enable-nginx-autoindex">Enable nginx autoindex<a class="headerlink" href="#enable-nginx-autoindex" title="Permanent link">&para;</a></h3>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>Eklavya's Blog</title><link href="https://sharmaeklavya2.github.io/blog/" rel="alternate"></link><link href="https://sharmaeklavya2.github.io/blog/feed/all.atom.xml" rel="self"></link><id>https://sharmaeklavya2.github.io/blog/</id><updated>2020-11-10T00:00:00+05:30</updated><entry><title>Weird dream</title><link href="https://sharmaeklavya2.github.io/blog/dream1.html" rel="alternate"></link><published>2020-11-10T00:00:00+05:30</published><updated>2020-11-10T00:00:00+05:30</updated><author><name>Eklavya Sharma</name></author><id>tag:sharmaeklavya2.github.io,2020-11-10:/blog/dream1.html</id><summary type="html"></summary><content type="html">&lt;p&gt;I had a weird 2-part dream today. Here's what happened in them.&lt;/p&gt;
-&lt;h1&gt;Part 1&lt;/h1&gt;
+&lt;h1 id="part-1"&gt;Part 1&lt;a class="headerlink" href="#part-1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;I had to get
 &lt;a href="https://en.wikipedia.org/wiki/Vladimir_Putin"&gt;Vladimir Putin&lt;/a&gt;'s signature
 on a document (I don't remember why). So he visited my house.
@@ -12,7 +12,7 @@ even though the form was completely black-and-white.
 I troubleshooted the printer while Putin patiently waited behind me.&lt;/p&gt;
 &lt;p&gt;Disclaimer: I'm not a Putin fan. I'm not interested in or aware of Russian politics.
 Then why was Putin in my dreams? I have no idea.&lt;/p&gt;
-&lt;h1&gt;Part 2&lt;/h1&gt;
+&lt;h1 id="part-2"&gt;Part 2&lt;a class="headerlink" href="#part-2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;I was attending a lecture at a university.
 There was a loud noise outside, so all the students rushed out to see what's going on.
 It turns out that &lt;a href="https://en.wikipedia.org/wiki/Saraswati"&gt;Saraswati Devi&lt;/a&gt; had
@@ -311,7 +311,6 @@ for the MINMAX problem:&lt;/p&gt;
 &lt;span class="p"&gt;};&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;In the segment tree library, we can call the above methods
 on the templated query monoid type without needing to know what they do.&lt;/p&gt;
 &lt;h2 id="node-update-function"&gt;Node update function&lt;a class="headerlink" href="#node-update-function" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
@@ -369,9 +368,10 @@ We'll also update all the ancestors of the affected nodes by recomputing their v
 alt="segment tree after adding 20 to 5 elements" /&gt;
 &lt;figcaption&gt;
 Segment tree after update
-&lt;span class="katex"&gt;&lt;span aria-hidden="true" class="katex-html"&gt;&lt;span class="base"&gt;&lt;span class="strut" style="height:0.69444em;vertical-align:0em;"&gt;&lt;/span&gt;&lt;span class="mord mathnormal" style="margin-right:0.01968em;"&gt;l&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.2777777777777778em;"&gt;&lt;/span&gt;&lt;span class="mrel"&gt;=&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.2777777777777778em;"&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="base"&gt;&lt;span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"&gt;&lt;/span&gt;&lt;span class="mord"&gt;2&lt;/span&gt;&lt;span class="mpunct"&gt;,&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.16666666666666666em;"&gt;&lt;/span&gt;&lt;span class="mord mathnormal" style="margin-right:0.02778em;"&gt;r&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.2777777777777778em;"&gt;&lt;/span&gt;&lt;span class="mrel"&gt;=&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.2777777777777778em;"&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="base"&gt;&lt;span class="strut" style="height:1em;vertical-align:-0.25em;"&gt;&lt;/span&gt;&lt;span class="mord"&gt;6&lt;/span&gt;&lt;span class="mpunct"&gt;,&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.16666666666666666em;"&gt;&lt;/span&gt;&lt;span class="mord mathnormal" style="margin-right:0.03588em;"&gt;g&lt;/span&gt;&lt;span class="mopen"&gt;(&lt;/span&gt;&lt;span class="mord mathnormal"&gt;x&lt;/span&gt;&lt;span class="mclose"&gt;)&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.2777777777777778em;"&gt;&lt;/span&gt;&lt;span class="mrel"&gt;=&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.2777777777777778em;"&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="base"&gt;&lt;span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"&gt;&lt;/span&gt;&lt;span class="mord mathnormal"&gt;x&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.2222222222222222em;"&gt;&lt;/span&gt;&lt;span class="mbin"&gt;+&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.2222222222222222em;"&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="base"&gt;&lt;span class="strut" style="height:0.64444em;vertical-align:0em;"&gt;&lt;/span&gt;&lt;span class="mord"&gt;2&lt;/span&gt;&lt;span class="mord"&gt;0&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;.&lt;br/&gt;
+$l=2, r=6, g(x) = x + 20$.&lt;br/&gt;
 Blue nodes were updated. Red nodes were not updated but they have a pending update.
-&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;/figcaption&gt;
+&lt;/figure&gt;
 &lt;h3 id="querying"&gt;Querying&lt;a class="headerlink" href="#querying" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;If a query arrives for &lt;span class="katex"&gt;&lt;span aria-hidden="true" class="katex-html"&gt;&lt;span class="base"&gt;&lt;span class="strut" style="height:0.69444em;vertical-align:0em;"&gt;&lt;/span&gt;&lt;span class="mord mathnormal" style="margin-right:0.01968em;"&gt;l&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.2777777777777778em;"&gt;&lt;/span&gt;&lt;span class="mrel"&gt;=&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.2777777777777778em;"&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="base"&gt;&lt;span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"&gt;&lt;/span&gt;&lt;span class="mord"&gt;2&lt;/span&gt;&lt;span class="mpunct"&gt;,&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.16666666666666666em;"&gt;&lt;/span&gt;&lt;span class="mord mathnormal" style="margin-right:0.02778em;"&gt;r&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.2777777777777778em;"&gt;&lt;/span&gt;&lt;span class="mrel"&gt;=&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.2777777777777778em;"&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="base"&gt;&lt;span class="strut" style="height:0.64444em;vertical-align:0em;"&gt;&lt;/span&gt;&lt;span class="mord"&gt;5&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;, we would like to return
 &lt;span class="katex"&gt;&lt;span aria-hidden="true" class="katex-html"&gt;&lt;span class="base"&gt;&lt;span class="strut" style="height:1em;vertical-align:-0.25em;"&gt;&lt;/span&gt;&lt;span class="mop"&gt;&lt;span class="mord mathrm" style="margin-right:0.01389em;"&gt;v&lt;/span&gt;&lt;span class="mord mathrm"&gt;a&lt;/span&gt;&lt;span class="mord mathrm"&gt;l&lt;/span&gt;&lt;span class="mord mathrm"&gt;u&lt;/span&gt;&lt;span class="mord mathrm"&gt;e&lt;/span&gt;&lt;/span&gt;&lt;span class="mopen"&gt;(&lt;/span&gt;&lt;span class="mord text"&gt;&lt;span class="mord texttt"&gt;2..3&lt;/span&gt;&lt;/span&gt;&lt;span class="mclose"&gt;)&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.2222222222222222em;"&gt;&lt;/span&gt;&lt;span class="mbin"&gt;∘&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.2222222222222222em;"&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="base"&gt;&lt;span class="strut" style="height:1em;vertical-align:-0.25em;"&gt;&lt;/span&gt;&lt;span class="mop"&gt;&lt;span class="mord mathrm" style="margin-right:0.01389em;"&gt;v&lt;/span&gt;&lt;span class="mord mathrm"&gt;a&lt;/span&gt;&lt;span class="mord mathrm"&gt;l&lt;/span&gt;&lt;span class="mord mathrm"&gt;u&lt;/span&gt;&lt;span class="mord mathrm"&gt;e&lt;/span&gt;&lt;/span&gt;&lt;span class="mopen"&gt;(&lt;/span&gt;&lt;span class="mord text"&gt;&lt;span class="mord texttt"&gt;4..5&lt;/span&gt;&lt;/span&gt;&lt;span class="mclose"&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;.
@@ -384,9 +384,10 @@ we say that the pending update 'propagated'.&lt;/p&gt;
 &lt;img src="https://sharmaeklavya2.github.io/blog/img/segtree-lazy-update/2.dot.svg"
 alt="querying a segment tree with lazy propagation" /&gt;
 &lt;figcaption&gt;
-Segment tree after the query &lt;span class="katex"&gt;&lt;span aria-hidden="true" class="katex-html"&gt;&lt;span class="base"&gt;&lt;span class="strut" style="height:0.69444em;vertical-align:0em;"&gt;&lt;/span&gt;&lt;span class="mord mathnormal" style="margin-right:0.01968em;"&gt;l&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.2777777777777778em;"&gt;&lt;/span&gt;&lt;span class="mrel"&gt;=&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.2777777777777778em;"&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="base"&gt;&lt;span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"&gt;&lt;/span&gt;&lt;span class="mord"&gt;2&lt;/span&gt;&lt;span class="mpunct"&gt;,&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.16666666666666666em;"&gt;&lt;/span&gt;&lt;span class="mord mathnormal" style="margin-right:0.02778em;"&gt;r&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.2777777777777778em;"&gt;&lt;/span&gt;&lt;span class="mrel"&gt;=&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.2777777777777778em;"&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="base"&gt;&lt;span class="strut" style="height:0.64444em;vertical-align:0em;"&gt;&lt;/span&gt;&lt;span class="mord"&gt;5&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;.&lt;br/&gt;
+Segment tree after the query $l=2, r=5$.&lt;br/&gt;
 The value returned by the query is written beside each node.
-&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;/figcaption&gt;
+&lt;/figure&gt;
 &lt;h3 id="combining-updates"&gt;Combining updates&lt;a class="headerlink" href="#combining-updates" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Suppose we get the update &lt;span class="katex"&gt;&lt;span aria-hidden="true" class="katex-html"&gt;&lt;span class="base"&gt;&lt;span class="strut" style="height:0.69444em;vertical-align:0em;"&gt;&lt;/span&gt;&lt;span class="mord mathnormal" style="margin-right:0.01968em;"&gt;l&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.2777777777777778em;"&gt;&lt;/span&gt;&lt;span class="mrel"&gt;=&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.2777777777777778em;"&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="base"&gt;&lt;span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"&gt;&lt;/span&gt;&lt;span class="mord"&gt;0&lt;/span&gt;&lt;span class="mpunct"&gt;,&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.16666666666666666em;"&gt;&lt;/span&gt;&lt;span class="mord mathnormal" style="margin-right:0.02778em;"&gt;r&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.2777777777777778em;"&gt;&lt;/span&gt;&lt;span class="mrel"&gt;=&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.2777777777777778em;"&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="base"&gt;&lt;span class="strut" style="height:1em;vertical-align:-0.25em;"&gt;&lt;/span&gt;&lt;span class="mord"&gt;6&lt;/span&gt;&lt;span class="mpunct"&gt;,&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.16666666666666666em;"&gt;&lt;/span&gt;&lt;span class="mord mathnormal" style="margin-right:0.03588em;"&gt;g&lt;/span&gt;&lt;span class="mopen"&gt;(&lt;/span&gt;&lt;span class="mord mathnormal"&gt;x&lt;/span&gt;&lt;span class="mclose"&gt;)&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.2777777777777778em;"&gt;&lt;/span&gt;&lt;span class="mrel"&gt;=&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.2777777777777778em;"&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="base"&gt;&lt;span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"&gt;&lt;/span&gt;&lt;span class="mord mathnormal"&gt;x&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.2222222222222222em;"&gt;&lt;/span&gt;&lt;span class="mbin"&gt;+&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.2222222222222222em;"&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="base"&gt;&lt;span class="strut" style="height:0.64444em;vertical-align:0em;"&gt;&lt;/span&gt;&lt;span class="mord"&gt;1&lt;/span&gt;&lt;span class="mord"&gt;0&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;.
 We will update the root node and add &lt;span class="katex"&gt;&lt;span aria-hidden="true" class="katex-html"&gt;&lt;span class="base"&gt;&lt;span class="strut" style="height:1em;vertical-align:-0.25em;"&gt;&lt;/span&gt;&lt;span class="mord mathnormal"&gt;d&lt;/span&gt;&lt;span class="mopen"&gt;(&lt;/span&gt;&lt;span class="mord"&gt;1&lt;/span&gt;&lt;span class="mpunct"&gt;,&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.16666666666666666em;"&gt;&lt;/span&gt;&lt;span class="mord"&gt;1&lt;/span&gt;&lt;span class="mord"&gt;0&lt;/span&gt;&lt;span class="mclose"&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; to the children.&lt;/p&gt;
@@ -395,9 +396,10 @@ We will update the root node and add &lt;span class="katex"&gt;&lt;span aria-hid
 alt="segment tree after two updates" /&gt;
 &lt;figcaption&gt;
 Segment tree after update
-&lt;span class="katex"&gt;&lt;span aria-hidden="true" class="katex-html"&gt;&lt;span class="base"&gt;&lt;span class="strut" style="height:0.69444em;vertical-align:0em;"&gt;&lt;/span&gt;&lt;span class="mord mathnormal" style="margin-right:0.01968em;"&gt;l&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.2777777777777778em;"&gt;&lt;/span&gt;&lt;span class="mrel"&gt;=&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.2777777777777778em;"&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="base"&gt;&lt;span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"&gt;&lt;/span&gt;&lt;span class="mord"&gt;0&lt;/span&gt;&lt;span class="mpunct"&gt;,&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.16666666666666666em;"&gt;&lt;/span&gt;&lt;span class="mord mathnormal" style="margin-right:0.02778em;"&gt;r&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.2777777777777778em;"&gt;&lt;/span&gt;&lt;span class="mrel"&gt;=&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.2777777777777778em;"&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="base"&gt;&lt;span class="strut" style="height:1em;vertical-align:-0.25em;"&gt;&lt;/span&gt;&lt;span class="mord"&gt;6&lt;/span&gt;&lt;span class="mpunct"&gt;,&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.16666666666666666em;"&gt;&lt;/span&gt;&lt;span class="mord mathnormal" style="margin-right:0.03588em;"&gt;g&lt;/span&gt;&lt;span class="mopen"&gt;(&lt;/span&gt;&lt;span class="mord mathnormal"&gt;x&lt;/span&gt;&lt;span class="mclose"&gt;)&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.2777777777777778em;"&gt;&lt;/span&gt;&lt;span class="mrel"&gt;=&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.2777777777777778em;"&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="base"&gt;&lt;span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"&gt;&lt;/span&gt;&lt;span class="mord mathnormal"&gt;x&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.2222222222222222em;"&gt;&lt;/span&gt;&lt;span class="mbin"&gt;+&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.2222222222222222em;"&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="base"&gt;&lt;span class="strut" style="height:0.64444em;vertical-align:0em;"&gt;&lt;/span&gt;&lt;span class="mord"&gt;1&lt;/span&gt;&lt;span class="mord"&gt;0&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;.&lt;br/&gt;
+$l=0, r=6, g(x) = x + 10$.&lt;br/&gt;
 Blue nodes were updated. Red nodes were not updated but they have a pending update.
-&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;/figcaption&gt;
+&lt;/figure&gt;
 &lt;p&gt;Now we get another update &lt;span class="katex"&gt;&lt;span aria-hidden="true" class="katex-html"&gt;&lt;span class="base"&gt;&lt;span class="strut" style="height:0.69444em;vertical-align:0em;"&gt;&lt;/span&gt;&lt;span class="mord mathnormal" style="margin-right:0.01968em;"&gt;l&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.2777777777777778em;"&gt;&lt;/span&gt;&lt;span class="mrel"&gt;=&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.2777777777777778em;"&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="base"&gt;&lt;span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"&gt;&lt;/span&gt;&lt;span class="mord"&gt;0&lt;/span&gt;&lt;span class="mpunct"&gt;,&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.16666666666666666em;"&gt;&lt;/span&gt;&lt;span class="mord mathnormal" style="margin-right:0.02778em;"&gt;r&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.2777777777777778em;"&gt;&lt;/span&gt;&lt;span class="mrel"&gt;=&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.2777777777777778em;"&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="base"&gt;&lt;span class="strut" style="height:1em;vertical-align:-0.25em;"&gt;&lt;/span&gt;&lt;span class="mord"&gt;6&lt;/span&gt;&lt;span class="mpunct"&gt;,&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.16666666666666666em;"&gt;&lt;/span&gt;&lt;span class="mord mathnormal" style="margin-right:0.03588em;"&gt;g&lt;/span&gt;&lt;span class="mopen"&gt;(&lt;/span&gt;&lt;span class="mord mathnormal"&gt;x&lt;/span&gt;&lt;span class="mclose"&gt;)&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.2777777777777778em;"&gt;&lt;/span&gt;&lt;span class="mrel"&gt;=&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.2777777777777778em;"&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="base"&gt;&lt;span class="strut" style="height:0.64444em;vertical-align:0em;"&gt;&lt;/span&gt;&lt;span class="mord"&gt;3&lt;/span&gt;&lt;span class="mord mathnormal"&gt;x&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;. This corresponds to &lt;span class="katex"&gt;&lt;span aria-hidden="true" class="katex-html"&gt;&lt;span class="base"&gt;&lt;span class="strut" style="height:0.69444em;vertical-align:0em;"&gt;&lt;/span&gt;&lt;span class="mord mathnormal"&gt;h&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.2777777777777778em;"&gt;&lt;/span&gt;&lt;span class="mrel"&gt;=&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.2777777777777778em;"&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="base"&gt;&lt;span class="strut" style="height:1em;vertical-align:-0.25em;"&gt;&lt;/span&gt;&lt;span class="mord mathnormal"&gt;d&lt;/span&gt;&lt;span class="mopen"&gt;(&lt;/span&gt;&lt;span class="mord"&gt;3&lt;/span&gt;&lt;span class="mpunct"&gt;,&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.16666666666666666em;"&gt;&lt;/span&gt;&lt;span class="mord"&gt;0&lt;/span&gt;&lt;span class="mclose"&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;.
 We can update the root node, and add &lt;span class="katex"&gt;&lt;span aria-hidden="true" class="katex-html"&gt;&lt;span class="base"&gt;&lt;span class="strut" style="height:1em;vertical-align:-0.25em;"&gt;&lt;/span&gt;&lt;span class="mord mathnormal"&gt;d&lt;/span&gt;&lt;span class="mopen"&gt;(&lt;/span&gt;&lt;span class="mord"&gt;3&lt;/span&gt;&lt;span class="mpunct"&gt;,&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.16666666666666666em;"&gt;&lt;/span&gt;&lt;span class="mord"&gt;0&lt;/span&gt;&lt;span class="mclose"&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; to the children.
 But the children already have a pending update of &lt;span class="katex"&gt;&lt;span aria-hidden="true" class="katex-html"&gt;&lt;span class="base"&gt;&lt;span class="strut" style="height:1em;vertical-align:-0.25em;"&gt;&lt;/span&gt;&lt;span class="mord mathnormal"&gt;d&lt;/span&gt;&lt;span class="mopen"&gt;(&lt;/span&gt;&lt;span class="mord"&gt;1&lt;/span&gt;&lt;span class="mpunct"&gt;,&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.16666666666666666em;"&gt;&lt;/span&gt;&lt;span class="mord"&gt;1&lt;/span&gt;&lt;span class="mord"&gt;0&lt;/span&gt;&lt;span class="mclose"&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;.
@@ -409,9 +411,10 @@ function which is equal to successively applying &lt;span class="katex"&gt;&lt;s
 alt="combining updates in a segment tree" /&gt;
 &lt;figcaption&gt;
 Segment tree after update
-&lt;span class="katex"&gt;&lt;span aria-hidden="true" class="katex-html"&gt;&lt;span class="base"&gt;&lt;span class="strut" style="height:0.69444em;vertical-align:0em;"&gt;&lt;/span&gt;&lt;span class="mord mathnormal" style="margin-right:0.01968em;"&gt;l&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.2777777777777778em;"&gt;&lt;/span&gt;&lt;span class="mrel"&gt;=&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.2777777777777778em;"&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="base"&gt;&lt;span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"&gt;&lt;/span&gt;&lt;span class="mord"&gt;0&lt;/span&gt;&lt;span class="mpunct"&gt;,&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.16666666666666666em;"&gt;&lt;/span&gt;&lt;span class="mord mathnormal" style="margin-right:0.02778em;"&gt;r&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.2777777777777778em;"&gt;&lt;/span&gt;&lt;span class="mrel"&gt;=&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.2777777777777778em;"&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="base"&gt;&lt;span class="strut" style="height:1em;vertical-align:-0.25em;"&gt;&lt;/span&gt;&lt;span class="mord"&gt;6&lt;/span&gt;&lt;span class="mpunct"&gt;,&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.16666666666666666em;"&gt;&lt;/span&gt;&lt;span class="mord mathnormal" style="margin-right:0.03588em;"&gt;g&lt;/span&gt;&lt;span class="mopen"&gt;(&lt;/span&gt;&lt;span class="mord mathnormal"&gt;x&lt;/span&gt;&lt;span class="mclose"&gt;)&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.2777777777777778em;"&gt;&lt;/span&gt;&lt;span class="mrel"&gt;=&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.2777777777777778em;"&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="base"&gt;&lt;span class="strut" style="height:0.64444em;vertical-align:0em;"&gt;&lt;/span&gt;&lt;span class="mord"&gt;3&lt;/span&gt;&lt;span class="mord mathnormal"&gt;x&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;.&lt;br/&gt;
+$l=0, r=6, g(x) = 3x$.&lt;br/&gt;
 Blue nodes were updated. Red nodes were not updated but they have a pending update.
-&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;/figcaption&gt;
+&lt;/figure&gt;
 &lt;p&gt;More generally, &lt;span class="katex"&gt;&lt;span aria-hidden="true" class="katex-html"&gt;&lt;span class="base"&gt;&lt;span class="strut" style="height:1em;vertical-align:-0.25em;"&gt;&lt;/span&gt;&lt;span class="mord mathnormal"&gt;d&lt;/span&gt;&lt;span class="mopen"&gt;(&lt;/span&gt;&lt;span class="mord"&gt;&lt;span class="mord mathnormal"&gt;a&lt;/span&gt;&lt;span class="msupsub"&gt;&lt;span class="vlist-t vlist-t2"&gt;&lt;span class="vlist-r"&gt;&lt;span class="vlist" style="height:0.30110799999999993em;"&gt;&lt;span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"&gt;&lt;span class="pstrut" style="height:2.7em;"&gt;&lt;/span&gt;&lt;span class="sizing reset-size6 size3 mtight"&gt;&lt;span class="mord mtight"&gt;1&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="vlist-s"&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class="vlist-r"&gt;&lt;span class="vlist" style="height:0.15em;"&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="mpunct"&gt;,&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.16666666666666666em;"&gt;&lt;/span&gt;&lt;span class="mord"&gt;&lt;span class="mord mathnormal"&gt;b&lt;/span&gt;&lt;span class="msupsub"&gt;&lt;span class="vlist-t vlist-t2"&gt;&lt;span class="vlist-r"&gt;&lt;span class="vlist" style="height:0.30110799999999993em;"&gt;&lt;span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"&gt;&lt;span class="pstrut" style="height:2.7em;"&gt;&lt;/span&gt;&lt;span class="sizing reset-size6 size3 mtight"&gt;&lt;span class="mord mtight"&gt;1&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="vlist-s"&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class="vlist-r"&gt;&lt;span class="vlist" style="height:0.15em;"&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="mclose"&gt;)&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.2222222222222222em;"&gt;&lt;/span&gt;&lt;span class="mbin"&gt;⋅&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.2222222222222222em;"&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="base"&gt;&lt;span class="strut" style="height:1em;vertical-align:-0.25em;"&gt;&lt;/span&gt;&lt;span class="mord mathnormal"&gt;d&lt;/span&gt;&lt;span class="mopen"&gt;(&lt;/span&gt;&lt;span class="mord"&gt;&lt;span class="mord mathnormal"&gt;a&lt;/span&gt;&lt;span class="msupsub"&gt;&lt;span class="vlist-t vlist-t2"&gt;&lt;span class="vlist-r"&gt;&lt;span class="vlist" style="height:0.30110799999999993em;"&gt;&lt;span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"&gt;&lt;span class="pstrut" style="height:2.7em;"&gt;&lt;/span&gt;&lt;span class="sizing reset-size6 size3 mtight"&gt;&lt;span class="mord mtight"&gt;2&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="vlist-s"&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class="vlist-r"&gt;&lt;span class="vlist" style="height:0.15em;"&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="mpunct"&gt;,&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.16666666666666666em;"&gt;&lt;/span&gt;&lt;span class="mord"&gt;&lt;span class="mord mathnormal"&gt;b&lt;/span&gt;&lt;span class="msupsub"&gt;&lt;span class="vlist-t vlist-t2"&gt;&lt;span class="vlist-r"&gt;&lt;span class="vlist" style="height:0.30110799999999993em;"&gt;&lt;span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"&gt;&lt;span class="pstrut" style="height:2.7em;"&gt;&lt;/span&gt;&lt;span class="sizing reset-size6 size3 mtight"&gt;&lt;span class="mord mtight"&gt;2&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="vlist-s"&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class="vlist-r"&gt;&lt;span class="vlist" style="height:0.15em;"&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="mclose"&gt;)&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.2777777777777778em;"&gt;&lt;/span&gt;&lt;span class="mrel"&gt;=&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.2777777777777778em;"&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="base"&gt;&lt;span class="strut" style="height:1em;vertical-align:-0.25em;"&gt;&lt;/span&gt;&lt;span class="mord mathnormal"&gt;d&lt;/span&gt;&lt;span class="mopen"&gt;(&lt;/span&gt;&lt;span class="mord"&gt;&lt;span class="mord mathnormal"&gt;a&lt;/span&gt;&lt;span class="msupsub"&gt;&lt;span class="vlist-t vlist-t2"&gt;&lt;span class="vlist-r"&gt;&lt;span class="vlist" style="height:0.30110799999999993em;"&gt;&lt;span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"&gt;&lt;span class="pstrut" style="height:2.7em;"&gt;&lt;/span&gt;&lt;span class="sizing reset-size6 size3 mtight"&gt;&lt;span class="mord mtight"&gt;1&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="vlist-s"&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class="vlist-r"&gt;&lt;span class="vlist" style="height:0.15em;"&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="mord"&gt;&lt;span class="mord mathnormal"&gt;a&lt;/span&gt;&lt;span class="msupsub"&gt;&lt;span class="vlist-t vlist-t2"&gt;&lt;span class="vlist-r"&gt;&lt;span class="vlist" style="height:0.30110799999999993em;"&gt;&lt;span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"&gt;&lt;span class="pstrut" style="height:2.7em;"&gt;&lt;/span&gt;&lt;span class="sizing reset-size6 size3 mtight"&gt;&lt;span class="mord mtight"&gt;2&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="vlist-s"&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class="vlist-r"&gt;&lt;span class="vlist" style="height:0.15em;"&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="mpunct"&gt;,&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.16666666666666666em;"&gt;&lt;/span&gt;&lt;span class="mord"&gt;&lt;span class="mord mathnormal"&gt;a&lt;/span&gt;&lt;span class="msupsub"&gt;&lt;span class="vlist-t vlist-t2"&gt;&lt;span class="vlist-r"&gt;&lt;span class="vlist" style="height:0.30110799999999993em;"&gt;&lt;span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"&gt;&lt;span class="pstrut" style="height:2.7em;"&gt;&lt;/span&gt;&lt;span class="sizing reset-size6 size3 mtight"&gt;&lt;span class="mord mtight"&gt;1&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="vlist-s"&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class="vlist-r"&gt;&lt;span class="vlist" style="height:0.15em;"&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="mord"&gt;&lt;span class="mord mathnormal"&gt;b&lt;/span&gt;&lt;span class="msupsub"&gt;&lt;span class="vlist-t vlist-t2"&gt;&lt;span class="vlist-r"&gt;&lt;span class="vlist" style="height:0.30110799999999993em;"&gt;&lt;span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"&gt;&lt;span class="pstrut" style="height:2.7em;"&gt;&lt;/span&gt;&lt;span class="sizing reset-size6 size3 mtight"&gt;&lt;span class="mord mtight"&gt;2&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="vlist-s"&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class="vlist-r"&gt;&lt;span class="vlist" style="height:0.15em;"&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.2222222222222222em;"&gt;&lt;/span&gt;&lt;span class="mbin"&gt;+&lt;/span&gt;&lt;span class="mspace" style="margin-right:0.2222222222222222em;"&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="base"&gt;&lt;span class="strut" style="height:1em;vertical-align:-0.25em;"&gt;&lt;/span&gt;&lt;span class="mord"&gt;&lt;span class="mord mathnormal"&gt;b&lt;/span&gt;&lt;span class="msupsub"&gt;&lt;span class="vlist-t vlist-t2"&gt;&lt;span class="vlist-r"&gt;&lt;span class="vlist" style="height:0.30110799999999993em;"&gt;&lt;span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"&gt;&lt;span class="pstrut" style="height:2.7em;"&gt;&lt;/span&gt;&lt;span class="sizing reset-size6 size3 mtight"&gt;&lt;span class="mord mtight"&gt;1&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="vlist-s"&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class="vlist-r"&gt;&lt;span class="vlist" style="height:0.15em;"&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="mclose"&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;.&lt;/p&gt;
 &lt;h2 id="node-update-function-family"&gt;Node update function family&lt;a class="headerlink" href="#node-update-function-family" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;In the above example for lazy propagation,
@@ -476,7 +479,6 @@ for the MINMAX problem:&lt;/p&gt;
         &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;l&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;l&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;l&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
 &lt;span class="p"&gt;};&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;In the segment tree library, we can call the above methods
 on the templated function family type without needing to know what they do.&lt;/p&gt;
@@ -690,7 +692,7 @@ In case you don't, here's a nice short tutorial by TreeHouse:
 &lt;p&gt;Terminal.app is the default terminal emulator on macOS.
 There are better alternatives, like &lt;a href="https://www.iterm2.com/features.html"&gt;iTerm2&lt;/a&gt;,
 but Terminal.app is good enough for me, so I didn't bother installing iTerm2.&lt;/p&gt;
-&lt;h4&gt;Creating a new profile with the Solarized color scheme&lt;/h4&gt;
+&lt;h4 id="creating-a-new-profile-with-the-solarized-color-scheme"&gt;Creating a new profile with the Solarized color scheme&lt;a class="headerlink" href="#creating-a-new-profile-with-the-solarized-color-scheme" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;Terminal.app has multiple profiles available.
 Each profile specifies the color scheme, font face, font size and many other settings.
 Instead of making changes to the default profile,
@@ -710,7 +712,7 @@ Go to 'System Preferences &amp;gt; Security &amp;gt; General' and press 'Open An
 &lt;li&gt;Open terminal, 'Preferences &amp;gt; Profiles', select 'Solarized Dark' and press the 'Default' button.
 Now restart Terminal.app and you'll see the dark blue background of the Solarized color scheme.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4&gt;Other preferences&lt;/h4&gt;
+&lt;h4 id="other-preferences"&gt;Other preferences&lt;a class="headerlink" href="#other-preferences" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;In the 'Preferences &amp;gt; Profile &amp;gt; Text' tab, set opacity to 85% and font size to 16.&lt;/li&gt;
 &lt;li&gt;In the 'Preferences &amp;gt; Profile &amp;gt; Window' tab, deselect 'restore text when reopening windows'.&lt;/li&gt;
@@ -738,7 +740,6 @@ mv _links/.bashrc _links/.bash_profile
 mv _links/* ~
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;Now either restart your terminal or run &lt;code&gt;source ~/.bash_profile&lt;/code&gt;.
 If you executed the above instructions correctly,
 the first thing you'll notice is the improved, colorful prompt.&lt;/p&gt;
@@ -756,11 +757,9 @@ You can install programs (called packages by brew) by simply writing commands on
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;brew install name-of-package
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;According to &lt;a href="https://brew.sh/"&gt;brew's website&lt;/a&gt;, brew can be installed by typing this into the terminal:&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;/usr/bin/ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;Installation may require superuser permissions.&lt;/p&gt;
 &lt;h3 id="install-tmux"&gt;Install &lt;a href="https://www.hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/"&gt;tmux&lt;/a&gt;&lt;a class="headerlink" href="#install-tmux" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
@@ -777,7 +776,6 @@ to &lt;code&gt;~/.bash_profile&lt;/code&gt; or &lt;code&gt;~/.env&lt;/code&gt;.&
 &lt;h3 id="java"&gt;Java&lt;a class="headerlink" href="#java" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;brew install java
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;h3 id="mactex"&gt;MacTex&lt;a class="headerlink" href="#mactex" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;MacTex is a suite of programs for typesetting documents using TeX and LaTeX.
@@ -800,11 +798,9 @@ but some are useful enough that I installed them in the beginning:&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pip install ipython requests jinja2 pipdeptree flake8 grip
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;These packages are useful for math and computation:&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pip install numpy scipy pandas matplotlib seaborn sympy
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;h2 id="transfer-backed-up-data"&gt;&lt;span style="background-color: rgba(0, 136, 255, 0.3)"&gt;Transfer backed-up data&lt;/span&gt;&lt;a class="headerlink" href="#transfer-backed-up-data" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;h3 id="reorganizing-data-and-backup"&gt;Reorganizing data and backup&lt;a class="headerlink" href="#reorganizing-data-and-backup" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
@@ -869,7 +865,6 @@ This will not replace the old vim; the old vim can still be accessed at &lt;code
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;Add &lt;code&gt;execute pathogen#infect()&lt;/code&gt; to your &lt;code&gt;.vimrc&lt;/code&gt;.
 If you're using &lt;a href="https://github.com/sharmaeklavya2/dotfiles"&gt;my dotfiles&lt;/a&gt;,
 you'll already have it in your &lt;code&gt;.vimrc&lt;/code&gt;.&lt;/p&gt;
@@ -905,7 +900,6 @@ Warning: Failed to set locale category LC_MONETARY to en_IN.
 Warning: Failed to set locale category LC_MESSAGES to en_IN.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;Fix this by adding &lt;code&gt;export LC_ALL=en_US.UTF-8&lt;/code&gt; to &lt;code&gt;~/.bash_profile&lt;/code&gt; or &lt;code&gt;~/.env&lt;/code&gt;
 (&lt;a href="https://discourse.brew.sh/t/failed-to-set-locale-category-lc-numeric-to-en-ru/5092"&gt;brew forum post&lt;/a&gt;).&lt;/p&gt;
 &lt;h2 id="install-nginx-and-serve-website-mirrors"&gt;&lt;span style="background-color: rgba(170, 0, 255, 0.3)"&gt;Install Nginx and serve website mirrors&lt;/span&gt;&lt;a class="headerlink" href="#install-nginx-and-serve-website-mirrors" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
@@ -915,7 +909,6 @@ It's useful to access local websites that I downloaded or created.&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;brew install nginx
 nginx
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;Now go to http://localhost:8080. You should see a welcome page from Nginx.&lt;/p&gt;
 &lt;h3 id="enable-nginx-autoindex"&gt;Enable nginx autoindex&lt;a class="headerlink" href="#enable-nginx-autoindex" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
@@ -963,7 +956,6 @@ using the &lt;a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/
 &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;CSS (for beautification):&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;collapsible&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
     &lt;span class="k"&gt;max-width&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;40&lt;/span&gt;&lt;span class="kt"&gt;em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
@@ -982,7 +974,6 @@ using the &lt;a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/
     &lt;span class="k"&gt;border-top&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt; &lt;span class="kc"&gt;solid&lt;/span&gt; &lt;span class="kc"&gt;black&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;This is what the output looks like:&lt;/p&gt;
 &lt;div class="collapsible"&gt;
@@ -1015,7 +1006,6 @@ I read about it on the blog post
 &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;Add this CSS:&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;collapsor-lbl&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
     &lt;span class="k"&gt;display&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;block&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
@@ -1027,7 +1017,6 @@ I read about it on the blog post
     &lt;span class="k"&gt;display&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;block&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;Output:&lt;/p&gt;
 &lt;div class="collapsible"&gt;
@@ -1076,13 +1065,11 @@ we will set &lt;code&gt;display: block&lt;/code&gt; on &lt;code&gt;.collapsible-
 &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;Add this CSS:&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;focus-capturer&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nd"&gt;focus-within&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;collapsible-content&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
     &lt;span class="k"&gt;display&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;block&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;Output:&lt;/p&gt;
 &lt;div class="collapsible"&gt;
