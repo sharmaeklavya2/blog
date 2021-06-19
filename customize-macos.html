@@ -126,6 +126,7 @@ but you'll have to make major modifications to the instructions below.</p>
 <li><a href="#install-and-run-nginx">Install and run Nginx</a></li>
 <li><a href="#enable-nginx-autoindex">Enable nginx autoindex</a></li>
 <li><a href="#serve-my-websites-with-nginx">Serve my websites with Nginx</a></li>
+<li><a href="#security">Security</a></li>
 </ul>
 </li>
 </ul>
@@ -447,6 +448,18 @@ you should see the list of files in <code>/usr/local/var/www</code>.</p>
 <p>I had backed up compressed archives of my websites to my external hard disk.
 I copied the websites from there, uncompressed them, and placed them in <code>/usr/local/var/www</code>.</p>
 <p>You can put symlinks in <code>/usr/local/var/www</code>, but <code>/usr/local/var/www</code> itself cannot be a symlink.</p>
+<h3 id="security">Security<a class="headerlink" href="#security" title="Permanent link">&para;</a></h3>
+<p>Anyone on your network can see your files in <code>/usr/local/var/www</code>,
+so you should be careful about what you put there to preserve your privacy.</p>
+<p>You can <a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-password-authentication-with-nginx-on-ubuntu-14-04">set password authentication for Nginx</a>,
+but if someone is eavesdropping, they can
+<a href="https://en.wikipedia.org/wiki/Basic_access_authentication#Security">easily recover your password</a>.</p>
+<p>If you want to prevent others on your network from accessing the http server,
+you can restrict Nginx to work on <code>localhost</code> only.
+To do this, go to <code>/usr/local/etc/nginx/nginx.conf</code> and
+change <code>listen 8080;</code> to <code>listen localhost:8080;</code>.
+This is somewhat secure, but not secure against a talented attacker
+(see <a href="https://security.stackexchange.com/q/86773">https://security.stackexchange.com/q/86773</a>).</p>
 </div>
 </article>
 </main>
