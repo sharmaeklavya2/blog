@@ -269,7 +269,7 @@ and at odd ticks, the right hand throws. This assumption is called <em>asynchron
 <p><strong>Assumption</strong>: <em>a hand can only hold 1 object at a time.</em>
 This restriction is called <em>non-multiplexing</em>.
 (Most non-jugglers assume that non-multiplexing is mandatory for juggling,
-but that's not always true.)</p>
+but that's not always true. We will, however, enforce non-multiplexing in our model for simplicity.)</p>
 <p>If all the other features (ticks per second, dwell, hand position) are fixed,
 then a juggling pattern can be uniquely determined by specifying two things for each throw:
 how high should the object be thrown, and whether the object is thrown to the same
@@ -306,7 +306,7 @@ I'll show some examples so that you get the hang of it.</p>
     <figcaption>Cascade</figcaption>
 </figure>
 
-<p>Firstly, note that all throws are identical.
+<p>First, note that all throws are identical.
 So all throws have the same throw-order.</p>
 <p>Suppose the blue ball is thrown at time <span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.61508em;vertical-align:0em;"></span><span class="mord mathnormal">t</span></span></span></span>.
 At time <span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.69841em;vertical-align:-0.08333em;"></span><span class="mord mathnormal">t</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> the red ball is thrown, at time <span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.69841em;vertical-align:-0.08333em;"></span><span class="mord mathnormal">t</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span> the green ball is thrown,
