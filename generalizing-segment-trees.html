@@ -300,29 +300,29 @@ For MINMAX, <span class="katex"><span aria-hidden="true" class="katex-html"><spa
 we can make the query monoid type a template parameter.</p>
 <p>Here's an example of how to represent query monoid elements as a class
 for the MINMAX problem:</p>
-<div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp"></span>
+<div class="codehilite"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;algorithm&gt;</span><span class="cp"></span>
 
-<span class="k">class</span> <span class="nc">MinMaxElem</span> <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="k">static</span> <span class="k">const</span> <span class="kt">int</span> <span class="n">infty</span> <span class="o">=</span> <span class="mf">2e9</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">x_min</span><span class="p">,</span> <span class="n">x_max</span><span class="p">;</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">MinMaxElem</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">infty</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2e9</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x_min</span><span class="p">,</span><span class="w"> </span><span class="n">x_max</span><span class="p">;</span><span class="w"></span>
 
-    <span class="n">MinMaxElem</span><span class="p">()</span><span class="o">:</span>
-        <span class="c1">// identity element</span>
-        <span class="n">x_min</span><span class="p">(</span><span class="n">infty</span><span class="p">),</span> <span class="n">x_max</span><span class="p">(</span><span class="o">-</span><span class="n">infty</span><span class="p">)</span> <span class="p">{}</span>
+<span class="w">    </span><span class="n">MinMaxElem</span><span class="p">()</span><span class="o">:</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// identity element</span>
+<span class="w">        </span><span class="n">x_min</span><span class="p">(</span><span class="n">infty</span><span class="p">),</span><span class="w"> </span><span class="n">x_max</span><span class="p">(</span><span class="o">-</span><span class="n">infty</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
 
-    <span class="k">explicit</span> <span class="n">MinMaxElem</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span><span class="o">:</span>
-        <span class="c1">// element at leaf node</span>
-        <span class="n">x_min</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x_max</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{}</span>
+<span class="w">    </span><span class="k">explicit</span><span class="w"> </span><span class="n">MinMaxElem</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="o">:</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// element at leaf node</span>
+<span class="w">        </span><span class="n">x_min</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="w"> </span><span class="n">x_max</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
 
-    <span class="n">MinMaxElem</span><span class="p">(</span><span class="k">const</span> <span class="n">MinMaxElem</span><span class="o">&amp;</span> <span class="n">l</span><span class="p">,</span> <span class="k">const</span> <span class="n">MinMaxElem</span><span class="o">&amp;</span> <span class="n">r</span><span class="p">)</span><span class="o">:</span>
-        <span class="c1">// binary operator</span>
-        <span class="n">x_min</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">min</span><span class="p">(</span><span class="n">l</span><span class="p">.</span><span class="n">x_min</span><span class="p">,</span> <span class="n">r</span><span class="p">.</span><span class="n">x_min</span><span class="p">)),</span> <span class="n">x_max</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">max</span><span class="p">(</span><span class="n">l</span><span class="p">.</span><span class="n">x_max</span><span class="p">,</span> <span class="n">r</span><span class="p">.</span><span class="n">x_max</span><span class="p">))</span> <span class="p">{}</span>
+<span class="w">    </span><span class="n">MinMaxElem</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">MinMaxElem</span><span class="o">&amp;</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">MinMaxElem</span><span class="o">&amp;</span><span class="w"> </span><span class="n">r</span><span class="p">)</span><span class="o">:</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// binary operator</span>
+<span class="w">        </span><span class="n">x_min</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">min</span><span class="p">(</span><span class="n">l</span><span class="p">.</span><span class="n">x_min</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">x_min</span><span class="p">)),</span><span class="w"> </span><span class="n">x_max</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">max</span><span class="p">(</span><span class="n">l</span><span class="p">.</span><span class="n">x_max</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">x_max</span><span class="p">))</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
 
-    <span class="n">MinMaxElem</span><span class="p">(</span><span class="kt">int</span> <span class="n">_x_min</span><span class="p">,</span> <span class="kt">int</span> <span class="n">_x_max</span><span class="p">)</span><span class="o">:</span>
-        <span class="c1">// direct constructor (will be used later, when coding update functions)</span>
-        <span class="n">x_min</span><span class="p">(</span><span class="n">_x_min</span><span class="p">),</span> <span class="n">x_max</span><span class="p">(</span><span class="n">_x_max</span><span class="p">)</span> <span class="p">{}</span>
-<span class="p">};</span>
+<span class="w">    </span><span class="n">MinMaxElem</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">_x_min</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">_x_max</span><span class="p">)</span><span class="o">:</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// direct constructor (will be used later, when coding update functions)</span>
+<span class="w">        </span><span class="n">x_min</span><span class="p">(</span><span class="n">_x_min</span><span class="p">),</span><span class="w"> </span><span class="n">x_max</span><span class="p">(</span><span class="n">_x_max</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
 </code></pre></div>
 
 <p>In the segment tree library, we can call the above methods
@@ -471,27 +471,27 @@ In the above example, the composition of <span class="katex"><span aria-hidden="
 we can make the node update function family a template parameter.</p>
 <p>Here's an example of how to represent node update functions as a class
 for the MINMAX problem:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">LinearUpdFunc</span> <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">;</span>  <span class="c1">// function representation</span>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">LinearUpdFunc</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">  </span><span class="c1">// function representation</span>
 
-    <span class="n">MinMaxElem</span> <span class="nf">operator</span><span class="p">()(</span><span class="k">const</span> <span class="n">MinMaxElem</span><span class="o">&amp;</span> <span class="n">x</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span>
-        <span class="c1">// function definition</span>
-        <span class="k">return</span> <span class="n">MinMaxElem</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">x_min</span> <span class="o">*</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">,</span> <span class="n">x</span><span class="p">.</span><span class="n">x_max</span> <span class="o">*</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">);</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="n">MinMaxElem</span><span class="w"> </span><span class="nf">operator</span><span class="p">()(</span><span class="k">const</span><span class="w"> </span><span class="n">MinMaxElem</span><span class="o">&amp;</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// function definition</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">MinMaxElem</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">x_min</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">x_max</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="n">LinearUpdFunc</span><span class="p">()</span><span class="o">:</span>
-        <span class="c1">// identity function</span>
-        <span class="n">a</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">b</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="p">{}</span>
+<span class="w">    </span><span class="n">LinearUpdFunc</span><span class="p">()</span><span class="o">:</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// identity function</span>
+<span class="w">        </span><span class="n">a</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">b</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
 
-    <span class="kt">bool</span> <span class="n">is_identity</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">);</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">is_identity</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">b</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="n">LinearUpdFunc</span><span class="p">(</span><span class="k">const</span> <span class="n">LinearUpdFunc</span><span class="o">&amp;</span> <span class="n">l</span><span class="p">,</span> <span class="k">const</span> <span class="n">LinearUpdFunc</span><span class="o">&amp;</span> <span class="n">r</span><span class="p">)</span><span class="o">:</span>
-        <span class="c1">// function composition</span>
-        <span class="n">a</span><span class="p">(</span><span class="n">l</span><span class="p">.</span><span class="n">a</span> <span class="o">*</span> <span class="n">r</span><span class="p">.</span><span class="n">a</span><span class="p">),</span> <span class="n">b</span><span class="p">(</span><span class="n">l</span><span class="p">.</span><span class="n">a</span> <span class="o">*</span> <span class="n">r</span><span class="p">.</span><span class="n">b</span> <span class="o">+</span> <span class="n">l</span><span class="p">.</span><span class="n">b</span><span class="p">)</span> <span class="p">{}</span>
-<span class="p">};</span>
+<span class="w">    </span><span class="n">LinearUpdFunc</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">LinearUpdFunc</span><span class="o">&amp;</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">LinearUpdFunc</span><span class="o">&amp;</span><span class="w"> </span><span class="n">r</span><span class="p">)</span><span class="o">:</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// function composition</span>
+<span class="w">        </span><span class="n">a</span><span class="p">(</span><span class="n">l</span><span class="p">.</span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">a</span><span class="p">),</span><span class="w"> </span><span class="n">b</span><span class="p">(</span><span class="n">l</span><span class="p">.</span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">b</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">l</span><span class="p">.</span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
 </code></pre></div>
 
 <p>In the segment tree library, we can call the above methods

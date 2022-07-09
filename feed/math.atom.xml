@@ -40,17 +40,17 @@ The animations below depict three well-known patterns:
 cascade, shower and fountain.&lt;/p&gt;
 &lt;div class="gallery"&gt;
 &lt;figure&gt;
-    &lt;video class="dark-filter" autoplay loop muted
+    &lt;video class="dark-filter" autoplay loop muted width="160" height="240"
         src="https://sharmaeklavya2.github.io/blog/img/siteswaps/3.gif.mp4" alt="cascade juggling pattern"&gt;&lt;/video&gt;
     &lt;figcaption&gt;Cascade&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;figure&gt;
-    &lt;video class="dark-filter" autoplay loop muted
+    &lt;video class="dark-filter" autoplay loop muted width="160" height="200"
         src="https://sharmaeklavya2.github.io/blog/img/siteswaps/51.gif.mp4" alt="shower juggling pattern"&gt;&lt;/video&gt;
     &lt;figcaption&gt;Shower&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;figure&gt;
-    &lt;video class="dark-filter" autoplay loop muted
+    &lt;video class="dark-filter" autoplay loop muted width="160" height="240"
         src="https://sharmaeklavya2.github.io/blog/img/siteswaps/4.gif.mp4" alt="fountain juggling pattern"&gt;&lt;/video&gt;
     &lt;figcaption&gt;Fountain&lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -92,12 +92,12 @@ and then move on to more complex but more important features.&lt;/p&gt;
 &lt;p&gt;Every pattern can be made slower by throwing the objects higher.&lt;/p&gt;
 &lt;div class="gallery"&gt;
 &lt;figure&gt;
-    &lt;video class="dark-filter" autoplay loop muted
+    &lt;video class="dark-filter" autoplay loop muted width="160" height="240"
         src="https://sharmaeklavya2.github.io/blog/img/siteswaps/3.gif.mp4" alt="cascade juggling pattern"&gt;&lt;/video&gt;
     &lt;figcaption&gt;Cascade&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;figure&gt;
-    &lt;video class="dark-filter" autoplay loop muted
+    &lt;video class="dark-filter" autoplay loop muted width="160" height="240"
         src="https://sharmaeklavya2.github.io/blog/img/siteswaps/522.gif.mp4" alt="cascade juggled slowly"&gt;&lt;/video&gt;
     &lt;figcaption&gt;Slow cascade&lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -113,12 +113,12 @@ Using a large dwell is called &lt;em&gt;lazy style&lt;/em&gt;
 and using a small dwell is called &lt;em&gt;hot-potato style&lt;/em&gt;.&lt;/p&gt;
 &lt;div class="gallery"&gt;
 &lt;figure&gt;
-    &lt;video class="dark-filter" autoplay loop muted
+    &lt;video class="dark-filter" autoplay loop muted width="160" height="240"
         src="https://sharmaeklavya2.github.io/blog/img/siteswaps/522.gif.mp4" alt="cascade juggling in lazy style"&gt;&lt;/video&gt;
     &lt;figcaption&gt;Lazy cascade&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;figure&gt;
-    &lt;video class="dark-filter" autoplay loop muted
+    &lt;video class="dark-filter" autoplay loop muted width="160" height="240"
         src="https://sharmaeklavya2.github.io/blog/img/siteswaps/900.gif.mp4" alt="cascade juggling in hot-potato style"&gt;&lt;/video&gt;
     &lt;figcaption&gt;Hot-potato cascade&lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -132,17 +132,17 @@ Hand positions can be specified using a coordinate system.
 is the mirror image of the coordinate system for the left hand.)&lt;/p&gt;
 &lt;div class="gallery"&gt;
 &lt;figure&gt;
-    &lt;video class="dark-filter" autoplay loop muted
+    &lt;video class="dark-filter" autoplay loop muted width="160" height="240"
         src="https://sharmaeklavya2.github.io/blog/img/siteswaps/3.gif.mp4" alt="cascade juggling pattern"&gt;&lt;/video&gt;
     &lt;figcaption&gt;Cascade&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;figure&gt;
-    &lt;video class="dark-filter" autoplay loop muted
+    &lt;video class="dark-filter" autoplay loop muted width="160" height="240"
         src="https://sharmaeklavya2.github.io/blog/img/siteswaps/3-cross.gif.mp4" alt="crossed-arm cascade juggling pattern"&gt;&lt;/video&gt;
     &lt;figcaption&gt;Crossed-arm cascade&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;figure&gt;
-    &lt;video class="dark-filter" autoplay loop muted
+    &lt;video class="dark-filter" autoplay loop muted width="160" height="240"
         src="https://sharmaeklavya2.github.io/blog/img/siteswaps/3-out.gif.mp4" alt="reverse cascade juggling pattern"&gt;&lt;/video&gt;
     &lt;figcaption&gt;Reverse cascade&lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -157,17 +157,17 @@ version of the normal cascade.)&lt;/p&gt;
 of the cascade, that don't really look like the cascade.&lt;/p&gt;
 &lt;div class="gallery"&gt;
 &lt;figure&gt;
-    &lt;video class="dark-filter" autoplay loop muted
+    &lt;video class="dark-filter" autoplay loop muted width="160" height="240"
         src="https://sharmaeklavya2.github.io/blog/img/siteswaps/3-mills.gif.mp4" alt="mills-mess juggling pattern"&gt;&lt;/video&gt;
     &lt;figcaption&gt;Mills mess&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;figure&gt;
-    &lt;video class="dark-filter" autoplay loop muted
+    &lt;video class="dark-filter" autoplay loop muted width="160" height="240"
         src="https://sharmaeklavya2.github.io/blog/img/siteswaps/3-wind.gif.mp4" alt="windmill juggling pattern"&gt;&lt;/video&gt;
     &lt;figcaption&gt;Windmill&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;figure&gt;
-    &lt;video class="dark-filter" autoplay loop muted
+    &lt;video class="dark-filter" autoplay loop muted width="160" height="240"
         src="https://sharmaeklavya2.github.io/blog/img/siteswaps/3-cherry.gif.mp4" alt="cherry-picker juggling pattern"&gt;&lt;/video&gt;
     &lt;figcaption&gt;Cherry picker&lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -177,22 +177,22 @@ of the cascade, that don't really look like the cascade.&lt;/p&gt;
 As an example, here are some hand positions applied to the fountain pattern:&lt;/p&gt;
 &lt;div class="gallery"&gt;
 &lt;figure&gt;
-    &lt;video class="dark-filter" autoplay loop muted
+    &lt;video class="dark-filter" autoplay loop muted width="160" height="240"
         src="https://sharmaeklavya2.github.io/blog/img/siteswaps/4.gif.mp4" alt="4 juggling pattern"&gt;&lt;/video&gt;
     &lt;figcaption&gt;Fountain&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;figure&gt;
-    &lt;video class="dark-filter" autoplay loop muted
+    &lt;video class="dark-filter" autoplay loop muted width="160" height="240"
         src="https://sharmaeklavya2.github.io/blog/img/siteswaps/4-out.gif.mp4" alt="4-out juggling pattern"&gt;&lt;/video&gt;
     &lt;figcaption&gt;Reverse fountain&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;figure&gt;
-    &lt;video class="dark-filter" autoplay loop muted
+    &lt;video class="dark-filter" autoplay loop muted width="160" height="240"
         src="https://sharmaeklavya2.github.io/blog/img/siteswaps/4-mills.gif.mp4" alt="4-mills juggling pattern"&gt;&lt;/video&gt;
     &lt;figcaption&gt;Fountain mills mess&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;figure&gt;
-    &lt;video class="dark-filter" autoplay loop muted
+    &lt;video class="dark-filter" autoplay loop muted width="160" height="240"
         src="https://sharmaeklavya2.github.io/blog/img/siteswaps/4-wind.gif.mp4" alt="4-wind juggling pattern"&gt;&lt;/video&gt;
     &lt;figcaption&gt;Fountain windmill&lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -243,7 +243,7 @@ I'll show some examples so that you get the hang of it.&lt;/p&gt;
 &lt;h2 id="siteswap-examples"&gt;Siteswap examples&lt;a class="headerlink" href="#siteswap-examples" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Let's start with the simplest pattern: cascade.&lt;/p&gt;
 &lt;figure&gt;
-    &lt;video class="dark-filter" autoplay loop muted
+    &lt;video class="dark-filter" autoplay loop muted width="160" height="240"
         src="https://sharmaeklavya2.github.io/blog/img/siteswaps/3-analyze.gif.mp4" alt="3-analyze juggling pattern"&gt;&lt;/video&gt;
     &lt;figcaption&gt;Cascade&lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -260,12 +260,12 @@ This gives us the siteswap &lt;code&gt;[3]&lt;/code&gt; for this pattern.&lt;/p&
 It's identified solely by its siteswap.&lt;/p&gt;
 &lt;div class="gallery"&gt;
 &lt;figure&gt;
-    &lt;video class="dark-filter" autoplay loop muted
+    &lt;video class="dark-filter" autoplay loop muted width="160" height="280"
         src="https://sharmaeklavya2.github.io/blog/img/siteswaps/345.gif.mp4" alt="345 juggling pattern"&gt;&lt;/video&gt;
     &lt;figcaption&gt;Normal&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;figure&gt;
-    &lt;video class="dark-filter" autoplay loop muted
+    &lt;video class="dark-filter" autoplay loop muted width="160" height="280"
         src="https://sharmaeklavya2.github.io/blog/img/siteswaps/345-analyze.gif.mp4" alt="345-analyze juggling pattern"&gt;&lt;/video&gt;
     &lt;figcaption&gt;Slo-mo&lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -442,18 +442,18 @@ This situation is called a zero-order throw.
 Here are some examples:&lt;/p&gt;
 &lt;div class="gallery"&gt;
 &lt;figure&gt;
-    &lt;video class="dark-filter" autoplay loop muted
+    &lt;video class="dark-filter" autoplay loop muted width="160" height="240"
         src="https://sharmaeklavya2.github.io/blog/img/siteswaps/50505.gif.mp4" alt="snake juggling pattern"&gt;&lt;/video&gt;
     &lt;figcaption&gt;Snake (50505)&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;figure&gt;
-    &lt;video class="dark-filter" autoplay loop muted
+    &lt;video class="dark-filter" autoplay loop muted width="160" height="220"
         src="https://sharmaeklavya2.github.io/blog/img/siteswaps/330.gif.mp4"
         alt="cascade juggling pattern with 1 ball mising; siteswap 330"&gt;&lt;/video&gt;
     &lt;figcaption&gt;Cascade with 1 ball &lt;br&gt;missing (330)&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;figure&gt;
-    &lt;video class="dark-filter" autoplay loop muted
+    &lt;video class="dark-filter" autoplay loop muted width="160" height="240"
         src="https://sharmaeklavya2.github.io/blog/img/siteswaps/40.gif.mp4" alt="juggling 2 balls in 1 hand"&gt;&lt;/video&gt;
     &lt;figcaption&gt;2-in-1 (40)&lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -463,12 +463,12 @@ Here are some examples:&lt;/p&gt;
 This can be achieved via order-2 throws (think why it makes sense).&lt;/p&gt;
 &lt;div class="gallery"&gt;
 &lt;figure&gt;
-    &lt;video class="dark-filter" autoplay loop muted
+    &lt;video class="dark-filter" autoplay loop muted width="160" height="240"
         src="https://sharmaeklavya2.github.io/blog/img/siteswaps/552.gif.mp4" alt="552 juggling pattern"&gt;&lt;/video&gt;
     &lt;figcaption&gt;552&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;figure&gt;
-    &lt;video class="dark-filter" autoplay loop muted
+    &lt;video class="dark-filter" autoplay loop muted width="160" height="240"
         src="https://sharmaeklavya2.github.io/blog/img/siteswaps/42.gif.mp4" alt="juggling 2 balls in one hand"&gt;&lt;/video&gt;
     &lt;figcaption&gt;2-in-1 (42)&lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -484,17 +484,17 @@ Fortunately, all of the theory we saw here can be ported to the synchronous mode
 and synchronous patterns have their own, somewhat different, siteswap notation.&lt;/p&gt;
 &lt;div class="gallery"&gt;
 &lt;figure&gt;
-    &lt;video class="dark-filter" autoplay loop muted
+    &lt;video class="dark-filter" autoplay loop muted width="160" height="240"
         src="https://sharmaeklavya2.github.io/blog/img/siteswaps/box.gif.mp4" alt="box juggling pattern"&gt;&lt;/video&gt;
     &lt;figcaption&gt;Box&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;figure&gt;
-    &lt;video class="dark-filter" autoplay loop muted
+    &lt;video class="dark-filter" autoplay loop muted width="160" height="240"
         src="https://sharmaeklavya2.github.io/blog/img/siteswaps/columns.gif.mp4" alt="columns juggling pattern"&gt;&lt;/video&gt;
     &lt;figcaption&gt;Columns&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;figure&gt;
-    &lt;video class="dark-filter" autoplay loop muted
+    &lt;video class="dark-filter" autoplay loop muted width="160" height="280"
         src="https://sharmaeklavya2.github.io/blog/img/siteswaps/6x4x.gif.mp4" alt="5-ball half-shower juggling pattern"&gt;&lt;/video&gt;
     &lt;figcaption&gt;5-ball half-shower&lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -506,13 +506,13 @@ i.e. multiple people juggling together.
 Siteswap notation and the associated theory extends to these too.&lt;/p&gt;
 &lt;div class="gallery"&gt;
 &lt;figure&gt;
-    &lt;video class="dark-filter" autoplay loop muted
+    &lt;video class="dark-filter" autoplay loop muted width="160" height="240"
         src="https://sharmaeklavya2.github.io/blog/img/siteswaps/multiplex-shower.gif.mp4"
         alt="multiplex-shower juggling pattern"&gt;&lt;/video&gt;
     &lt;figcaption&gt;Multiplexed shower&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;figure&gt;
-    &lt;video class="dark-filter" autoplay loop muted
+    &lt;video class="dark-filter" autoplay loop muted width="240" height="200"
         src="https://sharmaeklavya2.github.io/blog/img/siteswaps/3-pass.gif.mp4" alt="2-count passing cascade with 2 jugglers"&gt;&lt;/video&gt;
     &lt;figcaption&gt;Passing cascade&lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -524,7 +524,7 @@ up to a certain length and then using the permutation theorem to filter out inva
 Each siteswap output by this process corresponds to a valid juggling pattern.
 This is great, and rumors say that &lt;code&gt;441&lt;/code&gt; was invented like this.&lt;/p&gt;
 &lt;figure&gt;
-    &lt;video class="dark-filter" autoplay loop muted
+    &lt;video class="dark-filter" autoplay loop muted width="160" height="220"
         src="https://sharmaeklavya2.github.io/blog/img/siteswaps/441.gif.mp4" alt="441 juggling pattern"&gt;&lt;/video&gt;
     &lt;figcaption&gt;Half box (441)&lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -789,29 +789,29 @@ For MINMAX, &lt;span class="katex"&gt;&lt;span aria-hidden="true" class="katex-h
 we can make the query monoid type a template parameter.&lt;/p&gt;
 &lt;p&gt;Here's an example of how to represent query monoid elements as a class
 for the MINMAX problem:&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;algorithm&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="cp"&gt;#include&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="cpf"&gt;&amp;lt;algorithm&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
 
-&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;MinMaxElem&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="k"&gt;public&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
-    &lt;span class="k"&gt;static&lt;/span&gt; &lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;infty&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;2e9&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-    &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;x_min&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;x_max&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;class&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;MinMaxElem&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="k"&gt;public&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;static&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;infty&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mf"&gt;2e9&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;x_min&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;x_max&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 
-    &lt;span class="n"&gt;MinMaxElem&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
-        &lt;span class="c1"&gt;// identity element&lt;/span&gt;
-        &lt;span class="n"&gt;x_min&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;infty&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;x_max&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;infty&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;MinMaxElem&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="c1"&gt;// identity element&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="n"&gt;x_min&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;infty&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;x_max&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;infty&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 
-    &lt;span class="k"&gt;explicit&lt;/span&gt; &lt;span class="n"&gt;MinMaxElem&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
-        &lt;span class="c1"&gt;// element at leaf node&lt;/span&gt;
-        &lt;span class="n"&gt;x_min&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;x_max&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;explicit&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;MinMaxElem&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="c1"&gt;// element at leaf node&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="n"&gt;x_min&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;x_max&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 
-    &lt;span class="n"&gt;MinMaxElem&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="n"&gt;MinMaxElem&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;l&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="n"&gt;MinMaxElem&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
-        &lt;span class="c1"&gt;// binary operator&lt;/span&gt;
-        &lt;span class="n"&gt;x_min&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;min&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;l&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;x_min&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;x_min&lt;/span&gt;&lt;span class="p"&gt;)),&lt;/span&gt; &lt;span class="n"&gt;x_max&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;max&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;l&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;x_max&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;x_max&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;MinMaxElem&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;MinMaxElem&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;l&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;MinMaxElem&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="c1"&gt;// binary operator&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="n"&gt;x_min&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;min&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;l&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;x_min&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;x_min&lt;/span&gt;&lt;span class="p"&gt;)),&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;x_max&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;max&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;l&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;x_max&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;x_max&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 
-    &lt;span class="n"&gt;MinMaxElem&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;_x_min&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;_x_max&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
-        &lt;span class="c1"&gt;// direct constructor (will be used later, when coding update functions)&lt;/span&gt;
-        &lt;span class="n"&gt;x_min&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;_x_min&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;x_max&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;_x_max&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
-&lt;span class="p"&gt;};&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;MinMaxElem&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;_x_min&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;_x_max&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="c1"&gt;// direct constructor (will be used later, when coding update functions)&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="n"&gt;x_min&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;_x_min&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;x_max&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;_x_max&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="p"&gt;};&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;In the segment tree library, we can call the above methods
@@ -960,27 +960,27 @@ In the above example, the composition of &lt;span class="katex"&gt;&lt;span aria
 we can make the node update function family a template parameter.&lt;/p&gt;
 &lt;p&gt;Here's an example of how to represent node update functions as a class
 for the MINMAX problem:&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;LinearUpdFunc&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="k"&gt;public&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
-    &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;  &lt;span class="c1"&gt;// function representation&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;class&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;LinearUpdFunc&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="k"&gt;public&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;// function representation&lt;/span&gt;
 
-    &lt;span class="n"&gt;MinMaxElem&lt;/span&gt; &lt;span class="nf"&gt;operator&lt;/span&gt;&lt;span class="p"&gt;()(&lt;/span&gt;&lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="n"&gt;MinMaxElem&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-        &lt;span class="c1"&gt;// function definition&lt;/span&gt;
-        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;MinMaxElem&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;x_min&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;x_max&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;MinMaxElem&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;operator&lt;/span&gt;&lt;span class="p"&gt;()(&lt;/span&gt;&lt;span class="k"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;MinMaxElem&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="c1"&gt;// function definition&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;MinMaxElem&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;x_min&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;x_max&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 
-    &lt;span class="n"&gt;LinearUpdFunc&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
-        &lt;span class="c1"&gt;// identity function&lt;/span&gt;
-        &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;LinearUpdFunc&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="c1"&gt;// identity function&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 
-    &lt;span class="kt"&gt;bool&lt;/span&gt; &lt;span class="n"&gt;is_identity&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kt"&gt;bool&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;is_identity&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 
-    &lt;span class="n"&gt;LinearUpdFunc&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="n"&gt;LinearUpdFunc&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;l&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="n"&gt;LinearUpdFunc&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
-        &lt;span class="c1"&gt;// function composition&lt;/span&gt;
-        &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;l&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;l&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;l&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
-&lt;span class="p"&gt;};&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;LinearUpdFunc&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;LinearUpdFunc&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;l&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;LinearUpdFunc&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="c1"&gt;// function composition&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;l&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;l&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;l&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="p"&gt;};&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;In the segment tree library, we can call the above methods
