@@ -1,5 +1,6 @@
 https://sharmaeklavya2.github.io/blog/
 https://sharmaeklavya2.github.io/blog/pages/about-this-blog.html
+https://sharmaeklavya2.github.io/blog/latex-tips.html
 https://sharmaeklavya2.github.io/blog/dream2.html
 https://sharmaeklavya2.github.io/blog/easy-dal.html
 https://sharmaeklavya2.github.io/blog/dream1.html
@@ -10,6 +11,7 @@ https://sharmaeklavya2.github.io/blog/customize-macos.html
 https://sharmaeklavya2.github.io/blog/css-collapsible.html
 https://sharmaeklavya2.github.io/blog/juggling-101.html
 https://sharmaeklavya2.github.io/blog/3-in-1.html
+https://sharmaeklavya2.github.io/blog/tag/latex.html
 https://sharmaeklavya2.github.io/blog/tag/dream.html
 https://sharmaeklavya2.github.io/blog/tag/cooking.html
 https://sharmaeklavya2.github.io/blog/tag/tutorial.html
