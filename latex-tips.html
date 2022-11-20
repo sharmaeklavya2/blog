@@ -85,6 +85,7 @@ I will add more tips and elaborate on existing ones.</span></p>
 <li><a href="#always-include-hyperref">Always include hyperref</a></li>
 <li><a href="#handle-the-warnings">Handle the warnings</a></li>
 <li><a href="#supply-alt-text-in-section-titles">Supply alt-text in section titles</a></li>
+<li><a href="#use-cleveref">Use cleveref</a></li>
 <li><a href="#multi-file-projects-and-makefile">Multi-file projects and makefile</a></li>
 </ul>
 </li>
@@ -137,6 +138,13 @@ in \texorpdfstring{$n^{O_{\eps}(1)}$}{n\^{}(O\_eps(1))} time}
 are readable.</figcaption>
 </figure>
 
+<h3 id="use-cleveref">Use cleveref<a class="headerlink" href="#use-cleveref" title="Permanent link">&para;</a></h3>
+<p>Always <code>\usepackage{cleveref}</code>.</p>
+<p>Name your references such that it's possible to know what kind of thing it is:
+theorem, definition, section, figure, etc.
+Preferably do this by using a prefix: <code>thm:</code>, <code>defn:</code>, <code>sec:</code>, <code>fig:</code>, etc.
+Don't use different prefixes for theorems, lemmas, observations, claims;
+use <code>thm:</code> for all of them (otherwise there's no point in using <code>cleveref</code>).</p>
 <h3 id="multi-file-projects-and-makefile">Multi-file projects and makefile<a class="headerlink" href="#multi-file-projects-and-makefile" title="Permanent link">&para;</a></h3>
 <p>Suppose your document is split into multiple files, where the top-level file is called <code>main.tex</code>,
 and you <code>\input</code> other files in <code>main.tex</code>. When you use <code>pdflatex</code> to compile <code>main.tex</code>,

@@ -15,6 +15,7 @@ I will add more tips and elaborate on existing ones.&lt;/span&gt;&lt;/p&gt;
 &lt;li&gt;&lt;a href="#always-include-hyperref"&gt;Always include hyperref&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#handle-the-warnings"&gt;Handle the warnings&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#supply-alt-text-in-section-titles"&gt;Supply alt-text in section titles&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#use-cleveref"&gt;Use cleveref&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#multi-file-projects-and-makefile"&gt;Multi-file projects and makefile&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -67,6 +68,13 @@ in \texorpdfstring{$n^{O_{\eps}(1)}$}{n\^{}(O\_eps(1))} time}
 are readable.&lt;/figcaption&gt;
 &lt;/figure&gt;
 
+&lt;h3 id="use-cleveref"&gt;Use cleveref&lt;a class="headerlink" href="#use-cleveref" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Always &lt;code&gt;\usepackage{cleveref}&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Name your references such that it's possible to know what kind of thing it is:
+theorem, definition, section, figure, etc.
+Preferably do this by using a prefix: &lt;code&gt;thm:&lt;/code&gt;, &lt;code&gt;defn:&lt;/code&gt;, &lt;code&gt;sec:&lt;/code&gt;, &lt;code&gt;fig:&lt;/code&gt;, etc.
+Don't use different prefixes for theorems, lemmas, observations, claims;
+use &lt;code&gt;thm:&lt;/code&gt; for all of them (otherwise there's no point in using &lt;code&gt;cleveref&lt;/code&gt;).&lt;/p&gt;
 &lt;h3 id="multi-file-projects-and-makefile"&gt;Multi-file projects and makefile&lt;a class="headerlink" href="#multi-file-projects-and-makefile" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Suppose your document is split into multiple files, where the top-level file is called &lt;code&gt;main.tex&lt;/code&gt;,
 and you &lt;code&gt;\input&lt;/code&gt; other files in &lt;code&gt;main.tex&lt;/code&gt;. When you use &lt;code&gt;pdflatex&lt;/code&gt; to compile &lt;code&gt;main.tex&lt;/code&gt;,
