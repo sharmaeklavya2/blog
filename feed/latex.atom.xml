@@ -43,7 +43,6 @@ Some useful options:&lt;/p&gt;
 &lt;li&gt;&lt;code&gt;hidelinks&lt;/code&gt; and &lt;code&gt;colorlinks&lt;/code&gt;: &lt;code&gt;hyperref&lt;/code&gt;'s default behavior is to box links.
     Instead, if you want to color the links, use &lt;code&gt;colorlinks&lt;/code&gt;.
     If you want to neither box nor color links, use &lt;code&gt;hidelinks&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;colorlinks&lt;/code&gt;: color links instead of boxing them.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;linkcolor&lt;/code&gt;, &lt;code&gt;citecolor&lt;/code&gt;, &lt;code&gt;urlcolor&lt;/code&gt;:
     specify colors to use for internal links, citations, and URLs, respectively.&lt;/li&gt;
 &lt;/ol&gt;
