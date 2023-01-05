@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Eklavya's Blog - latex</title><link href="https://sharmaeklavya2.github.io/blog/" rel="alternate"></link><link href="https://sharmaeklavya2.github.io/blog/feed/latex.atom.xml" rel="self"></link><id>https://sharmaeklavya2.github.io/blog/</id><updated>2022-11-28T00:00:00+05:30</updated><entry><title>LaTeX tips</title><link href="https://sharmaeklavya2.github.io/blog/latex-tips.html" rel="alternate"></link><published>2022-11-13T00:00:00+05:30</published><updated>2022-11-28T00:00:00+05:30</updated><author><name>Eklavya Sharma</name></author><id>tag:sharmaeklavya2.github.io,2022-11-13:/blog/latex-tips.html</id><summary type="html">&lt;p&gt;This article lists LaTeX tips. The primary audience is my current and future collaborators, but it should be useful to other people too. To prevent stating facts that are either obvious or irrelevant to my primary audience, most of these tips are based on subtle 'mistakes' by other researchers and grad students.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I have collaborated on LaTeX documents with many people.
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Eklavya's Blog - latex</title><link href="https://sharmaeklavya2.github.io/blog/" rel="alternate"></link><link href="https://sharmaeklavya2.github.io/blog/feed/latex.atom.xml" rel="self"></link><id>https://sharmaeklavya2.github.io/blog/</id><updated>2023-01-05T00:00:00+05:30</updated><entry><title>LaTeX tips</title><link href="https://sharmaeklavya2.github.io/blog/latex-tips.html" rel="alternate"></link><published>2022-11-13T00:00:00+05:30</published><updated>2023-01-05T00:00:00+05:30</updated><author><name>Eklavya Sharma</name></author><id>tag:sharmaeklavya2.github.io,2022-11-13:/blog/latex-tips.html</id><summary type="html">&lt;p&gt;This article lists LaTeX tips. The primary audience is my current and future collaborators, but it should be useful to other people too. To prevent stating facts that are either obvious or irrelevant to my primary audience, most of these tips are based on subtle 'mistakes' by other researchers and grad students.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I have collaborated on LaTeX documents with many people.
 Although it should be expected that each person has their own unique style,
 there are a few best practices which I recommend others to follow.
 In this article, I'll list some of these best practices.&lt;/p&gt;
@@ -13,9 +13,9 @@ I will add more tips and elaborate on existing ones.&lt;/span&gt;&lt;/p&gt;
 &lt;div class="toc"&gt;&lt;span class="toctitle"&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href="#general-tex-and-latex-best-practices"&gt;General TeX and LaTeX best practices&lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href="#always-include-hyperref"&gt;Always include hyperref&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#use-cleveref"&gt;Use cleveref&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#handle-the-warnings"&gt;Handle the warnings&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#supply-alt-text-in-section-titles"&gt;Supply alt-text in section titles&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#use-cleveref"&gt;Use cleveref&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#multi-file-projects-and-makefile"&gt;Multi-file projects and makefile&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -40,6 +40,8 @@ Most packages should be loaded before &lt;code&gt;hyperref&lt;/code&gt;.&lt;/p&g
 Some useful options:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;code&gt;bookmarksnumbered=true&lt;/code&gt;: Table of contents entries will be numbered.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;hypertexnames=false&lt;/code&gt;: To work around hyperref-related bugs in some packages.
+    Example: &lt;a href="https://tex.stackexchange.com/a/670742"&gt;https://tex.stackexchange.com/a/670742&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;hidelinks&lt;/code&gt; and &lt;code&gt;colorlinks&lt;/code&gt;: &lt;code&gt;hyperref&lt;/code&gt;'s default behavior is to box links.
     Instead, if you want to color the links, use &lt;code&gt;colorlinks&lt;/code&gt;.
     If you want to neither box nor color links, use &lt;code&gt;hidelinks&lt;/code&gt;.&lt;/li&gt;
@@ -51,6 +53,22 @@ Some useful options:&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;\hypersetup{bookmarksnumbered=true,colorlinks,linkcolor=red,citecolor=red,urlcolor=blue}
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
+&lt;h3 id="use-cleveref"&gt;Use cleveref&lt;a class="headerlink" href="#use-cleveref" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Always &lt;code&gt;\usepackage{cleveref}&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;cleveref&lt;/code&gt; allows you to write &lt;code&gt;\cref{lower-bound}&lt;/code&gt; instead of &lt;code&gt;Theorem \ref{lower-bound}&lt;/code&gt;,
+because &lt;code&gt;cleveref&lt;/code&gt; automatically detects which kind of thing you're referring to.
+If you ever decide to change a theorem to a lemma,
+you won't have to find and replace every &lt;code&gt;Theorem \ref{lower-bound}&lt;/code&gt; to &lt;code&gt;Lemma \ref{lower-bound}&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Official documentation: &lt;a href="https://mirrors.mit.edu/CTAN/macros/latex/contrib/cleveref/cleveref.pdf"&gt;&lt;code&gt;CTAN:cleveref&lt;/code&gt;&lt;/a&gt;.
+Useful options you may want to check out: &lt;code&gt;capitalize&lt;/code&gt;, &lt;code&gt;sort&lt;/code&gt;.
+Load &lt;code&gt;cleveref&lt;/code&gt; after &lt;code&gt;hyperref&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Name your references such that it's possible to know what kind of thing it is:
+theorem, definition, section, figure, etc.
+Preferably do this by using a prefix: &lt;code&gt;thm:&lt;/code&gt;, &lt;code&gt;defn:&lt;/code&gt;, &lt;code&gt;sec:&lt;/code&gt;, &lt;code&gt;fig:&lt;/code&gt;, etc.
+(e.g., &lt;code&gt;\label{thm:lower-bound}&lt;/code&gt; instead of &lt;code&gt;\label{lower-bound}&lt;/code&gt;).
+This makes it easier to know what is being referenced when reading the TeX source.
+Don't use different prefixes for theorems, lemmas, observations, claims;
+use &lt;code&gt;thm:&lt;/code&gt; for all of them (otherwise there's no point in using &lt;code&gt;cleveref&lt;/code&gt;).&lt;/p&gt;
 &lt;h3 id="handle-the-warnings"&gt;Handle the warnings&lt;a class="headerlink" href="#handle-the-warnings" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Please read the warnings that are generated by TeX/LaTeX.
 Most of them indicate something wrong with your document.&lt;/p&gt;
@@ -87,22 +105,6 @@ in \texorpdfstring{$n^{O_{\eps}(1)}$}{n\^{}(O\_eps(1))} time}
 are readable.&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;h3 id="use-cleveref"&gt;Use cleveref&lt;a class="headerlink" href="#use-cleveref" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Always &lt;code&gt;\usepackage{cleveref}&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;cleveref&lt;/code&gt; allows you to write &lt;code&gt;\cref{lower-bound}&lt;/code&gt; instead of &lt;code&gt;Theorem \ref{lower-bound}&lt;/code&gt;,
-because &lt;code&gt;cleveref&lt;/code&gt; automatically detects which kind of thing you're referring to.
-If you ever decide to change a theorem to a lemma,
-you won't have to find and replace every &lt;code&gt;Theorem \ref{lower-bound}&lt;/code&gt; to &lt;code&gt;Lemma \ref{lower-bound}&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Official documentation: &lt;a href="https://mirrors.mit.edu/CTAN/macros/latex/contrib/cleveref/cleveref.pdf"&gt;&lt;code&gt;CTAN:cleveref&lt;/code&gt;&lt;/a&gt;.
-Useful options you may want to check out: &lt;code&gt;capitalize&lt;/code&gt;, &lt;code&gt;sort&lt;/code&gt;.
-Load &lt;code&gt;cleveref&lt;/code&gt; after &lt;code&gt;hyperref&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Name your references such that it's possible to know what kind of thing it is:
-theorem, definition, section, figure, etc.
-Preferably do this by using a prefix: &lt;code&gt;thm:&lt;/code&gt;, &lt;code&gt;defn:&lt;/code&gt;, &lt;code&gt;sec:&lt;/code&gt;, &lt;code&gt;fig:&lt;/code&gt;, etc.
-(e.g., &lt;code&gt;\label{thm:lower-bound}&lt;/code&gt; instead of &lt;code&gt;\label{lower-bound}&lt;/code&gt;).
-This makes it easier to know what is being referenced when reading the TeX source.
-Don't use different prefixes for theorems, lemmas, observations, claims;
-use &lt;code&gt;thm:&lt;/code&gt; for all of them (otherwise there's no point in using &lt;code&gt;cleveref&lt;/code&gt;).&lt;/p&gt;
 &lt;h3 id="multi-file-projects-and-makefile"&gt;Multi-file projects and makefile&lt;a class="headerlink" href="#multi-file-projects-and-makefile" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Suppose your document is split into multiple files, where the top-level file is called &lt;code&gt;main.tex&lt;/code&gt;,
 and you &lt;code&gt;\input&lt;/code&gt; other files in &lt;code&gt;main.tex&lt;/code&gt;. When you use &lt;code&gt;pdflatex&lt;/code&gt; to compile &lt;code&gt;main.tex&lt;/code&gt;,
