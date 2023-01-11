@@ -60,8 +60,8 @@ enableNav();
 <span class="post-date">
 <svg class="icon"><use xlink:href="https://sharmaeklavya2.github.io/blog/theme/sprites.svg#fa-calendar-alt"/></svg>
 <time class="published outdated" datetime="2019-07-12T00:00:00+05:30">12 Jul 2019</time>
-<time class="modified" datetime="2020-06-21T00:00:00+05:30">
-21 Jun 2020</time>
+<time class="modified" datetime="2023-01-12T00:00:00+05:30">
+12 Jan 2023</time>
 </span>
 <span class="post-tags">
 <svg class="icon"><use xlink:href="https://sharmaeklavya2.github.io/blog/theme/sprites.svg#fa-tags"/></svg>
@@ -104,9 +104,9 @@ but you'll have to make major modifications to the instructions below.</p>
 </ul>
 </li>
 <li><a href="#install-command-line-programs">Install command-line programs</a><ul>
-<li><a href="#java">Java</a></li>
 <li><a href="#mactex">MacTex</a></li>
 <li><a href="#python-and-packages">Python and packages</a></li>
+<li><a href="#other-useful-programs">Other useful programs</a></li>
 </ul>
 </li>
 <li><a href="#transfer-backed-up-data">Transfer backed-up data</a><ul>
@@ -300,14 +300,10 @@ you can open multiple shells on the server on a single SSH session.</p>
 To prevent that from happening, add <code>export HOMEBREW_NO_AUTO_UPDATE=1</code>
 to <code>~/.bash_profile</code> or <code>~/.env</code>.</p>
 <h2 id="install-command-line-programs"><span style="background-color: rgba(0, 255, 102, 0.3)">Install command-line programs</span><a class="headerlink" href="#install-command-line-programs" title="Permanent link">&para;</a></h2>
-<h3 id="java">Java<a class="headerlink" href="#java" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code>brew install java
-</code></pre></div>
-
 <h3 id="mactex">MacTex<a class="headerlink" href="#mactex" title="Permanent link">&para;</a></h3>
 <p>MacTex is a suite of programs for typesetting documents using TeX and LaTeX.
 LaTeX is a great system for writing professional-looking mathematical documents.</p>
-<p>You can install MacTex using a GUI installer, but I did it using <code>brew cask install mactex</code>.</p>
+<p>You can install MacTex using a GUI installer, but I did it using <code>brew install --cask mactex</code>.</p>
 <h3 id="python-and-packages">Python and packages<a class="headerlink" href="#python-and-packages" title="Permanent link">&para;</a></h3>
 <p>macOS has Python 2 pre-installed, but we should use Python 3, since
 <a href="https://www.anaconda.com/end-of-life-eol-for-python-2-7-is-coming-are-you-ready/">Python 2 will reach EOL</a>
@@ -329,6 +325,22 @@ but some are useful enough that I installed them in the beginning:</p>
 <div class="codehilite"><pre><span></span><code>pip install numpy scipy pandas matplotlib seaborn sympy
 </code></pre></div>
 
+<h3 id="other-useful-programs">Other useful programs<a class="headerlink" href="#other-useful-programs" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Although git is provided by the Xcode command line tools,
+a more recent version can be obtained using <code>brew install git</code>.</li>
+<li>To be able to write and run Java programs, install openjdk: <code>brew install openjdk</code>.</li>
+<li>Node.js and npm: <code>brew install node</code>.</li>
+<li>Other useful programs that can be <code>brew install</code>ed:
+<a href="https://github.com/mookid/diffr/"><code>diffr</code></a>,
+<a href="https://linux.die.net/man/1/dos2unix"><code>dos2unix</code></a>,
+<a href="https://en.wikipedia.org/wiki/Htop"><code>htop</code></a>,
+<a href="https://github.com/hanslub42/rlwrap/"><code>rlwrap</code></a>,
+<a href="https://graphviz.org"><code>graphviz</code></a>,
+<a href="https://ffmpeg.org"><code>ffmpeg</code></a>,
+<a href="https://pandoc.org"><code>pandoc</code></a>,
+<a href="https://github.com/ytdl-org/youtube-dl/"><code>youtube-dl</code></a>.</li>
+</ul>
 <h2 id="transfer-backed-up-data"><span style="background-color: rgba(0, 136, 255, 0.3)">Transfer backed-up data</span><a class="headerlink" href="#transfer-backed-up-data" title="Permanent link">&para;</a></h2>
 <h3 id="reorganizing-data-and-backup">Reorganizing data and backup<a class="headerlink" href="#reorganizing-data-and-backup" title="Permanent link">&para;</a></h3>
 <p>There are many places where I store my files:</p>

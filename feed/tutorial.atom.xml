@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Eklavya's Blog - Tutorial</title><link href="https://sharmaeklavya2.github.io/blog/" rel="alternate"></link><link href="https://sharmaeklavya2.github.io/blog/feed/tutorial.atom.xml" rel="self"></link><id>https://sharmaeklavya2.github.io/blog/</id><updated>2021-09-06T00:00:00+05:30</updated><entry><title>The No-Brainer Dal Recipe</title><link href="https://sharmaeklavya2.github.io/blog/easy-dal.html" rel="alternate"></link><published>2021-09-06T00:00:00+05:30</published><updated>2021-09-06T00:00:00+05:30</updated><author><name>Eklavya Sharma</name></author><id>tag:sharmaeklavya2.github.io,2021-09-06:/blog/easy-dal.html</id><summary type="html">&lt;p&gt;This article gives a very simple recipe for cooking dal, invented by my mom. It's easier than the recipes I found on the internet, and easier than the recipes that my friends use. This recipe is great if you want to reduce the time you spend cooking or if you're new to cooking and want to start simple.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This article gives a very simple recipe for cooking dal, invented by my mom.
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Eklavya's Blog - Tutorial</title><link href="https://sharmaeklavya2.github.io/blog/" rel="alternate"></link><link href="https://sharmaeklavya2.github.io/blog/feed/tutorial.atom.xml" rel="self"></link><id>https://sharmaeklavya2.github.io/blog/</id><updated>2023-01-12T00:00:00+05:30</updated><entry><title>The No-Brainer Dal Recipe</title><link href="https://sharmaeklavya2.github.io/blog/easy-dal.html" rel="alternate"></link><published>2021-09-06T00:00:00+05:30</published><updated>2021-09-06T00:00:00+05:30</updated><author><name>Eklavya Sharma</name></author><id>tag:sharmaeklavya2.github.io,2021-09-06:/blog/easy-dal.html</id><summary type="html">&lt;p&gt;This article gives a very simple recipe for cooking dal, invented by my mom. It's easier than the recipes I found on the internet, and easier than the recipes that my friends use. This recipe is great if you want to reduce the time you spend cooking or if you're new to cooking and want to start simple.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This article gives a very simple recipe for cooking dal, invented by my mom.
 It's easier than the recipes I found on the internet,
 and easier than the recipes that my friends use.
 This recipe is great if you want to reduce the time you spend cooking
@@ -151,7 +151,7 @@ and that's fixed to the boiling point of water.
 If you increase the stove's heat, the food will still take the same time to cook;
 the extra thermal energy will just be used to convert water to steam, i.e., wasted.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Credits&lt;/strong&gt;: Thanks mom for this awesome recipe!
-Thanks &lt;a href="https://tanvibajpai.com"&gt;Tanvi Bajpai&lt;/a&gt; for suggesting a good title.&lt;/p&gt;</content><category term="posts"></category><category term="Cooking"></category><category term="Tutorial"></category></entry><entry><title>A Comprehensive Guide to Customizing your MacBook</title><link href="https://sharmaeklavya2.github.io/blog/customize-macos.html" rel="alternate"></link><published>2019-07-12T00:00:00+05:30</published><updated>2020-06-21T00:00:00+05:30</updated><author><name>Eklavya Sharma</name></author><id>tag:sharmaeklavya2.github.io,2019-07-12:/blog/customize-macos.html</id><summary type="html">&lt;p&gt;This post contains a list of all the things I did to customize my MacBook. Most instructions here are useful only for programmers and power users.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I recently got a new laptop - a MacBook Air!
+Thanks &lt;a href="https://tanvibajpai.com"&gt;Tanvi Bajpai&lt;/a&gt; for suggesting a good title.&lt;/p&gt;</content><category term="posts"></category><category term="Cooking"></category><category term="Tutorial"></category></entry><entry><title>A Comprehensive Guide to Customizing your MacBook</title><link href="https://sharmaeklavya2.github.io/blog/customize-macos.html" rel="alternate"></link><published>2019-07-12T00:00:00+05:30</published><updated>2023-01-12T00:00:00+05:30</updated><author><name>Eklavya Sharma</name></author><id>tag:sharmaeklavya2.github.io,2019-07-12:/blog/customize-macos.html</id><summary type="html">&lt;p&gt;This post contains a list of all the things I did to customize my MacBook. Most instructions here are useful only for programmers and power users.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I recently got a new laptop - a MacBook Air!
 I customized it so that it's easy for me to use.
 Major changes include:&lt;/p&gt;
 &lt;ul&gt;
@@ -184,9 +184,9 @@ but you'll have to make major modifications to the instructions below.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href="#install-command-line-programs"&gt;Install command-line programs&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="#java"&gt;Java&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#mactex"&gt;MacTex&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#python-and-packages"&gt;Python and packages&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#other-useful-programs"&gt;Other useful programs&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href="#transfer-backed-up-data"&gt;Transfer backed-up data&lt;/a&gt;&lt;ul&gt;
@@ -380,14 +380,10 @@ you can open multiple shells on the server on a single SSH session.&lt;/p&gt;
 To prevent that from happening, add &lt;code&gt;export HOMEBREW_NO_AUTO_UPDATE=1&lt;/code&gt;
 to &lt;code&gt;~/.bash_profile&lt;/code&gt; or &lt;code&gt;~/.env&lt;/code&gt;.&lt;/p&gt;
 &lt;h2 id="install-command-line-programs"&gt;&lt;span style="background-color: rgba(0, 255, 102, 0.3)"&gt;Install command-line programs&lt;/span&gt;&lt;a class="headerlink" href="#install-command-line-programs" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;h3 id="java"&gt;Java&lt;a class="headerlink" href="#java" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;brew install java
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 &lt;h3 id="mactex"&gt;MacTex&lt;a class="headerlink" href="#mactex" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;MacTex is a suite of programs for typesetting documents using TeX and LaTeX.
 LaTeX is a great system for writing professional-looking mathematical documents.&lt;/p&gt;
-&lt;p&gt;You can install MacTex using a GUI installer, but I did it using &lt;code&gt;brew cask install mactex&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;You can install MacTex using a GUI installer, but I did it using &lt;code&gt;brew install --cask mactex&lt;/code&gt;.&lt;/p&gt;
 &lt;h3 id="python-and-packages"&gt;Python and packages&lt;a class="headerlink" href="#python-and-packages" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;macOS has Python 2 pre-installed, but we should use Python 3, since
 &lt;a href="https://www.anaconda.com/end-of-life-eol-for-python-2-7-is-coming-are-you-ready/"&gt;Python 2 will reach EOL&lt;/a&gt;
@@ -409,6 +405,22 @@ but some are useful enough that I installed them in the beginning:&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pip install numpy scipy pandas matplotlib seaborn sympy
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
+&lt;h3 id="other-useful-programs"&gt;Other useful programs&lt;a class="headerlink" href="#other-useful-programs" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Although git is provided by the Xcode command line tools,
+a more recent version can be obtained using &lt;code&gt;brew install git&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;To be able to write and run Java programs, install openjdk: &lt;code&gt;brew install openjdk&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Node.js and npm: &lt;code&gt;brew install node&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Other useful programs that can be &lt;code&gt;brew install&lt;/code&gt;ed:
+&lt;a href="https://github.com/mookid/diffr/"&gt;&lt;code&gt;diffr&lt;/code&gt;&lt;/a&gt;,
+&lt;a href="https://linux.die.net/man/1/dos2unix"&gt;&lt;code&gt;dos2unix&lt;/code&gt;&lt;/a&gt;,
+&lt;a href="https://en.wikipedia.org/wiki/Htop"&gt;&lt;code&gt;htop&lt;/code&gt;&lt;/a&gt;,
+&lt;a href="https://github.com/hanslub42/rlwrap/"&gt;&lt;code&gt;rlwrap&lt;/code&gt;&lt;/a&gt;,
+&lt;a href="https://graphviz.org"&gt;&lt;code&gt;graphviz&lt;/code&gt;&lt;/a&gt;,
+&lt;a href="https://ffmpeg.org"&gt;&lt;code&gt;ffmpeg&lt;/code&gt;&lt;/a&gt;,
+&lt;a href="https://pandoc.org"&gt;&lt;code&gt;pandoc&lt;/code&gt;&lt;/a&gt;,
+&lt;a href="https://github.com/ytdl-org/youtube-dl/"&gt;&lt;code&gt;youtube-dl&lt;/code&gt;&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id="transfer-backed-up-data"&gt;&lt;span style="background-color: rgba(0, 136, 255, 0.3)"&gt;Transfer backed-up data&lt;/span&gt;&lt;a class="headerlink" href="#transfer-backed-up-data" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;h3 id="reorganizing-data-and-backup"&gt;Reorganizing data and backup&lt;a class="headerlink" href="#reorganizing-data-and-backup" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;There are many places where I store my files:&lt;/p&gt;
