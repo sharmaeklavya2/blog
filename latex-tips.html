@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet" href="https://sharmaeklavya2.github.io/blog/theme/base.css" />
 <meta name="color-scheme" content="light dark" />
-<meta name="description" content="This article lists LaTeX tips. The primary audience is my current and future collaborators, but it should be useful to other people too. To prevent stating facts that are either obvious or irrelevant to my primary audience, most of these tips are based on subtle 'mistakes' by other researchers and grad students." />
+<meta name="description" content="This article lists LaTeX tips. The primary audience is my current and future collaborators, but it should be useful to other people too. To prevent stating facts that are either obvious or irrelevant to my primary audience, most of these tips are based on subtle 'mistakes' by other researchers and students." />
 <meta name="keywords" content="latex" />
 <script type="text/javascript">
 function enableNav() {
@@ -60,8 +60,8 @@ enableNav();
 <span class="post-date">
 <svg class="icon"><use xlink:href="https://sharmaeklavya2.github.io/blog/theme/sprites.svg#fa-calendar-alt"/></svg>
 <time class="published outdated" datetime="2022-11-13T00:00:00+05:30">13 Nov 2022</time>
-<time class="modified" datetime="2023-01-05T00:00:00+05:30">
-05 Jan 2023</time>
+<time class="modified" datetime="2023-01-12T00:00:00+05:30">
+12 Jan 2023</time>
 </span>
 <span class="post-tags">
 <svg class="icon"><use xlink:href="https://sharmaeklavya2.github.io/blog/theme/sprites.svg#fa-tags"/></svg>
@@ -71,14 +71,11 @@ enableNav();
 </span>
 </span>
 <div class="entry-content">
-<p>I have collaborated on LaTeX documents with many people.
-Although it should be expected that each person has their own unique style,
-there are a few best practices which I recommend others to follow.
-In this article, I'll list some of these best practices.</p>
+<p>In this article, I'll list tips for making LaTeX documents better and easing collaboration.</p>
 <p>The primary audience of this article are my current and future collaborators,
 but it should be useful to other LaTeX users too, mostly other academics.
 To prevent these tips from being obvious or irrelevant to my primary audience,
-most of them are either based on subtle 'mistakes' by other researchers and grad students,
+most of them are either based on subtle 'mistakes' by other researchers and students,
 or are tricks I discovered/invented to ease collaboration.</p>
 <p><span class="danger">This article is an incomplete draft.
 I will add more tips and elaborate on existing ones.</span></p>
@@ -86,6 +83,8 @@ I will add more tips and elaborate on existing ones.</span></p>
 <li><a href="#general-tex-and-latex-best-practices">General TeX and LaTeX best practices</a><ul>
 <li><a href="#always-include-hyperref">Always include hyperref</a></li>
 <li><a href="#use-cleveref">Use cleveref</a></li>
+<li><a href="#do-not-use-obsolete-commands">Do not use obsolete commands</a></li>
+<li><a href="#dont-repeat-yourself">Don't repeat yourself</a></li>
 <li><a href="#handle-the-warnings">Handle the warnings</a></li>
 <li><a href="#supply-alt-text-in-section-titles">Supply alt-text in section titles</a></li>
 <li><a href="#multi-file-projects-and-makefile">Multi-file projects and makefile</a></li>
@@ -136,7 +135,7 @@ Some useful options:</p>
 because <code>cleveref</code> automatically detects which kind of thing you're referring to.
 If you ever decide to change a theorem to a lemma,
 you won't have to find and replace every <code>Theorem \ref{lower-bound}</code> to <code>Lemma \ref{lower-bound}</code>.</p>
-<p>Official documentation: <a href="https://mirrors.mit.edu/CTAN/macros/latex/contrib/cleveref/cleveref.pdf"><code>CTAN:cleveref</code></a>.
+<p>Official documentation: <a href="https://mirrors.ctan.org/macros/latex/contrib/cleveref/cleveref.pdf"><code>CTAN:cleveref</code></a>.
 Useful options you may want to check out: <code>capitalize</code>, <code>sort</code>.
 Load <code>cleveref</code> after <code>hyperref</code>.</p>
 <p>Name your references such that it's possible to know what kind of thing it is:
@@ -146,6 +145,34 @@ Preferably do this by using a prefix: <code>thm:</code>, <code>defn:</code>, <co
 This makes it easier to know what is being referenced when reading the TeX source.
 Don't use different prefixes for theorems, lemmas, observations, claims;
 use <code>thm:</code> for all of them (otherwise there's no point in using <code>cleveref</code>).</p>
+<h3 id="do-not-use-obsolete-commands">Do not use obsolete commands<a class="headerlink" href="#do-not-use-obsolete-commands" title="Permanent link">&para;</a></h3>
+<p><a href="http://mirrors.ctan.org/info/l2tabu/english/l2tabuen.pdf">l2tabuen.pdf</a>
+lists obsolete commands and their newer alternatives. These are the most important ones:</p>
+<ul>
+<li>Use <code>\[ … \]</code> instead of <code>$$ … $$</code>.</li>
+<li>Use <code>\frac</code> instead of <code>\over</code>.</li>
+</ul>
+<h3 id="dont-repeat-yourself">Don't repeat yourself<a class="headerlink" href="#dont-repeat-yourself" title="Permanent link">&para;</a></h3>
+<p>If you ever find yourself writing the same paragraph/theorem/definition twice,
+it means you're repeating yourself. Repetition is bad and should be avoided, because</p>
+<ol>
+<li>You'll have to keep the copies in sync. If you make a change at one place
+    and forget to make it at other places, the copies will become inconsistent.</li>
+<li>Why would you say something that you've already said?</li>
+</ol>
+<p>But sometimes there may be a good reason to repeat yourself.
+Perhaps you're writing a long document and the reader may have forgotten things you said earlier.
+But even then, there are ways of repeating yourself where you just say something
+once in your TeX document and have it automatically appear at multiple places in your PDF document.
+This would save you from accidentally creating inconsistent copies.</p>
+<ol>
+<li>To restate theorems, definitions, examples, etc.,
+    use the <code>restatable</code> environment from the <code>thm-restate</code> package.
+    For more details, see <a href="https://tex.stackexchange.com/q/51286">https://tex.stackexchange.com/q/51286</a>
+    or Section 1.4 of <a href="http://mirrors.ctan.org/macros/latex/contrib/thmtools/doc/thmtools-manual.pdf">thmtools-manual.pdf</a>.</li>
+<li>Define a piece of text as a macro and then call it multiple times.</li>
+<li>Write something in a file and <code>\input</code> that file at multiple places.</li>
+</ol>
 <h3 id="handle-the-warnings">Handle the warnings<a class="headerlink" href="#handle-the-warnings" title="Permanent link">&para;</a></h3>
 <p>Please read the warnings that are generated by TeX/LaTeX.
 Most of them indicate something wrong with your document.</p>
@@ -333,7 +360,7 @@ make them move by screen lines instead of source lines.</li>
 <p>Trailing whitespace is when a line of text ends with a space,
 or when a file ends with multiple newline characters.
 Avoid trailing whitespaces.
-Git and some text editors mark them as warnings during <code>git diff</code>.</p>
+<code>git diff</code> and some text editors mark them as warnings.</p>
 <h3 id="online-collaboration-tools">Online collaboration tools<a class="headerlink" href="#online-collaboration-tools" title="Permanent link">&para;</a></h3>
 <h4 id="overleaf">Overleaf<a class="headerlink" href="#overleaf" title="Permanent link">&para;</a></h4>
 <p>Overleaf is an online editor that allows multiple people to edit a LaTeX document simultaneously.
