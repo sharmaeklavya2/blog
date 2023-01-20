@@ -28,6 +28,7 @@ or are tricks I discovered/invented to ease collaboration.&lt;/p&gt;
 &lt;li&gt;&lt;a href="#online-collaboration-tools"&gt;Online collaboration tools&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
+&lt;li&gt;&lt;a href="#references"&gt;References&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;h2 id="general-tex-and-latex-best-practices"&gt;General TeX and LaTeX best practices&lt;a class="headerlink" href="#general-tex-and-latex-best-practices" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
@@ -37,7 +38,8 @@ It won't affect what your document looks like when you print it on paper,
 but it will improve the digital reading experience,
 like making references clickable and adding a table of contents.&lt;/p&gt;
 &lt;p&gt;The order in which you load packages matters.
-Most packages should be loaded before &lt;code&gt;hyperref&lt;/code&gt;.&lt;/p&gt;
+Most packages should be loaded before &lt;code&gt;hyperref&lt;/code&gt;&lt;sup&gt;&lt;a href="#cite-freek-pc"&gt;[1]&lt;/a&gt;&lt;/sup&gt;
+(&lt;code&gt;cleveref&lt;/code&gt;, &lt;code&gt;algorithm&lt;/code&gt;, and &lt;code&gt;algpseudocode&lt;/code&gt; are the only exceptions I'm aware of).&lt;/p&gt;
 &lt;p&gt;You can pass several options to hyperref either while loading the package
 (&lt;code&gt;usepackage[options]{hyperref}&lt;/code&gt;) or later (&lt;code&gt;\hypersetup{options}&lt;/code&gt;).
 Some useful options:&lt;/p&gt;
@@ -326,7 +328,19 @@ the shared Dropbox folder into my working directory, and then I commit those cha
 Then I continue working on my git repository as usual.
 When I need to push, I use &lt;code&gt;rsync&lt;/code&gt; to copy my working directory to the shared Dropbox folder
 (I first check diffs to ensure that I'm not overwriting others' work).
-This way, I partially get the benefits of git and my collaborators don't even need to know about it.&lt;/p&gt;</content><category term="posts"></category><category term="latex"></category></entry><entry><title>Weird dream 2</title><link href="https://sharmaeklavya2.github.io/blog/dream2.html" rel="alternate"></link><published>2022-08-06T00:00:00+05:30</published><updated>2022-08-06T00:00:00+05:30</updated><author><name>Eklavya Sharma</name></author><id>tag:sharmaeklavya2.github.io,2022-08-06:/blog/dream2.html</id><summary type="html"></summary><content type="html">&lt;p&gt;I had a weird 2-part dream today.
+This way, I partially get the benefits of git and my collaborators don't even need to know about it.&lt;/p&gt;
+&lt;h2 id="references"&gt;References&lt;a class="headerlink" href="#references" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li class="citation" id="cite-freek-pc"&gt;
+&lt;!--&lt;span class="cite-name"&gt;freek-pc&lt;/span&gt;&lt;br&gt;--&gt;
+&lt;span class="cite-authors"&gt;Freek Dijkstra.&lt;/span&gt;
+&lt;cite class="cite-title"&gt;
+&lt;a href="http://www.math.ucsd.edu/~fan/ron/papers/04_05_juggling.pdf"&gt;
+&lt;a href="http://www.macfreek.nl/memory/LaTeX_package_conflicts"&gt;
+LaTeX package conflicts.&lt;/a&gt;&lt;/cite&gt;&lt;br&gt;
+&lt;!--&lt;span class="cite-source"&gt;&lt;/span&gt;--&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</content><category term="posts"></category><category term="latex"></category></entry><entry><title>Weird dream 2</title><link href="https://sharmaeklavya2.github.io/blog/dream2.html" rel="alternate"></link><published>2022-08-06T00:00:00+05:30</published><updated>2022-08-06T00:00:00+05:30</updated><author><name>Eklavya Sharma</name></author><id>tag:sharmaeklavya2.github.io,2022-08-06:/blog/dream2.html</id><summary type="html"></summary><content type="html">&lt;p&gt;I had a weird 2-part dream today.
 The two parts were happening kind-of parallely,
 but I'll narrate them sequentially for clarity.&lt;/p&gt;
 &lt;h2 id="part-1"&gt;Part 1&lt;a class="headerlink" href="#part-1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
