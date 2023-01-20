@@ -60,8 +60,8 @@ enableNav();
 <span class="post-date">
 <svg class="icon"><use xlink:href="https://sharmaeklavya2.github.io/blog/theme/sprites.svg#fa-calendar-alt"/></svg>
 <time class="published outdated" datetime="2022-11-13T00:00:00+05:30">13 Nov 2022</time>
-<time class="modified" datetime="2023-01-19T00:00:00+05:30">
-19 Jan 2023</time>
+<time class="modified" datetime="2023-01-20T00:00:00+05:30">
+20 Jan 2023</time>
 </span>
 <span class="post-tags">
 <svg class="icon"><use xlink:href="https://sharmaeklavya2.github.io/blog/theme/sprites.svg#fa-tags"/></svg>
@@ -81,7 +81,7 @@ or are tricks I discovered/invented to ease collaboration.</p>
 <div class="toc"><span class="toctitle">Table of Contents</span><ul>
 <li><a href="#general-tex-and-latex-best-practices">General TeX and LaTeX best practices</a><ul>
 <li><a href="#always-include-hyperref">Always include hyperref</a></li>
-<li><a href="#use-cleveref">Use cleveref</a></li>
+<li><a href="#use-cleveref-or-autoref">Use cleveref or autoref</a></li>
 <li><a href="#do-not-use-obsolete-commands">Do not use obsolete commands</a></li>
 <li><a href="#dont-repeat-yourself">Don't repeat yourself</a></li>
 <li><a href="#handle-the-warnings">Handle the warnings</a></li>
@@ -100,6 +100,7 @@ or are tricks I discovered/invented to ease collaboration.</p>
 <li><a href="#online-collaboration-tools">Online collaboration tools</a></li>
 </ul>
 </li>
+<li><a href="#acknowlegements">Acknowlegements</a></li>
 <li><a href="#references">References</a></li>
 </ul>
 </div>
@@ -130,8 +131,9 @@ Some useful options:</p>
 <div class="codehilite"><pre><span></span><code>\hypersetup{bookmarksnumbered=true,colorlinks,linkcolor=red,citecolor=red,urlcolor=blue}
 </code></pre></div>
 
-<h3 id="use-cleveref">Use cleveref<a class="headerlink" href="#use-cleveref" title="Permanent link">&para;</a></h3>
-<p>Always <code>\usepackage{cleveref}</code>.</p>
+<h3 id="use-cleveref-or-autoref">Use cleveref or autoref<a class="headerlink" href="#use-cleveref-or-autoref" title="Permanent link">&para;</a></h3>
+<p>Instead of <code>\ref</code>, use <code>\cref</code> from the cleveref package,
+or use <code>\autoref</code> from the hyperref package.</p>
 <p><code>cleveref</code> allows you to write <code>\cref{lower-bound}</code> instead of <code>Theorem \ref{lower-bound}</code>,
 because <code>cleveref</code> automatically detects which kind of thing you're referring to.
 If you ever decide to change a theorem to a lemma,
@@ -146,6 +148,18 @@ Preferably do this by using a prefix: <code>thm:</code>, <code>defn:</code>, <co
 This makes it easier to know what is being referenced when reading the TeX source.
 Don't use different prefixes for theorems, lemmas, observations, claims;
 use <code>thm:</code> for all of them (otherwise there's no point in using <code>cleveref</code>).</p>
+<p><code>\autoref</code> is almost the same as <code>\cref</code>.
+These are the main differences that I found:</p>
+<ul>
+<li>In <code>\cref</code> we can pass multiple comma-separated labels,
+    e.g., <code>\cref{thm:lower-bound,thm:upper-bound}</code> outputs 'Theorems 1 and 2'
+    (or 'Theorem 1 and Lemma 2', if <code>thm:upper-bound</code> is a Lemma).
+    <code>\autoref</code> doesn't support this.</li>
+<li>Capitalization can be controlled in <code>cleveref</code> using the <code>capitalize</code> option or the <code>\Cref</code> command.
+    With <code>\autoref</code>, some entities are capitalized and some are not.
+    The defaults can be overriden by defining <code>\&lt;entity&gt;autorefname</code>-style commands (see section 6 of the
+    <a href="http://mirrors.ctan.org/macros/latex/contrib/hyperref/doc/hyperref-doc.pdf">hyperref manual</a> for details).</li>
+</ul>
 <h3 id="do-not-use-obsolete-commands">Do not use obsolete commands<a class="headerlink" href="#do-not-use-obsolete-commands" title="Permanent link">&para;</a></h3>
 <p><a href="http://mirrors.ctan.org/info/l2tabu/english/l2tabuen.pdf">l2tabuen.pdf</a>
 lists obsolete commands and their newer alternatives. These are the most important ones:</p>
@@ -401,16 +415,21 @@ Then I continue working on my git repository as usual.
 When I need to push, I use <code>rsync</code> to copy my working directory to the shared Dropbox folder
 (I first check diffs to ensure that I'm not overwriting others' work).
 This way, I partially get the benefits of git and my collaborators don't even need to know about it.</p>
+<h2 id="acknowlegements">Acknowlegements<a class="headerlink" href="#acknowlegements" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://www.csa.iisc.ac.in/~arindamkhan/">Prof. Arindam Khan</a>, my masters advisor,
+told me about cleveref.</li>
+<li><a href="http://rgandre2.web.engr.illinois.edu">Robert Andrews</a> told me about <code>\autoref</code>.</li>
+</ul>
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
 <ol>
 <li class="citation" id="cite-freek-pc">
 <!--<span class="cite-name">freek-pc</span><br>-->
 <span class="cite-authors">Freek Dijkstra.</span>
 <cite class="cite-title">
-<a href="http://www.math.ucsd.edu/~fan/ron/papers/04_05_juggling.pdf">
 <a href="http://www.macfreek.nl/memory/LaTeX_package_conflicts">
-LaTeX package conflicts.</a></cite><br>
-<!--<span class="cite-source"></span>-->
+LaTeX package conflicts.</a></cite>
+<!--<br><span class="cite-source"></span>-->
 </li>
 </ol>
 </div>

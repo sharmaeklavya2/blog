@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Eklavya's Blog - latex</title><link href="https://sharmaeklavya2.github.io/blog/" rel="alternate"></link><link href="https://sharmaeklavya2.github.io/blog/feed/latex.atom.xml" rel="self"></link><id>https://sharmaeklavya2.github.io/blog/</id><updated>2023-01-19T00:00:00+05:30</updated><entry><title>LaTeX tips</title><link href="https://sharmaeklavya2.github.io/blog/latex-tips.html" rel="alternate"></link><published>2022-11-13T00:00:00+05:30</published><updated>2023-01-19T00:00:00+05:30</updated><author><name>Eklavya Sharma</name></author><id>tag:sharmaeklavya2.github.io,2022-11-13:/blog/latex-tips.html</id><summary type="html">&lt;p&gt;This article lists LaTeX tips. The primary audience is my current and future collaborators, but it should be useful to other people too. To prevent stating facts that are either obvious or irrelevant to my primary audience, most of these tips are based on subtle 'mistakes' by other researchers and students.&lt;/p&gt;</summary><content type="html">&lt;p&gt;In this article, I'll list tips for making LaTeX documents better and easing collaboration.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Eklavya's Blog - latex</title><link href="https://sharmaeklavya2.github.io/blog/" rel="alternate"></link><link href="https://sharmaeklavya2.github.io/blog/feed/latex.atom.xml" rel="self"></link><id>https://sharmaeklavya2.github.io/blog/</id><updated>2023-01-20T00:00:00+05:30</updated><entry><title>LaTeX tips</title><link href="https://sharmaeklavya2.github.io/blog/latex-tips.html" rel="alternate"></link><published>2022-11-13T00:00:00+05:30</published><updated>2023-01-20T00:00:00+05:30</updated><author><name>Eklavya Sharma</name></author><id>tag:sharmaeklavya2.github.io,2022-11-13:/blog/latex-tips.html</id><summary type="html">&lt;p&gt;This article lists LaTeX tips. The primary audience is my current and future collaborators, but it should be useful to other people too. To prevent stating facts that are either obvious or irrelevant to my primary audience, most of these tips are based on subtle 'mistakes' by other researchers and students.&lt;/p&gt;</summary><content type="html">&lt;p&gt;In this article, I'll list tips for making LaTeX documents better and easing collaboration.&lt;/p&gt;
 &lt;p&gt;The target audience of this article is academic researchers
 who write math-heavy papers using LaTeX.
 I don't want to offer tips that are either obvious or irrelevant,
@@ -9,7 +9,7 @@ or are tricks I discovered/invented to ease collaboration.&lt;/p&gt;
 &lt;div class="toc"&gt;&lt;span class="toctitle"&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href="#general-tex-and-latex-best-practices"&gt;General TeX and LaTeX best practices&lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href="#always-include-hyperref"&gt;Always include hyperref&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#use-cleveref"&gt;Use cleveref&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#use-cleveref-or-autoref"&gt;Use cleveref or autoref&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#do-not-use-obsolete-commands"&gt;Do not use obsolete commands&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#dont-repeat-yourself"&gt;Don't repeat yourself&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#handle-the-warnings"&gt;Handle the warnings&lt;/a&gt;&lt;/li&gt;
@@ -28,6 +28,7 @@ or are tricks I discovered/invented to ease collaboration.&lt;/p&gt;
 &lt;li&gt;&lt;a href="#online-collaboration-tools"&gt;Online collaboration tools&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
+&lt;li&gt;&lt;a href="#acknowlegements"&gt;Acknowlegements&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#references"&gt;References&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
@@ -58,8 +59,9 @@ Some useful options:&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;\hypersetup{bookmarksnumbered=true,colorlinks,linkcolor=red,citecolor=red,urlcolor=blue}
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h3 id="use-cleveref"&gt;Use cleveref&lt;a class="headerlink" href="#use-cleveref" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Always &lt;code&gt;\usepackage{cleveref}&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id="use-cleveref-or-autoref"&gt;Use cleveref or autoref&lt;a class="headerlink" href="#use-cleveref-or-autoref" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Instead of &lt;code&gt;\ref&lt;/code&gt;, use &lt;code&gt;\cref&lt;/code&gt; from the cleveref package,
+or use &lt;code&gt;\autoref&lt;/code&gt; from the hyperref package.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;cleveref&lt;/code&gt; allows you to write &lt;code&gt;\cref{lower-bound}&lt;/code&gt; instead of &lt;code&gt;Theorem \ref{lower-bound}&lt;/code&gt;,
 because &lt;code&gt;cleveref&lt;/code&gt; automatically detects which kind of thing you're referring to.
 If you ever decide to change a theorem to a lemma,
@@ -74,6 +76,18 @@ Preferably do this by using a prefix: &lt;code&gt;thm:&lt;/code&gt;, &lt;code&gt
 This makes it easier to know what is being referenced when reading the TeX source.
 Don't use different prefixes for theorems, lemmas, observations, claims;
 use &lt;code&gt;thm:&lt;/code&gt; for all of them (otherwise there's no point in using &lt;code&gt;cleveref&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;\autoref&lt;/code&gt; is almost the same as &lt;code&gt;\cref&lt;/code&gt;.
+These are the main differences that I found:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;In &lt;code&gt;\cref&lt;/code&gt; we can pass multiple comma-separated labels,
+    e.g., &lt;code&gt;\cref{thm:lower-bound,thm:upper-bound}&lt;/code&gt; outputs 'Theorems 1 and 2'
+    (or 'Theorem 1 and Lemma 2', if &lt;code&gt;thm:upper-bound&lt;/code&gt; is a Lemma).
+    &lt;code&gt;\autoref&lt;/code&gt; doesn't support this.&lt;/li&gt;
+&lt;li&gt;Capitalization can be controlled in &lt;code&gt;cleveref&lt;/code&gt; using the &lt;code&gt;capitalize&lt;/code&gt; option or the &lt;code&gt;\Cref&lt;/code&gt; command.
+    With &lt;code&gt;\autoref&lt;/code&gt;, some entities are capitalized and some are not.
+    The defaults can be overriden by defining &lt;code&gt;\&amp;lt;entity&amp;gt;autorefname&lt;/code&gt;-style commands (see section 6 of the
+    &lt;a href="http://mirrors.ctan.org/macros/latex/contrib/hyperref/doc/hyperref-doc.pdf"&gt;hyperref manual&lt;/a&gt; for details).&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3 id="do-not-use-obsolete-commands"&gt;Do not use obsolete commands&lt;a class="headerlink" href="#do-not-use-obsolete-commands" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;&lt;a href="http://mirrors.ctan.org/info/l2tabu/english/l2tabuen.pdf"&gt;l2tabuen.pdf&lt;/a&gt;
 lists obsolete commands and their newer alternatives. These are the most important ones:&lt;/p&gt;
@@ -329,15 +343,20 @@ Then I continue working on my git repository as usual.
 When I need to push, I use &lt;code&gt;rsync&lt;/code&gt; to copy my working directory to the shared Dropbox folder
 (I first check diffs to ensure that I'm not overwriting others' work).
 This way, I partially get the benefits of git and my collaborators don't even need to know about it.&lt;/p&gt;
+&lt;h2 id="acknowlegements"&gt;Acknowlegements&lt;a class="headerlink" href="#acknowlegements" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.csa.iisc.ac.in/~arindamkhan/"&gt;Prof. Arindam Khan&lt;/a&gt;, my masters advisor,
+told me about cleveref.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://rgandre2.web.engr.illinois.edu"&gt;Robert Andrews&lt;/a&gt; told me about &lt;code&gt;\autoref&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id="references"&gt;References&lt;a class="headerlink" href="#references" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li class="citation" id="cite-freek-pc"&gt;
 &lt;!--&lt;span class="cite-name"&gt;freek-pc&lt;/span&gt;&lt;br&gt;--&gt;
 &lt;span class="cite-authors"&gt;Freek Dijkstra.&lt;/span&gt;
 &lt;cite class="cite-title"&gt;
-&lt;a href="http://www.math.ucsd.edu/~fan/ron/papers/04_05_juggling.pdf"&gt;
 &lt;a href="http://www.macfreek.nl/memory/LaTeX_package_conflicts"&gt;
-LaTeX package conflicts.&lt;/a&gt;&lt;/cite&gt;&lt;br&gt;
-&lt;!--&lt;span class="cite-source"&gt;&lt;/span&gt;--&gt;
+LaTeX package conflicts.&lt;/a&gt;&lt;/cite&gt;
+&lt;!--&lt;br&gt;&lt;span class="cite-source"&gt;&lt;/span&gt;--&gt;
 &lt;/li&gt;
 &lt;/ol&gt;</content><category term="posts"></category><category term="latex"></category></entry></feed>
