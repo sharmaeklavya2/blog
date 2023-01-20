@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Eklavya's Blog - latex</title><link href="https://sharmaeklavya2.github.io/blog/" rel="alternate"></link><link href="https://sharmaeklavya2.github.io/blog/feed/latex.atom.xml" rel="self"></link><id>https://sharmaeklavya2.github.io/blog/</id><updated>2023-01-16T00:00:00+05:30</updated><entry><title>LaTeX tips</title><link href="https://sharmaeklavya2.github.io/blog/latex-tips.html" rel="alternate"></link><published>2022-11-13T00:00:00+05:30</published><updated>2023-01-16T00:00:00+05:30</updated><author><name>Eklavya Sharma</name></author><id>tag:sharmaeklavya2.github.io,2022-11-13:/blog/latex-tips.html</id><summary type="html">&lt;p&gt;This article lists LaTeX tips. The primary audience is my current and future collaborators, but it should be useful to other people too. To prevent stating facts that are either obvious or irrelevant to my primary audience, most of these tips are based on subtle 'mistakes' by other researchers and students.&lt;/p&gt;</summary><content type="html">&lt;p&gt;In this article, I'll list tips for making LaTeX documents better and easing collaboration.&lt;/p&gt;
-&lt;p&gt;The primary audience of this article are my current and future collaborators,
-but it should be useful to other LaTeX users too, mostly other academics.
-To prevent these tips from being obvious or irrelevant to my primary audience,
-most of them are either based on subtle 'mistakes' by other researchers and students,
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Eklavya's Blog - latex</title><link href="https://sharmaeklavya2.github.io/blog/" rel="alternate"></link><link href="https://sharmaeklavya2.github.io/blog/feed/latex.atom.xml" rel="self"></link><id>https://sharmaeklavya2.github.io/blog/</id><updated>2023-01-19T00:00:00+05:30</updated><entry><title>LaTeX tips</title><link href="https://sharmaeklavya2.github.io/blog/latex-tips.html" rel="alternate"></link><published>2022-11-13T00:00:00+05:30</published><updated>2023-01-19T00:00:00+05:30</updated><author><name>Eklavya Sharma</name></author><id>tag:sharmaeklavya2.github.io,2022-11-13:/blog/latex-tips.html</id><summary type="html">&lt;p&gt;This article lists LaTeX tips. The primary audience is my current and future collaborators, but it should be useful to other people too. To prevent stating facts that are either obvious or irrelevant to my primary audience, most of these tips are based on subtle 'mistakes' by other researchers and students.&lt;/p&gt;</summary><content type="html">&lt;p&gt;In this article, I'll list tips for making LaTeX documents better and easing collaboration.&lt;/p&gt;
+&lt;p&gt;The target audience of this article is academic researchers
+who write math-heavy papers using LaTeX.
+I don't want to offer tips that are either obvious or irrelevant,
+so most of these tips are either based on subtle 'mistakes' by other researchers and students,
+mistakes by me pointed out by my collaborators (thanks!),
 or are tricks I discovered/invented to ease collaboration.&lt;/p&gt;
 &lt;div class="toc"&gt;&lt;span class="toctitle"&gt;Table of Contents&lt;/span&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href="#general-tex-and-latex-best-practices"&gt;General TeX and LaTeX best practices&lt;/a&gt;&lt;ul&gt;
@@ -17,7 +18,7 @@ or are tricks I discovered/invented to ease collaboration.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href="#tips-for-writing-papers-for-submission"&gt;Tips for writing papers for submission&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="#splitting-a-document-into-multiple-tex-files"&gt;Splitting a document into multiple tex files&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#splitting-a-document-into-multiple-tex-files"&gt;Splitting a document into multiple TeX files&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#easily-convert-abstract-to-plain-text"&gt;Easily convert abstract to plain text&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -140,7 +141,7 @@ are readable.&lt;/figcaption&gt;
 and you &lt;code&gt;\input&lt;/code&gt; other files in &lt;code&gt;main.tex&lt;/code&gt;. When you use &lt;code&gt;pdflatex&lt;/code&gt; to compile &lt;code&gt;main.tex&lt;/code&gt;,
 the output will be named &lt;code&gt;main.pdf&lt;/code&gt;.
 If you use this naming scheme for all your documents, they will all be named &lt;code&gt;main.pdf&lt;/code&gt;.
-This can be a problem, depending on how you navigate your filesystem.
+This may be a problem, depending on how you navigate your filesystem.
 There are 2 ways of fixing this:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -159,7 +160,7 @@ There are 2 ways of fixing this:&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Change the input name&lt;/em&gt;:
     Name the top-level document &lt;code&gt;number-theory.tex&lt;/code&gt; instead of &lt;code&gt;main.tex&lt;/code&gt;.
     But this can make it hard for others (or you, after a long time)
-    to figure out which is the top-level tex file.&lt;/p&gt;
+    to figure out which is the top-level TeX file.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;For both the options above, I recommend having a file named &lt;code&gt;makefile&lt;/code&gt; in your project,
@@ -194,17 +195,17 @@ pdflatex -jobname=number-theory main.tex
 &lt;h2 id="tips-for-writing-papers-for-submission"&gt;Tips for writing papers for submission&lt;a class="headerlink" href="#tips-for-writing-papers-for-submission" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Publishers often have some requirements about the submission,
 like the way metadata is formatted, page limit,
-constraints on the tex source, bibliography format, etc.
+constraints on the TeX source, bibliography format, etc.
 Hence, authors need to make changes to their paper before submission.
 This issue is exacerbated if the authors get one or more rejections and they resubmit elsewhere,
 or they are also submitting to arXiv.&lt;/p&gt;
 &lt;p&gt;To make this just-before-submission process easier, I formulated some best practices
 and wrote programs to automate a few tasks.&lt;/p&gt;
-&lt;h3 id="splitting-a-document-into-multiple-tex-files"&gt;Splitting a document into multiple tex files&lt;a class="headerlink" href="#splitting-a-document-into-multiple-tex-files" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="splitting-a-document-into-multiple-tex-files"&gt;Splitting a document into multiple TeX files&lt;a class="headerlink" href="#splitting-a-document-into-multiple-tex-files" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;A common practice is to split a LaTeX document into multiple files.
 There is a file for each section, and they are all &lt;code&gt;\input&lt;/code&gt; into a main file (usually named &lt;code&gt;main.tex&lt;/code&gt;).
 Some people, including me, like this approach for various reasons.&lt;/p&gt;
-&lt;p&gt;One disadvantage of such a splitting is that publishers often ask for a single tex file.
+&lt;p&gt;One disadvantage of such a splitting is that publishers often ask for a single TeX file.
 Then we need to copy-and-paste everything into a single file.
 But this need not be a deterrent, because I automated this process:
 &lt;a href="https://github.com/sharmaeklavya2/tex-flatten"&gt;github:sharmaeklavya2/tex-flatten&lt;/a&gt;.&lt;/p&gt;
@@ -266,13 +267,12 @@ Hence, I can iterate over sentences by just reading the first few characters of 
 &lt;li&gt;Longer lines make it harder to use a diff tool (like &lt;code&gt;git diff&lt;/code&gt;) to see what has changed
 between versions of a file.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;As far as I know, most people don't hard wrap lines.
+&lt;p&gt;I recommend hard-wrapping. But as far as I know, most people don't hard wrap lines.
 They may agree to hard wrap and then keep forgetting to do so, because old habits die hard.
-They may also refuse to hard wrap text, and there can be good reasons for this.
+They may also refuse to hard wrap text, and there may be good reasons for this.
 For example, it can be irritating to edit TeX code that is hard-wrapped at
 a width larger than the editor window width, and Overleaf has a very narrow editor window.
-Hence, you will need ways to deal with extremely long lines,
-especially if you're not used to it.&lt;/p&gt;
+Hence, one needs to know how to deal with extremely long lines.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Use a diff tool that highlights intra-line diffs,
 like &lt;a href="https://dandavison.github.io/delta/introduction.html"&gt;&lt;code&gt;delta&lt;/code&gt;&lt;/a&gt;
@@ -299,25 +299,23 @@ This way, I can just use my own text editor (vim) to edit files.
 This is a premium feature, so everyone can't do this.&lt;/p&gt;
 &lt;h4 id="git"&gt;Git&lt;a class="headerlink" href="#git" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Git"&gt;Git&lt;/a&gt; is a tool for collaborative version control.
-It was written so that large software projects can be worked on
-by a large number of people at the same time.
-It's also useful for non-software projects, though, like LaTeX documents.&lt;/p&gt;
-&lt;p&gt;Git has a steep learning curve, and without adequate experience
-it's hard to appreciate its utility.
+It was written so that a large number of people
+can work on a large software project at the same time.
+Git is also useful for non-software projects, though, like LaTeX documents.&lt;/p&gt;
+&lt;p&gt;Git has a steep learning curve.
 (I used to be a professional software engineer, so I'm quite comfortable with git.)
 What makes learning git difficult isn't just getting used to the terminal commands.
-It's also understanding the concepts behind git, like commits, branches,
-working directory, remotes, etc.
-But it is the knowledge of these very concepts that make collaboration easier.&lt;/p&gt;
-&lt;p&gt;For hosting git repositories online,
-&lt;a href="https://github.com"&gt;Github&lt;/a&gt; and &lt;a href="https://gitlab.com"&gt;Gitlab&lt;/a&gt; are viable options.
-Repositories can be either public or private,
-though for private repositories there may be certain restrictions or paywalls.&lt;/p&gt;
+The real difficulty lies in realizing what git can do for you.
+If you think of git as just an interface to sync a folder to Github,
+you're missing the point, and won't be able to appreciate the utility of git.
+&lt;span class="danger"&gt;(TODO: add list of resources to learn about git.)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;For multiple people to work on a shared git repository, it needs to be hosted online.
+&lt;a href="https://github.com"&gt;Github&lt;/a&gt; and &lt;a href="https://gitlab.com"&gt;Gitlab&lt;/a&gt; are viable hosting options.&lt;/p&gt;
 &lt;h4 id="shared-online-folder"&gt;Shared online folder&lt;a class="headerlink" href="#shared-online-folder" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;A shared online folder (like &lt;a href="https://www.dropbox.com"&gt;Dropbox&lt;/a&gt; or &lt;a href="https://www.box.com"&gt;Box&lt;/a&gt;) is,
 in my opinion, a quick-and-dirty way of collaboration.
 With auto-syncing in Dropbox, authors need to be careful about concurrent access.
-Dropbox saves past versions, but git has far superior version control.
+Dropbox saves past versions, but the kind of versioning it does is very rudimentary (especially compared to git).
 Dropbox sends notifications to collaborators whenever someone makes a change.
 If someone has a habit of constantly saving their work, collaborators
 get flooded with notifications (except if they turn off those notifications entirely).&lt;/p&gt;
