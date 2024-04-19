@@ -203,11 +203,10 @@ Otherwise the output is so full of false warnings that useful warnings are hard 
 <p>If you <code>\usepackage{hyperref}</code>, then your PDF reader will show a table of contents.
 However, this table can only contain simple text, not mathematical expressions.
 Here's a screenshot of what happens if we include math in section titles.</p>
-<figure>
+<p><figure>
 <img src="https://sharmaeklavya2.github.io/blog/img/latex/bad-heading.png"/>
 <figcaption>PDF opened in Google Chrome, showing garbled section titles in the table of contents.</figcaption>
-</figure>
-
+</figure></p>
 <p>For this reason, LaTeX issues a warning whenever math is included in section titles.
 To fix this, supply alternative plain text for titles using <code>\texorpdfstring</code>.
 For example, change</p>
@@ -219,12 +218,11 @@ For example, change</p>
 in \texorpdfstring{$n^{O_{\eps}(1)}$}{n\^{}(O\_eps(1))} time}
 </code></pre></div>
 
-<figure>
+<p><figure>
 <img src="https://sharmaeklavya2.github.io/blog/img/latex/good-heading.png"/>
 <figcaption>PDF opened in Google Chrome, where section titles in the table of contents
 are readable.</figcaption>
-</figure>
-
+</figure></p>
 <h3 id="multi-file-projects-and-makefile">Multi-file projects and makefile<a class="headerlink" href="#multi-file-projects-and-makefile" title="Permanent link">&para;</a></h3>
 <p>Suppose your document is split into multiple files, where the top-level file is called <code>main.tex</code>,
 and you <code>\input</code> other files in <code>main.tex</code>. When you use <code>pdflatex</code> to compile <code>main.tex</code>,
@@ -322,11 +320,9 @@ I put my abstract in a separate file (like <code>abstract.tex</code>) and <code>
 My tool reads <code>abstract.tex</code> and outputs a plain text version by replacing LaTeX macros
 by unicode/ascii characters.</p>
 <h2 id="collaboration">Collaboration<a class="headerlink" href="#collaboration" title="Permanent link">&para;</a></h2>
-<p>People often have different preferences about how to write documents and collaborate,
-and such differences can make collaboration less pleasant.
-These differences often arise because of personal taste or choice of tools.
-To deal with such issues, it is important to respect others' preferences
-and know ways to handle conventions different from what one is used to.</p>
+<p>People often have different preferences about how to write documents and collaborate.
+To accommodate others' preferences, one needs to know how to
+handle conventions different from what one is used to.</p>
 <h3 id="long-lines">Long lines<a class="headerlink" href="#long-lines" title="Permanent link">&para;</a></h3>
 <p>TeX joins consecutive non-empty lines by a space. So if your TeX code looks like this:</p>
 <div class="codehilite"><pre><span></span><code>This is the first paragraph.
@@ -357,9 +353,8 @@ Hence, I can iterate over sentences by just reading the first few characters of 
 between versions of a file.</li>
 </ol>
 <p>I recommend hard-wrapping. But as far as I know, most people don't hard wrap lines.
-They may agree to hard wrap and then keep forgetting to do so, because old habits die hard.
-They may also refuse to hard wrap text, and there may be good reasons for this.
-For example, it can be irritating to edit TeX code that is hard-wrapped at
+They may agree to hard wrap and then keep forgetting to do so.
+Also, it can be irritating to edit TeX code that is hard-wrapped at
 a width larger than the editor window width, and Overleaf has a very narrow editor window.
 Hence, one needs to know how to deal with extremely long lines.</p>
 <ol>
@@ -381,11 +376,11 @@ Avoid trailing whitespaces.
 <p>Overleaf is an online editor that allows multiple people to edit a LaTeX document simultaneously.
 My initial impression of Overleaf (sometime in 2019) was bad, since it was slow
 and hard to use with a bad internet connection.
-It may have improved now, but I haven't tried it.</p>
+It may have improved now, but I haven't tried its web interface.</p>
 <p>Overleaf's best feature, in my opinion, is
 <a href="https://www.overleaf.com/learn/how-to/Using_Git_and_GitHub">the ability to pull and push via a git interface</a>.
 This way, I can just use my own text editor (vim) to edit files.
-This is a premium feature, so everyone can't do this.</p>
+This is a premium feature, unfortunately.</p>
 <h4 id="git">Git<a class="headerlink" href="#git" title="Permanent link">&para;</a></h4>
 <p><a href="https://en.wikipedia.org/wiki/Git">Git</a> is a tool for collaborative version control.
 It was written so that a large number of people
