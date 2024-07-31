@@ -61,8 +61,8 @@ enableNav();
 <span class="post-date">
 <svg class="icon"><use xlink:href="https://sharmaeklavya2.github.io/blog/theme/sprites.svg#fa-calendar-alt"/></svg>
 <time class="published outdated" datetime="2019-07-12T00:00:00+05:30">12 Jul 2019</time>
-<time class="modified" datetime="2023-01-12T00:00:00+05:30">
-12 Jan 2023</time>
+<time class="modified" datetime="2024-07-31T00:00:00+05:30">
+31 Jul 2024</time>
 </span>
 <span class="post-tags">
 <svg class="icon"><use xlink:href="https://sharmaeklavya2.github.io/blog/theme/sprites.svg#fa-tags"/></svg>
@@ -97,7 +97,7 @@ but you'll have to make major modifications to the instructions below.</p>
 </ul>
 </li>
 <li><a href="#terminal-and-shell">Terminal and Shell</a><ul>
-<li><a href="#terminalapp-preferences">Terminal.app preferences</a></li>
+<li><a href="#terminal-preferences">Terminal preferences</a></li>
 <li><a href="#installing-xcode-command-line-tools">Installing Xcode command-line tools</a></li>
 <li><a href="#dotfiles">Dotfiles</a></li>
 <li><a href="#install-homebrew">Install Homebrew</a></li>
@@ -216,23 +216,13 @@ you know the meaning of the following words:
 terminal emulator, shell, prompt, home directory, current working directory.
 In case you don't, here's a nice short tutorial by TreeHouse:
 <a href="https://blog.teamtreehouse.com/introduction-to-the-mac-os-x-command-line">Introduction to the Mac OS X Command Line</a>.</p>
-<h3 id="terminalapp-preferences">Terminal.app preferences<a class="headerlink" href="#terminalapp-preferences" title="Permanent link">&para;</a></h3>
+<h3 id="terminal-preferences">Terminal preferences<a class="headerlink" href="#terminal-preferences" title="Permanent link">&para;</a></h3>
 <p>Terminal.app is the default terminal emulator on macOS.
-There are better alternatives, like <a href="https://www.iterm2.com/features.html">iTerm2</a>,
-but Terminal.app is good enough for me, so I didn't bother installing iTerm2.</p>
-<h4 id="creating-a-new-profile-with-the-solarized-color-scheme">Creating a new profile with the Solarized color scheme<a class="headerlink" href="#creating-a-new-profile-with-the-solarized-color-scheme" title="Permanent link">&para;</a></h4>
-<p>Terminal.app has multiple profiles available.
-Each profile specifies the color scheme, font face, font size and many other settings.
-Instead of making changes to the default profile,
-we're going to create a new profile with our changes.</p>
-<p>I use the <a href="https://ethanschoonover.com/solarized/">Solarized</a> color scheme for my terminal because:</p>
-<ul>
-<li>It is an eye-pleasing color scheme. It works well with Vim's syntax highlighting.</li>
-<li>Solarized is a popular color scheme, so it's available on many terminal emulators, text editors, IDEs, etc.
-This helps me get a unified look-and-feel when switching programs or platforms.</li>
-</ul>
-<p>Even though Solarized isn't available out-of-the-box for Terminal.app,
-the advantages above outweigh the effort required to set it up on the terminal.</p>
+But I recommend a better alternative, like <a href="https://www.iterm2.com/features.html">iTerm2</a>.
+I use iTerm2 with the <em>Solarized</em> color scheme and font size 16.</p>
+<p>Terminal.app is also good enough, though.
+But if you want to use the Solarized color scheme on Terminal.app,
+you'll need to download and install it:</p>
 <ul>
 <li>Download the <a href="https://raw.githubusercontent.com/tomislav/osx-terminal.app-colors-solarized/master/Solarized%20Dark.terminal">Solarized dark theme for Terminal.app</a>. Open it in finder and double-click on it.</li>
 <li>macOS will say that the file cannot be opened because it is not from an identified developer.
@@ -240,11 +230,8 @@ Go to 'System Preferences &gt; Security &gt; General' and press 'Open Anyway' (d
 <li>Open terminal, 'Preferences &gt; Profiles', select 'Solarized Dark' and press the 'Default' button.
 Now restart Terminal.app and you'll see the dark blue background of the Solarized color scheme.</li>
 </ul>
-<h4 id="other-preferences">Other preferences<a class="headerlink" href="#other-preferences" title="Permanent link">&para;</a></h4>
-<ul>
-<li>In the 'Preferences &gt; Profile &gt; Text' tab, set opacity to 85% and font size to 16.</li>
-<li>In the 'Preferences &gt; Profile &gt; Window' tab, deselect 'restore text when reopening windows'.</li>
-</ul>
+<p>Additionally, you may want to deselect 'restore text when reopening windows'
+in the 'Preferences &gt; Profile &gt; Window' tab in Terminal.app.</p>
 <h3 id="installing-xcode-command-line-tools">Installing <a href="http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/">Xcode command-line tools</a><a class="headerlink" href="#installing-xcode-command-line-tools" title="Permanent link">&para;</a></h3>
 <p>The 'Xcode command-line tools' consist of command-line applications that are
 very common in Unix-like environments, like git, gcc, make, perl.</p>
@@ -272,13 +259,16 @@ mv _links/* ~
 If you executed the above instructions correctly,
 the first thing you'll notice is the improved, colorful prompt.</p>
 <p>My dotfiles are written with the Solarized terminal color scheme in mind.
-If you're not using Solarized, you may want to modify or omit using <code>.dircolors</code> and <code>.vimrc</code>.</p>
+If you're not using Solarized, you should modify <code>.vimrc</code> accordingly:
+either remove <code>colorscheme solarized</code> or pick a different colorscheme,
+like <a href="https://github.com/rakr/vim-one">one</a>.</p>
 <p>I also recommend using the <code>git-prompt.sh</code> utility script, which will display useful information
 about git repositories (like branch, dirty status, etc) in your prompt.
 To do this, download <a href="https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh">git-prompt.sh</a>
 to <code>~/ext_bin/git-prompt.sh</code>. The <code>~/.bash_profile</code> will use it to modify the prompt.</p>
-<p>I also recommend adding the line <code>export HISTSIZE=100000</code> to either <code>~/.env</code> or <code>~/.bash_profile</code>
-to increase your shell input history size.</p>
+<p>I also recommend adding the lines <code>export HISTSIZE=100000</code> and <code>export HISTCONTROL=ignoredups</code>
+to either <code>~/.env</code> or <code>~/.bash_profile</code> to increase your shell input history size
+and remove consecutive duplicates.</p>
 <h3 id="install-homebrew">Install <a href="https://brew.sh/">Homebrew</a><a class="headerlink" href="#install-homebrew" title="Permanent link">&para;</a></h3>
 <p>Homebrew (a.k.a. brew) is a package manager, which means it's like a terminal version of the App Store.
 You can install programs (called packages by brew) by simply writing commands on the terminal:</p>

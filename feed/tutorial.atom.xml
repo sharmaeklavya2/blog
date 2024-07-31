@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Eklavya's Blog - Tutorial</title><link href="https://sharmaeklavya2.github.io/blog/" rel="alternate"></link><link href="https://sharmaeklavya2.github.io/blog/feed/tutorial.atom.xml" rel="self"></link><id>https://sharmaeklavya2.github.io/blog/</id><updated>2023-01-12T00:00:00+05:30</updated><entry><title>The No-Brainer Dal Recipe</title><link href="https://sharmaeklavya2.github.io/blog/easy-dal.html" rel="alternate"></link><published>2021-09-06T00:00:00+05:30</published><updated>2021-09-06T00:00:00+05:30</updated><author><name>Eklavya Sharma</name></author><id>tag:sharmaeklavya2.github.io,2021-09-06:/blog/easy-dal.html</id><summary type="html">&lt;p&gt;This article gives a very simple recipe for cooking dal, invented by my mom. It's easier than the recipes I found on the internet, and easier than the recipes that my friends use. This recipe is great if you want to reduce the time you spend cooking or if you're new to cooking and want to start simple.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This article gives a very simple recipe for cooking dal, invented by my mom.
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Eklavya's Blog - Tutorial</title><link href="https://sharmaeklavya2.github.io/blog/" rel="alternate"></link><link href="https://sharmaeklavya2.github.io/blog/feed/tutorial.atom.xml" rel="self"></link><id>https://sharmaeklavya2.github.io/blog/</id><updated>2024-07-31T00:00:00+05:30</updated><entry><title>The No-Brainer Dal Recipe</title><link href="https://sharmaeklavya2.github.io/blog/easy-dal.html" rel="alternate"></link><published>2021-09-06T00:00:00+05:30</published><updated>2021-09-06T00:00:00+05:30</updated><author><name>Eklavya Sharma</name></author><id>tag:sharmaeklavya2.github.io,2021-09-06:/blog/easy-dal.html</id><summary type="html">&lt;p&gt;This article gives a very simple recipe for cooking dal, invented by my mom. It's easier than the recipes I found on the internet, and easier than the recipes that my friends use. This recipe is great if you want to reduce the time you spend cooking or if you're new to cooking and want to start simple.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This article gives a very simple recipe for cooking dal, invented by my mom.
 It's easier than the recipes I found on the internet,
 and easier than the recipes that my friends use.
 This recipe is great if you want to reduce the time you spend cooking
@@ -151,7 +151,7 @@ and that's fixed to the boiling point of water.
 If you increase the stove's heat, the food will still take the same time to cook;
 the extra thermal energy will just be used to convert water to steam, i.e., wasted.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Credits&lt;/strong&gt;: Thanks mom for this awesome recipe!
-Thanks &lt;a href="https://tanvibajpai.com"&gt;Tanvi Bajpai&lt;/a&gt; for suggesting a good title.&lt;/p&gt;</content><category term="posts"></category><category term="Cooking"></category><category term="Tutorial"></category></entry><entry><title>A Comprehensive Guide to Customizing your MacBook</title><link href="https://sharmaeklavya2.github.io/blog/customize-macos.html" rel="alternate"></link><published>2019-07-12T00:00:00+05:30</published><updated>2023-01-12T00:00:00+05:30</updated><author><name>Eklavya Sharma</name></author><id>tag:sharmaeklavya2.github.io,2019-07-12:/blog/customize-macos.html</id><summary type="html">&lt;p&gt;This post contains a list of all the things I did to customize my MacBook. Most instructions here are useful only for programmers and power users.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I recently got a new laptop - a MacBook Air!
+Thanks &lt;a href="https://tanvibajpai.com"&gt;Tanvi Bajpai&lt;/a&gt; for suggesting a good title.&lt;/p&gt;</content><category term="posts"></category><category term="Cooking"></category><category term="Tutorial"></category></entry><entry><title>A Comprehensive Guide to Customizing your MacBook</title><link href="https://sharmaeklavya2.github.io/blog/customize-macos.html" rel="alternate"></link><published>2019-07-12T00:00:00+05:30</published><updated>2024-07-31T00:00:00+05:30</updated><author><name>Eklavya Sharma</name></author><id>tag:sharmaeklavya2.github.io,2019-07-12:/blog/customize-macos.html</id><summary type="html">&lt;p&gt;This post contains a list of all the things I did to customize my MacBook. Most instructions here are useful only for programmers and power users.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I recently got a new laptop - a MacBook Air!
 I customized it so that it's easy for me to use.
 Major changes include:&lt;/p&gt;
 &lt;ul&gt;
@@ -176,7 +176,7 @@ but you'll have to make major modifications to the instructions below.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href="#terminal-and-shell"&gt;Terminal and Shell&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="#terminalapp-preferences"&gt;Terminal.app preferences&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#terminal-preferences"&gt;Terminal preferences&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#installing-xcode-command-line-tools"&gt;Installing Xcode command-line tools&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#dotfiles"&gt;Dotfiles&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#install-homebrew"&gt;Install Homebrew&lt;/a&gt;&lt;/li&gt;
@@ -295,23 +295,13 @@ you know the meaning of the following words:
 terminal emulator, shell, prompt, home directory, current working directory.
 In case you don't, here's a nice short tutorial by TreeHouse:
 &lt;a href="https://blog.teamtreehouse.com/introduction-to-the-mac-os-x-command-line"&gt;Introduction to the Mac OS X Command Line&lt;/a&gt;.&lt;/p&gt;
-&lt;h3 id="terminalapp-preferences"&gt;Terminal.app preferences&lt;a class="headerlink" href="#terminalapp-preferences" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="terminal-preferences"&gt;Terminal preferences&lt;a class="headerlink" href="#terminal-preferences" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Terminal.app is the default terminal emulator on macOS.
-There are better alternatives, like &lt;a href="https://www.iterm2.com/features.html"&gt;iTerm2&lt;/a&gt;,
-but Terminal.app is good enough for me, so I didn't bother installing iTerm2.&lt;/p&gt;
-&lt;h4 id="creating-a-new-profile-with-the-solarized-color-scheme"&gt;Creating a new profile with the Solarized color scheme&lt;a class="headerlink" href="#creating-a-new-profile-with-the-solarized-color-scheme" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
-&lt;p&gt;Terminal.app has multiple profiles available.
-Each profile specifies the color scheme, font face, font size and many other settings.
-Instead of making changes to the default profile,
-we're going to create a new profile with our changes.&lt;/p&gt;
-&lt;p&gt;I use the &lt;a href="https://ethanschoonover.com/solarized/"&gt;Solarized&lt;/a&gt; color scheme for my terminal because:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;It is an eye-pleasing color scheme. It works well with Vim's syntax highlighting.&lt;/li&gt;
-&lt;li&gt;Solarized is a popular color scheme, so it's available on many terminal emulators, text editors, IDEs, etc.
-This helps me get a unified look-and-feel when switching programs or platforms.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Even though Solarized isn't available out-of-the-box for Terminal.app,
-the advantages above outweigh the effort required to set it up on the terminal.&lt;/p&gt;
+But I recommend a better alternative, like &lt;a href="https://www.iterm2.com/features.html"&gt;iTerm2&lt;/a&gt;.
+I use iTerm2 with the &lt;em&gt;Solarized&lt;/em&gt; color scheme and font size 16.&lt;/p&gt;
+&lt;p&gt;Terminal.app is also good enough, though.
+But if you want to use the Solarized color scheme on Terminal.app,
+you'll need to download and install it:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Download the &lt;a href="https://raw.githubusercontent.com/tomislav/osx-terminal.app-colors-solarized/master/Solarized%20Dark.terminal"&gt;Solarized dark theme for Terminal.app&lt;/a&gt;. Open it in finder and double-click on it.&lt;/li&gt;
 &lt;li&gt;macOS will say that the file cannot be opened because it is not from an identified developer.
@@ -319,11 +309,8 @@ Go to 'System Preferences &amp;gt; Security &amp;gt; General' and press 'Open An
 &lt;li&gt;Open terminal, 'Preferences &amp;gt; Profiles', select 'Solarized Dark' and press the 'Default' button.
 Now restart Terminal.app and you'll see the dark blue background of the Solarized color scheme.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id="other-preferences"&gt;Other preferences&lt;a class="headerlink" href="#other-preferences" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;In the 'Preferences &amp;gt; Profile &amp;gt; Text' tab, set opacity to 85% and font size to 16.&lt;/li&gt;
-&lt;li&gt;In the 'Preferences &amp;gt; Profile &amp;gt; Window' tab, deselect 'restore text when reopening windows'.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;Additionally, you may want to deselect 'restore text when reopening windows'
+in the 'Preferences &amp;gt; Profile &amp;gt; Window' tab in Terminal.app.&lt;/p&gt;
 &lt;h3 id="installing-xcode-command-line-tools"&gt;Installing &lt;a href="http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/"&gt;Xcode command-line tools&lt;/a&gt;&lt;a class="headerlink" href="#installing-xcode-command-line-tools" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;The 'Xcode command-line tools' consist of command-line applications that are
 very common in Unix-like environments, like git, gcc, make, perl.&lt;/p&gt;
@@ -351,13 +338,16 @@ mv _links/* ~
 If you executed the above instructions correctly,
 the first thing you'll notice is the improved, colorful prompt.&lt;/p&gt;
 &lt;p&gt;My dotfiles are written with the Solarized terminal color scheme in mind.
-If you're not using Solarized, you may want to modify or omit using &lt;code&gt;.dircolors&lt;/code&gt; and &lt;code&gt;.vimrc&lt;/code&gt;.&lt;/p&gt;
+If you're not using Solarized, you should modify &lt;code&gt;.vimrc&lt;/code&gt; accordingly:
+either remove &lt;code&gt;colorscheme solarized&lt;/code&gt; or pick a different colorscheme,
+like &lt;a href="https://github.com/rakr/vim-one"&gt;one&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;I also recommend using the &lt;code&gt;git-prompt.sh&lt;/code&gt; utility script, which will display useful information
 about git repositories (like branch, dirty status, etc) in your prompt.
 To do this, download &lt;a href="https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh"&gt;git-prompt.sh&lt;/a&gt;
 to &lt;code&gt;~/ext_bin/git-prompt.sh&lt;/code&gt;. The &lt;code&gt;~/.bash_profile&lt;/code&gt; will use it to modify the prompt.&lt;/p&gt;
-&lt;p&gt;I also recommend adding the line &lt;code&gt;export HISTSIZE=100000&lt;/code&gt; to either &lt;code&gt;~/.env&lt;/code&gt; or &lt;code&gt;~/.bash_profile&lt;/code&gt;
-to increase your shell input history size.&lt;/p&gt;
+&lt;p&gt;I also recommend adding the lines &lt;code&gt;export HISTSIZE=100000&lt;/code&gt; and &lt;code&gt;export HISTCONTROL=ignoredups&lt;/code&gt;
+to either &lt;code&gt;~/.env&lt;/code&gt; or &lt;code&gt;~/.bash_profile&lt;/code&gt; to increase your shell input history size
+and remove consecutive duplicates.&lt;/p&gt;
 &lt;h3 id="install-homebrew"&gt;Install &lt;a href="https://brew.sh/"&gt;Homebrew&lt;/a&gt;&lt;a class="headerlink" href="#install-homebrew" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Homebrew (a.k.a. brew) is a package manager, which means it's like a terminal version of the App Store.
 You can install programs (called packages by brew) by simply writing commands on the terminal:&lt;/p&gt;
