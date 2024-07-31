@@ -198,7 +198,6 @@ but you'll have to make major modifications to the instructions below.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href="#customize-vim"&gt;Customize Vim&lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href="#install-newer-vim"&gt;Install newer Vim&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#install-pathogen"&gt;Install Pathogen&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#get-vim-plugins"&gt;Get Vim plugins&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#install-youcompleteme"&gt;Install YouCompleteMe&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#fix-vim-locale-error"&gt;Fix Vim locale error&lt;/a&gt;&lt;/li&gt;
@@ -469,31 +468,28 @@ You can see which features are installed by running &lt;code&gt;vim --version&lt
 &lt;p&gt;Run &lt;code&gt;brew install vim&lt;/code&gt; to install a newer, better Vim.
 Alternatively, you can install MacVim (&lt;code&gt;brew install macvim&lt;/code&gt;).
 This will not replace the old vim; the old vim can still be accessed at &lt;code&gt;/usr/bin/vim&lt;/code&gt;.&lt;/p&gt;
-&lt;h3 id="install-pathogen"&gt;Install &lt;a href="https://github.com/tpope/vim-pathogen"&gt;Pathogen&lt;/a&gt;&lt;a class="headerlink" href="#install-pathogen" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;mkdir -p ~/.vim/autoload ~/.vim/bundle &amp;amp;&amp;amp; \
-curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Add &lt;code&gt;execute pathogen#infect()&lt;/code&gt; to your &lt;code&gt;.vimrc&lt;/code&gt;.
-If you're using &lt;a href="https://github.com/sharmaeklavya2/dotfiles"&gt;my dotfiles&lt;/a&gt;,
-you'll already have it in your &lt;code&gt;.vimrc&lt;/code&gt;.&lt;/p&gt;
 &lt;h3 id="get-vim-plugins"&gt;Get Vim plugins&lt;a class="headerlink" href="#get-vim-plugins" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Just go to &lt;code&gt;~/.vim/bundle&lt;/code&gt; and clone the git repositories of the plugins you need.
+&lt;p&gt;Go to &lt;code&gt;~/.vim/pack/default/start&lt;/code&gt; (create this directory if it doesn't exist)
+and clone the git repositories of the plugins you need.
 You can see the list of plugins that I use at
 &lt;a href="https://github.com/sharmaeklavya2/dotfiles/blob/master/vimpackages.txt"&gt;&lt;code&gt;vimpackages.txt&lt;/code&gt;&lt;/a&gt; in my dotfiles.&lt;/p&gt;
-&lt;p&gt;If you're using my dotfiles, you can run &lt;code&gt;./scripts/get_vim_packages.py&lt;/code&gt;.
-This will download the vim plugins from &lt;code&gt;vimpackages.txt&lt;/code&gt; and place them in a directory named &lt;code&gt;vim_bundle&lt;/code&gt;.
-&lt;a href="https://kb.iu.edu/d/abbe"&gt;Symlink&lt;/a&gt; &lt;code&gt;vim_bundle&lt;/code&gt; to &lt;code&gt;~/.vim/bundle&lt;/code&gt;.&lt;/p&gt;
+&lt;!--If you're using my dotfiles, you can run `./scripts/get_vim_packages.py`.
+This will download the vim plugins from `vimpackages.txt` and place them in a directory named `vim_bundle`.
+[Symlink](https://kb.iu.edu/d/abbe) `vim_bundle` to `~/.vim/bundle`.--&gt;
+
 &lt;h3 id="install-youcompleteme"&gt;Install &lt;a href="https://github.com/ycm-core/YouCompleteMe"&gt;YouCompleteMe&lt;/a&gt;&lt;a class="headerlink" href="#install-youcompleteme" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;YouCompleteMe is a vim plugin for code auto-completion.
 To install this plugin:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Run &lt;code&gt;brew install cmake&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;cd ~/.vim/bundle ; git clone --recursive https://github.com/ycm-core/YouCompleteMe.git ; cd YouCompleteMe&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;If you use a python virtualenv, switch to it and then run &lt;code&gt;./install.py&lt;/code&gt;.
-If you don't switch to the virtualenv before running &lt;code&gt;./install.py&lt;/code&gt;,
-python auto-complete may not work for external libraries installed in that virtualenv.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;brew install cmake&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cd ~/.vim/pack/default/start&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git clone --recursive --depth=1 https://github.com/ycm-core/YouCompleteMe.git&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cd YouCompleteMe&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;If you use a python virtualenv, activate it.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;./install.py&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;If you don't switch to the virtualenv before running &lt;code&gt;./install.py&lt;/code&gt;,
+python auto-complete may not work for external libraries installed in that virtualenv.&lt;/p&gt;
 &lt;p&gt;You should read &lt;a href="https://github.com/ycm-core/YouCompleteMe"&gt;the documentation&lt;/a&gt;
 for more detailed installation instructions. This is important if you
 want good completion for C, C++, Java, Rust, Go or JavaScript

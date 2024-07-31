@@ -119,7 +119,6 @@ but you'll have to make major modifications to the instructions below.</p>
 </li>
 <li><a href="#customize-vim">Customize Vim</a><ul>
 <li><a href="#install-newer-vim">Install newer Vim</a></li>
-<li><a href="#install-pathogen">Install Pathogen</a></li>
 <li><a href="#get-vim-plugins">Get Vim plugins</a></li>
 <li><a href="#install-youcompleteme">Install YouCompleteMe</a></li>
 <li><a href="#fix-vim-locale-error">Fix Vim locale error</a></li>
@@ -390,31 +389,28 @@ You can see which features are installed by running <code>vim --version</code>.<
 <p>Run <code>brew install vim</code> to install a newer, better Vim.
 Alternatively, you can install MacVim (<code>brew install macvim</code>).
 This will not replace the old vim; the old vim can still be accessed at <code>/usr/bin/vim</code>.</p>
-<h3 id="install-pathogen">Install <a href="https://github.com/tpope/vim-pathogen">Pathogen</a><a class="headerlink" href="#install-pathogen" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code>mkdir -p ~/.vim/autoload ~/.vim/bundle &amp;&amp; \
-curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-</code></pre></div>
-
-<p>Add <code>execute pathogen#infect()</code> to your <code>.vimrc</code>.
-If you're using <a href="https://github.com/sharmaeklavya2/dotfiles">my dotfiles</a>,
-you'll already have it in your <code>.vimrc</code>.</p>
 <h3 id="get-vim-plugins">Get Vim plugins<a class="headerlink" href="#get-vim-plugins" title="Permanent link">&para;</a></h3>
-<p>Just go to <code>~/.vim/bundle</code> and clone the git repositories of the plugins you need.
+<p>Go to <code>~/.vim/pack/default/start</code> (create this directory if it doesn't exist)
+and clone the git repositories of the plugins you need.
 You can see the list of plugins that I use at
 <a href="https://github.com/sharmaeklavya2/dotfiles/blob/master/vimpackages.txt"><code>vimpackages.txt</code></a> in my dotfiles.</p>
-<p>If you're using my dotfiles, you can run <code>./scripts/get_vim_packages.py</code>.
-This will download the vim plugins from <code>vimpackages.txt</code> and place them in a directory named <code>vim_bundle</code>.
-<a href="https://kb.iu.edu/d/abbe">Symlink</a> <code>vim_bundle</code> to <code>~/.vim/bundle</code>.</p>
+<!--If you're using my dotfiles, you can run `./scripts/get_vim_packages.py`.
+This will download the vim plugins from `vimpackages.txt` and place them in a directory named `vim_bundle`.
+[Symlink](https://kb.iu.edu/d/abbe) `vim_bundle` to `~/.vim/bundle`.-->
+
 <h3 id="install-youcompleteme">Install <a href="https://github.com/ycm-core/YouCompleteMe">YouCompleteMe</a><a class="headerlink" href="#install-youcompleteme" title="Permanent link">&para;</a></h3>
 <p>YouCompleteMe is a vim plugin for code auto-completion.
 To install this plugin:</p>
 <ul>
-<li>Run <code>brew install cmake</code>.</li>
-<li><code>cd ~/.vim/bundle ; git clone --recursive https://github.com/ycm-core/YouCompleteMe.git ; cd YouCompleteMe</code>.</li>
-<li>If you use a python virtualenv, switch to it and then run <code>./install.py</code>.
-If you don't switch to the virtualenv before running <code>./install.py</code>,
-python auto-complete may not work for external libraries installed in that virtualenv.</li>
+<li><code>brew install cmake</code></li>
+<li><code>cd ~/.vim/pack/default/start</code></li>
+<li><code>git clone --recursive --depth=1 https://github.com/ycm-core/YouCompleteMe.git</code></li>
+<li><code>cd YouCompleteMe</code></li>
+<li>If you use a python virtualenv, activate it.</li>
+<li><code>./install.py</code></li>
 </ul>
+<p>If you don't switch to the virtualenv before running <code>./install.py</code>,
+python auto-complete may not work for external libraries installed in that virtualenv.</p>
 <p>You should read <a href="https://github.com/ycm-core/YouCompleteMe">the documentation</a>
 for more detailed installation instructions. This is important if you
 want good completion for C, C++, Java, Rust, Go or JavaScript
