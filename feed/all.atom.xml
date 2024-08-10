@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Eklavya's Blog</title><link href="https://sharmaeklavya2.github.io/blog/" rel="alternate"></link><link href="https://sharmaeklavya2.github.io/blog/feed/all.atom.xml" rel="self"></link><id>https://sharmaeklavya2.github.io/blog/</id><updated>2024-07-31T00:00:00+05:30</updated><entry><title>Forest Nightmare</title><link href="https://sharmaeklavya2.github.io/blog/dream3.html" rel="alternate"></link><published>2023-12-21T00:00:00+05:30</published><updated>2023-12-21T00:00:00+05:30</updated><author><name>Eklavya Sharma</name></author><id>tag:sharmaeklavya2.github.io,2023-12-21:/blog/dream3.html</id><summary type="html">&lt;p&gt;I had a nightmare today which I think can be made into a good horror movie.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I had a nightmare today. Although I never like nightmares, I was amused by this dream's concept.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Eklavya's Blog</title><link href="https://sharmaeklavya2.github.io/blog/" rel="alternate"></link><link href="https://sharmaeklavya2.github.io/blog/feed/all.atom.xml" rel="self"></link><id>https://sharmaeklavya2.github.io/blog/</id><updated>2024-08-08T00:00:00+05:30</updated><entry><title>Forest Nightmare</title><link href="https://sharmaeklavya2.github.io/blog/dream3.html" rel="alternate"></link><published>2023-12-21T00:00:00+05:30</published><updated>2023-12-21T00:00:00+05:30</updated><author><name>Eklavya Sharma</name></author><id>tag:sharmaeklavya2.github.io,2023-12-21:/blog/dream3.html</id><summary type="html">&lt;p&gt;I had a nightmare today which I think can be made into a good horror movie.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I had a nightmare today. Although I never like nightmares, I was amused by this dream's concept.&lt;/p&gt;
 &lt;h2 id="scene-1"&gt;Scene 1&lt;a class="headerlink" href="#scene-1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;I was camping with friends, in a forest full of tall coniferous trees.
 Despite a sunny day, the forest was unusually dark and the weather was cool,
@@ -1830,7 +1830,7 @@ a suitable node update function family is left as an exercise.&lt;/p&gt;
         &lt;li&gt;Largest suffix sum of the segment&lt;/li&gt;
         &lt;li&gt;Largest subarray sum of the segment&lt;/li&gt;
     &lt;/ol&gt;
-&lt;/details&gt;</content><category term="posts"></category><category term="Algorithms"></category><category term="Math"></category></entry><entry><title>A Comprehensive Guide to Customizing your MacBook</title><link href="https://sharmaeklavya2.github.io/blog/customize-macos.html" rel="alternate"></link><published>2019-07-12T00:00:00+05:30</published><updated>2024-07-31T00:00:00+05:30</updated><author><name>Eklavya Sharma</name></author><id>tag:sharmaeklavya2.github.io,2019-07-12:/blog/customize-macos.html</id><summary type="html">&lt;p&gt;This post contains a list of all the things I did to customize my MacBook. Most instructions here are useful only for programmers and power users.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I recently got a new laptop - a MacBook Air!
+&lt;/details&gt;</content><category term="posts"></category><category term="Algorithms"></category><category term="Math"></category></entry><entry><title>A Comprehensive Guide to Customizing your MacBook</title><link href="https://sharmaeklavya2.github.io/blog/customize-macos.html" rel="alternate"></link><published>2019-07-12T00:00:00+05:30</published><updated>2024-08-08T00:00:00+05:30</updated><author><name>Eklavya Sharma</name></author><id>tag:sharmaeklavya2.github.io,2019-07-12:/blog/customize-macos.html</id><summary type="html">&lt;p&gt;This post contains a list of all the things I did to customize my MacBook. Most instructions here are useful only for programmers and power users.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I recently got a new laptop - a MacBook Air!
 I customized it so that it's easy for me to use.
 Major changes include:&lt;/p&gt;
 &lt;ul&gt;
@@ -1976,17 +1976,20 @@ In case you don't, here's a nice short tutorial by TreeHouse:
 &lt;h3 id="terminal-preferences"&gt;Terminal preferences&lt;a class="headerlink" href="#terminal-preferences" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Terminal.app is the default terminal emulator on macOS.
 But I recommend a better alternative, like &lt;a href="https://www.iterm2.com/features.html"&gt;iTerm2&lt;/a&gt;.
-I use iTerm2 with the &lt;em&gt;Solarized&lt;/em&gt; color scheme and font size 16.&lt;/p&gt;
-&lt;p&gt;Terminal.app is also good enough, though.
-But if you want to use the Solarized color scheme on Terminal.app,
+I use iTerm2 with the &lt;em&gt;Solarized&lt;/em&gt; color scheme.&lt;/p&gt;
+&lt;p&gt;In iTerm2, you may want to configure &lt;kbd&gt;Option&lt;/kbd&gt; + arrow keys to move over words,
+just like in Terminal.app. To do this, go to Settings &amp;gt; Profiles &amp;gt; Keys &amp;gt; Key Mappings,
+and select 'Terminal.app Compatibility' as the preset.&lt;/p&gt;
+&lt;p&gt;If you decide to stick to Terminal.app, that's also not a bad option.
+If you want to use the Solarized color scheme on Terminal.app,
 you'll need to download and install it:&lt;/p&gt;
-&lt;ul&gt;
+&lt;ol&gt;
 &lt;li&gt;Download the &lt;a href="https://raw.githubusercontent.com/tomislav/osx-terminal.app-colors-solarized/master/Solarized%20Dark.terminal"&gt;Solarized dark theme for Terminal.app&lt;/a&gt;. Open it in finder and double-click on it.&lt;/li&gt;
 &lt;li&gt;macOS will say that the file cannot be opened because it is not from an identified developer.
 Go to 'System Preferences &amp;gt; Security &amp;gt; General' and press 'Open Anyway' (don't worry; it's not an executable).&lt;/li&gt;
 &lt;li&gt;Open terminal, 'Preferences &amp;gt; Profiles', select 'Solarized Dark' and press the 'Default' button.
 Now restart Terminal.app and you'll see the dark blue background of the Solarized color scheme.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/ol&gt;
 &lt;p&gt;Additionally, you may want to deselect 'restore text when reopening windows'
 in the 'Preferences &amp;gt; Profile &amp;gt; Window' tab in Terminal.app.&lt;/p&gt;
 &lt;h3 id="installing-xcode-command-line-tools"&gt;Installing &lt;a href="http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/"&gt;Xcode command-line tools&lt;/a&gt;&lt;a class="headerlink" href="#installing-xcode-command-line-tools" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
@@ -2060,8 +2063,7 @@ on Jan 1, 2020.&lt;/p&gt;
 &lt;p&gt;I use &lt;a href="https://docs.python.org/3/tutorial/venv.html"&gt;python virtual environments&lt;/a&gt;.
 I use one big virtualenv where I install all commonly used packages,
 and I create application-specific virtualenvs for large applications that I'm developing.&lt;/p&gt;
-&lt;p&gt;Run &lt;code&gt;pip3 install virtualenv&lt;/code&gt; to install the &lt;code&gt;virtualenv&lt;/code&gt; tool.
-Run &lt;code&gt;virtualenv /path/to/venv/ -p python3&lt;/code&gt; to create a python3 virtualenv.&lt;/p&gt;
+&lt;p&gt;Run &lt;code&gt;python3 -m venv /path/to/venv/&lt;/code&gt; to create a python3 virtualenv.&lt;/p&gt;
 &lt;p&gt;Activate the virtualenv using &lt;code&gt;source /path/to/venv/bin/activate&lt;/code&gt;.
 Now all python commands and applications you run will use this virtualenv.&lt;/p&gt;
 &lt;p&gt;I usually install python packages only when required,

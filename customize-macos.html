@@ -61,8 +61,8 @@ enableNav();
 <span class="post-date">
 <svg class="icon"><use xlink:href="https://sharmaeklavya2.github.io/blog/theme/sprites.svg#fa-calendar-alt"/></svg>
 <time class="published outdated" datetime="2019-07-12T00:00:00+05:30">12 Jul 2019</time>
-<time class="modified" datetime="2024-07-31T00:00:00+05:30">
-31 Jul 2024</time>
+<time class="modified" datetime="2024-08-08T00:00:00+05:30">
+08 Aug 2024</time>
 </span>
 <span class="post-tags">
 <svg class="icon"><use xlink:href="https://sharmaeklavya2.github.io/blog/theme/sprites.svg#fa-tags"/></svg>
@@ -218,17 +218,20 @@ In case you don't, here's a nice short tutorial by TreeHouse:
 <h3 id="terminal-preferences">Terminal preferences<a class="headerlink" href="#terminal-preferences" title="Permanent link">&para;</a></h3>
 <p>Terminal.app is the default terminal emulator on macOS.
 But I recommend a better alternative, like <a href="https://www.iterm2.com/features.html">iTerm2</a>.
-I use iTerm2 with the <em>Solarized</em> color scheme and font size 16.</p>
-<p>Terminal.app is also good enough, though.
-But if you want to use the Solarized color scheme on Terminal.app,
+I use iTerm2 with the <em>Solarized</em> color scheme.</p>
+<p>In iTerm2, you may want to configure <kbd>Option</kbd> + arrow keys to move over words,
+just like in Terminal.app. To do this, go to Settings &gt; Profiles &gt; Keys &gt; Key Mappings,
+and select 'Terminal.app Compatibility' as the preset.</p>
+<p>If you decide to stick to Terminal.app, that's also not a bad option.
+If you want to use the Solarized color scheme on Terminal.app,
 you'll need to download and install it:</p>
-<ul>
+<ol>
 <li>Download the <a href="https://raw.githubusercontent.com/tomislav/osx-terminal.app-colors-solarized/master/Solarized%20Dark.terminal">Solarized dark theme for Terminal.app</a>. Open it in finder and double-click on it.</li>
 <li>macOS will say that the file cannot be opened because it is not from an identified developer.
 Go to 'System Preferences &gt; Security &gt; General' and press 'Open Anyway' (don't worry; it's not an executable).</li>
 <li>Open terminal, 'Preferences &gt; Profiles', select 'Solarized Dark' and press the 'Default' button.
 Now restart Terminal.app and you'll see the dark blue background of the Solarized color scheme.</li>
-</ul>
+</ol>
 <p>Additionally, you may want to deselect 'restore text when reopening windows'
 in the 'Preferences &gt; Profile &gt; Window' tab in Terminal.app.</p>
 <h3 id="installing-xcode-command-line-tools">Installing <a href="http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/">Xcode command-line tools</a><a class="headerlink" href="#installing-xcode-command-line-tools" title="Permanent link">&para;</a></h3>
@@ -302,8 +305,7 @@ on Jan 1, 2020.</p>
 <p>I use <a href="https://docs.python.org/3/tutorial/venv.html">python virtual environments</a>.
 I use one big virtualenv where I install all commonly used packages,
 and I create application-specific virtualenvs for large applications that I'm developing.</p>
-<p>Run <code>pip3 install virtualenv</code> to install the <code>virtualenv</code> tool.
-Run <code>virtualenv /path/to/venv/ -p python3</code> to create a python3 virtualenv.</p>
+<p>Run <code>python3 -m venv /path/to/venv/</code> to create a python3 virtualenv.</p>
 <p>Activate the virtualenv using <code>source /path/to/venv/bin/activate</code>.
 Now all python commands and applications you run will use this virtualenv.</p>
 <p>I usually install python packages only when required,
