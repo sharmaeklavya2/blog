@@ -6,6 +6,8 @@ modified: 2026-02-25
 summary: I list some taals and representative music from each.
 
 
+(This article is co-written with Prathyusha Malladi.)
+
 I learned some Tabla in childhood, and back then I learned about different
 <a href="https://en.wikipedia.org/wiki/Tala_(music)#Common_Hindustani_talas">taals in Hindustani music</a>.
 Here I'll try to document a wide variety of songs (across different genres, languages, eras) from each taal I know.
@@ -23,9 +25,20 @@ Most well-known songs are in teentaal. Here are some examples.
 <table>
 <tr><th>Title</th><th>Album</th><th>Artist</th></tr>
 <tr>
-    <td><a href="https://www.youtube.com/watch?v=1aCWGqUcP3o">Madhuban mein radhika nache re</a></td>
-    <td>Kohinoor</td>
-    <td>Mohd Rafi</td>
+    <td><a href="https://www.youtube.com/watch?v=Zi_XLOBDo_Y">Billie Jean</a></td>
+    <td>Thriller</td>
+    <td>Michael Jackson</td>
+</tr>
+
+<tr>
+    <td><a href="https://www.youtube.com/watch?v=b1kbLwvqugk">Anti-hero</a></td>
+    <td>Midnights</td>
+    <td>Taylor Swift</td>
+</tr>
+<tr>
+    <td><a href="https://www.youtube.com/watch?v=6jSLH9CDPPQ">Canon in D</a></td>
+    <td>-</td>
+    <td>Johann Pachelbel</td>
 </tr>
 <tr>
     <td><a href="https://www.youtube.com/watch?v=CD-E-LDc384">Enter Sandman</a></td>
@@ -33,9 +46,19 @@ Most well-known songs are in teentaal. Here are some examples.
     <td>Metallica</td>
 </tr>
 <tr>
-    <td><a href="https://www.youtube.com/watch?v=6jSLH9CDPPQ">Canon in D</a></td>
-    <td>-</td>
-    <td>Johann Pachelbel</td>
+    <td><a href="https://www.youtube.com/watch?v=z3UHfi9vpbc">Sunn Raha Hai Na Tu</a></td>
+    <td>Aashiqui 2</td>
+    <td>Ankit Tiwari</td>
+</tr>
+<tr>
+    <td><a href="https://www.youtube.com/watch?v=1aCWGqUcP3o">Madhuban mein radhika nache re</a></td>
+    <td>Kohinoor</td>
+    <td>Mohd Rafi</td>
+</tr>
+<tr>
+    <td><a href="https://www.youtube.com/watch?v=GTCwRMuIjzA">Neeli Meghamulalo</a></td>
+    <td>35 Chinna Katha Kaadu</td>
+    <td>Prithvi Harish, Vivek Sagar</td>
 </tr>
 </table>
 
@@ -173,6 +196,11 @@ This taal is popular in Rajasthani music.
     <td>Death Note</td>
     <td>-</td>
 </tr>
+<tr>
+    <td><a href="https://www.youtube.com/watch?v=-0kcet4aPpQ">Money</a></td>
+    <td>The Dark Side of the Moon</td>
+    <td>Pink Floyd</td>
+</tr>
 </table>
 
 ## Jhaptaal (झपताल)
@@ -203,8 +231,20 @@ This taal is popular in Rajasthani music.
 <tr>
     <td><a href="https://www.youtube.com/watch?v=zetSCSGaNig">Chinnari sasirekha vardhillavamma</a></td>
     <td>Maya Bazar</td>
+    <td>Ghantasala</td>
     <td></td>
-    <td></td>
+</tr>
+<tr>
+    <td><a href="https://www.youtube.com/watch?v=pG7_gceIFL4">Seven days</a></td>
+    <td>Ten Summoner's Tales</td>
+    <td>Sting</td>
+    <td>Uses 5 = 3 + 2</td>
+</tr>
+<tr>
+    <td><a href="https://www.youtube.com/watch?v=IpIEVFreMRQ">Anthem, part 1</a></td>
+    <td>Powaqqatsi</td>
+    <td>Philip Glass</td>
+    <td>Uses 10 = 3 + 3 + 2 + 2</td>
 </tr>
 </table>
 
@@ -249,6 +289,12 @@ Here's a list of songs that either use an unsual taal or switch taals during the
     <td>-</td>
     <td>-</td>
     <td>Daadra, Keherva</td>
+</tr>
+<tr>
+    <td><a href="https://www.youtube.com/watch?v=_OO2PuGz-H8">Solsbury Hill</a></td>
+    <td>Peter Gabriel (Car)</td>
+    <td>Peter Gabriel</td>
+    <td>14 = 4 + 4 + 4 + 2</td>
 </tr>
 </table>
 
