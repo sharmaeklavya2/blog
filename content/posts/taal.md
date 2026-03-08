@@ -296,6 +296,12 @@ Here's a list of songs that either use an unsual taal or switch taals during the
     <td>Peter Gabriel</td>
     <td>14 = 4 + 4 + 4 + 2</td>
 </tr>
+<tr>
+    <td><a href="https://www.youtube.com/watch?v=dSMUJ2oEGB4">Kaahe Chhed</a></td>
+    <td>Devdas</td>
+    <td>Kavita Krishnamurthy</td>
+    <td>Daadra, Keherva</td>
+</tr>
 </table>
 
 The metal band <a href="https://en.wikipedia.org/wiki/Tool_(band)">Tool</a> has composed many songs in very unusual taals.
