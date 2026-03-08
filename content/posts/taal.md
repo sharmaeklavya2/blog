@@ -2,7 +2,7 @@ title: Taal
 slug: taal
 tags: music
 date: 2025-11-30
-modified: 2026-02-25
+modified: 2026-03-07
 summary: I list some taals and representative music from each.
 
 
