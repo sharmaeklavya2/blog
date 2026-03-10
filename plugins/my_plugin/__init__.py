@@ -15,6 +15,7 @@ def inspect_static_generator(static_generator):
 
 def post_process_staticfiles(pelican):
     count = 0
+    assert staticfiles is not None  # staticfiles should have been initialized by inspect_static_generator
     for sc in staticfiles:
         if (sc.source_path, sc.save_as) not in seen_file_pairs:
             count += post_process(input_path=pjoin(pelican.path, sc.source_path),
