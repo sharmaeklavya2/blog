@@ -1,7 +1,6 @@
 title: Taal
 slug: taal
 tags: music
-authors: Eklavya Sharma, Prathyusha Malladi
 date: 2025-11-30
 modified: 2026-03-07
 summary: I list some taals and representative music from each.
@@ -10,6 +9,8 @@ summary: I list some taals and representative music from each.
 I learned some Tabla in childhood, and back then I learned about different
 <a href="https://en.wikipedia.org/wiki/Tala_(music)#Common_Hindustani_talas">taals in Hindustani music</a>.
 Here I'll try to document a wide variety of songs (across different genres, languages, eras) from each taal I know.
+
+**Credits**: My wife, Prathyusha Malladi, helped me find some of these songs.
 
 
 [TOC]
