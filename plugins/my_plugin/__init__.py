@@ -2,6 +2,7 @@ import os
 from os.path import join as pjoin
 from pelican import signals
 from .post_process import post_process
+from .smart_json import tojson as smart_tojson
 
 staticfiles = None
 seen_file_pairs = set()  # workaround for bug: https://github.com/getpelican/pelican/pull/2593
@@ -48,7 +49,13 @@ def remove_external_articles(article_generator, writer):
                 pass
 
 
+def add_jinja_filters(pelican):
+    pelican.settings.setdefault("JINJA_FILTERS", {})
+    pelican.settings["JINJA_FILTERS"]["smart_tojson"] = smart_tojson
+
+
 def register():
+    signals.initialized.connect(add_jinja_filters)
     signals.static_generator_finalized.connect(inspect_static_generator)
     signals.finalized.connect(post_process_staticfiles)
     signals.finalized.connect(post_process_theme_staticfiles)
