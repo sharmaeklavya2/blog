@@ -6,7 +6,6 @@ import os
 import logging
 import markdown.util
 
-AUTHOR = 'Eklavya Sharma'
 SITENAME = "Eklavya's Blog"
 DESCRIPTION = "Eklavya Sharma's blog where he writes about juggling and computer science."
 
@@ -96,7 +95,6 @@ KATEX = KATEX_COMMON['options']
 
 # Show tags but not categories and authors
 
-SHOW_AUTHORS = False
 USE_CATEGORIES = False
 DISPLAY_CATEGORIES_ON_MENU = USE_CATEGORIES
 USE_TAGS = True
