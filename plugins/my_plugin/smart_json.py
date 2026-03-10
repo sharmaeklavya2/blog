@@ -1,13 +1,22 @@
 import json
 from collections.abc import Collection, Mapping
+from pelican.urlwrappers import URLWrapper
 
 
 def object_to_dict(x: object) -> dict[str, object] | None:
-    try:
-        d = vars(x)
-    except TypeError:
-        return None
-    return {k: v for k, v in d.items() if k != 'settings' and not k.startswith('_')}
+    if isinstance(x, URLWrapper):
+        d = {}
+        if x.name is not None:
+            d['name'] = x.name
+        if x.slug is not None:
+            d['slug'] = x.slug
+        return d
+    else:
+        try:
+            d = vars(x)
+        except TypeError:
+            return None
+        return {k: v for k, v in d.items() if k != 'settings' and not k.startswith('_')}
 
 
 def tojson_helper(x: object, parts: list[str], ancestor_objs: set[object], depth: int, indentStr: str) -> None:
