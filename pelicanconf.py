@@ -24,6 +24,8 @@ else:
     SITEURL = ''
 NUMBER_HEADINGS = True
 
+WRITE_TEMPLATE_DEBUG_INFO = ('PELICAN_DEBUG' in os.environ)
+
 # Plugins
 
 PLUGIN_PATHS = ['plugins', 'official-plugins']
@@ -120,6 +122,10 @@ FEED_ALL_ATOM = 'feed/all.atom.xml'
 FEED_ALL_RSS = 'feed/all.rss.xml'
 TAG_FEED_ATOM = 'feed/{slug}.atom.xml'
 TAG_FEED_RSS = 'feed/{slug}.rss.xml'
+
+# Capture all settings into a variable
+
+SETTINGS = {k: v for (k, v) in globals().items() if k.isupper()}
 
 
 # Prevent logging useless warnings

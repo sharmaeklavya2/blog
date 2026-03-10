@@ -4,5 +4,7 @@ clean:
 	find . -name "__pycache__" -type d -delete
 local:
 	pelican --theme=theme
+debug:
+	PELICAN_DEBUG=1 pelican --theme=theme
 deploy:
 	PELICAN_PUBLISH=1 pelican --theme=theme --output=deploy
