@@ -46,7 +46,7 @@ and our expected revenue would be $(2/3) · p$.
 If we set $p = 4$, our revenue would be $8/3$,
 and it is easy to see that there is no other way to set the price $p$
 such that the revenue is more than $8/3$.
-Hence, $p = 2$ is the optimal price and the optimal expected revenue is $8/3$.
+Hence, $p = 4$ is the optimal price and the optimal expected revenue is $8/3$.
 
 In general, our revenue is $p$ with probability $\Pr(v ≥ p)$
 and $0$ with probability $\Pr(v < p)$.
