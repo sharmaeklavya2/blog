@@ -1,4 +1,5 @@
-pelican
+# pelican
+git+https://github.com/sharmaeklavya2/pelican.git@draft-category
 Markdown
 csscompressor
 # pelican-render-math
