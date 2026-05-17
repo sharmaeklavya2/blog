@@ -61,14 +61,11 @@ MATH_JAX = {
     },
 }
 
-with open('package.json') as fp:
-    NPM_DEP_VERSIONS = json.load(fp)['dependencies']
-
-KATEX_VERSION = NPM_DEP_VERSIONS['katex']
+# pelican-katex ships katex.js with a fixed verison.
+# see https://github.com/martenlienen/pelican-katex/issues/17
+KATEX_VERSION = '0.16.x'
 KATEX_COMMON = {
-    'version': KATEX_VERSION,
     'prefix': 'https://cdn.jsdelivr.net/npm/katex@' + KATEX_VERSION + '/dist',
-    'defer_css': False,
     'options': {
         "output": "html",
         "fleqn": True,
@@ -90,7 +87,7 @@ KATEX_COMMON = {
         'KaTeX_Typewriter-Regular.woff2',
     ],
 }
-KATEX_PATH = "katex"
+# KATEX_PATH = "katex"  # for using your own katex
 KATEX = KATEX_COMMON['options']
 
 # Show tags but not categories and authors

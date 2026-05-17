@@ -16,7 +16,6 @@ This repository contains:
 * Install dependencies:
 
       pip install -r requirements.txt
-      npm install
 
 * Install [`dot`](https://graphviz.org/download/) and [`ffmpeg`](https://ffmpeg.org/).
 

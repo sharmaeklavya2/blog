@@ -1,7 +1,0 @@
-{
-  "name": "blog-source",
-  "version": "0.1.0",
-  "dependencies": {
-    "katex": "0.16.x"
-  }
-}
