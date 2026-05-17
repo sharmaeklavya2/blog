@@ -15,6 +15,8 @@ This repository contains:
 
 * Install dependencies:
 
+      python3 -m venv blogVenv
+      source blogVenv/bin/activate
       pip install -r requirements.txt
 
 * Install [`dot`](https://graphviz.org/download/) and [`ffmpeg`](https://ffmpeg.org/).
