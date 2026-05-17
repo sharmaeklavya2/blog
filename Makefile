@@ -6,5 +6,5 @@ local:
 	pelican --theme=theme
 debug:
 	PELICAN_DEBUG=1 pelican --theme=theme
-deploy:
-	PELICAN_PUBLISH=1 pelican --theme=theme --output=deploy
+publish:
+	PELICAN_PUBLISH=1 pelican --theme=theme

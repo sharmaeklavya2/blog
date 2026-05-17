@@ -24,12 +24,8 @@ This repository contains:
 * Get a pelican theme (like [MFPelicanTheme](https://github.com/sharmaeklavya2/MFPelicanTheme)).
   Place the theme's directory at `theme` or create a symlink.
 
-* To generate a website for local testing, run `make local`.
+* To generate the blog for local testing, run `make local`.
   The website will be generated in the directory `output`.
-  You also have the option of creating a symlink to a directory at `output`
-  before running `make local`.
-
-* To generate a website for deployment, run `make deploy`.
-  The website will be generated in the directory `deploy`.
-  You also have the option of creating a symlink to a directory at `deploy`
-  before running `make deploy`.
+  (`output` can be a pre-existing symlink.)
+  Then serve the contents of `output` using an HTTP server like [`nginx`](https://nginx.org/) or
+  Python's [`http.server`](https://docs.python.org/3/library/http.server.html#command-line-interface).
