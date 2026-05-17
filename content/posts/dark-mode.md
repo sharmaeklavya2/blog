@@ -1,5 +1,6 @@
 title: Dark Mode for Everything
 slug: dark-mode
+tags: customize
 date: 2025-12-20
 ExtraCSS: css/solarized.css
 summary: Tips and tricks on getting dark mode everywhere
