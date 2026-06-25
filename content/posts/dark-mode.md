@@ -2,6 +2,7 @@ title: Dark Mode for Everything
 slug: dark-mode
 tags: customize
 date: 2025-12-20
+modified: 2026-06-25
 ExtraCSS: css/solarized.css
 summary: Tips and tricks on getting dark mode everywhere
 
@@ -99,21 +100,39 @@ you'd have to translate them for your OS.
 PDF readers can often easily switch their UI (toolbars, etc.) to dark mode,
 but switching the PDFs themselves to dark mode is, of course, not easy.
 
-Preview, the default PDF app in macOS, doesn't support changing the colors of the PDF,
-but Adobe's Acrobat Reader does.
-In Acrobat Reader, go to Preferences > Accessibility, and check 'Replace Document Colors'.
-Select 'Custom Colors'. Then specify the colors for 'Page Background' and 'Document Text'
-I recommend `#151718` and `#bdbdbc`, respectively.
-Now you can switch between light and dark modes by simply
-toggling the 'Replace Document Colors' checkbox.
+Recently, in macOS Tahoe 26.5.1, the default PDF reader (macOS Preview) allows
+switching to dark mode in 'View > Use Dark Appearance for PDF'.
+But this has to be manually selected for each PDF; it doesn't open them in dark mode by default.
 
-The above would have been a very satisfactory solution if Acrobat Reader was an otherwise good PDF reader.
-Moreover, colored text is still not handled well in this solution.
+There are third-party PDF readers with support for dark mode:
+
+* [Skim](https://skim-app.sourceforge.io/): Settings > Invert colors in Dark Mode.
+    But Skim only works on macOS, and doesn't store annotations in the PDF file.
+* [Adobe's Acrobat Reader](https://get.adobe.com/reader/): Preferences > Accessibility > Replace Document Colors.
+    Select 'Custom Colors'. Then specify the colors for 'Page Background' and 'Document Text'.
+    I recommend `#151718` and `#bdbdbc`, respectively.
+    Now you can switch between light and dark modes by simply
+    toggling the 'Replace Document Colors' checkbox.
+    But Acrobat Reader is a cluttered, bloated, and annoying PDF reader.
+* [PDF Expert](https://pdfexpert.com/):
+    Apparently a great pdf reader, but it only works on macOS and iOS, and many features are locked behind a paywall,
+    so I didn't fully try it out.
+
+Skim works by inverting colors and rotating hues.
+This is great for viewing colored diagrams, e.g., dark blue in light mode would change to light blue in dark mode.
+macOS Preview, Acrobat Reader, and PDF Expert alter the colors of individual elements,
+so black and white change to whitish and blackish, respectively,
+but colors are either lost or stay the same.
+This is good for viewing photographs, but it doesn't invert colors in scanned PDFs
+and colored diagrams don't look good.
+
 I often read LaTeX-generated PDFs, where the colors of citations and links are specified using
 `linkcolor`, `citecolor`, `urlcolor` in `\hypersetup`.
-Most papers use dark or fully-saturated colors here, which are fine for light mode but not for dark mode.
+Most papers use dark or fully-saturated colors here,
+and I don't always like how readers other than Skim handle these colors.
 
-For PDFs that I write in LaTeX, I just generate them in dark mode.
+Before I learned about these third-party PDF readers,
+I would just generate my LaTeX PDFs in dark mode.
 See [`colorscheme.tex`](https://github.com/sharmaeklavya2/tex-colorscheme/)
 for TeX macros I wrote for this and how to use them.
 
